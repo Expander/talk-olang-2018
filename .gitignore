@@ -1,0 +1,13 @@
+*~
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+
+talk.pdf
+
+Feynman/FeynmanRules.*
+
+images/*-converted-to.pdf

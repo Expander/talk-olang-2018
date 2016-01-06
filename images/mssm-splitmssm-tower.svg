@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="mssm-splitmssm-tower.pdf">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mend"
+       style="overflow:visible;">
+      <path
+         id="path3830"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;">
+      <path
+         id="path3824"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="118.58972"
+     inkscape:cy="832.76484"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:window-width="1428"
+     inkscape:window-height="868"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2985" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g3791"
+       transform="translate(-10.953125,3.0220413)">
+      <rect
+         y="29.340141"
+         x="130.95312"
+         height="150"
+         width="170"
+         id="rect2987"
+         style="fill:#000000;fill-opacity:0;fill-rule:nonzero;stroke:#220000;stroke-width:1;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3757"
+         y="113.07647"
+         x="180"
+         style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+         xml:space="preserve"><tspan
+           y="113.07647"
+           x="180"
+           id="tspan3759"
+           sodipodi:role="line">MSSM</tspan></text>
+    </g>
+    <g
+       id="g3786"
+       transform="translate(-13.646759,-21.950333)">
+      <rect
+         y="214.31252"
+         x="133.64676"
+         height="70"
+         width="170"
+         id="rect3761"
+         style="fill:#000000;fill-opacity:0;fill-rule:nonzero;stroke:#220000;stroke-width:1;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3763"
+         y="255.93361"
+         x="152.14285"
+         style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+         xml:space="preserve"><tspan
+           y="255.93361"
+           x="152.14285"
+           id="tspan3765"
+           sodipodi:role="line">Split-MSSM</tspan></text>
+    </g>
+    <g
+       id="g3781"
+       transform="translate(17.410156,-9.1208191)">
+      <rect
+         y="281.483"
+         x="102.58984"
+         height="60"
+         width="170"
+         id="rect3775"
+         style="fill:#000000;fill-opacity:0;fill-rule:nonzero;stroke:#220000;stroke-width:1;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text3777"
+         y="320.21933"
+         x="170"
+         style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+         xml:space="preserve"><tspan
+           y="320.21933"
+           x="170"
+           id="tspan3779"
+           sodipodi:role="line">SM</tspan></text>
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+       d="M 90,342.36218 90,12.362183"
+       id="path3815"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:18px;font-style:oblique;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans Oblique"
+       x="40"
+       y="272.36218"
+       id="text4447"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4449"
+         x="40"
+         y="272.36218">M<tspan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="tspan4453">S</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:18px;font-style:oblique;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans;-inkscape-font-specification:Bitstream Vera Sans Oblique"
+       x="40"
+       y="192.36218"
+       id="text4455"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4457"
+         x="40"
+         y="192.36218">M<tspan
+   style="font-size:65.00091553%;font-style:normal;baseline-shift:sub;-inkscape-font-specification:Bitstream Vera Sans"
+   id="tspan4459">split</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="40"
+       y="32.362183"
+       id="text4461"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4463"
+         x="40"
+         y="32.362183"
+         style="font-size:18px;font-style:oblique;-inkscape-font-specification:Bitstream Vera Sans Oblique">M<tspan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="tspan4465">X</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="40"
+       y="332.36218"
+       id="text4467"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4469"
+         x="40"
+         y="332.36218"
+         style="font-size:18px;font-style:oblique;-inkscape-font-specification:Bitstream Vera Sans Oblique">M<tspan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="tspan4511">t</tspan></tspan></text>
+  </g>
+</svg>
