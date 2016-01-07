@@ -180,15 +180,22 @@
 \begin{frame}{Available models (selection)}
   \begin{table}
     \centering
-    \begin{tabular}{lll}
-      Model             & RGEs & $M_h$ calculation \\
+    \begin{tabular}{llll}
+      Models            & RGEs & \multicolumn{2}{l}{diagrammatic $M_h$ contributions} \\
       \midrule
-      MSSM              & 3L   & 1L + 2L $O()$ \\
-      NMSSM             & 2L   & 1L + 2L $O()$ \\
-      THDM-II           & 2L   & 1L \\
-      split-MSSM        & 2L   & 1L + 2L $O()$ \\
-      HSSUSY (= SUSYHD) & 3L   & 1L + 2L $O()$ \\
-      \emph{tower-MSSM} & 3L   & 1L + 2L $O()$ \\
+      MSSM              & 3L   & \multicolumn{2}{l}{1L + 2L $O((\alpha_t + \alpha_b) \alpha_s + (\alpha_t + \alpha_b)^2)$} \\
+      NMSSM             & 2L   & \multicolumn{2}{l}{1L + 2L $O((\alpha_t + \alpha_b) \alpha_s + (\alpha_t + \alpha_b)^2)$} \\
+      THDM              & 2L   & 1L \\
+      THDM + $\tilde{h}_i$ & 2L   & 1L \\
+      THDM + split      & 2L   & 1L \\
+      \\
+      EFTs              & RGEs & diagrammatic $M_h$ & matching \\
+                        &      & contributions      & conditions \\
+      \midrule
+      split-MSSM        & 2L   & 1L + 2L $O(\alpha_t (\alpha_s + \alpha_t))$ \\
+                        &      & \phantom{1L} + 3L gluino $O(\alpha_t \alpha_s^2)$ \\
+      SM                & 3L   & 1L + 2L $O(\alpha_t (\alpha_s + \alpha_t))$ \\
+      SM                & 3L   & 1L + 2L $O(\alpha_t (\alpha_s + \alpha_t))$ \\
     \end{tabular}
   \end{table}
 \end{frame}
