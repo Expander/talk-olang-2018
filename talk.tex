@@ -181,23 +181,36 @@
   \begin{table}
     \centering
     \begin{tabular}{llll}
-      Models            & RGEs & \multicolumn{2}{l}{diagrammatic $M_h$ contributions} \\
+      Model             & RGEs & \multicolumn{2}{l}{diagrammatic $M_h$ contributions} \\
       \midrule
       MSSM              & 3L   & \multicolumn{2}{l}{1L + 2L $O((\alpha_t + \alpha_b) \alpha_s + (\alpha_t + \alpha_b)^2)$} \\
       NMSSM             & 2L   & \multicolumn{2}{l}{1L + 2L $O((\alpha_t + \alpha_b) \alpha_s + (\alpha_t + \alpha_b)^2)$} \\
+      USSM              & 2L   & \multicolumn{2}{l}{1L + 2L $O((\alpha_t + \alpha_b) \alpha_s + (\alpha_t + \alpha_b)^2)$} \\
+      E6SSM             & 2L   & \multicolumn{2}{l}{1L + 2L $O((\alpha_t + \alpha_b) \alpha_s + (\alpha_t + \alpha_b)^2)$} \\
       THDM              & 2L   & 1L \\
       THDM + $\tilde{h}_i$ & 2L   & 1L \\
       THDM + split      & 2L   & 1L \\
-      \\
-      EFTs              & RGEs & diagrammatic $M_h$ & matching \\
-                        &      & contributions      & conditions \\
-      \midrule
-      split-MSSM        & 2L   & 1L + 2L $O(\alpha_t (\alpha_s + \alpha_t))$ \\
-                        &      & \phantom{1L} + 3L gluino $O(\alpha_t \alpha_s^2)$ \\
-      SM                & 3L   & 1L + 2L $O(\alpha_t (\alpha_s + \alpha_t))$ \\
-      SM                & 3L   & 1L + 2L $O(\alpha_t (\alpha_s + \alpha_t))$ \\
     \end{tabular}
   \end{table}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Available models matched to the MSSM at $M_S$}
+  \resizebox{\textwidth}{!}{%
+    \begin{tabular}{llll}
+      Model             & RGEs & diagrammatic $M_h$ & matching \\
+                        &      & contributions      & conditions \\
+      \midrule
+      SM + split        & 2L   & 1L + 2L $O(\alpha_t (\alpha_s + \alpha_t))$       & 1L $\tilde{g}_{ij}$ $O(\alpha_t + \alpha_i)$ \\
+                        &      & \phantom{1L} + 3L gluino $O(\alpha_t \alpha_s^2)$ & + 1L $\lambda$ $O((\alpha_t + \alpha_i)^2)$ \\
+                        &      &                                                  & + 2L $\lambda$ $O(\alpha_s \alpha_t^2)$ \\
+                        &      &                                                  & \mycite{1407.4081} \\[0.5em]
+      SM                & 3L   & 1L + 2L $O(\alpha_t (\alpha_s + \alpha_t))$ & 1L $\lambda$ $O((\alpha_t + \alpha_i)^2 + \alpha_b^2 + \alpha_\tau^2)$ \\
+      ($\approx$ SUSYHD) &      &                                            & 2L $\lambda$ $O((\alpha_s + \alpha_t)\alpha_t^2)$ \\
+                        &      &                                            & \mycite{1407.4081, 1504.05200} \\[0.5em]
+      SM                & 3L   & 1L + 2L $O(\alpha_t (\alpha_s + \alpha_t))$ & 1L $\lambda$ + $p^2/M_S^2$ terms \\
+    \end{tabular}}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
