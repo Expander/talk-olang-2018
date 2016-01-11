@@ -15,4 +15,4 @@ datafile = "PlotScale.in.FH_new_low"
 plot [93:] [70:] \
      datafile u 1:2 w lines ls 1 t 'FlexibleSUSY matching M_h', \
      datafile u 1:3 w lines ls 2 t 'FlexibleSUSY matching {/Symbol l}', \
-     datafile u 1:6 w lines ls 3 t 'FeynHiggs'
+     datafile u 1:6 w lines ls 3 t 'FeynHiggs 2.11.3'

@@ -13,7 +13,7 @@ plot [93:] [70:] \
      datafile u 1:3               w lines ls 2 t 'FlexibleSUSY matching {/Symbol l}', \
      datafile u 1:4               w lines ls 3 t 'SUSYHD', \
      datafile u 1:($4-$5):($4+$5) w filledcurves ls 3 t '', \
-     datafile u 1:6               w lines ls 4 t 'FeynHiggs', \
+     datafile u 1:6               w lines ls 4 t 'FeynHiggs 2.11.3', \
      datafile u 1:($6-$7):($6+$7) w filledcurves ls 4 t '', \
      datafile u 1:8               w lines ls 5 t 'SPheno', \
      datafile u 1:9               w lines ls 6 t 'FlexibleSUSY MSSM', \
