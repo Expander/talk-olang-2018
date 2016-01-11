@@ -2,7 +2,8 @@
 
 OUTFILENAME := talk.pdf
 PLOTS       := plots/PlotScale-in-FH_new_low.pdf \
-               plots/PlotScale-in-FH_new_low-selected.pdf
+               plots/PlotScale-in-FH_new_low-selected.pdf \
+               plots/PlotXt-selected.pdf
 TEXDIRS     := $(PLOTSDIR)
 BIBTEX      := bibtex
 
@@ -14,6 +15,9 @@ plots/PlotScale-in-FH_new_low.pdf: plots/plot-mh-ms.gnuplot plots/PlotScale.in.F
 	cd plots && gnuplot $(shell basename $<)
 
 plots/PlotScale-in-FH_new_low-selected.pdf: plots/plot-mh-ms-selected.gnuplot plots/PlotScale.in.FH_new_low
+	cd plots && gnuplot $(shell basename $<)
+
+plots/PlotXt-selected.pdf: plots/plot-mh-xt-selected.gnuplot plots/PlotXt.in
 	cd plots && gnuplot $(shell basename $<)
 
 %.pdf: %.tex $(PLOTS)
