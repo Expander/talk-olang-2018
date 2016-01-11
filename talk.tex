@@ -224,14 +224,63 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Algorithm matching SM--MSSM at $\mu = M_S$}
+\begin{frame}{Diagrammatic approach}
+  % \begin{figure}
+  %   \centering
+  %   \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected}
+  % \end{figure}
+  Bild: calculate $M_h$ at $\mu = M_S$
+\end{frame}
+
+\begin{frame}{Diagrammatic approach}
+  \begin{align*}
+    (M_h^\text{MSSM})^2 &= \text{smallest eigenvalue of} \\
+    &\phantom{={}} \left[(m_h^\text{MSSM})^2 - \Sigma^\text{MSSM}_h(p^2 = (M_h^\text{MSSM})^2,\mu = M_S)\right]_{ij}
+  \end{align*}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{EFT approach}
+  % \begin{figure}
+  %   \centering
+  %   \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected}
+  % \end{figure}
+  Bild: calculate $\lambda(M_S)$
+\end{frame}
+
+\begin{frame}{EFT approach: matching all $\Gamma_{\phi_1,\ldots,\phi_n}$}
+  Determine $\lambda(M_S)$ from mathching all $\Gamma_{\phi_1,\ldots,\phi_n}$:
+  \begin{align*}
+    \frac{\partial}{\partial p^2}\Gamma_{hh}^{\SM}(p^2 = 0, \mu = M_S) &= \frac{\partial}{\partial p^2}\Gamma_{hh}^\text{MSSM}(p^2 = 0, \mu = M_S) \\
+    \Gamma_{hhhh}^{\SM}(p^2 = 0, \mu = M_S) &= \Gamma_{hhhh}^\text{MSSM}(p^2 = 0, \mu = M_S)
+  \end{align*}
+  $\Rightarrow$
+  \begin{align*}
+    \lambda (M_S) &= \frac{1}{4}\left[\frac{3}{5} g_1^{2} + g_2^2\right] \cos^22\beta \\
+    &\phantom{={}}
+    + \Delta \lambda^{1L,\,\text{reg}}
+    + \Delta \lambda^{1L,\,\phi}
+    + \Delta \lambda^{1L,\,\chi}
+  \end{align*}
+  \emph{Advantage:} resums large logarithms $\log(M_Z/M_S)$\\
+  \emph{Disadvantage:} neglects 1L terms $O(p^2/M_S^2)$
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Combining EFT and diagrammatic approach}
+  % \begin{figure}
+  %   \centering
+  %   \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected}
+  % \end{figure}
+  Bild: calculate $\lambda(M_S)$ including $p^2/M_S^2$ terms
+\end{frame}
+
+\begin{frame}{Combining EFT and diagrammatic approach: matching $M_h$}
   \begin{align*}
     M_h^{\SM} &= M_h^\text{MSSM}
   \end{align*}
-  % $\Rightarrow$
-  % \begin{align*}
-  %   \lambda = \frac{1}{v^2} \left[ \right]
-  % \end{align*}
   $\Rightarrow$
   \begin{align*}
     \lambda_{n+1} \leftarrow \frac{1}{v^2} \left[ (M_h^\text{MSSM})^2 - (M_h^{\SM})^2 + \lambda_n v^2 \right]
@@ -242,6 +291,8 @@
     (M_h^\text{MSSM})^2 &= \text{smallest eigenvalue of} \\
     &\phantom{={}} \left[(m_h^\text{MSSM})^2 - \Sigma^\text{MSSM}_h(p^2 = (M_h^\text{MSSM})^2,\mu = M_S)\right]_{ij}
   \end{align*}
+  \emph{Advantage:} resums large logarithms $\log(M_Z/M_S)$\\
+  \emph{Advantage:} includes 1L terms $O(p^2/M_S^2)$
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
