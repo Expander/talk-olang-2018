@@ -404,256 +404,71 @@
   $\tan\beta = 5$, $X_{b,\tau} = 0$, $M_S = 2\eh{TeV}$
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Calculation of SM parameters}
 
-\begin{frame}{NMSSM variants available in FlexibleSUSY}
-  $Z_3$-symmetric NMSSM (called \texttt{NMSSM} in FlexibleSUSY):
-  \begin{align*} 
-    W_{Z_3} &= y_e (H_d L) \bar{E}
-      + y_d (H_d Q) \bar{D}
-      + y_u (Q H_u) \bar{U}\\
-      &\phantom{={}}
-      \textcolor{blue}{+ \lambda S (H_d H_u) + \frac{\kappa}{3}S^{3}} \\
-    \Lagr_{\text{soft},Z_3} &= \Lagr_\text{soft,MSSM}(B\mu=0)\\
-    &\phantom{={}}
-    \textcolor{blue}{ -\ m_s^2|s|^2 
-      -\left(\lambda A_\lambda s (h_d h_u)
-        + \frac{\kappa A_\kappa}{3} s^3 + \text{h.c.}\right)}
-  \end{align*}
-\end{frame}
-
-\begin{frame}{NMSSM variants available in FlexibleSUSY}
-  $\Zv$-NMSSM (called \texttt{SMSSM} in FlexibleSUSY):
-  \begin{align*} 
-    W_{\Zv} &= y_e (H_d L) \bar{E}
-      + y_d (H_d Q) \bar{D}
-      + y_u (Q H_u) \bar{U}\\
-      &\phantom{={}}
-      \textcolor{blue}{+ \lambda S (H_d H_u) + \frac{\kappa}{3}S^{3}} \\
-      &\phantom{={}}
-      \textcolor{red}{+ \mu(H_d H_u) + \xi_FS 
-      + \frac{\mu^\prime}{2} S^{2}}\\
-    \Lagr_{\text{soft},\Zv} &= \Lagr_\text{soft,MSSM}(B\mu=0)\\
-    &\phantom{={}}
-    \textcolor{blue}{ -\ m_s^2|s|^2 
-      -\left(\lambda A_\lambda s (h_d h_u)
-        + \frac{\kappa A_\kappa}{3} s^3 + \text{h.c.}\right)}\\
-    &\phantom{={}}
-    \textcolor{red}{ -\ \xi_s s - \frac{m_s^{\prime \, 2}}{2} s^2
-    - B\mu (h_d h_u) + \text{h.c.}}
-  \end{align*}
-\end{frame}
-
-\subsection{Parameters}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{NMSSM parameters ($\DRbar$ scheme)}
-  \begin{table}[tbh]
-    \footnotesize
-    \centering
-    \begin{tabularx}{\textwidth}{lXX}
-      \toprule
-      & $Z_3$ (\texttt{NMSSM}) & $\Zv$ (\texttt{SMSSM})\\
-      \midrule
-      fixed by SM
-      & $g_Y$, $g_2$, $g_3$, $y_u$, $y_d$, $y_e$, $v_u$, $v_d$
-      & $g_Y$, $g_2$, $g_3$, $y_u$, $y_d$, $y_e$, $v_u$, $v_d$
-      \\\midrule
-      fixed by EWSB
-      & $\kappa$, $|v_s|$, $m_s^2$
-      & $|\mu|^2$, $B\mu$, $\xi_s$
-      \\\midrule
-      User input
-      & $m_q^2$, $m_u^2$,  $m_d^2$, $m_\ell^2$, $m_e^2$,
-      & $m_q^2$, $m_u^2$,  $m_d^2$, $m_\ell^2$, $m_e^2$,\\
-      (general)
-      & $m_{h_d}^2$, $m_{h_u}^2$,
-      & $m_{h_d}^2$, $m_{h_u}^2$, $m_s^2$,\\
-      & $A_e$, $A_d$, $A_u$, $A_\lambda$, $A_\kappa$,
-      & $A_e$, $A_d$, $A_u$, $A_\lambda$, $A_\kappa$,
-      \\
-      & $M_1$, $M_2$, $M_3$,
-      & $M_1$, $M_2$, $M_3$,
-      \\
-      & $\lambda$, $\sign v_s$
-      & $\lambda$, $\sign\mu$,
-      \\
-      & & $\kappa$, $v_s$, $\mu'$, $m_s^{\prime 2}$, $\xi_F$
-      % \\\midrule
-      % User input
-      % & $m_0^2$, $A_0$, $M_{1/2}$,
-      % & $m_0^2$, $A_0$, $M_{1/2}$,
-      % \\
-      % (mSUGRA)
-      % & $\lambda$, $\tan\beta$, $\sign v_s$
-      % & $\lambda$, $\tan\beta$, $\sign\mu$,\\
-      % & &
-      % $\kappa$, $v_s$, $m_s^2$, $\mu'$, $m_s^{\prime 2}$, $\xi_F$
-      \\\bottomrule
-    \end{tabularx}
-  \end{table}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{NMSSM parameters ($\DRbar$ scheme)}
-  \begin{table}[tbh]
-    \footnotesize
-    \centering
-    \begin{tabularx}{\textwidth}{lXX}
-      \toprule
-      & $Z_3$ (\texttt{NUTNMSSM}) & $\Zv$ (\texttt{NUTSMSSM})\\
-      \midrule
-      fixed by SM
-      & $g_Y$, $g_2$, $g_3$, $y_u$, $y_d$, $y_e$, $v_u$, $v_d$
-      & $g_Y$, $g_2$, $g_3$, $y_u$, $y_d$, $y_e$, $v_u$, $v_d$
-      \\\midrule
-      fixed by EWSB
-      & \textcolor{darkgreen}{$m_{h_d}^2$, $m_{h_u}^2$}, $m_s^2$
-      & \textcolor{darkgreen}{$m_{h_d}^2$, $m_{h_u}^2$, $m_s^2$}
-      \\\midrule
-      User input
-      & $m_q^2$, $m_u^2$,  $m_d^2$, $m_\ell^2$, $m_e^2$,
-      & $m_q^2$, $m_u^2$,  $m_d^2$, $m_\ell^2$, $m_e^2$,\\
-      (general)
-      & \textcolor{darkgreen}{$\kappa$, $|v_s|$},
-      & \textcolor{darkgreen}{$|\mu|^2$, $B\mu$, $\xi_s$},\\
-      & $A_e$, $A_d$, $A_u$, $A_\lambda$, $A_\kappa$,
-      & $A_e$, $A_d$, $A_u$, $A_\lambda$, $A_\kappa$,
-      \\
-      & $M_1$, $M_2$, $M_3$,
-      & $M_1$, $M_2$, $M_3$,
-      \\
-      & $\lambda$, $\sign v_s$
-      & $\lambda$, $\sign\mu$,
-      \\
-      & & $\kappa$, $v_s$, $\mu'$, $m_s^{\prime 2}$, $\xi_F$
-      % \\\midrule
-      % User input
-      % & $m_0^2$, $A_0$, $M_{1/2}$,
-      % & $m_0^2$, $A_0$, $M_{1/2}$,
-      % \\
-      % (mSUGRA)
-      % & $\lambda$, $\tan\beta$, $\sign v_s$
-      % & $\lambda$, $\tan\beta$, $\sign\mu$,\\
-      % & &
-      % $\kappa$, $v_s$, $m_s^2$, $\mu'$, $m_s^{\prime 2}$, $\xi_F$
-      \\\bottomrule
-    \end{tabularx}
-  \end{table}
-\end{frame}
-
-\section{Physical problem statement}
-
-\begin{frame}{Physical problem statement for the $Z_3$-NMSSM}
-  \begin{figure}[tbh]
-    \centering
-    \begin{tikzpicture}[node distance = 3.5cm, auto]
-      \node [block, text width=8.6em] (lowscale) {\footnotesize Matching to SM\\ $g_i$, $y_f$, $v$};
-      \node [block, above=1cm of lowscale, text width=8.6em] (susyscale) {\footnotesize Input: $\lambda$, $\sign v_s$\\EWSB: $\kappa$, $|v_s|$, $m_s^2$};
-      \node [block, above=1.8cm of susyscale, text width=8.6em] (highscale) {\footnotesize GUT BCs\\ $m_{\tilde{f}}^2$, $M_i$, $A_i$};
-      \path [arrow2] (highscale) -- node (RGEs) {RGEs} (susyscale);
-      \path [arrow2] (susyscale) -- node {RGEs} (lowscale);
-      % energy axis
-      \node [below left=0em and 1cm of lowscale] (energy_start) {};
-      \node [above=6cm of energy_start] (energy_stop) {};
-      \node [above=0em of energy_stop,align=center] (energy_label) {Energy \\ scale};
-      \path [arrow] (energy_start) -- (energy_stop);
-      \node [text width=2em,left=3.0em of highscale] (mx) {$M_X$};
-      \node [text width=2em,left=3.0em of susyscale] (ms) {$M_S$};
-      \node [text width=2em,left=3.0em of lowscale] (mz) {$M_Z$};
-    \end{tikzpicture}
-  \end{figure}
-\end{frame}
-
-\section{Algorithm to calculate the model parameters}
-
-\begin{frame}{Algorithm to calculate the model parameters consistent with all BCs}
-  \begin{figure}[tbh]
-    \centering
-    \small
-    \begin{tikzpicture}[node distance = 3.5cm, auto,scale=0.9, every node/.style={transform shape}]
-      \node [block] (guess) {Start};
-      \node [block, right of=guess] (lowscale) {Calculate\\ $g_i$, $y_f$, $v$};
-      \node [block, above=1cm of lowscale,text width=8em] (susyscale) {Set $\lambda$, $\sign v_s$\\EWSB: $\kappa$, $|v_s|$, $m_s^2$};
-      \node [block, above=2cm of susyscale] (highscale) {Set\\ $m_{\tilde{f}}^2$, $M_i$, $A_i$};
-      \node [block, right of=susyscale] (spec) {\DRbar\ masses\\ $\Rightarrow$ pole masses};
-      \path [arrow] (guess) -- (lowscale);
-      \path [-latex, thick] (lowscale.west) edge[bend left=70] node {RGEs} (highscale.west);
-      \path [arrow] (highscale) -- node {RGEs} (susyscale);
-      \path [arrow] (susyscale) -- node {RGEs} (lowscale);
-      \path [arrow] (susyscale) -- (spec);
-      % energy axis
-      \node [below left=1em and 1em of guess] (energy_start) {};
-      \node [above=6cm of energy_start] (energy_stop) {};
-      \node [above=0em of energy_stop,align=center] (energy_label) {Energy\\ scale};
-      \path [arrow] (energy_start) -- (energy_stop);
-      \node [text width=3.3em,left=10em of highscale] (mx) {$M_X$};
-      \node [text width=3.3em,left=9.5em of susyscale] (ms) {$M_S$};
-      \node [text width=3.3em,left=10em of lowscale] (mz) {$M_Z$};
-    \end{tikzpicture}
-  \end{figure}
-\end{frame}
-
-\begin{frame}{Calculation of $g_3^{\DRbar}(M_Z)$}
-  \emph{Input:} \ \ $\alpha_{\text{s},\text{SM}}^{(5),\text{\MSbar}}(M_Z) = 0.1185$\\[1em]
+\begin{frame}{Calculation of $g_3^{\SM}(M_t)$}
+  \emph{Input:} \ \ $\alpha_{\text{s}}^{\SM(5)}(M_t) = 0.1185$\\[1em]
   $\rightarrow$
   \begin{align*}
-    \alpha_{\text{s}}^{\text{\DRbar}}(M_Z) &=
-    \frac{\alpha_{\text{s},\text{SM}}^{(5),\text{\MSbar}}(M_Z)}{1 -
-      \Delta\alpha_{\text{s},\text{SM}}(M_Z)
-      - \Delta\alpha_{\text{s}}(M_Z)}
-    \intertext{with}
-    \Delta\alpha_{\text{s},\text{SM}}(\mu) &=
-    \frac{\alpha_\text{s}}{2\pi} \left[
-      -\frac{2}{3} \log{\frac{m_t}{\mu}} \right]\\
+    \alpha_{\text{s}}^{\SM}(M_t) &=
+    \frac{\alpha_{\text{s}}^{\SM(5)}(M_t)}{1 -
+      \Delta\alpha_{\text{s}}(M_t)} \intertext{with}
     \Delta\alpha_{\text{s}}(\mu) &=
-    \frac{\alpha_\text{s}}{2\pi}\left[ \frac{1}{2}-\sum_{\text{SUSY
-          particle } f} T_f \log{\frac{m_f}{\mu}} \right]
+    \frac{\alpha_\text{s}}{2\pi} \left[
+      -\frac{2}{3} \log{\frac{m_t}{\mu}} \right]
     \intertext{$\Rightarrow$}
-    g_{3}^{\text{\DRbar}}(M_Z) &=
-    \sqrt{4\pi\alpha_{\text{s}}^{\text{\DRbar}}(M_Z)}
+    g_{3}^{\SM}(M_t) &=
+    \sqrt{4\pi\alpha_{\text{s}}^{\SM}(M_t)}
   \end{align*}
 \end{frame}
 
-\begin{frame}{Calculation of $y_t^{\DRbar}(M_Z)$}
+\begin{frame}{Calculation of $y_t^{\SM}(M_t)$}
   \begin{align*}
-    y_t^{\DRbar}(M_Z) &= \frac{\sqrt{2}\,
-      m_{t}^{\text{\DRbar}}(M_Z)}{v_u(M_Z)}
+    y_t^{\SM}(M_t) &= \frac{\sqrt{2}\, m_{t}^{\SM}(M_t)}{v(M_t)}
     %
-    \intertext{where the running top mass is calculated from the pole
-      mass $M_t$ as}
+    \intertext{where}
     %
-    m_{t}^{\text{\DRbar}}(\mu) &= M_t +
+    m_{t}^{\SM}(\mu) &= M_t +
     \re\Sigma_{t}^{S}(M_t) + M_t \Big[ \re\Sigma_{t}^{L}(M_t) \\
     &\phantom{={}} +
     \re\Sigma_{t}^{R}(M_t) + \Delta
-    m_t^{(1),\text{gluon}} + \Delta m_t^{(2),\text{gluon}} \Big]\\
-    % m_{t}^{\text{\DRbar}} &= M_t +
+    m_t^{1L,\text{gluon}} + \Delta m_t^{2L,\text{gluon}} \Big]\\
+    % m_{t}^{\text{\MSbar}} &= M_t +
     % \Sigma_{t}^\text{no gluon}(M_t) + M_t \Big[\Delta
     % m_t^{(1L),\text{gluon}} + \Delta m_t^{(2L),\text{gluon}} \Big]
     % \\
-    \Delta m_t^{(1L),\text{gluon}} &= -\frac{g_3^2}{12 \pi^2}
-    \left[5-3 \log\left(\frac{m_t^2}{\mu^2}\right)\right]
+    \Delta m_t^{1L,\text{gluon}} &= -\frac{g_3^2}{12 \pi^2}
+    \left[4 - 3 \log\left(\frac{m_t^2}{\mu^2}\right)\right]
     \\
-    \Delta m_t^{(2L),\text{gluon}} &= \left(\Delta
-      m_t^{(1L),\text{gluon}}\right)^2 \\
+    \Delta m_t^{2L,\text{gluon}} &= \left(\Delta
+      m_t^{1L,\text{gluon}}\right)^2 \\
     &\phantom{=\;} - \frac{g_3^4}{4608 \pi^4} \Bigg[396
-    \log^2\left(\frac{m_t^2}{\mu^2}\right)-1476
-    \log\left(\frac{m_t^2}{\mu^2}\right) \\
+    \log^2\left(\frac{m_t^2}{\mu^2}\right)
+    - 2028 \log\left(\frac{m_t^2}{\mu^2}\right) \\
     &\phantom{=\; - \frac{g_3^4}{4608 \pi^4}\Bigg[} -48
-    \zeta(3)+2011+16 \pi ^2 (1+\log 4)\Bigg]
+    \zeta(3)+2821+16 \pi ^2 (1+\log 4)\Bigg]
   \end{align*}
   $\Rightarrow$
+\end{frame}
+
+\begin{frame}{Calculation of $v^\SM$}
+  The VEV $v^\SM$ is calculated from the running $Z$ mass at $\mu = M_t$:
+  \begin{align*}
+    v^{\SM}(M_t) &= \frac{2 m_Z^{\SM}(M_t)}{\sqrt{g_Y^2 + g_2^2}} \\
+    m_Z^{\SM}(M_t) &= \sqrt{M_Z^2 + \Pi_Z^{1L}(p^2=M_Z^2,\mu=M_t)}
+  \end{align*}
+  $v^{\SM}$ evolves under RG running according to\\\bigcite{Sperling,
+    Stöckinger, AV, 2013, 2014}
 \end{frame}
 
 \begin{frame}{Calculation of $v_u$ and $v_d$}
   The VEVs are calculated from the running $Z$ mass at $\mu = M_Z$:
   \begin{align*}
-    v_u^{\DRbar}(M_Z) &= \frac{2 m_Z^{\DRbar}(M_Z)\sin\beta}{\sqrt{g_Y^2 + g_2^2}} \\
-    v_d^{\DRbar}(M_Z) &= \frac{2 m_Z^{\DRbar}(M_Z)\cos\beta}{\sqrt{g_Y^2 + g_2^2}} \\
-    m_Z^{\DRbar}(M_Z) &= \sqrt{M_Z^2 + \Pi_Z^{(1L)}(p^2=\mu^2=M_Z^2)}
+    v_u^{\MSbar}(M_Z) &= \frac{2 m_Z^{\MSbar}(M_Z)\sin\beta}{\sqrt{g_Y^2 + g_2^2}} \\
+    v_d^{\MSbar}(M_Z) &= \frac{2 m_Z^{\MSbar}(M_Z)\cos\beta}{\sqrt{g_Y^2 + g_2^2}} \\
+    m_Z^{\MSbar}(M_Z) &= \sqrt{M_Z^2 + \Pi_Z^{(1L)}(p^2=\mu^2=M_Z^2)}
   \end{align*}
-  $v_u^{\DRbar}$ and $v_d^{\DRbar}$ evolve under RG running according
+  $v_u^{\MSbar}$ and $v_d^{\MSbar}$ evolve under RG running according
   to\\\bigcite{Sperling, Stöckinger, AV, 2013, 2014}
 \end{frame}
 
