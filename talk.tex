@@ -216,16 +216,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Tower of EFTs}
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.6\textwidth]{images/mssm-sm-tower}
-  \end{figure}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{Different approaches}
+\begin{frame}{Approaches to predict $M_h$}
   \begin{minipage}[t]{0.45\textwidth}
     \centering
     Diagrammatic approach\\[1em]
@@ -386,13 +377,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Comparison fixed order / EFT}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/PlotXt-selected}
-  \end{figure}
-  $\tan\beta = 5$, $X_{b,\tau} = 0$, $M_S = 2\eh{TeV}$
-\end{frame}
+% \begin{frame}{Comparison diagrammatic / EFT}
+%   \begin{figure}
+%     \centering
+%     \includegraphics[width=\textwidth]{plots/PlotXt-selected}
+%   \end{figure}
+%   $\tan\beta = 5$, $X_{b,\tau} = 0$, $M_S = 2\eh{TeV}$
+% \end{frame}
 
 \section{Calculation of SM parameters}
 
@@ -498,7 +489,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Comparison fixed order / EFT}
+\begin{frame}{Comparison diagrammatic vs.\ EFT vs.\ mixed approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected}
@@ -544,20 +535,6 @@
     $M_t$, $G_F$, \ldots
   \item Output parameters:\\ $m_h$, $M_h$, $Z_h$, \ldots
   \end{itemize}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Generating a spectrum generator}
-  \begin{figure}
-    \centering
-    \begin{tikzpicture}[node distance=4em]
-      \node [block, text width=10em] (Lagr) {model definition\\ $\Lagr(\tilde t, \tilde b, \tilde g,\ldots; g_i, y_f,\ldots)$};
-      \node [block, below=of Lagr, text width=10em] (expr1) {$M_{\tilde t}$, $\Sigma_{\tilde t}$, $\beta_{g_i}$,
-        \ldots\\ (Mathematica)};
-      \node [block, below=of expr1, text width=10em] (flexiblesusy) {spectrum generator\\(C++)};
-      \path [arrow] (Lagr) -- node[right] {SARAH} (expr1);
-      \path [arrow] (expr1) -- node[right] {\emph{FlexibleSUSY}} (flexiblesusy);
-    \end{tikzpicture}
-  \end{figure}
 \end{frame}
 
 \begin{frame}[noframenumbering]{Physical problem statement for the SM}
