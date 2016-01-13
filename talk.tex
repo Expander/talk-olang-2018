@@ -389,16 +389,6 @@
 \begin{frame}{Comparison fixed order / EFT}
   \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected}
-  \end{figure}
-  $\tan\beta = 5$, $X_{t,b,\tau} = 0$
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{Comparison fixed order / EFT}
-  \begin{figure}
-    \centering
     \includegraphics[width=\textwidth]{plots/PlotXt-selected}
   \end{figure}
   $\tan\beta = 5$, $X_{b,\tau} = 0$, $M_S = 2\eh{TeV}$
@@ -473,102 +463,64 @@
   \end{align*}
 \end{frame}
 
-\begin{frame}{Calculation of $v_u$ and $v_d$}
-  The VEVs are calculated from the running $Z$ mass at $\mu = M_Z$:
+\begin{frame}{Calculation of $v_i^\MSSM(M_S)$}
   \begin{align*}
-    v_u^{\MSbar}(M_Z) &= \frac{2 m_Z^{\MSbar}(M_Z)\sin\beta}{\sqrt{g_Y^2 + g_2^2}} \\
-    v_d^{\MSbar}(M_Z) &= \frac{2 m_Z^{\MSbar}(M_Z)\cos\beta}{\sqrt{g_Y^2 + g_2^2}} \\
-    m_Z^{\MSbar}(M_Z) &= \sqrt{M_Z^2 + \Pi_Z^{(1L)}(p^2=\mu^2=M_Z^2)}
+    M_Z^\SM = M_Z^\MSSM
   \end{align*}
-  $v_u^{\MSbar}$ and $v_d^{\MSbar}$ evolve under RG running according
-  to\\\bigcite{Sperling, Stöckinger, AV, 2013, 2014}
-\end{frame}
-
-\section{Calculation of the Higgs pole mass}
-
-\begin{frame}{Calculation of the Higgs pole mass}
-  For each $i=1,\ldots, 3$: find $p^2=M_{h_i}^2$ which satisfies
+  $\Rightarrow$
   \begin{align*}
-    0 &= \det\left[ p^2 - m_{h}^2 - \Delta m_{h,\text{1L}}^2 - \Delta m_{h,\text{2L}}^2 \right]\\
-    \intertext{where}
-    \Delta m_{h,\text{1L}}^2 &= \Sigma_h^{(1L)}(p^2=M_{h_i}^2, \mu=M_S)\\
-    \Delta m_{h,\text{2L}}^2 &= O(\alpha_s(\alpha_t + \alpha_b), p^2=0)\qquad\ \text{NMSSM \mycite{Degrassi, Slavich, Nucl.\ Phys.\ B 825}}\\
-    & + O((\alpha_t + \alpha_b)^2 + \alpha_\tau^2, p^2=0)\quad \text{MSSM}
+    (m_Z^{\MSSM}(M_S))^2 &= (M_Z^\SM)^2 + \Pi_Z^{\MSSM,1L}(\mu=M_S) \\
+    (M_Z^{\SM})^2 &= \frac{1}{4} \left[(g_Y^\SM)^2 + (g_2^\SM)^2\right] (v^\SM)^2 - \Pi_Z^{\SM,1L}(\mu=M_S)
+  \end{align*}
+  $\Rightarrow$
+  \begin{align*}
+    v^\MSSM(M_S) &= \frac{2 m_Z^{\MSSM}(M_S)}{\sqrt{(g_Y^\MSSM)^2 + (g_2^\MSSM)^2}}
+    \intertext{$\Rightarrow$}
+    v_u^{\MSSM}(M_S) &= v^\MSSM(M_S) \sin\beta(M_S) \\
+    v_d^{\MSSM}(M_S) &= v^\MSSM(M_S) \cos\beta(M_S)
   \end{align*}
 \end{frame}
+
+\begin{frame}{Calculation of $y_i^\MSSM(M_S)$}
+  \begin{align*}
+    M_f^\SM = M_f^\MSSM
+  \end{align*}
+  $\Rightarrow$
+  \begin{align*}
+    m_f^{\MSSM}(M_S) &= M_f^\SM + \Sigma_f^{\MSSM,1L}(\mu=M_S) \\
+    M_f^{\SM} &= \frac{\sqrt{2} m_f^\SM}{v_i^\SM} - \Sigma_f^{\SM,1L}(\mu=M_S)
+  \end{align*}
+  $\Rightarrow$
+  \begin{align*}
+    y_f^\MSSM(M_S) = \frac{\sqrt{2} m_f^\MSSM(M_S)}{v_i^\MSSM(M_S)}
+  \end{align*}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Comparison fixed order / EFT}
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected}
+  \end{figure}
+  $\tan\beta = 5$, $X_{t,b,\tau} = 0$
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Summary}
-\subsection{Differences to SoftSUSY}
 
-\begin{frame}{FlexibleSUSY vs.\ NMSSM-SoftSUSY}
-  \begin{center}
-    \scalebox{0.7}{%
-      \begin{tabular}{ll}
-        \toprule
-        NMSSM-SoftSUSY               & FlexibleSUSY                            \\
-        \midrule
-        \multicolumn{2}{c}{\emph{\textcolor{green}{Commonalities}}}\\
-        \midrule
-        \multicolumn{2}{l}{$Z_3$- and $\Zv$-NMSSM}\\
-        \multicolumn{2}{l}{GUT boundary conditions}\\
-        \multicolumn{2}{l}{complete $\beta^{(1L)}$ and $\beta^{(2L)}$ (incl.\ family mixing)}\\
-        \multicolumn{2}{l}{complete $\Sigma^{(1L)}(p^2)$ $\forall$ particles}\\
-        \multicolumn{2}{l}{genuine NMSSM 2-loop Higgs mass corrections
-          $O(\alpha_s(\alpha_t + \alpha_b), p^2=0)$}\\
-        \multicolumn{2}{l}{2-loop MSSM Higgs mass corrections $O((\alpha_t + \alpha_b)^2
-          + \alpha_\tau^2, p^2=0)$}\\
-        \midrule
-        \multicolumn{2}{c}{\emph{\textcolor{red}{Differences}}}\\
-        \midrule
-        Decay interface for NMSDECAY & FlexibleDecay (currently in development) \\
-        optimized couplings          & automatically generated couplings       \\
-        3 EWSB variants              & user-defined                            \\
-        BCs via C++                  & BCs via Mathematica or C++              \\
-        fast pole masses             & fast RG running                         \\
-        stable code basis            & automatically generated                 \\
-        few dependencies             & requires Mathematica, SARAH, Boost, Eigen, GSL\\
-        $G_\mu$ input                 & $G_\mu$ or $M_W$ input                   \\
-        no sfermion flavour violation & sfermion flavour violation possible    \\
-        relic density via micrOMEGAS & -- \\
-        real parameters              & complex parameters (development finished, currently in testing) \\
-        \bottomrule
-      \end{tabular}}
-  \end{center}
-\end{frame}
-
-\subsection{Features and restrictions}
-
-\begin{frame}{Features and restrictions}
-  \emph{\textcolor{red}{Restrictions:}}
+\begin{frame}{Summary}
+  \emph{Summary:}
   \begin{itemize}
-  \item gauge group restricted to $\SUc\times\SUL\times\UY\times G$
-  \item currently only MSSM- and NMSSM Higgs 2-loop corrections
-  \item currently no decays
+  \item diagrammatic approach suffers from large logs $\log(M_t/M_S)$
+  \item EFT approach misses terms $O(p^2/M_S^2)$
+  \item[$\rightarrow$] mixed approach, which resums large logs and
+    includes terms $O(p^2/M_S^2)$
   \end{itemize}
-  %
-  \emph{\textcolor{darkgreen}{Features:}}
+  \emph{Todo:}
   \begin{itemize}
-  \item automatically generate spectrum generator for MSSM, NMSSM,
-    USSM, MRSSM, E$_6$SSM, $\mu\nu$SSM, SM, THDM-II
-  \item aim to be as precise as SoftSUSY
-  \item modular C++ code $\rightarrow$ extensible and reusable
-  \item easy to build towers of EFTs
-  % \item multiple BVP solvers (two-scale, lattice, \ldots)
-  \end{itemize}  
-\end{frame}
-
-\subsection{Coming soon}
-
-\begin{frame}{Comming soon}
-  \begin{itemize}
-  \item decays via FlexibleDecay
-  \item $(g-2)_\mu$
-  \item more precise Higgs pole mass calculation via EFT approach
-    (large log resummation)
-  \item automated creation of tower of EFTs
-  \item alternative BVP solvers (lattice solver, semi-analytic solver)
-  \item prediction of $M_W$ in all models
-  \item complex parameters $\Rightarrow$ CP violation
+  \item matching $M_h$ at 2-loop level
   \end{itemize}
 \end{frame}
 
@@ -594,66 +546,66 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}[containsverbatim,noframenumbering]
-  \frametitle{NMSSM-Spektrumgenerator in FlexibleSUSY}
-  1. Get the source code from \ \ \ \
-  \href{https://flexiblesusy.hepforge.org}{https://flexiblesusy.hepforge.org}\\
-%   \begin{lstlisting}[language=bash]
-% $ wget \
-%    https://www.hepforge.org/archive/flexiblesusy/FlexibleSUSY-1.0.1.tar.gz
-% $ tar -zxf FlexibleSUSY-1.0.1.tar.gz
-% $ cd FlexibleSUSY-1.0.1
-%   \end{lstlisting} % $
-  \vspace{0.5em}
-  2. Create a NMSSM spectrum generator:
-  \begin{lstlisting}[language=bash]
-$ ./install-sarah # if not already installed
-$ ./createmodel --name=NMSSM
-$ ./configure --with-models=NMSSM
-$ make
-  \end{lstlisting} % $
-  \vspace{0.5em}
-  3. Calculate spectrum for given parameter point (SLHA format):
-  \begin{lstlisting}[language=bash]
-$ ./models/NMSSM/run_NMSSM.x \
-   --slha-input-file=models/NMSSM/LesHouches.in.NMSSM
-
-Block MASS
-   1000021     5.05906233E+02   # Glu
-   1000024     1.46609728E+02   # Cha_1
-   1000037     3.99399367E+02   # Cha_2
-        37     4.33363816E+02   # Hpm_2
-...
-  \end{lstlisting} % $
-        % 25     1.09963504E+02   # hh_1
-        % 35     4.24984041E+02   # hh_2
-        % 45     5.31954492E+02   # hh_3
+\begin{frame}[noframenumbering]{Generating a spectrum generator}
+  \begin{figure}
+    \centering
+    \begin{tikzpicture}[node distance=4em]
+      \node [block, text width=10em] (Lagr) {model definition\\ $\Lagr(\tilde t, \tilde b, \tilde g,\ldots; g_i, y_f,\ldots)$};
+      \node [block, below=of Lagr, text width=10em] (expr1) {$M_{\tilde t}$, $\Sigma_{\tilde t}$, $\beta_{g_i}$,
+        \ldots\\ (Mathematica)};
+      \node [block, below=of expr1, text width=10em] (flexiblesusy) {spectrum generator\\(C++)};
+      \path [arrow] (Lagr) -- node[right] {SARAH} (expr1);
+      \path [arrow] (expr1) -- node[right] {\emph{FlexibleSUSY}} (flexiblesusy);
+    \end{tikzpicture}
+  \end{figure}
 \end{frame}
 
-\begin{frame}[containsverbatim,noframenumbering]
-  \frametitle{FlexibleSUSY SLHA configuration options}
-  \small
-  \begin{lstlisting}[language=bash]
-Block FlexibleSUSY
-    0   1e-04  # precision goal
-    1   0      # max. iterations (0 = automatic)
-    3   0      # calculate SM pole masses
-    4   2      # pole mass loop order
-    5   2      # EWSB loop order
-    6   2      # beta-functions loop order
-    7   2      # threshold corrections loop order
-    8   1      # Higgs 2-loop corrections
-               # O(alpha_t alpha_s)
-    9   1      # Higgs 2-loop corrections
-               # O(alpha_b alpha_s)
-   10   1      # Higgs 2-loop corrections
-               # O((alpha_t + alpha_b)^2)
-   11   1      # Higgs 2-loop corrections
-               # O(alpha_tau^2)
-   12   0      # force output
-   13   1      # Top quark 2-loop corrections QCD
-   14   1e-11  # beta-function zero threshold
-  \end{lstlisting}
+\begin{frame}[noframenumbering]{Physical problem statement for the CMSSM}
+  \begin{figure}[tbh]
+    \centering
+    \begin{tikzpicture}[node distance = 3.5cm, auto]
+      \node [block, text width=8.6em] (lowscale) {\footnotesize Matching to SM\\ $g_i$, $y_f$, $v$};
+      \node [block, above=1cm of lowscale, text width=8.6em] (susyscale) {\footnotesize Input: $\sign\mu$\\EWSB: $|\mu|$, $B\mu$};
+      \node [block, above=1.8cm of susyscale, text width=8.6em] (highscale) {\footnotesize GUT BCs\\ $m_{\tilde{f}}^2$, $M_i$, $A_i$};
+      \path [arrow2] (highscale) -- node (RGEs) {RGEs} (susyscale);
+      \path [arrow2] (susyscale) -- node {RGEs} (lowscale);
+      % energy axis
+      \node [below left=0em and 1cm of lowscale] (energy_start) {};
+      \node [above=6cm of energy_start] (energy_stop) {};
+      \node [above=0em of energy_stop,align=center] (energy_label) {Energy \\ scale};
+      \path [arrow] (energy_start) -- (energy_stop);
+      \node [text width=2em,left=3.0em of highscale] (mx) {$M_X$};
+      \node [text width=2em,left=3.0em of susyscale] (ms) {$M_S$};
+      \node [text width=2em,left=3.0em of lowscale] (mz) {$M_t$};
+    \end{tikzpicture}
+  \end{figure}
+\end{frame}
+
+\begin{frame}[noframenumbering]{Algorithm to calculate the model parameters consistent with all BCs}
+  \begin{figure}[tbh]
+    \centering
+    \small
+    \begin{tikzpicture}[node distance = 3.5cm, auto,scale=0.9, every node/.style={transform shape}]
+      \node [block] (guess) {Start};
+      \node [block, right of=guess] (lowscale) {Calculate\\ $g_i$, $y_f$, $v$};
+      \node [block, above=1cm of lowscale,text width=8em] (susyscale) {Set $\sign\mu$\\EWSB: $|\mu|$, $B\mu$};
+      \node [block, above=2cm of susyscale] (highscale) {Set\\ $m_{\tilde{f}}^2$, $M_i$, $A_i$};
+      \node [block, right of=susyscale] (spec) {\DRbar\ masses\\ $\Rightarrow$ pole masses};
+      \path [arrow] (guess) -- (lowscale);
+      \path [-latex, thick] (lowscale.west) edge[bend left=70] node {RGEs} (highscale.west);
+      \path [arrow] (highscale) -- node {RGEs} (susyscale);
+      \path [arrow] (susyscale) -- node {RGEs} (lowscale);
+      \path [arrow] (susyscale) -- (spec);
+      % energy axis
+      \node [below left=1em and 1em of guess] (energy_start) {};
+      \node [above=6cm of energy_start] (energy_stop) {};
+      \node [above=0em of energy_stop,align=center] (energy_label) {Energy\\ scale};
+      \path [arrow] (energy_start) -- (energy_stop);
+      \node [text width=3.3em,left=10em of highscale] (mx) {$M_X$};
+      \node [text width=3.3em,left=9.5em of susyscale] (ms) {$M_S$};
+      \node [text width=3.3em,left=10em of lowscale] (mz) {$M_t$};
+    \end{tikzpicture}
+  \end{figure}
 \end{frame}
 
 \end{document}
