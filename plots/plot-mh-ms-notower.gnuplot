@@ -13,5 +13,5 @@ set style line 3 lt 1 dt 4 lw 2 lc rgb "#45AD53"
 datafile = "PlotScale.in.FH_new_low"
 
 plot [93:] [70:] \
-     datafile u 1:3 w lines ls 2 t 'FlexibleSUSY/SM EFT', \
-     datafile u 1:9 w lines ls 3 t 'FlexibleSUSY/MSSM diagrammatic'
+     datafile u 1:9 w lines ls 3 t 'diagrammatic', \
+     datafile u 1:3 w lines ls 2 t 'EFT'
