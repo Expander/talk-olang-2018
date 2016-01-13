@@ -17,11 +17,11 @@ datafile = "PlotXt.in"
 plot [:] [:] \
      datafile u 1:2               w lines ls 1 t 'FlexibleSUSY matching M_h', \
      datafile u 1:3               w lines ls 2 t 'FlexibleSUSY matching {/Symbol l}', \
-     datafile u 1:6               w lines ls 3 t 'FeynHiggs 2.11.3', \
-     datafile u 1:($6-$7):($6+$7) w filledcurves ls 3 t '', \
+     "< awk '{ if ($9 > 0) print }' ".datafile u 1:9 w lines ls 3 t 'FlexibleSUSY/MSSM', \
+     datafile u 1:6               w lines ls 5 t 'FeynHiggs 2.11.3', \
+     datafile u 1:($6-$7):($6+$7) w filledcurves ls 5 t '', \
      datafile u 1:4               w lines ls 4 t 'SUSYHD', \
-     datafile u 1:($4-$5):($4+$5) w filledcurves ls 4 t '', \
-     "< awk '{ if ($9 > 0) print }' ".datafile u 1:9 w lines ls 5 t 'FlexibleSUSY/MSSM'
+     datafile u 1:($4-$5):($4+$5) w filledcurves ls 4 t ''
 
 #      datafile u 1:8               w lines ls 5 t 'SPheno', \
 #      datafile u 1:10              w lines ls 7 t 'SoftSUSY'
