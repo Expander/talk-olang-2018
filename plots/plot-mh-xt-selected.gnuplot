@@ -15,4 +15,4 @@ datafile = "PlotXt.in"
 plot [:] [:] \
      datafile u 1:2 w lines ls 1 t 'FlexibleSUSY matching M_h', \
      datafile u 1:3 w lines ls 2 t 'FlexibleSUSY matching {/Symbol l}', \
-     datafile u 1:6 w lines ls 3 t 'FeynHiggs 2.11.3'
+     "< awk '{ if ($9 > 0) print }' ".datafile u 1:9 w lines ls 3 t 'FlexibleSUSY/MSSM'
