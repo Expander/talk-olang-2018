@@ -560,22 +560,19 @@
   \end{figure}
 \end{frame}
 
-\begin{frame}[noframenumbering]{Physical problem statement for the CMSSM}
+\begin{frame}[noframenumbering]{Physical problem statement for the SM}
   \begin{figure}[tbh]
     \centering
     \begin{tikzpicture}[node distance = 3.5cm, auto]
-      \node [block, text width=8.6em] (lowscale) {\footnotesize Matching to SM\\ $g_i$, $y_f$, $v$};
-      \node [block, above=1cm of lowscale, text width=8.6em] (susyscale) {\footnotesize Input: $\sign\mu$\\EWSB: $|\mu|$, $B\mu$};
-      \node [block, above=1.8cm of susyscale, text width=8.6em] (highscale) {\footnotesize GUT BCs\\ $m_{\tilde{f}}^2$, $M_i$, $A_i$};
-      \path [arrow2] (highscale) -- node (RGEs) {RGEs} (susyscale);
-      \path [arrow2] (susyscale) -- node {RGEs} (lowscale);
+      \node [block, text width=8.6em] (lowscale) {\footnotesize EWSB: $\mu^2$\\ Matching to SM(5)\\ $g_i$, $y_f$, $v$};
+      \node [block, above=1.8cm of lowscale, text width=8.6em] (highscale) {\footnotesize BC for $\lambda$};
+      \path [arrow2] (highscale) -- node {RGEs} (lowscale);
       % energy axis
       \node [below left=0em and 1cm of lowscale] (energy_start) {};
-      \node [above=6cm of energy_start] (energy_stop) {};
+      \node [above=4.5cm of energy_start] (energy_stop) {};
       \node [above=0em of energy_stop,align=center] (energy_label) {Energy \\ scale};
       \path [arrow] (energy_start) -- (energy_stop);
-      \node [text width=2em,left=3.0em of highscale] (mx) {$M_X$};
-      \node [text width=2em,left=3.0em of susyscale] (ms) {$M_S$};
+      \node [text width=2em,left=3.0em of highscale] (mx) {$M_S$};
       \node [text width=2em,left=3.0em of lowscale] (mz) {$M_t$};
     \end{tikzpicture}
   \end{figure}
@@ -587,22 +584,19 @@
     \small
     \begin{tikzpicture}[node distance = 3.5cm, auto,scale=0.9, every node/.style={transform shape}]
       \node [block] (guess) {Start};
-      \node [block, right of=guess] (lowscale) {Calculate\\ $g_i$, $y_f$, $v$};
-      \node [block, above=1cm of lowscale,text width=8em] (susyscale) {Set $\sign\mu$\\EWSB: $|\mu|$, $B\mu$};
-      \node [block, above=2cm of susyscale] (highscale) {Set\\ $m_{\tilde{f}}^2$, $M_i$, $A_i$};
-      \node [block, right of=susyscale] (spec) {\DRbar\ masses\\ $\Rightarrow$ pole masses};
+      \node [block, right of=guess] (lowscale) {Calculate\\ $g_i$, $y_f$, $v$, $\mu^2$};
+      \node [block, above=2cm of lowscale] (highscale) {Set $\lambda$};
+      \node [block, right of=lowscale] (spec) {\MSbar\ masses\\ $\Rightarrow$ pole masses};
       \path [arrow] (guess) -- (lowscale);
       \path [-latex, thick] (lowscale.west) edge[bend left=70] node {RGEs} (highscale.west);
-      \path [arrow] (highscale) -- node {RGEs} (susyscale);
-      \path [arrow] (susyscale) -- node {RGEs} (lowscale);
-      \path [arrow] (susyscale) -- (spec);
+      \path [arrow] (highscale) -- node {RGEs} (lowscale);
+      \path [arrow] (lowscale) -- (spec);
       % energy axis
       \node [below left=1em and 1em of guess] (energy_start) {};
-      \node [above=6cm of energy_start] (energy_stop) {};
+      \node [above=4.5cm of energy_start] (energy_stop) {};
       \node [above=0em of energy_stop,align=center] (energy_label) {Energy\\ scale};
       \path [arrow] (energy_start) -- (energy_stop);
       \node [text width=3.3em,left=10em of highscale] (mx) {$M_X$};
-      \node [text width=3.3em,left=9.5em of susyscale] (ms) {$M_S$};
       \node [text width=3.3em,left=10em of lowscale] (mz) {$M_t$};
     \end{tikzpicture}
   \end{figure}
