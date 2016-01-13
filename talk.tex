@@ -226,13 +226,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Different approaches}
-  \begin{minipage}{0.45\textwidth}
+  \begin{minipage}[t]{0.45\textwidth}
     \centering
     Diagrammatic approach\\[1em]
     \includegraphics[width=\textwidth]{images/mssm-sm-tower-diagrammatic}
   \end{minipage}
   \hfill
-  \begin{minipage}{0.45\textwidth}
+  \begin{minipage}[t]{0.45\textwidth}
     \centering
     EFT approach\\[1em]
     \includegraphics[width=\textwidth]{images/mssm-sm-tower-eft}
@@ -240,12 +240,10 @@
 \end{frame}
 
 \begin{frame}{Diagrammatic approach (\DRbar\ codes)}
-  \centering
-  \includegraphics[width=0.45\textwidth]{images/mssm-sm-tower-diagrammatic}
-\end{frame}
-
-\begin{frame}{Diagrammatic approach (\DRbar\ codes)}
-  \emph{Idea:} Calculate $M_h$ in the MSSM as a function of the \DRbar\ parameters:\\[1.5em]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{images/mssm-sm-tower-diagrammatic}\\[1em]
+  \end{center}
+  \emph{Idea:} Calculate $M_h$ in the MSSM as a function of the \DRbar\ parameters:\\[1em]
   \centering $g_i$, $y^f_{ij}$, $v_i$, $\mu$, $B\mu$, $m^2_{H_i}$,
   $m_{\tilde{f},ij}^2$, $M_i$, $T^f_{ij}$
 \end{frame}
@@ -260,32 +258,54 @@
       $\alpha_\text{em}^{\SM(5)}(M_t)$ & $\rightarrow$ & $e^\MSSM(M_t)$ & $\rightarrow$ & $g_1^\MSSM(M_t)$ \\
       $G_F$ & $\rightarrow$ & $\sin\theta_W^\MSSM(M_t)$ & $\rightarrow$ & $g_2^\MSSM(M_t)$ \\
       $\alpha_\text{s}^{\SM(5)}(M_t)$ & & & $\rightarrow$ & $g_3^\MSSM(M_t)$ \\
-      $M_t$ & $\rightarrow$ & $m_Z^\MSSM(M_t)$ & $\rightarrow$ & $v^\MSSM(M_t)$ \\
+      $M_Z$ & $\rightarrow$ & $m_Z^\MSSM(M_t)$ & $\rightarrow$ & $v^\MSSM(M_t)$ \\
       $M_t$ & $\rightarrow$ & $m_t^\MSSM(M_t)$ & $\rightarrow$ & $y_t^\MSSM(M_t)$ \\
       $m_b^{\SM(5)}(m_b)$ & $\rightarrow$ & $m_b^\MSSM(M_t)$ & $\rightarrow$ & $y_b^\MSSM(M_t)$ \\
       $M_\tau$ & $\rightarrow$ & $m_\tau^\MSSM(M_t)$ & $\rightarrow$ & $y_\tau^\MSSM(M_t)$ \\
     \end{tabular}
   \end{table}
   \emph{Fixed by 2 EWSB conditions:} $m^2_{H_u}$, $m^2_{H_d}$ \\[1em]
-  \emph{Free parameters:} $\mu$, $B\mu$, $m_{\tilde{f},ij}^2$, $M_i$,
+  \emph{Free parameters:} $\tan\beta$, $\mu$, $B\mu$, $m_{\tilde{f},ij}^2$, $M_i$,
   $T^f_{ij}$
 \end{frame}
 
-\begin{frame}{Diagrammatic approach}
+\begin{frame}{Diagrammatic approach (\DRbar\ codes)}
   \begin{align*}
     (M_h^\text{MSSM})^2 &= \text{smallest eigenvalue of} \\
     &\phantom{={}} \left[(m_h^\text{MSSM})^2 - \Sigma^\text{MSSM}_h(p^2 = (M_h^\text{MSSM})^2,\mu = M_S)\right]_{ij}
   \end{align*}
+  \emph{Advantage:} includes terms $O(p^2/M_S^2)$\\
+  \emph{Disadvantage:} suffers from large logarithms $\log(M_t/M_S)$\\
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{EFT approach}
-  % \begin{figure}
-  %   \centering
-  %   \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected}
-  % \end{figure}
-  Bild: calculate $\lambda(M_S)$
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{images/mssm-sm-tower-eft}\\[1em]
+  \end{center}
+  \emph{Idea:} Calculate $M_h$ in the SM as a function of the \MSbar\ parameters:\\[1em]
+  \centering $g_i$, $y^f_{ij}$, $v$, $\mu^2$, $\lambda$
+\end{frame}
+
+\begin{frame}{EFT approach}
+  \emph{Fixed by observables:}
+  \begin{table}
+    \centering
+    \begin{tabular}{lllll}
+      Input & & & & Output \\
+      \midrule
+      $\alpha_\text{em}^{\SM(5)}(M_t)$ & $\rightarrow$ & $e^\SM(M_t)$ & $\rightarrow$ & $g_1^\SM(M_t)$ \\
+      $G_F$ & $\rightarrow$ & $\sin\theta_W^\SM(M_t)$ & $\rightarrow$ & $g_2^\SM(M_t)$ \\
+      $\alpha_\text{s}^{\SM(5)}(M_t)$ & & & $\rightarrow$ & $g_3^\SM(M_t)$ \\
+      $M_Z$ & $\rightarrow$ & $m_Z^\SM(M_t)$ & $\rightarrow$ & $v^\SM(M_t)$ \\
+      $M_t$ & $\rightarrow$ & $m_t^\SM(M_t)$ & $\rightarrow$ & $y_t^\SM(M_t)$ \\
+      $m_b^{\SM(5)}(m_b)$ & $\rightarrow$ & $m_b^\SM(M_t)$ & $\rightarrow$ & $y_b^\SM(M_t)$ \\
+      $M_\tau$ & $\rightarrow$ & $m_\tau^\SM(M_t)$ & $\rightarrow$ & $y_\tau^\SM(M_t)$ \\
+    \end{tabular}
+  \end{table}
+  \emph{Fixed by 1 EWSB condition:} $\mu^2$ \\[1em]
+  \emph{Free parameter:} $\lambda$
 \end{frame}
 
 \begin{frame}{EFT approach: matching all $\Gamma_{\phi_1,\ldots,\phi_n}$}
@@ -303,17 +323,20 @@
     + \Delta \lambda^{1L,\,\chi}
   \end{align*}
   \emph{Advantage:} resums large logarithms $\log(M_Z/M_S)$\\
-  \emph{Disadvantage:} neglects 1L terms $O(p^2/M_S^2)$
+  \emph{Disadvantage:} neglects terms $O(p^2/M_S^2)$
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Combining EFT and diagrammatic approach}
-  % \begin{figure}
-  %   \centering
-  %   \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected}
-  % \end{figure}
-  Bild: calculate $\lambda(M_S)$ including $p^2/M_S^2$ terms
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{images/mssm-sm-tower-eft}\\[1em]
+  \end{center}
+  \emph{Idea:} Calculate $M_h$ in the SM as a function of the \MSbar\ parameters:\\[1em]
+  \begin{center}
+    $g_i$, $y^f_{ij}$, $v$, $\mu^2$, $\lambda$
+  \end{center}
+  \emph{including terms $O(p^2/M_S^2)$}
 \end{frame}
 
 \begin{frame}{Combining EFT and diagrammatic approach: matching $M_h$}
