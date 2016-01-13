@@ -3,6 +3,9 @@
 OUTFILENAME := talk.pdf
 PLOTS       := plots/PlotScale-in-FH_new_low.pdf \
                plots/PlotScale-in-FH_new_low-selected.pdf \
+               plots/PlotScale-in-FH_new_low-notower.pdf \
+               plots/PlotScale-in-FH_new_low-fhsusyhd.pdf \
+               plots/PlotScale-in-FH_new_low-fhsusyhd-error.pdf \
                plots/PlotXt.pdf \
                plots/PlotXt-selected.pdf
 TEXDIRS     := $(PLOTSDIR)
@@ -16,6 +19,15 @@ plots/PlotScale-in-FH_new_low.pdf: plots/plot-mh-ms.gnuplot plots/PlotScale.in.F
 	cd plots && gnuplot $(shell basename $<)
 
 plots/PlotScale-in-FH_new_low-selected.pdf: plots/plot-mh-ms-selected.gnuplot plots/PlotScale.in.FH_new_low
+	cd plots && gnuplot $(shell basename $<)
+
+plots/PlotScale-in-FH_new_low-notower.pdf: plots/plot-mh-ms-notower.gnuplot plots/PlotScale.in.FH_new_low
+	cd plots && gnuplot $(shell basename $<)
+
+plots/PlotScale-in-FH_new_low-fhsusyhd.pdf: plots/plot-mh-ms-fhsusyhd.gnuplot plots/PlotScale.in.FH_new_low
+	cd plots && gnuplot $(shell basename $<)
+
+plots/PlotScale-in-FH_new_low-fhsusyhd-error.pdf: plots/plot-mh-ms-fhsusyhd-error.gnuplot plots/PlotScale.in.FH_new_low
 	cd plots && gnuplot $(shell basename $<)
 
 plots/PlotXt.pdf: plots/plot-mh-xt.gnuplot plots/PlotXt.in
