@@ -91,6 +91,7 @@
 \newcommand{\DRbar}{\ensuremath{\overline{\text{DR}}}}
 \newcommand{\MSbar}{\ensuremath{\overline{\text{MS}}}}
 \newcommand{\SM}{\ensuremath{\text{SM}}}
+\newcommand{\MSSM}{\ensuremath{\text{MSSM}}}
 \newcommand{\pole}{\ensuremath{\text{pole}}}
 \newcommand{\tree}{\ensuremath{\text{tree}}}
 \newcommand{\Zv}{\ensuremath{\backslash\mkern-11.0mu{Z_3}}}
@@ -236,11 +237,38 @@
     EFT approach\\[1em]
     \includegraphics[width=\textwidth]{images/mssm-sm-tower-eft}
   \end{minipage}
-  % \begin{figure}
-  %   \centering
-  %   \hfill
-  %   \includegraphics[width=0.45\textwidth]{images/mssm-sm-tower-eft}
-  % \end{figure}
+\end{frame}
+
+\begin{frame}{Diagrammatic approach (\DRbar\ codes)}
+  \centering
+  \includegraphics[width=0.45\textwidth]{images/mssm-sm-tower-diagrammatic}
+\end{frame}
+
+\begin{frame}{Diagrammatic approach (\DRbar\ codes)}
+  \emph{Idea:} Calculate $M_h$ in the MSSM as a function of the \DRbar\ parameters:\\[1.5em]
+  \centering $g_i$, $y^f_{ij}$, $v_i$, $\mu$, $B\mu$, $m^2_{H_i}$,
+  $m_{\tilde{f},ij}^2$, $M_i$, $T^f_{ij}$
+\end{frame}
+
+\begin{frame}{Diagrammatic approach (\DRbar\ codes)}
+  \emph{Fixed by observables:}
+  \begin{table}
+    \centering
+    \begin{tabular}{lllll}
+      Input & & & & Output \\
+      \midrule
+      $\alpha_\text{em}^{\SM(5)}(M_t)$ & $\rightarrow$ & $e^\MSSM(M_t)$ & $\rightarrow$ & $g_1^\MSSM(M_t)$ \\
+      $G_F$ & $\rightarrow$ & $\sin\theta_W^\MSSM(M_t)$ & $\rightarrow$ & $g_2^\MSSM(M_t)$ \\
+      $\alpha_\text{s}^{\SM(5)}(M_t)$ & & & $\rightarrow$ & $g_3^\MSSM(M_t)$ \\
+      $M_t$ & $\rightarrow$ & $m_Z^\MSSM(M_t)$ & $\rightarrow$ & $v^\MSSM(M_t)$ \\
+      $M_t$ & $\rightarrow$ & $m_t^\MSSM(M_t)$ & $\rightarrow$ & $y_t^\MSSM(M_t)$ \\
+      $m_b^{\SM(5)}(m_b)$ & $\rightarrow$ & $m_b^\MSSM(M_t)$ & $\rightarrow$ & $y_b^\MSSM(M_t)$ \\
+      $M_\tau$ & $\rightarrow$ & $m_\tau^\MSSM(M_t)$ & $\rightarrow$ & $y_\tau^\MSSM(M_t)$ \\
+    \end{tabular}
+  \end{table}
+  \emph{Fixed by 2 EWSB conditions:} $m^2_{H_u}$, $m^2_{H_d}$ \\[1em]
+  \emph{Free parameters:} $\mu$, $B\mu$, $m_{\tilde{f},ij}^2$, $M_i$,
+  $T^f_{ij}$
 \end{frame}
 
 \begin{frame}{Diagrammatic approach}
