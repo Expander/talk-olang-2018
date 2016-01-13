@@ -324,7 +324,7 @@
     (M_h^\SM)^2 &= (m_h^\SM)^2 - \Sigma^\SM_h(p^2 = (M_h^\SM)^2,\mu =
     M_t)
   \end{align*}
-  \emph{Advantage:} resums large logarithms $\log(M_Z/M_S)$\\
+  \emph{Advantage:} resums large logarithms $\log(M_t/M_S)$\\
   \emph{Disadvantage:} neglects terms $O(p^2/M_S^2)$
 \end{frame}
 
@@ -347,15 +347,16 @@
   \end{align*}
   $\Rightarrow$
   \begin{align*}
-    \lambda_{n+1} \leftarrow \frac{1}{v^2} \left[ (M_h^\text{MSSM})^2 - (M_h^{\SM})^2 + \lambda_n v^2 \right]
+    \lambda = \frac{1}{v^2} \left[ (M_h^\text{MSSM})^2 +
+      \Sigma^\SM_h(p^2 = (M_h^\SM)^2,\mu = M_t) \right]
   \end{align*}
   where
   \begin{align*}
-    (M_h^{\SM})^2 &= \lambda_n v^2 - \Sigma^{\SM}_h(p^2 = (M_h^{\SM})^2,\mu = M_S) \\
+    (M_h^{\SM})^2 &= \lambda v^2 - \Sigma^{\SM}_h(p^2 = (M_h^{\SM})^2,\mu = M_t) \\
     (M_h^\text{MSSM})^2 &= \text{smallest eigenvalue of} \\
-    &\phantom{={}} \left[(m_h^\text{MSSM})^2 - \Sigma^\text{MSSM}_h(p^2 = (M_h^\text{MSSM})^2,\mu = M_S)\right]_{ij}
+    &\phantom{={}} \left[(m_h^\text{MSSM})^2 - \Sigma^\text{MSSM}_h(p^2 = (M_h^\text{MSSM})^2,\mu = M_t)\right]_{ij}
   \end{align*}
-  \emph{Advantage:} resums large logarithms $\log(M_Z/M_S)$\\
+  \emph{Advantage:} resums large logarithms $\log(M_t/M_S)$\\
   \emph{Advantage:} includes 1L terms $O(p^2/M_S^2)$
 \end{frame}
 
