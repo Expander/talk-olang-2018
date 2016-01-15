@@ -268,7 +268,7 @@
     &\phantom{={}} \left[(m_h^\text{MSSM})^2 - \Sigma^\text{MSSM}_h(p^2 = (M_h^\text{MSSM})^2,\mu = M_S)\right]_{ij}
   \end{align*}
   \emph{Advantage:} includes terms $O(p^2/M_S^2)$\\
-  \emph{Disadvantage:} suffers from large logarithms $\log(M_Z/M_S)$\\
+  \emph{Disadvantage:} suffers from large logarithms $\propto\log(M_Z/M_S)$ if $M_S\gg M_Z$\\
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -316,33 +316,19 @@
   \end{align*}
   $\Rightarrow$
   \begin{align*}
-    (M_h^\SM)^2 &= (m_h^\SM)^2 - \Sigma^\SM_h(p^2 = (M_h^\SM)^2,\mu =
+    (M_h^\SM)^2 &= \lambda(M_Z) v^2(M_Z) - \Sigma^\SM_h(p^2 = (M_h^\SM)^2,\mu =
     M_Z)
+    % \\
+    % &\phantom{={}} + t^\SM(\mu=M_Z)
   \end{align*}
-  \emph{Advantage:} resums large logarithms $\log(M_Z/M_S)$\\
-  \emph{Disadvantage:} neglects terms $O(p^2/M_S^2)$
+  \emph{Advantage:} resums large logarithms $\propto\log(M_Z/M_S)$\\
+  \emph{Disadvantage:} neglects terms $O(p^2/M_S^2)$ from SUSY particles
 \end{frame}
 
 \begin{frame}{Comparison diagrammatic vs.\ EFT approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-notower}
-  \end{figure}
-  $\tan\beta = 5$, $X_{t,b,\tau} = 0$
-\end{frame}
-
-\begin{frame}{Comparison diagrammatic vs.\ EFT approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-fhsusyhd}
-  \end{figure}
-  $\tan\beta = 5$, $X_{t,b,\tau} = 0$
-\end{frame}
-
-\begin{frame}{Comparison diagrammatic vs.\ EFT approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-fhsusyhd-error}
   \end{figure}
   $\tan\beta = 5$, $X_{t,b,\tau} = 0$
 \end{frame}
@@ -359,26 +345,46 @@
   \begin{center}
     $g_i$, $y^f_{ij}$, $v$, $\mu^2$, $\lambda$
   \end{center}
-  \emph{including terms $O(p^2/M_S^2)$}
+  \emph{including terms $O(p^2/M_S^2)$ from SUSY particles}
 \end{frame}
 
 \begin{frame}{Combining EFT and diagrammatic approach: matching $M_h$}
   \begin{align*}
-    M_h^{\SM} &= M_h^\text{MSSM}
+    M_h^{\SM} &\overset{!}{=} M_h^\text{MSSM} \quad \text{at} \quad \mu = M_S
   \end{align*}
   $\Rightarrow$
   \begin{align*}
-    \lambda = \frac{1}{v^2} \left[ (M_h^\text{MSSM})^2 +
-      \Sigma^\SM_h(p^2 = (M_h^\SM)^2,\mu = M_Z) \right]
+    \lambda(M_S) = \frac{1}{v^2(M_S)} \Big[
+    {\color{normal text.fg!15!normal text.bg}
+    \only<2->{\color{normal text.fg}}{%
+    \underbrace{\usebeamercolor[fg]{text}{(M_h^\text{MSSM})^2 + \Sigma^\SM_h(p^2 = (M_h^\SM)^2,\mu = M_S)}}_{\text{large logs $\propto\log(M_Z/M_S)$ cancel in decoupling limit}}}}
+    \Big]
   \end{align*}
   where
   \begin{align*}
-    (M_h^{\SM})^2 &= \lambda v^2 - \Sigma^{\SM}_h(p^2 = (M_h^{\SM})^2,\mu = M_Z) \\
+    (M_h^{\SM})^2 &= \lambda(M_S) v^2(M_S) - \Sigma^{\SM}_h(p^2 = (M_h^{\SM})^2,\mu = M_S) \\
     (M_h^\text{MSSM})^2 &= \text{smallest eigenvalue of} \\
-    &\phantom{={}} \left[(m_h^\text{MSSM})^2 - \Sigma^\text{MSSM}_h(p^2 = (M_h^\text{MSSM})^2,\mu = M_Z)\right]_{ij}
+    &\phantom{={}} \left[(m_h^\text{MSSM})^2 - \Sigma^\text{MSSM}_h(p^2 = (M_h^\text{MSSM})^2,\mu = M_S)\right]_{ij}
   \end{align*}
-  \emph{Advantage:} resums large logarithms $\log(M_Z/M_S)$\\
-  \emph{Advantage:} includes 1L terms $O(p^2/M_S^2)$
+\end{frame}
+
+\begin{frame}{Combining EFT and diagrammatic approach: matching $M_h$}
+  Next step: RG running to $\mu = M_Z$\\
+  $\Rightarrow$
+  \begin{align*}
+    (M_h^{\SM})^2 &= \lambda(M_Z) v^2(M_Z) - \Sigma^{\SM}_h(p^2 = (M_h^{\SM})^2,\mu = M_Z)
+  \end{align*}
+  \emph{Advantages:}
+  \begin{itemize}
+  \item includes 1L terms $O(p^2/M_S^2)$ from SUSY particles
+  \item resums large logarithms $\log(M_Z/M_S)$ due to RG running
+  \item incorporates SUSY particle mixings
+  \item easily automatizable
+  \end{itemize}
+  \emph{Disadvantage:}
+  \begin{itemize}
+  \item large logs in matching cancel only in decoupling limit
+  \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -510,12 +516,17 @@
 \begin{frame}{Summary}
   \emph{Summary:}
   \begin{itemize}
-  \item diagrammatic approach suffers from large logs $\log(M_Z/M_S)$
+  \item diagrammatic approach suffers from large logs $\propto\log(M_Z/M_S)$
   \item EFT approach misses terms $O(p^2/M_S^2)$
-  \item mixed approach \emph{resums large logs and includes terms
-      $O(p^2/M_S^2)$}
-  \item mixed approach can be \emph{automatized} $\rightarrow$
-    incorporation into FlexibleSUSY
+  \item mixed approach
+    \begin{itemize}
+    \item includes terms $O(p^2/M_S^2)$
+    \item resums large logs $\propto\log(M_Z/M_S)$
+    \item handles SUSY particle mixings
+    \item can be automatized easily \emph{automatized} $\rightarrow$
+      incorporation into FlexibleSUSY
+    \item large logs cancel only in decoupling limit
+    \end{itemize}
   \end{itemize}
   \emph{Todo:}
   \begin{itemize}
