@@ -265,7 +265,7 @@
 \begin{frame}{Diagrammatic approach (\DRbar\ codes)}
   \begin{align*}
     (M_h^\text{MSSM})^2 &= \text{smallest eigenvalue of} \\
-    &\phantom{={}} \left[(m_h^\text{MSSM})^2 - \Sigma^\text{MSSM}_h(p^2 = (M_h^\text{MSSM})^2,\mu = M_S)\right]_{ij}
+    &\phantom{={}} \left[(m_h^\text{MSSM})^2 - \Sigma^\text{MSSM}_h(p^2 = (M_h^\text{MSSM})^2,Q = M_S)\right]_{ij}
   \end{align*}
   \emph{Advantage:} includes terms $O(p^2/M_S^2)$\\
   \emph{Disadvantage:} suffers from large logarithms $\propto\log(M_Z/M_S)$ if $M_S\gg M_Z$\\
@@ -306,8 +306,8 @@
 \begin{frame}{EFT approach: matching all $\Gamma_{\phi_1,\ldots,\phi_n}$}
   Determine $\lambda(M_S)$ from mathching all $\Gamma_{\phi_1,\ldots,\phi_n}$:
   \begin{align*}
-    \frac{\partial}{\partial p^2}\Gamma_{hh}^{\SM}(p^2 = 0, \mu = M_S) &= \frac{\partial}{\partial p^2}\Gamma_{hh}^\text{MSSM}(p^2 = 0, \mu = M_S) \\
-    \Gamma_{hhhh}^{\SM}(p^2 = 0, \mu = M_S) &= \Gamma_{hhhh}^\text{MSSM}(p^2 = 0, \mu = M_S)
+    \frac{\partial}{\partial p^2}\Gamma_{hh}^{\SM}(p^2 = 0, Q = M_S) &= \frac{\partial}{\partial p^2}\Gamma_{hh}^\text{MSSM}(p^2 = 0, Q = M_S) \\
+    \Gamma_{hhhh}^{\SM}(p^2 = 0, Q = M_S) &= \Gamma_{hhhh}^\text{MSSM}(p^2 = 0, Q = M_S)
   \end{align*}
   $\Rightarrow$
   \begin{align*}
@@ -316,10 +316,10 @@
   \end{align*}
   $\Rightarrow$
   \begin{align*}
-    (M_h^\SM)^2 &= \lambda(M_Z) v^2(M_Z) - \Sigma^\SM_h(p^2 = (M_h^\SM)^2,\mu =
+    (M_h^\SM)^2 &= \lambda(M_Z) v^2(M_Z) - \Sigma^\SM_h(p^2 = (M_h^\SM)^2,Q =
     M_Z)
     % \\
-    % &\phantom{={}} + t^\SM(\mu=M_Z)
+    % &\phantom{={}} + t^\SM(Q=M_Z)
   \end{align*}
   \emph{Advantage:} resums large logarithms $\propto\log(M_Z/M_S)$\\
   \emph{Disadvantage:} neglects terms $O(p^2/M_S^2)$ from SUSY particles
@@ -350,29 +350,29 @@
 
 \begin{frame}{Combining EFT and diagrammatic approach: matching $M_h$}
   \begin{align*}
-    M_h^{\SM} &\overset{!}{=} M_h^\text{MSSM} \quad \text{at} \quad \mu = M_S
+    M_h^{\SM} &\overset{!}{=} M_h^\text{MSSM} \quad \text{at} \quad Q = M_S
   \end{align*}
   $\Rightarrow$
   \begin{align*}
     \lambda(M_S) = \frac{1}{v^2(M_S)} \Big[
     {\color{normal text.fg!15!normal text.bg}
     \only<2->{\color{normal text.fg}}{%
-    \underbrace{\usebeamercolor[fg]{text}{(M_h^\text{MSSM})^2 + \Sigma^\SM_h(p^2 = (M_h^\SM)^2,\mu = M_S)}}_{\text{large logs $\propto\log(M_Z/M_S)$ cancel in decoupling limit}}}}
+    \underbrace{\usebeamercolor[fg]{text}{(M_h^\text{MSSM})^2 + \Sigma^\SM_h(p^2 = (M_h^\SM)^2,Q = M_S)}}_{\text{large logs $\propto\log(M_Z/M_S)$ cancel in decoupling limit}}}}
     \Big]
   \end{align*}
   where
   \begin{align*}
-    (M_h^{\SM})^2 &= \lambda(M_S) v^2(M_S) - \Sigma^{\SM}_h(p^2 = (M_h^{\SM})^2,\mu = M_S) \\
+    (M_h^{\SM})^2 &= \lambda(M_S) v^2(M_S) - \Sigma^{\SM}_h(p^2 = (M_h^{\SM})^2,Q = M_S) \\
     (M_h^\text{MSSM})^2 &= \text{smallest eigenvalue of} \\
-    &\phantom{={}} \left[(m_h^\text{MSSM})^2 - \Sigma^\text{MSSM}_h(p^2 = (M_h^\text{MSSM})^2,\mu = M_S)\right]_{ij}
+    &\phantom{={}} \left[(m_h^\text{MSSM})^2 - \Sigma^\text{MSSM}_h(p^2 = (M_h^\text{MSSM})^2,Q = M_S)\right]_{ij}
   \end{align*}
 \end{frame}
 
 \begin{frame}{Combining EFT and diagrammatic approach: matching $M_h$}
-  Next step: RG running to $\mu = M_Z$\\
+  Next step: RG running to $Q = M_Z$\\
   $\Rightarrow$
   \begin{align*}
-    (M_h^{\SM})^2 &= \lambda(M_Z) v^2(M_Z) - \Sigma^{\SM}_h(p^2 = (M_h^{\SM})^2,\mu = M_Z)
+    (M_h^{\SM})^2 &= \lambda(M_Z) v^2(M_Z) - \Sigma^{\SM}_h(p^2 = (M_h^{\SM})^2,Q = M_Z)
   \end{align*}
   \emph{Advantages:}
   \begin{itemize}
@@ -404,9 +404,9 @@
     \alpha_{\text{s}}^{\SM}(M_Z) &=
     \frac{\alpha_{\text{s}}^{\SM(5)}(M_Z)}{1 -
       \Delta\alpha_{\text{s}}(M_Z)} \intertext{with}
-    \Delta\alpha_{\text{s}}(\mu) &=
+    \Delta\alpha_{\text{s}}(Q) &=
     \frac{\alpha_\text{s}}{2\pi} \left[
-      -\frac{2}{3} \log{\frac{m_t}{\mu}} \right]
+      -\frac{2}{3} \log{\frac{m_t}{Q}} \right]
     \intertext{$\Rightarrow$}
     g_{3}^{\SM}(M_Z) &=
     \sqrt{4\pi\alpha_{\text{s}}^{\SM}(M_Z)}
@@ -419,7 +419,7 @@
     %
     \intertext{where}
     %
-    m_{t}^{\SM}(\mu) &= M_t +
+    m_{t}^{\SM}(Q) &= M_t +
     \re\Sigma_{t}^{S}(M_Z) + M_t \Big[ \re\Sigma_{t}^{L}(M_Z) \\
     &\phantom{={}} +
     \re\Sigma_{t}^{R}(M_Z) + \Delta
@@ -429,13 +429,13 @@
     % m_t^{(1L),\text{gluon}} + \Delta m_t^{(2L),\text{gluon}} \Big]
     % \\
     \Delta m_t^{1L,\text{gluon}} &= -\frac{g_3^2}{12 \pi^2}
-    \left[4 - 3 \log\left(\frac{m_t^2}{\mu^2}\right)\right]
+    \left[4 - 3 \log\left(\frac{m_t^2}{Q^2}\right)\right]
     \\
     \Delta m_t^{2L,\text{gluon}} &= \left(\Delta
       m_t^{1L,\text{gluon}}\right)^2 \\
     &\phantom{=\;} - \frac{g_3^4}{4608 \pi^4} \Bigg[396
-    \log^2\left(\frac{m_t^2}{\mu^2}\right)
-    - 2028 \log\left(\frac{m_t^2}{\mu^2}\right) \\
+    \log^2\left(\frac{m_t^2}{Q^2}\right)
+    - 2028 \log\left(\frac{m_t^2}{Q^2}\right) \\
     &\phantom{=\; - \frac{g_3^4}{4608 \pi^4}\Bigg[} -48
     \zeta(3)+2821+16 \pi ^2 (1+\log 4)\Bigg]
   \end{align*}
@@ -443,10 +443,10 @@
 \end{frame}
 
 \begin{frame}{Calculation of $v^\SM$}
-  The VEV $v^\SM$ is calculated from the running $Z$ mass at $\mu = M_Z$:
+  The VEV $v^\SM$ is calculated from the running $Z$ mass at $Q = M_Z$:
   \begin{align*}
     v^{\SM}(M_Z) &= \frac{2 m_Z^{\SM}(M_Z)}{\sqrt{g_Y^2 + g_2^2}} \\
-    m_Z^{\SM}(M_Z) &= \sqrt{M_Z^2 + \Pi_Z^{1L}(p^2=M_Z^2,\mu=M_Z)}
+    m_Z^{\SM}(M_Z) &= \sqrt{M_Z^2 + \Pi_Z^{1L}(p^2=M_Z^2,Q=M_Z)}
   \end{align*}
   $v^{\SM}$ evolves under RG running according to\\\bigcite{Sperling,
     Stöckinger, AV, 2013, 2014}
@@ -457,9 +457,9 @@
     \alpha_{\text{s}}^{\MSSM}(M_S) &=
     \frac{\alpha_{\text{s}}^{\SM}(M_S)}{1 -
       \Delta\alpha_{\text{s}}(M_S)} \intertext{with}
-    \Delta\alpha_{\text{s}}(\mu) &= \frac{\alpha_\text{s}}{2\pi}\left[
+    \Delta\alpha_{\text{s}}(Q) &= \frac{\alpha_\text{s}}{2\pi}\left[
       \frac{1}{2}-\sum_{\text{SUSY particle } f} T_f
-      \log{\frac{m_f}{\mu}} \right] \intertext{$\Rightarrow$}
+      \log{\frac{m_f}{Q}} \right] \intertext{$\Rightarrow$}
     g_{3}^{\MSSM}(M_S) &= \sqrt{4\pi\alpha_{\text{s}}^{\MSSM}(M_S)}
   \end{align*}
 \end{frame}
@@ -470,8 +470,8 @@
   \end{align*}
   $\Rightarrow$
   \begin{align*}
-    (m_Z^{\MSSM}(M_S))^2 &= (M_Z^\SM)^2 + \Pi_Z^{\MSSM,1L}(\mu=M_S) \\
-    (M_Z^{\SM})^2 &= \frac{1}{4} \left[(g_Y^\SM)^2 + (g_2^\SM)^2\right] (v^\SM)^2 - \Pi_Z^{\SM,1L}(\mu=M_S)
+    (m_Z^{\MSSM}(M_S))^2 &= (M_Z^\SM)^2 + \Pi_Z^{\MSSM,1L}(Q=M_S) \\
+    (M_Z^{\SM})^2 &= \frac{1}{4} \left[(g_Y^\SM)^2 + (g_2^\SM)^2\right] (v^\SM)^2 - \Pi_Z^{\SM,1L}(Q=M_S)
   \end{align*}
   $\Rightarrow$
   \begin{align*}
@@ -488,8 +488,8 @@
   \end{align*}
   $\Rightarrow$
   \begin{align*}
-    m_f^{\MSSM}(M_S) &= M_f^\SM + \Sigma_f^{\MSSM,1L}(\mu=M_S) \\
-    M_f^{\SM} &= \frac{\sqrt{2} m_f^\SM}{v_i^\SM} - \Sigma_f^{\SM,1L}(\mu=M_S)
+    m_f^{\MSSM}(M_S) &= M_f^\SM + \Sigma_f^{\MSSM,1L}(Q=M_S) \\
+    M_f^{\SM} &= \frac{\sqrt{2} m_f^\SM}{v_i^\SM} - \Sigma_f^{\SM,1L}(Q=M_S)
   \end{align*}
   $\Rightarrow$
   \begin{align*}
@@ -550,6 +550,46 @@
     \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low}
   \end{figure}
   $\tan\beta = 5$, $X_{t,b,\tau} = 0$
+\end{frame}
+
+\begin{frame}{Equivalence EFT and mixed approach $O(y_t^2)$}
+  \begin{align*}
+    M_h^{\SM} &\overset{!}{=} M_h^\text{MSSM} \quad \text{at} \quad Q = M_S
+  \end{align*}
+  where
+  \begin{align*}
+    (M_h^{\SM})^2 &= \lambda v^2 - \Sigma^{\SM}_h + t_h^\SM \\
+    t_h^\SM &= -6 (y_t^\SM)^2 A_0(m_t)
+  \intertext{and}
+    (M_h^\MSSM)^2 &= \frac{1}{4} (g_Y^2 + g_2^2) v^2 c^2_{2\beta}
+    - \Sigma_h^\MSSM + t_h^\MSSM\\
+    \Sigma_h^\MSSM &= \Sigma_h^\SM \frac{c^2_\alpha}{s^2_\beta}
+    + 3 (y_t^\SM)^2 \frac{c^2_\alpha}{s^2_\beta} \Big\{
+       A_0(m_{Q_3}) + A_0(m_{U_3})\\
+       &\phantom{={}} + 2 m_t \big[ B_0(m_{Q_3},m_{Q_3}) + B_0(m_{U_3},m_{U_3}) \big]
+    \Big\}\\
+    t_h^\MSSM &= -3 (y_t^\SM)^2 \frac{c^2_\alpha}{s^2_\beta} \Big[2 A_0(m_t) - A_0(m_{Q_3}) - A_0(m_{U_3})\Big]
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Equivalence EFT and mixed approach $O(y_t^2)$}
+  in SM limit $\frac{c^2_\alpha}{s^2_\beta} \rightarrow 1$\\
+  $\Rightarrow$ 
+  \begin{align*}
+    \lambda &= \frac{1}{4} (g_Y^2 + g_2^2) c_{2\beta}^2\\
+    &\phantom{={}}
+    - 3 (y_t^\SM)^4 \Big[
+    B_0(p^2,m_{Q_3},m_{Q_3}) + B_0(p^2,m_{U_3},m_{U_3}) \Big]\\
+    &=
+    \frac{1}{4} (g_Y^2 + g_2^2) c_{2\beta}^2\\
+    &\phantom{={}} - 3 (y_t^\SM)^4 \Big[
+    -\log\frac{m^2_{Q_3}}{Q^2} + \frac{p^2}{6m^2_{Q_3}} + O\Big(\frac{p^4}{m^4_{Q_3}}\Big)\\
+    &\phantom{={} - 3 (y_t^\SM)^4 \Big[}
+    - \log\frac{m^2_{U_3}}{Q^2} + \frac{p^2}{6m^2_{U_3}} + O\Big(\frac{p^4}{m^4_{U_3}}\Big) \Big]\\
+    &= [\text{Bagnaschi et.\ al. 2014}]
+    + O\Big(\frac{p^2}{m^2_{Q_3}}\Big)
+    + O\Big(\frac{p^2}{m^2_{U_3}}\Big)
+  \end{align*}
 \end{frame}
 
 \begin{frame}[noframenumbering]{FlexibleSUSY's Weltanschauung}
