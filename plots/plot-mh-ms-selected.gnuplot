@@ -10,9 +10,9 @@ set style line 1 lt 1 dt 1 lw 2 lc rgb "#FF0000"
 set style line 2 lt 1 dt 2 lw 2 lc rgb "#0000FF"
 set style line 3 lt 1 dt 4 lw 2 lc rgb "#45AD53"
 
-datafile = "PlotScale.in.FH_new_low"
+datafile = "scale_low.dat"
 
-plot [93:] [70:] \
+plot [91:] [70:] \
      datafile u 1:2 w lines ls 1 t 'mixed', \
-     datafile u 1:9 w lines ls 3 t 'diagrammatic', \
-     datafile u 1:3 w lines ls 2 t 'EFT'
+     datafile u 1:3 w lines ls 3 t 'diagrammatic', \
+     datafile u 1:4 w lines ls 2 t 'EFT'
