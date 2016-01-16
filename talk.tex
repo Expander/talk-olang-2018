@@ -185,7 +185,7 @@
       MSSM              & 3L   & \multicolumn{2}{l}{1L + 2L $O((\alpha_t + \alpha_b) \alpha_s + (\alpha_t + \alpha_b)^2)$} \\
       NMSSM             & 2L   & \multicolumn{2}{l}{1L + 2L $O((\alpha_t + \alpha_b) \alpha_s + (\alpha_t + \alpha_b)^2)$} \\
       USSM              & 2L   & \multicolumn{2}{l}{1L + 2L $O((\alpha_t + \alpha_b) \alpha_s + (\alpha_t + \alpha_b)^2)$} \\
-      E6SSM             & 2L   & \multicolumn{2}{l}{1L + 2L $O((\alpha_t + \alpha_b) \alpha_s + (\alpha_t + \alpha_b)^2)$} \\
+      E$_6$SSM          & 2L   & \multicolumn{2}{l}{1L + 2L $O((\alpha_t + \alpha_b) \alpha_s + (\alpha_t + \alpha_b)^2)$} \\
       THDM              & 2L   & 1L \\
       THDM + $\tilde{h}_i$ & 2L   & 1L \\
       THDM + split      & 2L   & 1L \\
@@ -202,13 +202,14 @@
                         &      & contributions      & conditions \\
       \midrule
       SM + split        & 2L   & 1L + 2L $O(\alpha_t (\alpha_s + \alpha_t))$       & 1L $\tilde{g}_{ij}$ $O(\alpha_t + \alpha_i)$ \\
-                        &      & \phantom{1L} + 3L gluino $O(\alpha_t \alpha_s^2)$ & + 1L $\lambda$ $O((\alpha_t + \alpha_i)^2)$ \\
+      (SplitMSSM)       &      & \phantom{1L} + 3L gluino $O(\alpha_t \alpha_s^2)$ & + 1L $\lambda$ $O((\alpha_t + \alpha_i)^2)$ \\
                         &      &                                                  & + 2L $\lambda$ $O(\alpha_s \alpha_t^2)$ \\
                         &      &                                                  & \mycite{1407.4081} \\[0.5em]
       SM                & 3L   & 1L + 2L $O(\alpha_t (\alpha_s + \alpha_t))$ & 1L $\lambda$ $O((\alpha_t + \alpha_i)^2 + \alpha_b^2 + \alpha_\tau^2)$ \\
-      ($\approx$ SUSYHD) &      &                                            & 2L $\lambda$ $O((\alpha_s + \alpha_t)\alpha_t^2)$ \\
+      (HSSUSY)          &      &                                            & 2L $\lambda$ $O((\alpha_s + \alpha_t)\alpha_t^2)$ \\
                         &      &                                            & \mycite{1407.4081, 1504.05200} \\[0.5em]
-      SM                & 3L   & 1L + 2L $O(\alpha_t (\alpha_s + \alpha_t))$ & 1L $\lambda$ + $p^2/M_S^2$ terms \\
+      SM                & 3L   & 1L + 2L $O(\alpha_t (\alpha_s + \alpha_t))$ & 1L $\lambda$ + $O(p^2/M_S^2)$ terms \\
+      (``mixed'')
     \end{tabular}}
 \end{frame}
 
@@ -322,7 +323,7 @@
     % &\phantom{={}} + t^\SM(Q=M_Z)
   \end{align*}
   \emph{Advantage:} resums large logarithms $\propto\log(M_Z/M_S)$\\
-  \emph{Disadvantage:} neglects terms $O(p^2/M_S^2)$ from SUSY particles
+  \emph{Disadvantage:} neglects terms $O(p^2/M_S^2)$ from SUSY particles at 1L
 \end{frame}
 
 \begin{frame}{Comparison diagrammatic vs.\ EFT approach}
@@ -345,7 +346,7 @@
   \begin{center}
     $g_i$, $y^f_{ij}$, $v$, $\mu^2$, $\lambda$
   \end{center}
-  \emph{including terms $O(p^2/M_S^2)$ from SUSY particles}
+  \emph{including terms $O(p^2/M_S^2)$ from SUSY particles at 1L}
 \end{frame}
 
 \begin{frame}{Combining EFT and diagrammatic approach: matching $M_h$}
@@ -357,7 +358,7 @@
     \lambda(M_S) = \frac{1}{v^2(M_S)} \Big[
     {\color{normal text.fg!15!normal text.bg}
     \only<2->{\color{normal text.fg}}{%
-    \underbrace{\usebeamercolor[fg]{text}{(M_h^\text{MSSM})^2 + \Sigma^\SM_h(p^2 = (M_h^\SM)^2,Q = M_S)}}_{\text{large logs $\propto\log(M_Z/M_S)$ cancel in decoupling limit}}}}
+    \underbrace{\usebeamercolor[fg]{text}{(M_h^\text{MSSM})^2 + \Sigma^\SM_h(p^2 = (M_h^\SM)^2,Q = M_S)}}_{\text{large logs $\propto\log(M_Z/M_S)$ cancel in SM limit}}}}
     \Big]
   \end{align*}
   where
@@ -383,7 +384,7 @@
   \end{itemize}
   \emph{Disadvantage:}
   \begin{itemize}
-  \item large logs in matching cancel only in decoupling limit
+  \item large logs in matching cancel only in SM limit
   \end{itemize}
 \end{frame}
 
@@ -517,15 +518,15 @@
   \emph{Summary:}
   \begin{itemize}
   \item diagrammatic approach suffers from large logs $\propto\log(M_Z/M_S)$
-  \item EFT approach misses terms $O(p^2/M_S^2)$
+  \item EFT approach misses terms $O(p^2/M_S^2)$ at 1L
   \item mixed approach
     \begin{itemize}
-    \item includes terms $O(p^2/M_S^2)$
+    \item includes terms $O(p^2/M_S^2)$ at 1L
     \item resums large logs $\propto\log(M_Z/M_S)$
     \item handles SUSY particle mixings
     \item can be automatized easily \emph{automatized} $\rightarrow$
       incorporation into FlexibleSUSY
-    \item large logs cancel only in decoupling limit
+    \item large logs cancel only in SM limit
     \end{itemize}
   \end{itemize}
   \emph{Todo:}
