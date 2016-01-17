@@ -359,14 +359,14 @@
     \lambda(M_S) = \frac{1}{v^2(M_S)} \Big[
     {\color{normal text.fg!15!normal text.bg}
     \only<2->{\color{normal text.fg}}{%
-    \underbrace{\usebeamercolor[fg]{text}{(M_h^\text{MSSM})^2 + \Sigma^\SM_h(p^2 = (M_h^\SM)^2,Q = M_S)}}_{\text{large logs $\propto\log(M_Z/M_S)$ cancel in SM limit}}}}
+    \underbrace{\usebeamercolor[fg]{text}{(M_h^\text{MSSM})^2 + \Sigma^{\SM,1L}_h(p^2 = (M_h^\SM)^2,Q = M_S)}}_{\text{large logs $\propto\log(M_Z/M_S)$ cancel in SM limit}}}}
     \Big]
   \end{align*}
   where
   \begin{align*}
-    (M_h^{\SM})^2 &= \lambda(M_S) v^2(M_S) - \Sigma^{\SM}_h(p^2 = (M_h^{\SM})^2,Q = M_S) \\
+    (M_h^{\SM})^2 &= \lambda(M_S) v^2(M_S) - \Sigma^{\SM,1L}_h(p^2 = (M_h^{\SM})^2,Q = M_S) \\
     (M_h^\text{MSSM})^2 &= \text{smallest eigenvalue of} \\
-    &\phantom{={}} \left[(m_h^\text{MSSM})^2 - \Sigma^\text{MSSM}_h(p^2 = (M_h^\text{MSSM})^2,Q = M_S)\right]_{ij}
+    &\phantom{={}} \left[(m_h^\text{MSSM})^2 - \Sigma^{\MSSM,1L}_h(p^2 = (M_h^\text{MSSM})^2,Q = M_S)\right]_{ij}
   \end{align*}
 \end{frame}
 
@@ -374,7 +374,8 @@
   Next step: RG running to $Q = M_Z$\\
   $\Rightarrow$
   \begin{align*}
-    (M_h^{\SM})^2 &= \lambda(M_Z) v^2(M_Z) - \Sigma^{\SM}_h(p^2 = (M_h^{\SM})^2,Q = M_Z)
+    (M_h^{\SM})^2 &= \lambda(M_Z) v^2(M_Z) - \Sigma^{\SM,1L}_h(p^2 = (M_h^{\SM})^2,Q = M_Z) \\
+    &\phantom{=\; \lambda(M_Z) v^2(M_Z)} - \Sigma^{\SM,2L}_h(p^2 = (M_h^{\SM})^2,Q = M_Z)
   \end{align*}
   \emph{Advantages:}
   \begin{itemize}
