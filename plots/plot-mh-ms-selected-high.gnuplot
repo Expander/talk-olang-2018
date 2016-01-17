@@ -16,3 +16,12 @@ plot [:] [70:] \
      datafile u ($1/1000):2 w lines ls 1 t 'mixed', \
      datafile u ($1/1000):3 w lines ls 3 t 'diagrammatic', \
      datafile u ($1/1000):4 w lines ls 2 t 'EFT'
+
+set output "PlotScale-in-FH_new_low-selected-high-TB20.pdf"
+datafile = "scale_low_TB20.dat scale_high_TB20.dat"
+set logscale x
+
+plot [0.093:] [70:] \
+     "< cat ".datafile u ($1/1000):2 w lines ls 1 t 'mixed', \
+     "< awk '{ if ($3 > 0) print }' ".datafile u ($1/1000):3 w lines ls 3 t 'diagrammatic', \
+     "< cat ".datafile u ($1/1000):4 w lines ls 2 t 'EFT'
