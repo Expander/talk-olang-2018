@@ -10,7 +10,7 @@ set style line 1 lt 1 dt 1 lw 2 lc rgb "#FF0000"
 set style line 2 lt 1 dt 2 lw 2 lc rgb "#0000FF"
 set style line 3 lt 1 dt 4 lw 2 lc rgb "#45AD53"
 
-datafile = "scale_low.dat"
+datafile = "scale_low_TB5.dat"
 
 plot [91:] [70:] \
      datafile u 1:2 w lines ls 1 t 'mixed', \
