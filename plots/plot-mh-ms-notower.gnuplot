@@ -13,5 +13,5 @@ set style line 3 lt 1 dt 4 lw 2 lc rgb "#45AD53"
 datafile = "scale_low.dat"
 
 plot [91:] [70:] \
-     datafile u 1:3 w lines ls 3 t 'diagrammatic', \
-     datafile u 1:4 w lines ls 2 t 'EFT'
+     datafile u 1:3 w lines ls 3 t 'diagrammatic 2L', \
+     datafile u 1:4 w lines ls 2 t 'EFT 2L'
