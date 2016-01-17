@@ -22,7 +22,7 @@ plots/PlotScale-in-FH_new_low.pdf: plots/plot-mh-ms.gnuplot plots/PlotScale.in.F
 plots/PlotScale-in-FH_new_low-selected.pdf: plots/plot-mh-ms-selected.gnuplot plots/PlotScale.in.FH_new_low
 	cd plots && gnuplot $(shell basename $<)
 
-plots/PlotScale-in-FH_new_low-selected-high.pdf: plots/plot-mh-ms-selected-high.gnuplot plots/scale_high.dat
+plots/PlotScale-in-FH_new_low-selected-high.pdf: plots/plot-mh-ms-selected-high.gnuplot plots/scale_high_TB5.dat
 	cd plots && gnuplot $(shell basename $<)
 
 plots/PlotScale-in-FH_new_low-notower.pdf: plots/plot-mh-ms-notower.gnuplot plots/PlotScale.in.FH_new_low
