@@ -16,7 +16,7 @@ datafile = "scale_high_TB5.dat"
 
 plot [0.091:] [70:] \
      datafile u ($1/1000):2 w lines ls 1 t 'mixed', \
-     datafile u ($1/1000):3 w lines ls 3 t 'diagrammatic 2L', \
+     "< awk '{ if ($3 > 0) print }' ".datafile u ($1/1000):3 w lines ls 3 t 'diagrammatic 2L', \
      datafile u ($1/1000):4 w lines ls 2 t 'EFT 2L'
 
 set output "PlotScale-in-FH_new_low-selected-high-TB20.pdf"
