@@ -18,7 +18,7 @@ datafile = "PlotScale.in.FH_new_low"
 
 plot [93:] [70:] \
      datafile u 1:2               w lines ls 1 t 'FlexibleSUSY mixed', \
-     datafile u 1:9               w lines ls 3 t 'FlexibleSUSY diagrammatic', \
+     datafile u 1:9               w lines ls 3 t 'FlexibleSUSY MSSM', \
      datafile u 1:3               w lines ls 2 t 'FlexibleSUSY EFT', \
      datafile u 1:6               w lines ls 5 t 'FeynHiggs 2.11.3', \
      datafile u 1:($6-$7):($6+$7) w filledcurves ls 5 t '', \

@@ -17,7 +17,7 @@ set style line 7 lt 1 dt 1 lw 2 lc rgb "#45AD53"
 datafile = "scale_low_TB5.dat"
 
 plot [91:] [70:] \
-     datafile u 1:3 w lines ls 3 t 'diagrammatic 2L', \
+     datafile u 1:3 w lines ls 3 t 'full model 2L', \
      datafile u 1:4 w lines ls 2 t 'EFT 2L'
 
 set output "PlotScale-in-FH_new_low-notower-ss-susyhd.pdf"
@@ -25,7 +25,7 @@ set output "PlotScale-in-FH_new_low-notower-ss-susyhd.pdf"
 datafile2 = "PlotScale.in.FH_new_low"
 
 plot [91:] [70:] \
-     datafile u 1:3 w lines ls 3 t 'diagrammatic 2L', \
+     datafile u 1:3 w lines ls 3 t 'full model 2L', \
      datafile u 1:4 w lines ls 2 t 'EFT 2L', \
      datafile2 u 1:10 w lines ls 7 t 'SoftSUSY 3.6.2', \
      datafile2 u 1:4  w lines ls 4 t 'SUSYHD 1.0.2'

@@ -14,7 +14,7 @@ datafile = "scale_low_TB5.dat"
 
 plot [91:] [70:] \
      datafile u 1:2 w lines ls 1 t 'mixed', \
-     datafile u 1:3 w lines ls 3 t 'diagrammatic 2L', \
+     datafile u 1:3 w lines ls 3 t 'full model 2L', \
      datafile u 1:4 w lines ls 2 t 'EFT 2L'
 
 set output "PlotScale-in-FH_new_low-selected-TB20.pdf"
@@ -22,5 +22,5 @@ datafile = "scale_low_TB20.dat"
 
 plot [93:] [70:] \
      datafile u 1:2 w lines ls 1 t 'mixed', \
-     "< awk '{ if ($3 > 0) print }' ".datafile u 1:3 w lines ls 3 t 'diagrammatic 2L', \
+     "< awk '{ if ($3 > 0) print }' ".datafile u 1:3 w lines ls 3 t 'full model 2L', \
      datafile u 1:4 w lines ls 2 t 'EFT 2L'
