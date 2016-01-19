@@ -23,11 +23,15 @@ plot [91:] [70:] \
 set output "PlotScale-in-FH_new_low-notower-ss-susyhd.pdf"
 
 datafile2 = "PlotScale.in.FH_new_low"
+datafileSUSYHD = "susyhd_high_TB5.dat"
+#set logscale x
 
-plot [91:] [70:] \
+plot [91:1000] [70:] \
      datafile u 1:3 w lines ls 3 t 'full model 2L', \
      datafile u 1:4 w lines ls 2 t 'EFT 2L', \
      datafile2 u 1:10 w lines ls 7 t 'SoftSUSY 3.6.2', \
-     datafile2 u 1:4  w lines ls 4 t 'SUSYHD 1.0.2'
+     datafileSUSYHD u 1:2  w lines ls 4 t 'SUSYHD 1.0.2'
 
+     # datafile2 u 1:4  w lines ls 4 t 'SUSYHD 1.0.2'
+     # datafileSUSYHD u 1:2  w lines ls 4 t 'SUSYHD 1.0.2'
      # datafile2 u 1:($4-$5):($4+$5) w filledcurves ls 4 t '', \
