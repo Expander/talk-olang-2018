@@ -119,8 +119,8 @@
 \makeatother
 \usecolortheme{tud}
 
-\title{Automated Higgs mass prediction in BSM models with
-  FlexibleSUSY using a mixed full / EFT approach}
+\title{Higgs mass prediction in BSM models with FlexibleSUSY using an
+  automatized EFT approach}
 
 \author[Alexander Voigt]{Tom Steudtner, Dominik Stöckinger, \underline{Alexander Voigt}}
 
@@ -198,7 +198,7 @@
       (``EFT'')         &      &                                            & + 2L $\lambda$ $O((\alpha_s + \alpha_t)\alpha_t^2)$ \\
                         &      &                                            & \mycite{1407.4081, 1504.05200} \\[0.5em]
       SM                & 3L   & 1L                                         & 1L $\lambda$ + $O(p^2/M_S^2)$ terms \\
-      (``mixed'')
+      (``automatic EFT'')
     \end{tabular}}
 \end{frame}
 
@@ -332,9 +332,9 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Mixed approach}
+\subsection{Automatic EFT approach}
 
-\begin{frame}{Combining EFT and full approach}
+\begin{frame}{Automatic EFT approach}
   \begin{center}
     \includegraphics[width=0.45\textwidth]{images/mssm-sm-tower-eft}\\[1em]
   \end{center}
@@ -342,10 +342,10 @@
   \begin{center}
     $g_i$, $y^f_{ij}$, $v$, $\mu^2$, $\lambda$
   \end{center}
-  \emph{including terms $O(p^2/M_S^2)$ from SUSY particles at 1L}
+  \emph{where $\lambda(M_S)$ is determined by numerical 1L matching condition}
 \end{frame}
 
-\begin{frame}{Combining EFT and full approach: matching $M_h$}
+\begin{frame}{Automatic EFT approach: matching $M_h$}
   \begin{align*}
     M_h^{\SM} &\overset{!}{=} M_h^\text{MSSM} \quad \text{at} \quad Q = M_S, 1L
   \end{align*}
@@ -365,7 +365,7 @@
   \end{align*}
 \end{frame}
 
-\begin{frame}{Combining EFT and full approach: matching $M_h$}
+\begin{frame}{Automatic EFT approach: matching $M_h$}
   Next step: RG running to $Q = M_Z$\\
   $\Rightarrow$
   \begin{align*}
@@ -373,10 +373,10 @@
   \end{align*}
   \emph{Advantages:}
   \begin{itemize}
-  \item includes 1L terms $O(p^2/M_S^2)$ from SUSY particles
-  \item resums large logarithms $\log(M_Z/M_S)$ due to RG running
-  \item incorporates SUSY particle mixings
   \item easily automatizable
+  \item resums large logarithms $\log(M_Z/M_S)$ due to RG running
+  \item includes 1L terms $O(p^2/M_S^2)$ from SUSY particles
+  \item incorporates SUSY particle mixings
   \end{itemize}
   \emph{Disadvantage:}
   \begin{itemize}
@@ -389,7 +389,7 @@
 
 \section{Comparison}
 
-\begin{frame}{Comparison full vs.\ EFT vs.\ mixed approach}
+\begin{frame}{Comparison full vs.\ EFT vs.\ automatic EFT approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected}
@@ -397,7 +397,7 @@
   $\tan\beta = 5$, $X_{t,b,\tau} = 0$
 \end{frame}
 
-\begin{frame}{Comparison full vs.\ EFT vs.\ mixed approach}
+\begin{frame}{Comparison full vs.\ EFT vs.\ automatic EFT approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected-high}
@@ -407,9 +407,9 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Equivalence of EFT and mixed approach}
+\section{Equivalence of EFT and automatic EFT approach}
 
-\begin{frame}{Equivalence EFT and mixed approach $O(y_t^2)$}
+\begin{frame}{Equivalence EFT and automatic EFT approach $O(y_t^2)$}
   \begin{align*}
     M_h^{\SM} &\overset{!}{=} M_h^\text{MSSM} \quad \text{at} \quad Q = M_S, 1L
   \end{align*}
@@ -429,7 +429,7 @@
   \end{align*}
 \end{frame}
 
-\begin{frame}{Equivalence EFT and mixed approach $O(y_t^2)$}
+\begin{frame}{Equivalence EFT and automatic EFT approach $O(y_t^2)$}
   in SM limit $\frac{c^2_\alpha}{s^2_\beta} \rightarrow 1$\\
   $\Rightarrow$ 
   \begin{align*}
@@ -456,17 +456,18 @@
 \begin{frame}{Summary}
   \emph{Summary:}
   \begin{itemize}
-  \item full approach suffers from large logs
+  \item full model approach suffers from large logs
     $\propto\log(M_Z/M_S)$ if $M_S \gg M_Z$
-  \item EFT approach misses 1L terms $O(p^2/M_S^2)$ if performed at
-    1L-level only
-  \item mixed approach
+  \item EFT approach resums large logs, but difficult to automatize
+    (also misses 1L terms $O(p^2/M_S^2)$ if performed at 1L-level
+    only)
+  \item ``automatic EFT'' approach
     \begin{itemize}
-    \item includes terms $O(p^2/M_S^2)$ at 1L
+    \item can be automatized easily $\rightarrow$ incorporation into
+      FlexibleSUSY
     \item resums large logs $\propto\log(M_Z/M_S)$
+    \item includes terms $O(p^2/M_S^2)$ at 1L
     \item handles SUSY particle mixings
-    \item can be automatized easily \emph{automatized} $\rightarrow$
-      incorporation into FlexibleSUSY
     \item large logs cancel only in SM limit
     \end{itemize}
   \end{itemize}
@@ -486,7 +487,7 @@
   \end{center}
 \end{frame}
 
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ mixed approach}
+\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected-high-TB5-Xtsqrt6}
@@ -494,7 +495,7 @@
   $\tan\beta = 5$, $X_{t} = \sqrt{6}$, $X_{b,\tau} = 0$
 \end{frame}
 
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ mixed approach}
+\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected-high-TB20-Xtsqrt6}
@@ -502,7 +503,7 @@
   $\tan\beta = 20$, $X_{t} = \sqrt{6}$, $X_{b,\tau} = 0$
 \end{frame}
 
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ mixed approach}
+\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected-TB20}
@@ -510,7 +511,7 @@
   $\tan\beta = 20$, $X_{t,b,\tau} = 0$
 \end{frame}
 
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ mixed approach}
+\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected-high-TB20}
@@ -518,7 +519,7 @@
   $\tan\beta = 20$, $X_{t,b,\tau} = 0$
 \end{frame}
 
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ mixed approach}
+\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/Xt_TB5_MS1000}
@@ -526,7 +527,7 @@
   $\tan\beta = 5$, $X_{b,\tau} = 0$, $M_S = 1\eh{TeV}$
 \end{frame}
 
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ mixed approach}
+\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/Xt_TB5_MS10000}
@@ -534,7 +535,7 @@
   $\tan\beta = 5$, $X_{b,\tau} = 0$, $M_S = 10\eh{TeV}$
 \end{frame}
 
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ mixed approach}
+\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/Xt_TB20_MS2000}
@@ -542,7 +543,7 @@
   $\tan\beta = 20$, $X_{b,\tau} = 0$, $M_S = 2\eh{TeV}$
 \end{frame}
 
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ mixed approach}
+\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low}
