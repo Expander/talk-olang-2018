@@ -487,6 +487,122 @@
   \end{center}
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[noframenumbering]
+  \begin{center}
+    \Large Calculation of SM parameters
+  \end{center}
+\end{frame}
+
+\begin{frame}[noframenumbering]{Calculation of $g_3^{\SM}(M_Z)$}
+  \emph{Input:} \ \ $\alpha_{\text{s}}^{\SM(5)}(M_Z) = 0.1185$\\[1em]
+  $\rightarrow$
+  \begin{align*}
+    \alpha_{\text{s}}^{\SM}(M_Z) &=
+    \frac{\alpha_{\text{s}}^{\SM(5)}(M_Z)}{1 -
+      \Delta\alpha_{\text{s}}(M_Z)} \intertext{with}
+    \Delta\alpha_{\text{s}}(Q) &=
+    \frac{\alpha_\text{s}}{2\pi} \left[
+      -\frac{2}{3} \log{\frac{m_t}{Q}} \right]
+    \intertext{$\Rightarrow$}
+    g_{3}^{\SM}(M_Z) &=
+    \sqrt{4\pi\alpha_{\text{s}}^{\SM}(M_Z)}
+  \end{align*}
+\end{frame}
+
+\begin{frame}[noframenumbering]{Calculation of $y_t^{\SM}(M_Z)$}
+  \begin{align*}
+    y_t^{\SM}(M_Z) &= \frac{\sqrt{2}\, m_{t}^{\SM}(M_Z)}{v(M_Z)}
+    %
+    \intertext{where}
+    %
+    m_{t}^{\SM}(Q) &= M_t +
+    \re\Sigma_{t}^{S}(M_Z) + M_t \Big[ \re\Sigma_{t}^{L}(M_Z) \\
+    &\phantom{={}} +
+    \re\Sigma_{t}^{R}(M_Z) + \Delta
+    m_t^{1L,\text{gluon}} + \Delta m_t^{2L,\text{gluon}} \Big]\\
+    % m_{t}^{\text{\MSbar}} &= M_t +
+    % \Sigma_{t}^\text{no gluon}(M_Z) + M_t \Big[\Delta
+    % m_t^{(1L),\text{gluon}} + \Delta m_t^{(2L),\text{gluon}} \Big]
+    % \\
+    \Delta m_t^{1L,\text{gluon}} &= -\frac{g_3^2}{12 \pi^2}
+    \left[4 - 3 \log\left(\frac{m_t^2}{Q^2}\right)\right]
+    \\
+    \Delta m_t^{2L,\text{gluon}} &= \left(\Delta
+      m_t^{1L,\text{gluon}}\right)^2 \\
+    &\phantom{=\;} - \frac{g_3^4}{4608 \pi^4} \Bigg[396
+    \log^2\left(\frac{m_t^2}{Q^2}\right)
+    - 2028 \log\left(\frac{m_t^2}{Q^2}\right) \\
+    &\phantom{=\; - \frac{g_3^4}{4608 \pi^4}\Bigg[} -48
+    \zeta(3)+2821+16 \pi ^2 (1+\log 4)\Bigg]
+  \end{align*}
+  $\Rightarrow$
+\end{frame}
+
+\begin{frame}[noframenumbering]{Calculation of $v^\SM$}
+  The VEV $v^\SM$ is calculated from the running $Z$ mass at $Q = M_Z$:
+  \begin{align*}
+    v^{\SM}(M_Z) &= \frac{2 m_Z^{\SM}(M_Z)}{\sqrt{g_Y^2 + g_2^2}} \\
+    m_Z^{\SM}(M_Z) &= \sqrt{M_Z^2 + \Pi_Z^{1L}(p^2=M_Z^2,Q=M_Z)}
+  \end{align*}
+  $v^{\SM}$ evolves under RG running according to\\\bigcite{Sperling,
+    Stöckinger, AV, 2013, 2014}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[noframenumbering]
+  \begin{center}
+    \Large Calculation of MSSM parameters
+  \end{center}
+\end{frame}
+
+\begin{frame}[noframenumbering]{Calculation of $g_3^\MSSM(M_S)$}
+  \begin{align*}
+    \alpha_{\text{s}}^{\MSSM}(M_S) &=
+    \frac{\alpha_{\text{s}}^{\SM}(M_S)}{1 -
+      \Delta\alpha_{\text{s}}(M_S)} \intertext{with}
+    \Delta\alpha_{\text{s}}(Q) &= \frac{\alpha_\text{s}}{2\pi}\left[
+      \frac{1}{2}-\sum_{\text{SUSY particle } f} T_f
+      \log{\frac{m_f}{Q}} \right] \intertext{$\Rightarrow$}
+    g_{3}^{\MSSM}(M_S) &= \sqrt{4\pi\alpha_{\text{s}}^{\MSSM}(M_S)}
+  \end{align*}
+\end{frame}
+
+\begin{frame}[noframenumbering]{Calculation of $v_i^\MSSM(M_S)$}
+  \begin{align*}
+    M_Z^\SM = M_Z^\MSSM
+  \end{align*}
+  $\Rightarrow$
+  \begin{align*}
+    (m_Z^{\MSSM}(M_S))^2 &= (M_Z^\SM)^2 + \Pi_Z^{\MSSM,1L}(Q=M_S) \\
+    (M_Z^{\SM})^2 &= \frac{1}{4} \left[(g_Y^\SM)^2 + (g_2^\SM)^2\right] (v^\SM)^2 - \Pi_Z^{\SM,1L}(Q=M_S)
+  \end{align*}
+  $\Rightarrow$
+  \begin{align*}
+    v^\MSSM(M_S) &= \frac{2 m_Z^{\MSSM}(M_S)}{\sqrt{(g_Y^\MSSM)^2 + (g_2^\MSSM)^2}}
+    \intertext{$\Rightarrow$}
+    v_u^{\MSSM}(M_S) &= v^\MSSM(M_S) \sin\beta(M_S) \\
+    v_d^{\MSSM}(M_S) &= v^\MSSM(M_S) \cos\beta(M_S)
+  \end{align*}
+\end{frame}
+
+\begin{frame}[noframenumbering]{Calculation of $y_i^\MSSM(M_S)$}
+  \begin{align*}
+    M_f^\SM = M_f^\MSSM
+  \end{align*}
+  $\Rightarrow$
+  \begin{align*}
+    m_f^{\MSSM}(M_S) &= M_f^\SM + \Sigma_f^{\MSSM,1L}(Q=M_S) \\
+    M_f^{\SM} &= \frac{\sqrt{2} m_f^\SM}{v_i^\SM} - \Sigma_f^{\SM,1L}(Q=M_S)
+  \end{align*}
+  $\Rightarrow$
+  \begin{align*}
+    y_f^\MSSM(M_S) = \frac{\sqrt{2} m_f^\MSSM(M_S)}{v_i^\MSSM(M_S)}
+  \end{align*}
+\end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[noframenumbering]
@@ -662,118 +778,6 @@
     \includegraphics[width=\textwidth]{plots/Xt_TB5_MS10000_Matching0L}
   \end{figure}
   $\tan\beta = 5$, $X_{b,\tau} = 0$, $M_S = 10\eh{TeV}$ ($0L$ matching SM $\rightarrow$ MSSM)
-\end{frame}
-
-\begin{frame}[noframenumbering]
-  \begin{center}
-    \Large Calculation of SM parameters
-  \end{center}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Calculation of $g_3^{\SM}(M_Z)$}
-  \emph{Input:} \ \ $\alpha_{\text{s}}^{\SM(5)}(M_Z) = 0.1185$\\[1em]
-  $\rightarrow$
-  \begin{align*}
-    \alpha_{\text{s}}^{\SM}(M_Z) &=
-    \frac{\alpha_{\text{s}}^{\SM(5)}(M_Z)}{1 -
-      \Delta\alpha_{\text{s}}(M_Z)} \intertext{with}
-    \Delta\alpha_{\text{s}}(Q) &=
-    \frac{\alpha_\text{s}}{2\pi} \left[
-      -\frac{2}{3} \log{\frac{m_t}{Q}} \right]
-    \intertext{$\Rightarrow$}
-    g_{3}^{\SM}(M_Z) &=
-    \sqrt{4\pi\alpha_{\text{s}}^{\SM}(M_Z)}
-  \end{align*}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Calculation of $y_t^{\SM}(M_Z)$}
-  \begin{align*}
-    y_t^{\SM}(M_Z) &= \frac{\sqrt{2}\, m_{t}^{\SM}(M_Z)}{v(M_Z)}
-    %
-    \intertext{where}
-    %
-    m_{t}^{\SM}(Q) &= M_t +
-    \re\Sigma_{t}^{S}(M_Z) + M_t \Big[ \re\Sigma_{t}^{L}(M_Z) \\
-    &\phantom{={}} +
-    \re\Sigma_{t}^{R}(M_Z) + \Delta
-    m_t^{1L,\text{gluon}} + \Delta m_t^{2L,\text{gluon}} \Big]\\
-    % m_{t}^{\text{\MSbar}} &= M_t +
-    % \Sigma_{t}^\text{no gluon}(M_Z) + M_t \Big[\Delta
-    % m_t^{(1L),\text{gluon}} + \Delta m_t^{(2L),\text{gluon}} \Big]
-    % \\
-    \Delta m_t^{1L,\text{gluon}} &= -\frac{g_3^2}{12 \pi^2}
-    \left[4 - 3 \log\left(\frac{m_t^2}{Q^2}\right)\right]
-    \\
-    \Delta m_t^{2L,\text{gluon}} &= \left(\Delta
-      m_t^{1L,\text{gluon}}\right)^2 \\
-    &\phantom{=\;} - \frac{g_3^4}{4608 \pi^4} \Bigg[396
-    \log^2\left(\frac{m_t^2}{Q^2}\right)
-    - 2028 \log\left(\frac{m_t^2}{Q^2}\right) \\
-    &\phantom{=\; - \frac{g_3^4}{4608 \pi^4}\Bigg[} -48
-    \zeta(3)+2821+16 \pi ^2 (1+\log 4)\Bigg]
-  \end{align*}
-  $\Rightarrow$
-\end{frame}
-
-\begin{frame}[noframenumbering]{Calculation of $v^\SM$}
-  The VEV $v^\SM$ is calculated from the running $Z$ mass at $Q = M_Z$:
-  \begin{align*}
-    v^{\SM}(M_Z) &= \frac{2 m_Z^{\SM}(M_Z)}{\sqrt{g_Y^2 + g_2^2}} \\
-    m_Z^{\SM}(M_Z) &= \sqrt{M_Z^2 + \Pi_Z^{1L}(p^2=M_Z^2,Q=M_Z)}
-  \end{align*}
-  $v^{\SM}$ evolves under RG running according to\\\bigcite{Sperling,
-    Stöckinger, AV, 2013, 2014}
-\end{frame}
-
-\begin{frame}[noframenumbering]
-  \begin{center}
-    \Large Calculation of MSSM parameters
-  \end{center}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Calculation of $g_3^\MSSM(M_S)$}
-  \begin{align*}
-    \alpha_{\text{s}}^{\MSSM}(M_S) &=
-    \frac{\alpha_{\text{s}}^{\SM}(M_S)}{1 -
-      \Delta\alpha_{\text{s}}(M_S)} \intertext{with}
-    \Delta\alpha_{\text{s}}(Q) &= \frac{\alpha_\text{s}}{2\pi}\left[
-      \frac{1}{2}-\sum_{\text{SUSY particle } f} T_f
-      \log{\frac{m_f}{Q}} \right] \intertext{$\Rightarrow$}
-    g_{3}^{\MSSM}(M_S) &= \sqrt{4\pi\alpha_{\text{s}}^{\MSSM}(M_S)}
-  \end{align*}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Calculation of $v_i^\MSSM(M_S)$}
-  \begin{align*}
-    M_Z^\SM = M_Z^\MSSM
-  \end{align*}
-  $\Rightarrow$
-  \begin{align*}
-    (m_Z^{\MSSM}(M_S))^2 &= (M_Z^\SM)^2 + \Pi_Z^{\MSSM,1L}(Q=M_S) \\
-    (M_Z^{\SM})^2 &= \frac{1}{4} \left[(g_Y^\SM)^2 + (g_2^\SM)^2\right] (v^\SM)^2 - \Pi_Z^{\SM,1L}(Q=M_S)
-  \end{align*}
-  $\Rightarrow$
-  \begin{align*}
-    v^\MSSM(M_S) &= \frac{2 m_Z^{\MSSM}(M_S)}{\sqrt{(g_Y^\MSSM)^2 + (g_2^\MSSM)^2}}
-    \intertext{$\Rightarrow$}
-    v_u^{\MSSM}(M_S) &= v^\MSSM(M_S) \sin\beta(M_S) \\
-    v_d^{\MSSM}(M_S) &= v^\MSSM(M_S) \cos\beta(M_S)
-  \end{align*}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Calculation of $y_i^\MSSM(M_S)$}
-  \begin{align*}
-    M_f^\SM = M_f^\MSSM
-  \end{align*}
-  $\Rightarrow$
-  \begin{align*}
-    m_f^{\MSSM}(M_S) &= M_f^\SM + \Sigma_f^{\MSSM,1L}(Q=M_S) \\
-    M_f^{\SM} &= \frac{\sqrt{2} m_f^\SM}{v_i^\SM} - \Sigma_f^{\SM,1L}(Q=M_S)
-  \end{align*}
-  $\Rightarrow$
-  \begin{align*}
-    y_f^\MSSM(M_S) = \frac{\sqrt{2} m_f^\MSSM(M_S)}{v_i^\MSSM(M_S)}
-  \end{align*}
 \end{frame}
 
 \begin{frame}[noframenumbering]
