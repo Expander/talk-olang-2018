@@ -39,34 +39,40 @@ plot [:] [:] \
 
 set output "Xt_TB5_MS100_Matching0L.pdf"
 datafile = "Xt_TB5_MS100_Matching0L.dat"
+datafile2= "Xt_TB5_MS100_Matching0L_SE1L.dat"
 
 plot [:] [70:132] \
-     datafile u 1:2 w lines ls 1 t 'automatic EFT 1L (0L MSSM matching)', \
-     datafile u 1:4 w lines ls 2 t 'EFT (1L lambda threshold)', \
-     datafile u 1:3 w lines ls 3 t 'full model 2L'
+     datafile  u 1:2 w lines ls 1 t 'automatic EFT 1L (0L MSSM parameter matching)', \
+     datafile2 u 1:4 w lines ls 2 t 'EFT 1L', \
+     datafile  u 1:3 w lines ls 3 t 'full model 2L'
 
 set output "Xt_TB5_MS200_Matching0L.pdf"
 datafile = "Xt_TB5_MS200_Matching0L.dat"
+datafile2= "Xt_TB5_MS200_Matching0L_SE1L.dat"
 
 replot
 
 set output "Xt_TB5_MS300_Matching0L.pdf"
 datafile = "Xt_TB5_MS300_Matching0L.dat"
+datafile2= "Xt_TB5_MS300_Matching0L_SE1L.dat"
 
 replot
 
 set output "Xt_TB5_MS400_Matching0L.pdf"
 datafile = "Xt_TB5_MS400_Matching0L.dat"
+datafile2= "Xt_TB5_MS400_Matching0L_SE1L.dat"
 
 replot
 
 set output "Xt_TB5_MS500_Matching0L.pdf"
 datafile = "Xt_TB5_MS500_Matching0L.dat"
+datafile2= "Xt_TB5_MS500_Matching0L_SE1L.dat"
 
 replot
 
 set output "Xt_TB5_MS1000_Matching0L.pdf"
 datafile = "Xt_TB5_MS1000_Matching0L.dat"
+datafile2= "Xt_TB5_MS1000_Matching0L_SE1L.dat"
 
 set key bottom
 
@@ -74,5 +80,6 @@ replot
 
 set output "Xt_TB5_MS10000_Matching0L.pdf"
 datafile = "Xt_TB5_MS10000_Matching0L.dat"
+datafile2= "Xt_TB5_MS10000_Matching0L_SE1L.dat"
 
 replot
