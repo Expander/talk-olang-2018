@@ -36,13 +36,15 @@ replot
 
 set output "PlotScale-in-FH_new_low-selected-high-TB5-Xtsqrt6_Matching0L.pdf"
 datafile = "scale_high_TB5_Xtsqrt6_Matching0L.dat"
+datafile2 = "scale_high_TB5_Xtsqrt6_Matching0L_SE1L.dat"
 
 plot [0.091:] [70:] \
      datafile u ($1/1000):2 w lines ls 1 t 'automatic EFT 1L', \
      "< awk '{ if ($3 > 0) print }' ".datafile u ($1/1000):3 w lines ls 3 t 'full model 2L', \
-     datafile u ($1/1000):4 w lines ls 2 t 'EFT (1L lambda threshold)'
+     datafile2 u ($1/1000):4 w lines ls 2 t 'EFT 1L'
 
 set output "PlotScale-in-FH_new_low-selected-high-TB20-Xtsqrt6_Matching0L.pdf"
 datafile = "scale_high_TB20_Xtsqrt6_Matching0L.dat"
+datafile2 = "scale_high_TB20_Xtsqrt6_Matching0L_SE1L.dat"
 
 replot
