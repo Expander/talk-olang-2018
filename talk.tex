@@ -393,12 +393,65 @@
   \end{itemize}
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \begin{center}
+    \Large Determination of MSSM parameters
+  \end{center}
+\end{frame}
+
+\begin{frame}{Determination of $g_3^\MSSM(M_S)$}
+  \begin{align*}
+    \alpha_{\text{s}}^{\MSSM}(M_S) &=
+    \frac{\alpha_{\text{s}}^{\SM}(M_S)}{1 -
+      \Delta\alpha_{\text{s}}(M_S)} \intertext{with}
+    \Delta\alpha_{\text{s}}(Q) &= \frac{\alpha_\text{s}}{2\pi}\left[
+      \frac{1}{2}-\sum_{\text{SUSY particle } f} T_f
+      \log{\frac{m_f}{Q}} \right] \intertext{$\Rightarrow$}
+    g_{3}^{\MSSM}(M_S) &= \sqrt{4\pi\alpha_{\text{s}}^{\MSSM}(M_S)}
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Determination of $v_i^\MSSM(M_S)$}
+  \begin{align*}
+    M_Z^\SM = M_Z^\MSSM
+  \end{align*}
+  $\Rightarrow$
+  \begin{align*}
+    (m_Z^{\MSSM}(M_S))^2 &= (M_Z^\SM)^2 + \Pi_Z^{\MSSM,1L}(Q=M_S) \\
+    (M_Z^{\SM})^2 &= \frac{1}{4} \left[(g_Y^\SM)^2 + (g_2^\SM)^2\right] (v^\SM)^2 - \Pi_Z^{\SM,1L}(Q=M_S)
+  \end{align*}
+  $\Rightarrow$
+  \begin{align*}
+    v^\MSSM(M_S) &= \frac{2 m_Z^{\MSSM}(M_S)}{\sqrt{(g_Y^\MSSM)^2 + (g_2^\MSSM)^2}}
+    \intertext{$\Rightarrow$}
+    v_u^{\MSSM}(M_S) &= v^\MSSM(M_S) \sin\beta(M_S) \\
+    v_d^{\MSSM}(M_S) &= v^\MSSM(M_S) \cos\beta(M_S)
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Determination of $y_i^\MSSM(M_S)$}
+  \begin{align*}
+    M_f^\SM = M_f^\MSSM
+  \end{align*}
+  $\Rightarrow$
+  \begin{align*}
+    m_f^{\MSSM}(M_S) &= M_f^\SM + \Sigma_f^{\MSSM,1L}(Q=M_S) \\
+    M_f^{\SM} &= \frac{\sqrt{2} m_f^\SM}{v_i^\SM} - \Sigma_f^{\SM,1L}(Q=M_S)
+  \end{align*}
+  $\Rightarrow$
+  \begin{align*}
+    y_f^\MSSM(M_S) = \frac{\sqrt{2} m_f^\MSSM(M_S)}{v_i^\MSSM(M_S)}
+  \end{align*}
+\end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Comparison of the approaches}
 \subsection{Numerical comparison}
 
-\begin{frame}{Contents of the approaches}
+\begin{frame}{Contents}
   \tableofcontents[currentsection]  
 \end{frame}
 
@@ -422,7 +475,7 @@
 
 \subsection{Equivalence of EFT and automatic EFT approach}
 
-\begin{frame}{Equivalence EFT and automatic EFT approach $O(y_t^4)$}
+\begin{frame}{Equivalence EFT and automatic EFT approach $O(\hbar y_t^4)$}
   \begin{align*}
     M_h^{\SM} &\overset{!}{=} M_h^\text{MSSM} \quad \text{at} \quad Q = M_S, 1L
   \end{align*}
@@ -443,7 +496,7 @@
   \end{align*}
 \end{frame}
 
-\begin{frame}{Equivalence EFT and automatic EFT approach $O(y_t^4)$}
+\begin{frame}{Equivalence EFT and automatic EFT approach $O(\hbar y_t^4)$}
   in SM limit $\frac{c^2_\alpha}{s^2_\beta} \rightarrow 1$\\
   $\Rightarrow$ 
   \begin{align*}
@@ -563,59 +616,6 @@
   \end{align*}
   $v^{\SM}$ evolves under RG running according to\\\bigcite{Sperling,
     Stöckinger, AV, 2013, 2014}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[noframenumbering]
-  \begin{center}
-    \Large Determination of MSSM parameters
-  \end{center}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Determination of $g_3^\MSSM(M_S)$}
-  \begin{align*}
-    \alpha_{\text{s}}^{\MSSM}(M_S) &=
-    \frac{\alpha_{\text{s}}^{\SM}(M_S)}{1 -
-      \Delta\alpha_{\text{s}}(M_S)} \intertext{with}
-    \Delta\alpha_{\text{s}}(Q) &= \frac{\alpha_\text{s}}{2\pi}\left[
-      \frac{1}{2}-\sum_{\text{SUSY particle } f} T_f
-      \log{\frac{m_f}{Q}} \right] \intertext{$\Rightarrow$}
-    g_{3}^{\MSSM}(M_S) &= \sqrt{4\pi\alpha_{\text{s}}^{\MSSM}(M_S)}
-  \end{align*}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Determination of $v_i^\MSSM(M_S)$}
-  \begin{align*}
-    M_Z^\SM = M_Z^\MSSM
-  \end{align*}
-  $\Rightarrow$
-  \begin{align*}
-    (m_Z^{\MSSM}(M_S))^2 &= (M_Z^\SM)^2 + \Pi_Z^{\MSSM,1L}(Q=M_S) \\
-    (M_Z^{\SM})^2 &= \frac{1}{4} \left[(g_Y^\SM)^2 + (g_2^\SM)^2\right] (v^\SM)^2 - \Pi_Z^{\SM,1L}(Q=M_S)
-  \end{align*}
-  $\Rightarrow$
-  \begin{align*}
-    v^\MSSM(M_S) &= \frac{2 m_Z^{\MSSM}(M_S)}{\sqrt{(g_Y^\MSSM)^2 + (g_2^\MSSM)^2}}
-    \intertext{$\Rightarrow$}
-    v_u^{\MSSM}(M_S) &= v^\MSSM(M_S) \sin\beta(M_S) \\
-    v_d^{\MSSM}(M_S) &= v^\MSSM(M_S) \cos\beta(M_S)
-  \end{align*}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Determination of $y_i^\MSSM(M_S)$}
-  \begin{align*}
-    M_f^\SM = M_f^\MSSM
-  \end{align*}
-  $\Rightarrow$
-  \begin{align*}
-    m_f^{\MSSM}(M_S) &= M_f^\SM + \Sigma_f^{\MSSM,1L}(Q=M_S) \\
-    M_f^{\SM} &= \frac{\sqrt{2} m_f^\SM}{v_i^\SM} - \Sigma_f^{\SM,1L}(Q=M_S)
-  \end{align*}
-  $\Rightarrow$
-  \begin{align*}
-    y_f^\MSSM(M_S) = \frac{\sqrt{2} m_f^\MSSM(M_S)}{v_i^\MSSM(M_S)}
-  \end{align*}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
