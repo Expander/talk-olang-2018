@@ -55,9 +55,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.133218"
-     inkscape:cx="185.65891"
-     inkscape:cy="939.76387"
+     inkscape:zoom="2.0080966"
+     inkscape:cx="190.88515"
+     inkscape:cy="853.43779"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -134,19 +134,6 @@
        sodipodi:nodetypes="cc" />
     <text
        xml:space="preserve"
-       style="font-style:oblique;font-weight:normal;font-size:18px;line-height:125%;font-family:'Bitstream Vera Sans';-inkscape-font-specification:'Bitstream Vera Sans Oblique';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       x="35.451801"
-       y="224.20323"
-       id="text4447-0"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan4449-5"
-         x="35.451801"
-         y="224.20323">M<tspan
-   style="font-size:65.00091553%;baseline-shift:sub"
-   id="tspan4453-5">S</tspan></tspan></text>
-    <text
-       xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:24px;line-height:125%;font-family:'Bitstream Vera Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        x="35.451801"
        y="68.203232"
@@ -157,8 +144,8 @@
          x="35.451801"
          y="68.203232"
          style="font-style:oblique;font-size:18px;-inkscape-font-specification:'Bitstream Vera Sans Oblique'">M<tspan
-   style="font-size:65.00091553%;baseline-shift:sub"
-   id="tspan4465-5">X</tspan></tspan></text>
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan4173">S</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:24px;line-height:125%;font-family:'Bitstream Vera Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
@@ -175,7 +162,7 @@
    id="tspan4172">Z</tspan></tspan></text>
     <g
        id="g4759"
-       transform="translate(0,-2)">
+       transform="translate(1.4085115,-151.65435)">
       <text
          sodipodi:linespacing="125%"
          id="text3469"
