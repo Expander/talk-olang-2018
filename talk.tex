@@ -37,6 +37,7 @@
 \usepackage{multirow}
 \usepackage{tcolorbox}
 \usepackage{pifont}
+\usepackage{xspace}
 \usepackage{hyperref}
 \hypersetup{colorlinks,linkcolor=,urlcolor=blue}
 \usepackage{listings}
@@ -227,7 +228,7 @@
   \end{align*}
   RG running to $Q=M_t$ $\Rightarrow$
   \begin{align*}
-    (M_h^\SM)^2 &= \lambda v^2 - \Sigma^\SM_h((M_h^\SM)^2,M_t) + \frac{t_h^\SM}{v}
+    (M_h^\SM)^2 &= \lambda v^2 - \Sigma^\SM_h((M_h^\SM)^2) + \frac{t_h^\SM}{v}
   \end{align*}
   \emph{Advantage:} resums large logarithms $\propto\log(M_t/M_S)$\\
   \emph{Disadvantage:} difficult to automatize; neglects terms
@@ -304,6 +305,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Numerical comparison of the approaches}
+\subsection{Comparison of full model approaches}
 
 \begin{frame}{Contents}
   \tableofcontents[currentsection]  
@@ -318,19 +320,16 @@
 \end{frame}
 
 \begin{frame}{Comparison full model vs.\ EFT approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/scale_MSSM_step_by_step_detail}
-  \end{figure}
-  $\tan\beta = 5$, $X_{t,b,\tau} = 0$
+  \begin{center}
+    Q1: Why is FlexibleSUSY/MSSM so close to the EFT approaches and
+    SPheno so far off?
+  \end{center}
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Uncertainty estimation}
-
-\begin{frame}{Uncertainty estimation in the full model approach}
-  FlexibleSUSY:
+\begin{frame}{Calculation of $y_t^{\text{MSSM}}$}
+  A1: Different treatment of 2-loop corrections to $y_t^{\text{MSSM}}$:
+  \\[1em]
+  \emph{FlexibleSUSY:}
   \begin{align*}
     m_t &=
     M_t+\re\left[
@@ -344,7 +343,7 @@
       + \left(\widetilde{\Sigma}_t^{(1),\text{qcd}}(m_t)\right)^2
       + \widetilde{\Sigma}_t^{(2),\text{qcd}}(m_t)\right]
   \end{align*}
-  SPheno:
+  \emph{SPheno:}
   \begin{align*}
     m_t &=
     M_t+\re\left[
@@ -359,7 +358,122 @@
       \widetilde{\Sigma}_t^{(2),\text{qcd}}(m_t)
     \right]
   \end{align*}
-  Parametrize difference by adding
+\end{frame}
+
+\newcommand{\FS}{FlexibleSUSY\xspace}
+\newcommand{\SARAH}{SARAH\xspace}
+\newcommand{\Softsusy}{SOFTSUSY\xspace}
+\newcommand{\SPheno}{SPheno\xspace}
+\newcommand{\SUSYHD}{SUSYHD\xspace}
+
+\newcommand{\bgsgs}{\beta_{\gshigh,\gshigh^2}}
+\newcommand{\bytgs}{\beta_{\ythigh,\gshigh^2}}
+\newcommand{\bytyt}{\beta_{\ythigh,\ythigh^2}}
+\newcommand{\bvyt}{\beta_{\vhigh,\ythigh^2}}
+\newcommand{\blambdaytyt}{\beta_{\lambdahigh,\ythigh^4}}
+\newcommand{\blambdayt}{\beta_{\lambdahigh,\ythigh^2\lambdahigh}}
+\newcommand{\blambdalambda}{\beta_{\lambdahigh,\lambdahigh^2}}
+\newcommand{\btildegsgs}{\tilde\beta_{\gshigh,\gshigh^2}}
+\newcommand{\btildeytgs}{\tilde\beta_{\ythigh,\gshigh^2}}
+\newcommand{\btildeytyt}{\tilde\beta_{\ythigh,\ythigh^2}}
+\newcommand{\btildevyt}{\tilde\beta_{\vhigh,\ythigh^2}}
+
+\newcommand{\gs}{\hat{g}_3}
+\newcommand{\gsMSSM}{\bar{g}_3}
+\newcommand{\ytlow}{\hat{y}_t}
+\newcommand{\ytMSSMlow}{\bar{y}_t}
+\newcommand{\vlow}{\hat{v}}
+\newcommand{\vMSSM}{\bar{v}}
+\newcommand{\gshigh}{{g}_3}
+\newcommand{\gsMSSMhigh}{\tilde{g}_3}
+\newcommand{\ythigh}{y_t}
+\newcommand{\ytMSSMhigh}{\tilde{y}_t}
+\newcommand{\vhigh}{v}
+\newcommand{\vMSSMhigh}{\tilde{v}}
+\newcommand{\lambdalow}{\hat{\lambda}}
+\newcommand{\lambdahigh}{{\lambda}}
+
+\newcommand{\kappaL}{\kappa}
+
+\begin{frame}{Calculation of $y_t^{\text{MSSM}}$}
+  \begin{align*}
+    \ytMSSMhigh^{\text{\FS}} &= 
+    \ythigh +
+    t^2\kappaL^2 \left(\frac{184}{9} \gshigh^4 \ythigh -24 \gshigh^2
+      \ythigh^3 
+      +\frac{9}{8} \ythigh^5 \right) 
+    +\ldots\\
+    \ytMSSMhigh^{\text{\SPheno}} &= 
+    \ythigh +
+    t^2 \kappaL^2 \left(\frac{248}{9} \gshigh^4 \ythigh-16 \gshigh^2
+      \ythigh^3
+      +\frac{27}{8} \ythigh^5\right) 
+    +\ldots
+  \end{align*}
+  with
+  \begin{align*}
+    y_t &\equiv y_t^\SM(M_S), & g_3 &\equiv g_3^\SM(M_S), \\
+    \tilde{y}_t &\equiv y_t^\text{MSSM}(M_S), & \tilde{g}_3 &\equiv g_3^\text{MSSM}(M_S), \\
+    t &\equiv \log\frac{M_S}{M_t}, & \kappaL &\equiv \frac{1}{(4 \pi)^2}
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Calculation of $y_t^{\text{MSSM}}$}
+  \begin{align*}
+    (M_h^2)^{\text{EFT}}&=
+    m_h^2
+    + \vhigh^2 
+    \ythigh^4\Big[12 t \kappaL
+    +12 t^2 \kappaL^2 
+    \left(16 \gshigh^2 - 9\ythigh^2 \right)
+    \\&\quad{}
+    +
+    4 t^3\kappaL^3  \left(736 \gshigh^4-672 \gshigh^2 \ythigh^2+90
+      \ythigh^4\right) 
+    +\ldots\Big],
+    \\
+    (M_h^2)^{\text{\FS}}&=
+    m_h^2
+    + \vhigh^2 
+    \ythigh^4\Big[12 t \kappaL
+    +12 t^2 \kappaL^2 
+    \left(16 \gshigh^2 - 9\ythigh^2 \right)
+    \\&\quad{}
+    +4 t^3\kappaL^3 \left(\frac{736 \gshigh^4}{3}-288 \gshigh^2
+      \ythigh^2+\frac{27 \ythigh^4}{2}\right)
+    +\ldots\Big],
+    \\
+    (M_h^2)^{\text{\SPheno}}&=
+    m_h^2
+    + \vhigh^2 
+    \ythigh^4\Big[12 t \kappaL
+    +12 t^2 \kappaL^2 
+    \left(16 \gshigh^2 - 9\ythigh^2 \right)
+    \\&\quad{}
+    +4 t^3\kappaL^3 \left(\frac{992 \gshigh^4}{3}-192 \gshigh^2
+      \ythigh^2+\frac{81 \ythigh^4}{2}\right)
+    +\ldots\Big].
+  \end{align*}
+\end{frame}
+
+% \begin{frame}{Comparison full model vs.\ EFT approach}
+%   \begin{figure}
+%     \centering
+%     \includegraphics[width=\textwidth]{plots/scale_MSSM_step_by_step_detail}
+%   \end{figure}
+%   $\tan\beta = 5$, $X_{t,b,\tau} = 0$
+% \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Uncertainty estimation}
+
+\begin{frame}{Contents}
+  \tableofcontents[currentsection]  
+\end{frame}
+
+\begin{frame}{Uncertainty estimation in the full model approach}
+  Parametrize difference between FlexibleSUSY and SPheno by adding
   \begin{align*}
     \Delta m_t = \frac{C_3 g_3^4 M_t}{(4\pi)^4} \log^2\frac{M_S}{M_Z}
   \end{align*}
@@ -375,13 +489,13 @@
   $\tan\beta = 5$, $X_{t,b,\tau} = 0$
 \end{frame}
 
-\begin{frame}{Uncertainty estimation in the automatic EFT model approach}
+\begin{frame}{Uncertainty estimation in the automatic EFT approach}
   Parametrize missing 2L threshold corrections by adding
   \begin{align*}
     \Delta\lambda^{(2)}_{(\alpha_t^2 \alpha_s)}
     &= \frac{g_3^2 (y_t^\SM)^4}{(4\pi)^4} \times C_1 \\
     \Delta\lambda^{(2)}_{(\alpha_t^4)}
-    &= \frac{(y_t^\SM)^6}{(4\pi)^4} \times C_2 ,
+    &= \frac{(y_t^\SM)^6}{(4\pi)^4} \times C_2
   \end{align*}
   In the MSSM for $X_t\in [-3M_S,+3M_S]$, $\tan\beta \in [1,\infty]$:
   \begin{align*}
@@ -389,7 +503,7 @@
   \end{align*}
 \end{frame}
 
-\begin{frame}{Uncertainty estimation in the automatic EFT model approach}
+\begin{frame}{Uncertainty estimation in the automatic EFT approach}
   \begin{figure}
     \centering
     % \includegraphics[width=\textwidth]{plots/scale_MSSM_uncertainty_all}
@@ -398,9 +512,66 @@
   $\tan\beta = 5$, $X_{t,b,\tau} = 0$
 \end{frame}
 
+\begin{frame}{Uncertainty estimation in the automatic EFT approach}
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{plots/scale_MSSM_Xt-2_uncertainty_tower}
+  \end{figure}
+  $\tan\beta = 5$, $X_t = 2 M_S$, $X_{b,\tau} = 0$
+\end{frame}
+
+\begin{frame}{Uncertainty estimation in the automatic EFT approach}
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{plots/scale_MSSM_Xt-2_uncertainty_all}
+  \end{figure}
+  $\tan\beta = 5$, $X_t = 2 M_S$, $X_{b,\tau} = 0$
+\end{frame}
+
+\begin{frame}{Uncertainty estimation in the automatic EFT approach}
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{plots/xt_MSSM_MS-2000}
+  \end{figure}
+  $\tan\beta = 5$, $M_S = 2\eh{TeV}$, $X_{b,\tau} = 0$
+\end{frame}
+
+\begin{frame}{Uncertainty estimation in the automatic EFT approach}
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{plots/xt_MSSM_MS-2000_tower}
+  \end{figure}
+  $\tan\beta = 5$, $M_S = 2\eh{TeV}$, $X_{b,\tau} = 0$
+\end{frame}
+
+\begin{frame}{Uncertainty estimation in the automatic EFT approach}
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{plots/xt_MSSM_MS-2000_uncertainty}
+  \end{figure}
+  $\tan\beta = 5$, $M_S = 2\eh{TeV}$, $X_{b,\tau} = 0$
+\end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{$M_h$ in the THDM}
+
+\begin{frame}{Contents}
+  \tableofcontents[currentsection]  
+\end{frame}
+
+\begin{frame}{$M_h$ in the THDM}
+  Wagner/Lee \bigcite{1508.00576}:\\
+  \begin{align*}
+    \lambda_i(M_S) = \kappa O(y_{t,b,\tau}^4 + g_i^2 y_{t,b,\tau}^2)
+    + \kappa^2 O(g_i^2 y_{t,b,\tau}^4)
+  \end{align*}
+  \\[1em]
+  Nierste et.al.: \bigcite{0901.2065}:\\
+  \begin{align*}
+    \lambda_i(M_S) = \kappa O(y_{jk}^4 + g_i^2 y_{jk}^2 + g_i^4)
+  \end{align*}
+\end{frame}
 
 \begin{frame}{$M_h$ in the THDM}
   \begin{figure}
@@ -408,8 +579,6 @@
     \includegraphics[width=0.49\textwidth]{plots/THDM/THDMIIMSSMBC_Xt-0_combined}
     \includegraphics[width=0.49\textwidth]{plots/THDM/THDMIIMSSMBC_Xt-Sqrt[6]_combined}
   \end{figure}
-  1L Wagner/Lee + 2L Wagner/Lee: \bigcite{1508.00576}\\
-  1L Nierste et.al.: \bigcite{0901.2065}
 \end{frame}
 
 \begin{frame}{$M_h$ in the THDM + Higgsinos + gauginos}
@@ -418,8 +587,6 @@
     \includegraphics[width=0.49\textwidth]{plots/THDM/HGTHDMIIMSSMBC_Xt-0_combined}
     \includegraphics[width=0.49\textwidth]{plots/THDM/HGTHDMIIMSSMBC_Xt-Sqrt[6]_combined}
   \end{figure}
-  1L Wagner/Lee + 2L Wagner/Lee: \bigcite{1508.00576}\\
-  1L Nierste et.al.: \bigcite{0901.2065}
 \end{frame}
 
 \begin{frame}{$M_h$ in the THDM as function of $M_S$}
@@ -463,7 +630,7 @@
 \section{Summary}
 
 \begin{frame}{Summary}
-  \emph{Summary:}
+  \emph{Automatic EFT approach}
   \begin{itemize}
   \item full model approach suffers from large logs
     $\propto\log(M_Z/M_S)$ if $M_S \gg M_Z$
@@ -475,15 +642,17 @@
     \item can be automatized easily $\rightarrow$ incorporation into
       FlexibleSUSY
     \item resums large logs $\propto\log(M_Z/M_S)$
-    \item includes terms $O(p^2/M_S^2)$ at 1L
+    \item includes all 1L terms $O(p^n/M_S^n)$
     \item handles SUSY particle mixings
     \item large logs cancel only in SM limit
+    \item Todo: perform matching and calculation of $M_h$ at 2-loop level
     \end{itemize}
   \end{itemize}
-  \emph{Todo:}
+  \emph{THDM (+ Higgsinos + Gauginos):}
   \begin{itemize}
-  \item perform matching and calculation of $M_h$ at 2-loop level
-  \item test non-SUSY and non-minimal SUSY models
+  \item Effect of threshold corrections $\kappa O(g_i^4)$ on $M_h$
+    less than $1\eh{GeV}$
+  \item Uncertainty from variation of $Q$ and $M_t$: max. $\pm 2\eh{GeV}$
   \end{itemize}
 \end{frame}
 
@@ -499,7 +668,11 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Equivalence of EFT and automatic EFT approach}
+\begin{frame}[noframenumbering]
+  \begin{center}
+    \Large Equivalence of EFT and automatic EFT approach
+  \end{center}
+\end{frame}
 
 \begin{frame}{Equivalence EFT and automatic EFT approach $O(\hbar y_t^4)$}
   \begin{align*}
