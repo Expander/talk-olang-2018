@@ -238,14 +238,6 @@
   $O(p^2/M_S^2)$ from SUSY particles if performed at 1L-level only
 \end{frame}
 
-\begin{frame}{Comparison full model vs.\ EFT approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/scale_MSSM}
-  \end{figure}
-  $\tan\beta = 5$, $X_{t,b,\tau} = 0$
-\end{frame}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Automatic EFT approach}
@@ -324,13 +316,13 @@
 
 \begin{frame}{Comparison full model vs.\ EFT approach}
   \begin{center}
-    Q1: Why is FlexibleSUSY/MSSM so close to the EFT approaches and
+    Q: Why is FlexibleSUSY/MSSM so close to the EFT approaches and
     SPheno so far off?
   \end{center}
 \end{frame}
 
 \begin{frame}{Calculation of $y_t^{\text{MSSM}}$}
-  A1: Different treatment of 2-loop corrections to $y_t^{\text{MSSM}}$:
+  A: Different treatment of 2-loop corrections to $y_t^{\text{MSSM}}$:
   \\[1em]
   \emph{FlexibleSUSY:}
   \begin{align*}
@@ -471,10 +463,6 @@
 
 \subsection{Uncertainty estimation}
 
-\begin{frame}{Contents}
-  \tableofcontents[currentsection]  
-\end{frame}
-
 \begin{frame}{Uncertainty estimation in the full model approach}
   Parametrize difference between FlexibleSUSY and SPheno by adding
   \begin{align*}
@@ -486,10 +474,17 @@
 \begin{frame}{Uncertainty estimation in the full model approach}
   \begin{figure}
     \centering
-    % \includegraphics[width=\textwidth]{plots/scale_MSSM_uncertainty_MSSM}
     \includegraphics[width=\textwidth]{plots/scale_MSSM_yt_variants}
   \end{figure}
   $\tan\beta = 5$, $X_{t,b,\tau} = 0$
+\end{frame}
+
+\begin{frame}{Uncertainty estimation in the full model approach}
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{plots/xt_MSSM_MS-2000_uncertainty_MSSM}
+  \end{figure}
+  $\tan\beta = 5$, $M_S = 2\eh{TeV}$, $X_{b,\tau} = 0$
 \end{frame}
 
 \begin{frame}{Uncertainty estimation in the automatic EFT approach}
@@ -554,10 +549,26 @@
 \begin{frame}{Uncertainty estimation in the automatic EFT approach}
   \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{plots/scale_MSSM_Xt-2_uncertainty_all}
+    \includegraphics[width=\textwidth]{plots/scale_MSSM_Xt-0_scale_uncertainty_tower}
   \end{figure}
-  $\tan\beta = 5$, $X_t = 2 M_S$, $X_{b,\tau} = 0$
+  $\tan\beta = 5$, $X_{t,b,\tau} = 0$
 \end{frame}
+
+\begin{frame}{Uncertainty estimation in the automatic EFT approach}
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{plots/scale_MSSM_Xt-2_scale_uncertainty_tower}
+  \end{figure}
+  $\tan\beta = 5$, $M_S = 2\eh{TeV}$, $X_{b,\tau} = 0$
+\end{frame}
+
+% \begin{frame}{Uncertainty estimation in the automatic EFT approach}
+%   \begin{figure}
+%     \centering
+%     \includegraphics[width=\textwidth]{plots/scale_MSSM_Xt-2_uncertainty_all}
+%   \end{figure}
+%   $\tan\beta = 5$, $X_t = 2 M_S$, $X_{b,\tau} = 0$
+% \end{frame}
 
 \begin{frame}{Uncertainty estimation in the automatic EFT approach}
   \begin{figure}
@@ -570,9 +581,33 @@
 \begin{frame}{Uncertainty estimation in the automatic EFT approach}
   \begin{figure}
     \centering
+    \includegraphics[width=\textwidth]{plots/xt_MSSM_MS-2000_tower_scale_uncertainty}
+  \end{figure}
+  $\tan\beta = 5$, $M_S = 2\eh{TeV}$, $X_{b,\tau} = 0$
+\end{frame}
+
+\begin{frame}{Uncertainty estimation in the automatic EFT approach}
+  \begin{figure}
+    \centering
     \includegraphics[width=\textwidth]{plots/xt_MSSM_MS-2000_uncertainty}
   \end{figure}
   $\tan\beta = 5$, $M_S = 2\eh{TeV}$, $X_{b,\tau} = 0$
+  \\TODO: Combine uncertainties for full model and tower in this plot
+\end{frame}
+
+\begin{frame}{Conclusion of uncertainty estimations}
+  TODO: Check these numbers!\\
+  \emph{Full model approach:}
+  \begin{itemize}
+  \item $M_S = 1\eh{TeV}$: uncertainty around $\pm 5\eh{GeV}$
+  \item $M_S = 2\eh{TeV}$: uncertainty around $\pm 5\eh{GeV}$
+  \item $M_S = 10\eh{TeV}$: uncertainty around $\pm X\eh{GeV}$
+  \end{itemize}
+  \emph{Automatic EFT approach (1L):}
+  \begin{itemize}
+  \item $X_t = 0$, $M_S = 2\eh{TeV}$: uncertainty around $\pm 1\eh{GeV}$
+  \item $X_t = \sqrt{6}$, $M_S = 2\eh{TeV}$: uncertainty around $\pm 6\eh{GeV}$
+  \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
