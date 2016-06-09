@@ -504,13 +504,41 @@
   \begin{align*}
     C_1&\in[-314, 231] \\ C_2&\in[-6, 489]
   \end{align*}
+  Problem: This is most likely an over-estimate of the EFT uncertainty
+  for small $X_t$, because for small $X_t$ the 2L corrections to
+  $\lambda$ are small.
 \end{frame}
 
 \begin{frame}{Uncertainty estimation in the automatic EFT approach}
   \begin{figure}
     \centering
-    % \includegraphics[width=\textwidth]{plots/scale_MSSM_uncertainty_all}
-    \includegraphics[width=\textwidth]{plots/scale_MSSM_uncertainty_tower}
+    \includegraphics[width=\textwidth]{plots/scale_MSSM_uncertainty_tower_C1C2}
+  \end{figure}
+  $\tan\beta = 5$, $X_{t,b,\tau} = 0$
+\end{frame}
+
+\begin{frame}{Uncertainty estimation in the automatic EFT approach}
+  Probably better: Change calculation of $\lambda$ by higher-order
+  terms: For example, use $y_t^{\text{MSSM},(0)}$
+  vs. $y_t^{\text{MSSM},(1)}$ in
+  \begin{align*}
+    \lambda(M_S) = \frac{1}{v^2} \left[
+      (m_h^\text{MSSM})^2 - \Sigma^{\MSSM}_h + \frac{t_h^\text{MSSM}}{v}
+      + \Sigma^{\SM}_h - \frac{t_h^\SM}{v}
+    \right]
+  \end{align*}
+  where
+  \begin{align*}
+    y_t^{\text{MSSM},(0)} &= \frac{y_t^{\SM}}{s_\beta} \\
+    y_t^{\text{MSSM},(1)} &= \frac{y_t^{\SM}}{s_\beta} + \frac{\sqrt{2}}{s_\beta v}
+    \left[ \Sigma_t^{\text{MSSM}} - \Sigma_t^{\SM} \right]
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Uncertainty estimation in the automatic EFT approach}
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{plots/scale_MSSM_uncertainty_tower_yt}
   \end{figure}
   $\tan\beta = 5$, $X_{t,b,\tau} = 0$
 \end{frame}
@@ -529,14 +557,6 @@
     \includegraphics[width=\textwidth]{plots/scale_MSSM_Xt-2_uncertainty_all}
   \end{figure}
   $\tan\beta = 5$, $X_t = 2 M_S$, $X_{b,\tau} = 0$
-\end{frame}
-
-\begin{frame}{Uncertainty estimation in the automatic EFT approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/xt_MSSM_MS-2000}
-  \end{figure}
-  $\tan\beta = 5$, $M_S = 2\eh{TeV}$, $X_{b,\tau} = 0$
 \end{frame}
 
 \begin{frame}{Uncertainty estimation in the automatic EFT approach}
