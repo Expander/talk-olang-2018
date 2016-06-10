@@ -596,18 +596,31 @@
 \end{frame}
 
 \begin{frame}{Conclusion of uncertainty estimations}
-  TODO: Check these numbers!\\
-  \emph{Full model approach:}
-  \begin{itemize}
-  \item $M_S = 1\eh{TeV}$: uncertainty around $\pm 5\eh{GeV}$
-  \item $M_S = 2\eh{TeV}$: uncertainty around $\pm 5\eh{GeV}$
-  \item $M_S = 10\eh{TeV}$: uncertainty around $\pm X\eh{GeV}$
-  \end{itemize}
-  \emph{Automatic EFT approach (1L):}
-  \begin{itemize}
-  \item $X_t = 0$, $M_S = 2\eh{TeV}$: uncertainty around $\pm 1\eh{GeV}$
-  \item $X_t = \sqrt{6}$, $M_S = 2\eh{TeV}$: uncertainty around $\pm 6\eh{GeV}$
-  \end{itemize}
+  \emph{Full model approach (2L):}\\
+  ($C_3$ and $Q$ uncertainties added linearly)
+  \begin{table}
+    \centering
+    \begin{tabular}{rrr|rr}
+      $M_S / \eh{TeV}$ & $X_t / M_S$ & $\Delta M_h / \eh{GeV}$ & $X_t / M_S$ & $\Delta M_h / \eh{GeV}$ \\
+      \midrule
+      $1$  & $0$ & $\pm 1.3$ & $2$ & $\pm 2.0$\\
+      $2$  & $0$ & $\pm 2.1$ & $2$ & $\pm 3.0$\\
+      $10$ & $0$ & $\pm 4.5$ & $2$ & $\pm 5.5$\\
+    \end{tabular}
+  \end{table}
+  %
+  \emph{Automatic EFT approach (1L):}\\
+  ($y_t^{(i)}$ and $Q$ uncertainties added linearly)
+  \begin{table}
+    \centering
+    \begin{tabular}{rrr|rr}
+      $M_S / \eh{TeV}$ & $X_t / M_S$ & $\Delta M_h / \eh{GeV}$ & $X_t / M_S$ & $\Delta M_h / \eh{GeV}$ \\
+      \midrule
+      $1$  & $0$ & $\pm 1.0$ & $2$ & $\pm 3.1$\\
+      $2$  & $0$ & $\pm 1.0$ & $2$ & $\pm 3.1$\\
+      $10$ & $0$ & $\pm 1.1$ & $2$ & $\pm 2.8$\\
+    \end{tabular}
+  \end{table}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
