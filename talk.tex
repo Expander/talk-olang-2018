@@ -121,8 +121,8 @@
 \usecolortheme{tud}
 
 \title{Update: Higgs mass prediction in BSM models with FlexibleSUSY
-  using an automatized EFT approach and and Higgs mass prediction in
-  the THDH from high-scale SUSY}
+  using an EFT calculation with $M_h$ matching \\---\\ Higgs mass
+  prediction in the THDH from high-scale SUSY}
 
 \author[Alexander Voigt]{Peter Athron, Emanuele Bagnaschi, Georg
   Weiglein, Jae-hyeon Park, Tom Steudtner, Dominik Stöckinger,
@@ -212,8 +212,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{EFT approach}
-
 \begin{frame}{EFT approach}
   \begin{center}
     \includegraphics[width=0.45\textwidth]{images/mssm-sm-tower-eft}\\[1em]
@@ -222,9 +220,13 @@
   \centering $g_i$, $y^f_{ij}$, $v$, $\mu^2$, $\lambda$
 \end{frame}
 
-\begin{frame}{EFT approach: matching all $\Gamma_{\phi_1,\ldots,\phi_n}(p^2 = 0, Q = M_S)$}
-  Determine $\lambda(M_S)$ from mathching all $\Gamma_{\phi_1,\ldots,\phi_n}(Q = M_S)$:
-  $\Rightarrow$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{EFT approach with $\Gamma$ matching}
+
+\begin{frame}{EFT approach with $\Gamma$ matching}
+  Determine $\lambda(M_S)$ from mathching all
+  $\Gamma_{\phi_1,\ldots,\phi_n}^{(k)}(p^2 = 0, Q = M_S)$: $\Rightarrow$
   \begin{align*}
     \lambda (M_S) &= \frac{1}{4}\left[g_Y^{2} + g_2^2\right] \cos^22\beta
     + \Delta \lambda
@@ -240,21 +242,9 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Automatic EFT approach}
+\subsection{EFT approach with $M_h$ matching}
 
-\begin{frame}{Automatic EFT approach}
-  \begin{center}
-    \includegraphics[width=0.45\textwidth]{images/mssm-sm-tower-eft}\\[1em]
-  \end{center}
-  \emph{Idea:} Calculate $M_h$ in the SM at the scale $Q = M_t$ as a function of the \MSbar\ parameters:\\[1em]
-  \begin{center}
-    $g_i$, $y^f_{ij}$, $v$, $\mu^2$, $\lambda$
-  \end{center}
-  \emph{where $\lambda(M_S)$ is determined numerically by the 1L
-    matching condition} $M_h^{\SM} \overset{!}{=} M_h^\text{MSSM}$
-\end{frame}
-
-\begin{frame}{Automatic EFT approach: matching $M_h$}
+\begin{frame}{EFT approach with $M_h$ matching}
   \begin{align*}
     M_h^{\SM} &\overset{!}{=} M_h^\text{MSSM} \quad \text{at} \quad Q = M_S, 1L
   \end{align*}
@@ -272,7 +262,7 @@
   \end{align*}
 \end{frame}
 
-\begin{frame}{Automatic EFT approach: matching $M_h$}
+\begin{frame}{EFT approach with $M_h$ matching}
   Next step: RG running to $Q = M_t$\\
   $\Rightarrow$
   \begin{align*}
@@ -282,12 +272,12 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Summary of automatic EFT approach}
+\begin{frame}{EFT approach with $M_h$ matching}
   \emph{Advantages:}
   \begin{itemize}
   \item easily automatizable
   \item resums large logarithms $\log(M_t/M_S)$ due to RG running
-  \item includes all 1L terms $O(p^n/M_S^n, v^n/M_S^n)$ from SUSY particles
+  \item includes all 1L terms $O(p^n/M_S^n, v^n/M_S^n)$
   \end{itemize}
   \emph{Disadvantage:}
   \begin{itemize}
@@ -468,7 +458,7 @@
   \begin{align*}
     \Delta m_t = \frac{C_3 g_3^4 M_t}{(4\pi)^4} \log^2\frac{M_S}{M_Z}
   \end{align*}
-  In the MSSM \bigcite{hep-ph/0210258}: $C_3 = -184/9 \approx 20$
+  In the MSSM: $C_3 = -184/9 \approx 20$ \bigcite{hep-ph/0210258}
 \end{frame}
 
 \begin{frame}{Uncertainty estimation in the full model approach}
@@ -487,7 +477,7 @@
   $\tan\beta = 5$, $M_S = 2\eh{TeV}$, $X_{b,\tau} = 0$
 \end{frame}
 
-\begin{frame}{Uncertainty estimation in the automatic EFT approach}
+\begin{frame}{Uncertainty estimation in the EFT-$M_h$ approach}
   Parametrize missing 2L threshold corrections by adding
   \begin{align*}
     \Delta\lambda^{(2)}_{(\alpha_t^2 \alpha_s)}
@@ -505,7 +495,7 @@
   $\lambda$ are small.
 \end{frame}
 
-\begin{frame}{Uncertainty estimation in the automatic EFT approach}
+\begin{frame}{Uncertainty estimation in the EFT-$M_h$ approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/scale_MSSM_uncertainty_tower_C1C2}
@@ -513,7 +503,7 @@
   $\tan\beta = 5$, $X_{t,b,\tau} = 0$
 \end{frame}
 
-\begin{frame}{Uncertainty estimation in the automatic EFT approach}
+\begin{frame}{Uncertainty estimation in the EFT-$M_h$ approach}
   Probably better: Change calculation of $\lambda$ by higher-order
   terms: For example, use $y_t^{\text{MSSM},(0)}$
   vs. $y_t^{\text{MSSM},(1)}$ in
@@ -531,7 +521,7 @@
   \end{align*}
 \end{frame}
 
-\begin{frame}{Uncertainty estimation in the automatic EFT approach}
+\begin{frame}{Uncertainty estimation in the EFT-$M_h$ approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/scale_MSSM_uncertainty_tower_yt}
@@ -563,7 +553,7 @@
 %   $\tan\beta = 5$, $X_t = 2 M_S$, $X_{b,\tau} = 0$
 % \end{frame}
 
-\begin{frame}{Uncertainty estimation in the automatic EFT approach}
+\begin{frame}{Uncertainty estimation in the EFT-$M_h$ approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/xt_MSSM_MS-2000_tower}
@@ -571,7 +561,7 @@
   $\tan\beta = 5$, $M_S = 2\eh{TeV}$, $X_{b,\tau} = 0$
 \end{frame}
 
-\begin{frame}{Uncertainty estimation in the automatic EFT approach}
+\begin{frame}{Uncertainty estimation in the EFT-$M_h$ approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/scale_MSSM_Xt-0_scale_uncertainty_tower}
@@ -579,7 +569,7 @@
   $\tan\beta = 5$, $X_{t,b,\tau} = 0$
 \end{frame}
 
-\begin{frame}{Uncertainty estimation in the automatic EFT approach}
+\begin{frame}{Uncertainty estimation in the EFT-$M_h$ approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/xt_MSSM_MS-2000_tower_scale_uncertainty}
@@ -587,7 +577,7 @@
   $\tan\beta = 5$, $M_S = 2\eh{TeV}$, $X_{b,\tau} = 0$
 \end{frame}
 
-\begin{frame}{Comparison of full model and automatic EFT approach}
+\begin{frame}{Comparison of full model and EFT-$M_h$ approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/xt_MSSM_MS-2000_uncertainty_tower_and_full}
@@ -595,7 +585,7 @@
   $\tan\beta = 5$, $M_S = 2\eh{TeV}$, $X_{b,\tau} = 0$
 \end{frame}
 
-\begin{frame}{Comparison of full model and automatic EFT approach}
+\begin{frame}{Comparison of full model and EFT-$M_h$ approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/xt_MSSM_MS-2000_uncertainty}
@@ -617,7 +607,7 @@
     \end{tabular}
   \end{table}
   %
-  \emph{Automatic EFT approach (1L):}\\
+  \emph{EFT-$M_h$ approach (1L):}\\
   ($y_t^{(i)}$ and $Q$ uncertainties added linearly)
   \begin{table}
     \centering
@@ -709,14 +699,14 @@
 \section{Summary}
 
 \begin{frame}{Summary}
-  \emph{Automatic EFT approach}
+  \emph{EFT-$M_h$ approach}
   \begin{itemize}
   \item full model approach suffers from large logs
     $\propto\log(M_Z/M_S)$ if $M_S \gg M_Z$
-  \item EFT approach resums large logs, but difficult to automatize
-    (also misses 1L terms $O(p^2/M_S^2)$ if performed at 1L-level
-    only)
-  \item ``automatic EFT'' approach
+  \item EFT-$\lambda$ approach resums large logs, but difficult to
+    automatize (also misses 1L terms $O(p^2/M_S^2)$ if performed at
+    1L-level only)
+  \item EFT-$M_h$ approach
     \begin{itemize}
     \item can be automatized easily $\rightarrow$ incorporation into
       FlexibleSUSY
@@ -749,11 +739,11 @@
 
 \begin{frame}[noframenumbering]
   \begin{center}
-    \Large Equivalence of EFT and automatic EFT approach
+    \Large Equivalence of EFT-$\lambda$ and EFT-$M_h$ approach
   \end{center}
 \end{frame}
 
-\begin{frame}[noframenumbering]{Equivalence EFT and automatic EFT approach $O(\hbar y_t^4)$}
+\begin{frame}[noframenumbering]{Equivalence EFT-$\lambda$ and EFT-$M_h$ approach $O(\hbar y_t^4)$}
   \begin{align*}
     M_h^{\SM} &\overset{!}{=} M_h^\text{MSSM} \quad \text{at} \quad Q = M_S, 1L
   \end{align*}
@@ -774,7 +764,7 @@
   \end{align*}
 \end{frame}
 
-\begin{frame}[noframenumbering]{Equivalence EFT and automatic EFT approach $O(\hbar y_t^4)$}
+\begin{frame}[noframenumbering]{Equivalence EFT-$\lambda$ and EFT-$M_h$ approach $O(\hbar y_t^4)$}
   in SM limit $\frac{c^2_\alpha}{s^2_\beta} \rightarrow 1$\\
   $\Rightarrow$ 
   \begin{align*}
@@ -970,7 +960,7 @@
   \end{center}
 \end{frame}
 
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
+\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected-high}
@@ -978,7 +968,7 @@
   $\tan\beta = 5$, $X_{t,b,\tau} = 0$
 \end{frame}
 
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
+\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected-high-TB5-Xtsqrt6}
@@ -986,7 +976,7 @@
   $\tan\beta = 5$, $X_{t} = \sqrt{6}$, $X_{b,\tau} = 0$
 \end{frame}
 
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
+\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected-high-TB5-Xtsqrt6_Matching0L}
@@ -1002,7 +992,7 @@
   \end{center}
 \end{frame}
 
-% \begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
+% \begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
 %   \begin{figure}
 %     \centering
 %     \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected-TB20}
@@ -1010,7 +1000,7 @@
 %   $\tan\beta = 20$, $X_{t,b,\tau} = 0$
 % \end{frame}
 
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
+\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected-high-TB20}
@@ -1018,7 +1008,7 @@
   $\tan\beta = 20$, $X_{t,b,\tau} = 0$
 \end{frame}
 
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
+\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected-high-TB20-Xtsqrt6}
@@ -1026,7 +1016,7 @@
   $\tan\beta = 20$, $X_{t} = \sqrt{6}$, $X_{b,\tau} = 0$
 \end{frame}
 
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
+\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected-high-TB20-Xtsqrt6_Matching0L}
@@ -1043,7 +1033,7 @@
   \end{center}
 \end{frame}
 
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
+\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/Xt_TB5_MS1000}
@@ -1051,7 +1041,7 @@
   $\tan\beta = 5$, $X_{b,\tau} = 0$, $M_S = 1\eh{TeV}$
 \end{frame}
 
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
+\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/Xt_TB5_MS10000}
@@ -1059,7 +1049,7 @@
   $\tan\beta = 5$, $X_{b,\tau} = 0$, $M_S = 10\eh{TeV}$
 \end{frame}
 
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
+\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/Xt_TB20_MS2000}
@@ -1076,7 +1066,7 @@
   \end{center}
 \end{frame}
 
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
+\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/Xt_TB5_MS100_Matching0L}
@@ -1084,7 +1074,7 @@
   $\tan\beta = 5$, $X_{b,\tau} = 0$, $M_S = 100\eh{GeV}$ ($0L$ matching SM $\rightarrow$ MSSM)
 \end{frame}
 
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
+\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/Xt_TB5_MS200_Matching0L}
@@ -1092,7 +1082,7 @@
   $\tan\beta = 5$, $X_{b,\tau} = 0$, $M_S = 200\eh{GeV}$ ($0L$ matching SM $\rightarrow$ MSSM)
 \end{frame}
 
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
+\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/Xt_TB5_MS300_Matching0L}
@@ -1100,7 +1090,7 @@
   $\tan\beta = 5$, $X_{b,\tau} = 0$, $M_S = 300\eh{GeV}$ ($0L$ matching SM $\rightarrow$ MSSM)
 \end{frame}
 
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
+\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/Xt_TB5_MS400_Matching0L}
@@ -1108,7 +1098,7 @@
   $\tan\beta = 5$, $X_{b,\tau} = 0$, $M_S = 400\eh{GeV}$ ($0L$ matching SM $\rightarrow$ MSSM)
 \end{frame}
 
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
+\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/Xt_TB5_MS500_Matching0L}
@@ -1116,7 +1106,7 @@
   $\tan\beta = 5$, $X_{b,\tau} = 0$, $M_S = 500\eh{GeV}$ ($0L$ matching SM $\rightarrow$ MSSM)
 \end{frame}
 
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
+\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/Xt_TB5_MS1000_Matching0L}
@@ -1124,7 +1114,7 @@
   $\tan\beta = 5$, $X_{b,\tau} = 0$, $M_S = 1\eh{TeV}$ ($0L$ matching SM $\rightarrow$ MSSM)
 \end{frame}
 
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
+\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/Xt_TB5_MS10000_Matching0L}
@@ -1138,7 +1128,7 @@
   \end{center}
 \end{frame}
 
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT vs.\ automatic EFT approach}
+\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
   \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low}
