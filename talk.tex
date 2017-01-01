@@ -315,172 +315,44 @@
 
 \subsection{Uncertainty estimation}
 
-\begin{frame}{Uncertainty estimation in the full model approach}
-  Parametrize difference between FlexibleSUSY and SPheno by adding
-  \begin{align*}
-    \Delta m_t = \frac{C_3 g_3^4 M_t}{(4\pi)^4} \log^2\frac{M_S}{M_Z}
-  \end{align*}
-  In the MSSM: $C_3 = -184/9 \approx 20$ \bigcite{hep-ph/0210258}
+\begin{frame}{Uncertainty estimation of FlexibleEFTHiggs 2L}
+  \begin{itemize}
+  \item use $y_t^{\text{MSSM},(1)}$ vs.\ $y_t^{\text{MSSM},(2)}$
+  \item vary $Q_\text{match}$ within $[M_S/2, 2 M_S]$
+  \item vary $Q_\text{pole}$ within $[M_t/2, 2 M_t]$
+  \end{itemize}
 \end{frame}
 
-\begin{frame}{Uncertainty estimation in the full model approach}
+\begin{frame}{Uncertainty estimation of FlexibleEFTHiggs 1L}
   \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{plots/scale_MSSM_yt_variants}
+    \includegraphics[width=\textwidth]{plots/FlexibleEFTHiggs/DMh_tower-1L_MS_TB-5_Xt-0}
   \end{figure}
   $\tan\beta = 5$, $X_{t,b,\tau} = 0$
 \end{frame}
 
-\begin{frame}{Uncertainty estimation in the full model approach}
+\begin{frame}{Uncertainty estimation of FlexibleEFTHiggs 2L}
   \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{plots/xt_MSSM_MS-2000_uncertainty_MSSM}
-  \end{figure}
-  $\tan\beta = 5$, $M_S = 2\eh{TeV}$, $X_{b,\tau} = 0$
-\end{frame}
-
-\begin{frame}{Uncertainty estimation in the EFT-$M_h$ approach}
-  Parametrize missing 2L threshold corrections by adding
-  \begin{align*}
-    \Delta\lambda^{(2)}_{(\alpha_t^2 \alpha_s)}
-    &= \frac{g_3^2 (y_t^\SM)^4}{(4\pi)^4} \times C_1 \\
-    \Delta\lambda^{(2)}_{(\alpha_t^4)}
-    &= \frac{(y_t^\SM)^6}{(4\pi)^4} \times C_2
-  \end{align*}
-  In the MSSM for $X_t\in [-3M_S,+3M_S]$, $\tan\beta \in [1,\infty]$
-  \bigcite{1407.4081,1504.05200}:
-  \begin{align*}
-    C_1&\in[-314, 231] \\ C_2&\in[-6, 489]
-  \end{align*}
-  Problem: This is most likely an over-estimate of the EFT uncertainty
-  for small $X_t$, because for small $X_t$ the 2L corrections to
-  $\lambda$ are small.
-\end{frame}
-
-\begin{frame}{Uncertainty estimation in the EFT-$M_h$ approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/scale_MSSM_uncertainty_tower_C1C2}
+    \includegraphics[width=\textwidth]{plots/FlexibleEFTHiggs/DMh_tower-2L_MS_TB-5_Xt-0}
   \end{figure}
   $\tan\beta = 5$, $X_{t,b,\tau} = 0$
 \end{frame}
 
-\begin{frame}{Uncertainty estimation in the EFT-$M_h$ approach}
-  Probably better: Change calculation of $\lambda$ by higher-order
-  terms: For example, use $y_t^{\text{MSSM},(0)}$
-  vs. $y_t^{\text{MSSM},(1)}$ in
-  \begin{align*}
-    \lambda(M_S) = \frac{1}{v^2} \left[
-      (m_h^\text{MSSM})^2 - \Sigma^{\MSSM}_h + \frac{t_h^\text{MSSM}}{v}
-      + \Sigma^{\SM}_h - \frac{t_h^\SM}{v}
-    \right]
-  \end{align*}
-  where
-  \begin{align*}
-    y_t^{\text{MSSM},(0)} &= \frac{y_t^{\SM}}{s_\beta} \\
-    y_t^{\text{MSSM},(1)} &= \frac{y_t^{\SM}}{s_\beta} + \frac{\sqrt{2}}{s_\beta v}
-    \left[ \Sigma_t^{\text{MSSM}} - \Sigma_t^{\SM} \right]
-  \end{align*}
-\end{frame}
-
-\begin{frame}{Uncertainty estimation in the EFT-$M_h$ approach}
+\begin{frame}{Uncertainty estimation of FlexibleEFTHiggs 1L}
   \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{plots/scale_MSSM_uncertainty_tower_yt}
-  \end{figure}
-  $\tan\beta = 5$, $X_{t,b,\tau} = 0$
-\end{frame}
-
-% \begin{frame}{Uncertainty estimation in the automatic EFT approach}
-%   \begin{figure}
-%     \centering
-%     \includegraphics[width=\textwidth]{plots/scale_MSSM_Xt-2_uncertainty_tower}
-%   \end{figure}
-%   $\tan\beta = 5$, $X_t = 2 M_S$, $X_{b,\tau} = 0$
-% \end{frame}
-
-% \begin{frame}{Uncertainty estimation in the automatic EFT approach}
-%   \begin{figure}
-%     \centering
-%     \includegraphics[width=\textwidth]{plots/scale_MSSM_Xt-2_scale_uncertainty_tower}
-%   \end{figure}
-%   $\tan\beta = 5$, $M_S = 2\eh{TeV}$, $X_{b,\tau} = 0$
-% \end{frame}
-
-% \begin{frame}{Uncertainty estimation in the automatic EFT approach}
-%   \begin{figure}
-%     \centering
-%     \includegraphics[width=\textwidth]{plots/scale_MSSM_Xt-2_uncertainty_all}
-%   \end{figure}
-%   $\tan\beta = 5$, $X_t = 2 M_S$, $X_{b,\tau} = 0$
-% \end{frame}
-
-\begin{frame}{Uncertainty estimation in the EFT-$M_h$ approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/xt_MSSM_MS-2000_tower}
+    \includegraphics[width=\textwidth]{plots/FlexibleEFTHiggs/DMh_tower-1L_Xt_TB-5_MS-2000}
   \end{figure}
   $\tan\beta = 5$, $M_S = 2\eh{TeV}$, $X_{b,\tau} = 0$
 \end{frame}
 
-\begin{frame}{Uncertainty estimation in the EFT-$M_h$ approach}
+\begin{frame}{Uncertainty estimation of FlexibleEFTHiggs 2L}
   \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{plots/scale_MSSM_Xt-0_scale_uncertainty_tower}
+    \includegraphics[width=\textwidth]{plots/FlexibleEFTHiggs/DMh_tower-2L_Xt_TB-5_MS-2000}
   \end{figure}
-  $\tan\beta = 5$, $X_{t,b,\tau} = 0$
-\end{frame}
-
-\begin{frame}{Uncertainty estimation in the EFT-$M_h$ approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/xt_MSSM_MS-2000_tower_scale_uncertainty}
-  \end{figure}
-  $\tan\beta = 5$, $M_S = 2\eh{TeV}$, $X_{b,\tau} = 0$
-\end{frame}
-
-\begin{frame}{Comparison of full model and EFT-$M_h$ approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/xt_MSSM_MS-2000_uncertainty_tower_and_full}
-  \end{figure}
-  $\tan\beta = 5$, $M_S = 2\eh{TeV}$, $X_{b,\tau} = 0$
-\end{frame}
-
-\begin{frame}{Comparison of full model and EFT-$M_h$ approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/xt_MSSM_MS-2000_uncertainty}
-  \end{figure}
-  $\tan\beta = 5$, $M_S = 2\eh{TeV}$, $X_{b,\tau} = 0$
-\end{frame}
-
-\begin{frame}{Conclusion of uncertainty estimations}
-  \emph{Full model approach (2L):}\\
-  ($C_3$ and $Q$ uncertainties added linearly)
-  \begin{table}
-    \centering
-    \begin{tabular}{rrr|rr}
-      $M_S / \text{TeV}$ & $X_t / M_S$ & $\Delta M_h / \text{GeV}$ & $X_t / M_S$ & $\Delta M_h / \text{GeV}$ \\
-      \midrule
-      $1$  & $0$ & $\pm 1.3$ & $2$ & $\pm 2.0$\\
-      $2$  & $0$ & $\pm 2.1$ & $2$ & $\pm 3.0$\\
-      $10$ & $0$ & $\pm 4.5$ & $2$ & $\pm 5.5$\\
-    \end{tabular}
-  \end{table}
-  %
-  \emph{EFT-$M_h$ approach (1L):}\\
-  ($y_t^{(i)}$ and $Q$ uncertainties added linearly)
-  \begin{table}
-    \centering
-    \begin{tabular}{rrr|rr}
-      $M_S / \text{TeV}$ & $X_t / M_S$ & $\Delta M_h / \text{GeV}$ & $X_t / M_S$ & $\Delta M_h / \text{GeV}$ \\
-      \midrule
-      $1$  & $0$ & $\pm 1.0$ & $2$ & $\pm 3.1$\\
-      $2$  & $0$ & $\pm 1.0$ & $2$ & $\pm 3.1$\\
-      $10$ & $0$ & $\pm 1.1$ & $2$ & $\pm 2.8$\\
-    \end{tabular}
-  \end{table}
+  $\tan\beta = 5$, $M_S = 2\eh{TeV}$, $X_{t,b,\tau} = 0$
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -522,15 +394,6 @@
   \begin{center}
     \Huge Backup
   \end{center}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[noframenumbering]{MRSSM}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{{plots/scale_MRSSM_yt_variants}}
-  \end{figure}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -881,249 +744,6 @@
       \ythigh^2+\frac{81 \ythigh^4}{2}\right)
     +\ldots\Big].
   \end{align*}
-\end{frame}
-
-\begin{frame}[noframenumbering]
-  \begin{center}
-    {\Large $X_t$ dependence}\\[1em]
-    (default algorithm: $1L$ matching SM $\rightarrow$ MSSM)
-  \end{center}
-\end{frame}
-
-\begin{frame}[noframenumbering]
-  \begin{center}
-    $\tan\beta = 5$
-  \end{center}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected-high}
-  \end{figure}
-  $\tan\beta = 5$, $X_{t,b,\tau} = 0$
-\end{frame}
-
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected-high-TB5-Xtsqrt6}
-  \end{figure}
-  $\tan\beta = 5$, $X_{t} = \sqrt{6}$, $X_{b,\tau} = 0$
-\end{frame}
-
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected-high-TB5-Xtsqrt6_Matching0L}
-  \end{figure}
-  $\tan\beta = 5$, $X_{t} = \sqrt{6}$, $X_{b,\tau} = 0$ ($0L$ matching SM $\rightarrow$ MSSM)
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[noframenumbering]
-  \begin{center}
-    $\tan\beta = 20$
-  \end{center}
-\end{frame}
-
-% \begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
-%   \begin{figure}
-%     \centering
-%     \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected-TB20}
-%   \end{figure}
-%   $\tan\beta = 20$, $X_{t,b,\tau} = 0$
-% \end{frame}
-
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected-high-TB20}
-  \end{figure}
-  $\tan\beta = 20$, $X_{t,b,\tau} = 0$
-\end{frame}
-
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected-high-TB20-Xtsqrt6}
-  \end{figure}
-  $\tan\beta = 20$, $X_{t} = \sqrt{6}$, $X_{b,\tau} = 0$
-\end{frame}
-
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low-selected-high-TB20-Xtsqrt6_Matching0L}
-  \end{figure}
-  $\tan\beta = 20$, $X_{t} = \sqrt{6}$, $X_{b,\tau} = 0$ ($0L$ matching SM $\rightarrow$ MSSM)
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[noframenumbering]
-  \begin{center}
-    {\Large $X_t$ dependence}\\[1em]
-    (default algorithm: $1L$ matching SM $\rightarrow$ MSSM)
-  \end{center}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/Xt_TB5_MS1000}
-  \end{figure}
-  $\tan\beta = 5$, $X_{b,\tau} = 0$, $M_S = 1\eh{TeV}$
-\end{frame}
-
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/Xt_TB5_MS10000}
-  \end{figure}
-  $\tan\beta = 5$, $X_{b,\tau} = 0$, $M_S = 10\eh{TeV}$
-\end{frame}
-
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/Xt_TB20_MS2000}
-  \end{figure}
-  $\tan\beta = 20$, $X_{b,\tau} = 0$, $M_S = 2\eh{TeV}$
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[noframenumbering]
-  \begin{center}
-    {\Large $X_t$ dependence}\\[1em]
-    ($0L$ matching SM $\rightarrow$ MSSM)
-  \end{center}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/Xt_TB5_MS100_Matching0L}
-  \end{figure}
-  $\tan\beta = 5$, $X_{b,\tau} = 0$, $M_S = 100\eh{GeV}$ ($0L$ matching SM $\rightarrow$ MSSM)
-\end{frame}
-
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/Xt_TB5_MS200_Matching0L}
-  \end{figure}
-  $\tan\beta = 5$, $X_{b,\tau} = 0$, $M_S = 200\eh{GeV}$ ($0L$ matching SM $\rightarrow$ MSSM)
-\end{frame}
-
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/Xt_TB5_MS300_Matching0L}
-  \end{figure}
-  $\tan\beta = 5$, $X_{b,\tau} = 0$, $M_S = 300\eh{GeV}$ ($0L$ matching SM $\rightarrow$ MSSM)
-\end{frame}
-
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/Xt_TB5_MS400_Matching0L}
-  \end{figure}
-  $\tan\beta = 5$, $X_{b,\tau} = 0$, $M_S = 400\eh{GeV}$ ($0L$ matching SM $\rightarrow$ MSSM)
-\end{frame}
-
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/Xt_TB5_MS500_Matching0L}
-  \end{figure}
-  $\tan\beta = 5$, $X_{b,\tau} = 0$, $M_S = 500\eh{GeV}$ ($0L$ matching SM $\rightarrow$ MSSM)
-\end{frame}
-
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/Xt_TB5_MS1000_Matching0L}
-  \end{figure}
-  $\tan\beta = 5$, $X_{b,\tau} = 0$, $M_S = 1\eh{TeV}$ ($0L$ matching SM $\rightarrow$ MSSM)
-\end{frame}
-
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/Xt_TB5_MS10000_Matching0L}
-  \end{figure}
-  $\tan\beta = 5$, $X_{b,\tau} = 0$, $M_S = 10\eh{TeV}$ ($0L$ matching SM $\rightarrow$ MSSM)
-\end{frame}
-
-\begin{frame}[noframenumbering]
-  \begin{center}
-    \Large Comparison with other spectrum generators
-  \end{center}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Comparison full vs.\ EFT-$\lambda$ vs.\ EFT-$M_h$ approach}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/PlotScale-in-FH_new_low}
-  \end{figure}
-  $\tan\beta = 5$, $X_{t,b,\tau} = 0$
-\end{frame}
-
-\begin{frame}[noframenumbering]{FlexibleSUSY's Weltanschauung}
-  \begin{itemize} \setlength\itemsep{2em}
-  \item Model is defined in terms of Lagrangian parameters:\\
-    $g_i$, $y_{ij}$, $v_i$, \ldots in the \MSbar/\DRbar\ scheme
-  \item Input parameters:\\
-    $\alpha_{\text{em},\text{SM}}^{(5),\MSbar}(M_Z)$,
-    $\alpha_{\text{s},\text{SM}}^{(5),\text{\MSbar}}(M_Z)$, $M_Z$,
-    $M_t$, $G_F$, \ldots
-  \item Output parameters:\\ $m_h$, $M_h$, \ldots
-  \end{itemize}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Physical problem statement for the SM}
-  \begin{figure}[tbh]
-    \centering
-    \begin{tikzpicture}[node distance = 3.5cm, auto]
-      \node [block, text width=8.6em] (lowscale) {\footnotesize EWSB: $\mu^2$\\ Matching to SM(5)\\ $g_i$, $y_f$, $v$};
-      \node [block, above=1.8cm of lowscale, text width=8.6em] (highscale) {\footnotesize BC for $\lambda$};
-      \path [arrow2] (highscale) -- node {RGEs} (lowscale);
-      % energy axis
-      \node [below left=0em and 1cm of lowscale] (energy_start) {};
-      \node [above=4.5cm of energy_start] (energy_stop) {};
-      \node [above=0em of energy_stop,align=center] (energy_label) {Energy \\ scale};
-      \path [arrow] (energy_start) -- (energy_stop);
-      \node [text width=2em,left=3.0em of highscale] (mx) {$M_S$};
-      \node [text width=2em,left=3.0em of lowscale] (mz) {$M_Z$};
-    \end{tikzpicture}
-  \end{figure}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Algorithm to calculate the model parameters consistent with all BCs}
-  \begin{figure}[tbh]
-    \centering
-    \small
-    \begin{tikzpicture}[node distance = 3.5cm, auto,scale=0.9, every node/.style={transform shape}]
-      \node [block] (guess) {Start};
-      \node [block, right of=guess] (lowscale) {Calculate\\ $g_i$, $y_f$, $v$, $\mu^2$};
-      \node [block, above=2cm of lowscale] (highscale) {Set $\lambda$};
-      \node [block, right of=lowscale] (spec) {\MSbar\ masses\\ $\Rightarrow$ pole masses};
-      \path [arrow] (guess) -- (lowscale);
-      \path [-latex, thick] (lowscale.west) edge[bend left=70] node {RGEs} (highscale.west);
-      \path [arrow] (highscale) -- node {RGEs} (lowscale);
-      \path [arrow] (lowscale) -- (spec);
-      % energy axis
-      \node [below left=1em and 1em of guess] (energy_start) {};
-      \node [above=4.5cm of energy_start] (energy_stop) {};
-      \node [above=0em of energy_stop,align=center] (energy_label) {Energy\\ scale};
-      \path [arrow] (energy_start) -- (energy_stop);
-      \node [text width=3.3em,left=10em of highscale] (mx) {$M_X$};
-      \node [text width=3.3em,left=10em of lowscale] (mz) {$M_Z$};
-    \end{tikzpicture}
-  \end{figure}
 \end{frame}
 
 \end{document}
