@@ -9,11 +9,12 @@ plot() {
     local label=$6
     local log=$7
     local scaling=$8
+    local xlabel=$9
 
     local setlabel=
     local logscale=
 
-    [ -n "$label" ] && setlabel="set label 100 \"${label}\" at first ${label}, graph -0.06 center"
+    [ -n "$label" ] && setlabel="set label 100 \"${label}\" at first ${label}, graph -0.055 center"
     [ -n "$log" ] && logscale="set logscale x"
     [ -z "$scaling" ] && scaling=1
 
@@ -26,7 +27,7 @@ Mt = 0.17334
 ${setlabel}
 ${logscale}
 set grid
-set xlabel 'M_{SUSY} / TeV'
+set xlabel '${xlabel}'
 
 ran(left,right,data) = (data < left || data > right ? 1/0 : data)
 
@@ -89,9 +90,9 @@ EOF
 }
 
 scenario="
- MS_TB-5_Xt-0,Mt:,80:140,Mt:,-4:10,0.2,log,1000
- MS_TB-5_Xt--2,0.3:,95:140,0.3:,-4:10,0.3,log,1000
- Xt_TB-5_MS-2000,-3.5:3.5,:,-3.5:3.5,-4:10
+ MS_TB-5_Xt-0,Mt:,80:140,Mt:,-4:10,0.2,log,1000,M_S/TeV
+ MS_TB-5_Xt--2,0.3:,95:140,0.3:,-4:10,0.3,log,1000,M_S/TeV
+ Xt_TB-5_MS-2000,-3.5:3.5,:,-3.5:3.5,-4:10,,,,X_t/M_S
 "
 
 for s in $scenario ; do
