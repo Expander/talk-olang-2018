@@ -243,25 +243,19 @@
 
 \begin{frame}{EFT approach with $M_h$ matching}
   \begin{align*}
-    M_h^{\SM} &\overset{!}{=} M_h^\text{MSSM} \quad \text{at} \quad Q = M_S, 1L
+    M_h^{\SM} &\overset{!}{=} M_h^\text{MSSM} \quad \text{at} \quad Q = M_S
   \end{align*}
   with
   \begin{align*}
-    (M_h^{\SM})^2 &= \lambda(M_S) v^2 - \Sigma^{\SM}_h(M_h^2) + \frac{t_h^\SM}{v} \\
-    (M_h^\text{MSSM})^2 &= (m_h^\text{MSSM})^2 - \Sigma^{\MSSM}_h(M_h^2) + \frac{t_h^\text{MSSM}}{v}
+    (M_h^{\SM})^2 &= \lambda v^2 - \Sigma^{\SM}_h(M_h^2) + \frac{t_h^\SM}{v}
   \end{align*}
   $\Rightarrow$
   \begin{align*}
-    \lambda(M_S) = \frac{1}{v^2} \left[
-      (m_h^\text{MSSM})^2 - \Sigma^{\MSSM}_h + \frac{t_h^\text{MSSM}}{v}
+    \lambda = \frac{1}{v^2} \left[(M_h^\text{MSSM})^2
       + \Sigma^{\SM}_h - \frac{t_h^\SM}{v}
     \right]
   \end{align*}
-\end{frame}
-
-\begin{frame}{EFT approach with $M_h$ matching}
-  Next step: RG running to $Q = M_t$\\
-  $\Rightarrow$
+  RG running to $Q = M_t$ $\Rightarrow$
   \begin{align*}
     M_h^2 &= \lambda(M_t) v^2 - \Sigma^{\SM}_h(M_h^2) + \frac{t_h^\SM}{v}
   \end{align*}
@@ -279,7 +273,6 @@
   \emph{Disadvantage:}
   \begin{itemize}
   \item large logs in matching cancel only in SM limit $\cos(\beta - \alpha) \rightarrow 0$
-  \item only 1L calculation so far
   \end{itemize}
 \end{frame}
 
@@ -298,144 +291,6 @@
     \includegraphics[width=\textwidth]{plots/scale_MSSM_tower}
   \end{figure}
   $\tan\beta = 5$, $X_{t,b,\tau} = 0$
-\end{frame}
-
-\begin{frame}{Comparison full model vs.\ EFT approach}
-  \begin{center}
-    Q: Why is FlexibleSUSY/MSSM so close to the EFT approaches and
-    SPheno so far off?
-  \end{center}
-\end{frame}
-
-\begin{frame}{Calculation of $y_t^{\text{MSSM}}(M_Z)$}
-  A: Different treatment of 2-loop corrections to $y_t^{\text{MSSM}}(M_Z)$:
-  \\[1em]
-  \emph{FlexibleSUSY:}
-  \begin{align*}
-    m_t &=
-    M_t+\re\left[
-      \widetilde{\Sigma}_t^{(1),S}(M_t)\right] +
-    \textcolor{red}{M_t} \re\left[
-      \widetilde{\Sigma}_t^{(1),L}(M_t) +
-      \widetilde{\Sigma}_t^{(1),R}(M_t)
-    \right] \nonumber \\
-    &\phantom{={}} + M_t
-    \left[\widetilde{\Sigma}_t^{(1),\text{qcd}}(m_t)
-      + \left(\widetilde{\Sigma}_t^{(1),\text{qcd}}(m_t)\right)^2
-      + \widetilde{\Sigma}_t^{(2),\text{qcd}}(m_t)\right]
-  \end{align*}
-  \emph{SPheno:}
-  \begin{align*}
-    m_t &=
-    M_t+\re\left[
-      \widetilde{\Sigma}_t^{(1),S}(m_t)\right]+
-    \textcolor{red}{m_t} \re\left[
-      \widetilde{\Sigma}_t^{(1),L}(m_t) +
-      \widetilde{\Sigma}_t^{(1),R}(m_t)
-    \right] \nonumber \\
-    &\phantom{={}} +
-    m_t
-    \left[\widetilde{\Sigma}_t^{(1),\text{qcd}}(m_t) +
-      \widetilde{\Sigma}_t^{(2),\text{qcd}}(m_t)
-    \right]
-  \end{align*}
-\end{frame}
-
-\newcommand{\FS}{FlexibleSUSY\xspace}
-\newcommand{\SARAH}{SARAH\xspace}
-\newcommand{\Softsusy}{SOFTSUSY\xspace}
-\newcommand{\SPheno}{SPheno\xspace}
-\newcommand{\SUSYHD}{SUSYHD\xspace}
-
-\newcommand{\bgsgs}{\beta_{\gshigh,\gshigh^2}}
-\newcommand{\bytgs}{\beta_{\ythigh,\gshigh^2}}
-\newcommand{\bytyt}{\beta_{\ythigh,\ythigh^2}}
-\newcommand{\bvyt}{\beta_{\vhigh,\ythigh^2}}
-\newcommand{\blambdaytyt}{\beta_{\lambdahigh,\ythigh^4}}
-\newcommand{\blambdayt}{\beta_{\lambdahigh,\ythigh^2\lambdahigh}}
-\newcommand{\blambdalambda}{\beta_{\lambdahigh,\lambdahigh^2}}
-\newcommand{\btildegsgs}{\tilde\beta_{\gshigh,\gshigh^2}}
-\newcommand{\btildeytgs}{\tilde\beta_{\ythigh,\gshigh^2}}
-\newcommand{\btildeytyt}{\tilde\beta_{\ythigh,\ythigh^2}}
-\newcommand{\btildevyt}{\tilde\beta_{\vhigh,\ythigh^2}}
-
-\newcommand{\gs}{\hat{g}_3}
-\newcommand{\gsMSSM}{\bar{g}_3}
-\newcommand{\ytlow}{\hat{y}_t}
-\newcommand{\ytMSSMlow}{\bar{y}_t}
-\newcommand{\vlow}{\hat{v}}
-\newcommand{\vMSSM}{\bar{v}}
-\newcommand{\gshigh}{{g}_3}
-\newcommand{\gsMSSMhigh}{\tilde{g}_3}
-\newcommand{\ythigh}{y_t}
-\newcommand{\ytMSSMhigh}{\tilde{y}_t}
-\newcommand{\vhigh}{v}
-\newcommand{\vMSSMhigh}{\tilde{v}}
-\newcommand{\lambdalow}{\hat{\lambda}}
-\newcommand{\lambdahigh}{{\lambda}}
-
-\newcommand{\kappaL}{\kappa}
-
-\begin{frame}{Calculation of $y_t^{\text{MSSM}}(M_Z)$}
-  $\Rightarrow$
-  \begin{align*}
-    \ytMSSMhigh^{\text{\FS}} &= 
-    \ythigh +
-    t^2\kappaL^2 \left(\frac{184}{9} \gshigh^4 \ythigh -24 \gshigh^2
-      \ythigh^3 
-      +\frac{9}{8} \ythigh^5 \right) 
-    +\ldots\\
-    \ytMSSMhigh^{\text{\SPheno}} &= 
-    \ythigh +
-    t^2 \kappaL^2 \left(\frac{248}{9} \gshigh^4 \ythigh-16 \gshigh^2
-      \ythigh^3
-      +\frac{27}{8} \ythigh^5\right) 
-    +\ldots
-  \end{align*}
-  with
-  \begin{align*}
-    y_t &\equiv y_t^\SM(M_S), & g_3 &\equiv g_3^\SM(M_S), \\
-    \tilde{y}_t &\equiv y_t^\text{MSSM}(M_S), & \tilde{g}_3 &\equiv g_3^\text{MSSM}(M_S), \\
-    t &\equiv \log\frac{M_S}{M_t}, & \kappaL &\equiv \frac{1}{(4 \pi)^2}
-  \end{align*}
-\end{frame}
-
-\begin{frame}{Calculation of $y_t^{\text{MSSM}}(M_Z)$}
-  \begin{align*}
-    (M_h^2)^{\text{EFT}}&=
-    m_h^2
-    + \vhigh^2 
-    \ythigh^4\Big[12 t \kappaL
-    +12 t^2 \kappaL^2 
-    \left(16 \gshigh^2 - 9\ythigh^2 \right)
-    \\&\quad{}
-    +
-    4 t^3\kappaL^3  \left(736 \gshigh^4-672 \gshigh^2 \ythigh^2+90
-      \ythigh^4\right) 
-    +\ldots\Big],
-    \\
-    (M_h^2)^{\text{\FS}}&=
-    m_h^2
-    + \vhigh^2 
-    \ythigh^4\Big[12 t \kappaL
-    +12 t^2 \kappaL^2 
-    \left(16 \gshigh^2 - 9\ythigh^2 \right)
-    \\&\quad{}
-    +4 t^3\kappaL^3 \left(\frac{736 \gshigh^4}{3}-288 \gshigh^2
-      \ythigh^2+\frac{27 \ythigh^4}{2}\right)
-    +\ldots\Big],
-    \\
-    (M_h^2)^{\text{\SPheno}}&=
-    m_h^2
-    + \vhigh^2 
-    \ythigh^4\Big[12 t \kappaL
-    +12 t^2 \kappaL^2 
-    \left(16 \gshigh^2 - 9\ythigh^2 \right)
-    \\&\quad{}
-    +4 t^3\kappaL^3 \left(\frac{992 \gshigh^4}{3}-192 \gshigh^2
-      \ythigh^2+\frac{81 \ythigh^4}{2}\right)
-    +\ldots\Big].
-  \end{align*}
 \end{frame}
 
 % \begin{frame}{Comparison full model vs.\ EFT approach}
@@ -879,6 +734,144 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Comparison full model vs.\ EFT approach}
+  \begin{center}
+    Q: Why is FlexibleSUSY/MSSM so close to the EFT approaches and
+    SPheno so far off?
+  \end{center}
+\end{frame}
+
+\begin{frame}{Calculation of $y_t^{\text{MSSM}}(M_Z)$}
+  A: Different treatment of 2-loop corrections to $y_t^{\text{MSSM}}(M_Z)$:
+  \\[1em]
+  \emph{FlexibleSUSY:}
+  \begin{align*}
+    m_t &=
+    M_t+\re\left[
+      \widetilde{\Sigma}_t^{(1),S}(M_t)\right] +
+    \textcolor{red}{M_t} \re\left[
+      \widetilde{\Sigma}_t^{(1),L}(M_t) +
+      \widetilde{\Sigma}_t^{(1),R}(M_t)
+    \right] \nonumber \\
+    &\phantom{={}} + M_t
+    \left[\widetilde{\Sigma}_t^{(1),\text{qcd}}(m_t)
+      + \left(\widetilde{\Sigma}_t^{(1),\text{qcd}}(m_t)\right)^2
+      + \widetilde{\Sigma}_t^{(2),\text{qcd}}(m_t)\right]
+  \end{align*}
+  \emph{SPheno:}
+  \begin{align*}
+    m_t &=
+    M_t+\re\left[
+      \widetilde{\Sigma}_t^{(1),S}(m_t)\right]+
+    \textcolor{red}{m_t} \re\left[
+      \widetilde{\Sigma}_t^{(1),L}(m_t) +
+      \widetilde{\Sigma}_t^{(1),R}(m_t)
+    \right] \nonumber \\
+    &\phantom{={}} +
+    m_t
+    \left[\widetilde{\Sigma}_t^{(1),\text{qcd}}(m_t) +
+      \widetilde{\Sigma}_t^{(2),\text{qcd}}(m_t)
+    \right]
+  \end{align*}
+\end{frame}
+
+\newcommand{\FS}{FlexibleSUSY\xspace}
+\newcommand{\SARAH}{SARAH\xspace}
+\newcommand{\Softsusy}{SOFTSUSY\xspace}
+\newcommand{\SPheno}{SPheno\xspace}
+\newcommand{\SUSYHD}{SUSYHD\xspace}
+
+\newcommand{\bgsgs}{\beta_{\gshigh,\gshigh^2}}
+\newcommand{\bytgs}{\beta_{\ythigh,\gshigh^2}}
+\newcommand{\bytyt}{\beta_{\ythigh,\ythigh^2}}
+\newcommand{\bvyt}{\beta_{\vhigh,\ythigh^2}}
+\newcommand{\blambdaytyt}{\beta_{\lambdahigh,\ythigh^4}}
+\newcommand{\blambdayt}{\beta_{\lambdahigh,\ythigh^2\lambdahigh}}
+\newcommand{\blambdalambda}{\beta_{\lambdahigh,\lambdahigh^2}}
+\newcommand{\btildegsgs}{\tilde\beta_{\gshigh,\gshigh^2}}
+\newcommand{\btildeytgs}{\tilde\beta_{\ythigh,\gshigh^2}}
+\newcommand{\btildeytyt}{\tilde\beta_{\ythigh,\ythigh^2}}
+\newcommand{\btildevyt}{\tilde\beta_{\vhigh,\ythigh^2}}
+
+\newcommand{\gs}{\hat{g}_3}
+\newcommand{\gsMSSM}{\bar{g}_3}
+\newcommand{\ytlow}{\hat{y}_t}
+\newcommand{\ytMSSMlow}{\bar{y}_t}
+\newcommand{\vlow}{\hat{v}}
+\newcommand{\vMSSM}{\bar{v}}
+\newcommand{\gshigh}{{g}_3}
+\newcommand{\gsMSSMhigh}{\tilde{g}_3}
+\newcommand{\ythigh}{y_t}
+\newcommand{\ytMSSMhigh}{\tilde{y}_t}
+\newcommand{\vhigh}{v}
+\newcommand{\vMSSMhigh}{\tilde{v}}
+\newcommand{\lambdalow}{\hat{\lambda}}
+\newcommand{\lambdahigh}{{\lambda}}
+
+\newcommand{\kappaL}{\kappa}
+
+\begin{frame}{Calculation of $y_t^{\text{MSSM}}(M_Z)$}
+  $\Rightarrow$
+  \begin{align*}
+    \ytMSSMhigh^{\text{\FS}} &= 
+    \ythigh +
+    t^2\kappaL^2 \left(\frac{184}{9} \gshigh^4 \ythigh -24 \gshigh^2
+      \ythigh^3 
+      +\frac{9}{8} \ythigh^5 \right) 
+    +\ldots\\
+    \ytMSSMhigh^{\text{\SPheno}} &= 
+    \ythigh +
+    t^2 \kappaL^2 \left(\frac{248}{9} \gshigh^4 \ythigh-16 \gshigh^2
+      \ythigh^3
+      +\frac{27}{8} \ythigh^5\right) 
+    +\ldots
+  \end{align*}
+  with
+  \begin{align*}
+    y_t &\equiv y_t^\SM(M_S), & g_3 &\equiv g_3^\SM(M_S), \\
+    \tilde{y}_t &\equiv y_t^\text{MSSM}(M_S), & \tilde{g}_3 &\equiv g_3^\text{MSSM}(M_S), \\
+    t &\equiv \log\frac{M_S}{M_t}, & \kappaL &\equiv \frac{1}{(4 \pi)^2}
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Calculation of $y_t^{\text{MSSM}}(M_Z)$}
+  \begin{align*}
+    (M_h^2)^{\text{EFT}}&=
+    m_h^2
+    + \vhigh^2 
+    \ythigh^4\Big[12 t \kappaL
+    +12 t^2 \kappaL^2 
+    \left(16 \gshigh^2 - 9\ythigh^2 \right)
+    \\&\quad{}
+    +
+    4 t^3\kappaL^3  \left(736 \gshigh^4-672 \gshigh^2 \ythigh^2+90
+      \ythigh^4\right) 
+    +\ldots\Big],
+    \\
+    (M_h^2)^{\text{\FS}}&=
+    m_h^2
+    + \vhigh^2 
+    \ythigh^4\Big[12 t \kappaL
+    +12 t^2 \kappaL^2 
+    \left(16 \gshigh^2 - 9\ythigh^2 \right)
+    \\&\quad{}
+    +4 t^3\kappaL^3 \left(\frac{736 \gshigh^4}{3}-288 \gshigh^2
+      \ythigh^2+\frac{27 \ythigh^4}{2}\right)
+    +\ldots\Big],
+    \\
+    (M_h^2)^{\text{\SPheno}}&=
+    m_h^2
+    + \vhigh^2 
+    \ythigh^4\Big[12 t \kappaL
+    +12 t^2 \kappaL^2 
+    \left(16 \gshigh^2 - 9\ythigh^2 \right)
+    \\&\quad{}
+    +4 t^3\kappaL^3 \left(\frac{992 \gshigh^4}{3}-192 \gshigh^2
+      \ythigh^2+\frac{81 \ythigh^4}{2}\right)
+    +\ldots\Big].
+  \end{align*}
+\end{frame}
 
 \begin{frame}[noframenumbering]
   \begin{center}
