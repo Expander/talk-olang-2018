@@ -128,8 +128,8 @@
 \date{23.--25.01.2017}
 
 \institute[Aachen]{KUTS 2017 Aachen}
-\subject{FlexibleSUSY,MSSM,THDM,Higgs,FlexibleEFTHiggs}
-\keywords{FlexibleSUSY,MSSM,THDM,Higgs,FlexibleEFTHiggs}
+\subject{FlexibleSUSY,MSSM,Higgs,FlexibleEFTHiggs}
+\keywords{FlexibleSUSY,MSSM,Higgs,FlexibleEFTHiggs}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -315,9 +315,9 @@
 
 \subsection{Uncertainty estimation}
 
-\begin{frame}{Uncertainty estimation of FlexibleEFTHiggs 2L}
+\begin{frame}{Uncertainty estimation of FlexibleEFTHiggs}
   \begin{itemize}
-  \item use $y_t^{\text{MSSM},(1)}$ vs.\ $y_t^{\text{MSSM},(2)}$
+  \item relation between $y_t^{\text{SM}}$ and $y_t^{\text{MSSM}}$ one loop order higher
   \item vary $Q_\text{match}$ within $[M_S/2, 2 M_S]$
   \item vary $Q_\text{pole}$ within $[M_t/2, 2 M_t]$
   \end{itemize}
@@ -352,7 +352,7 @@
     \centering
     \includegraphics[width=\textwidth]{plots/FlexibleEFTHiggs/DMh_tower-2L_Xt_TB-5_MS-2000}
   \end{figure}
-  $\tan\beta = 5$, $M_S = 2\eh{TeV}$, $X_{t,b,\tau} = 0$
+  $\tan\beta = 5$, $M_S = 2\eh{TeV}$, $X_{b,\tau} = 0$
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -360,29 +360,21 @@
 \section{Summary}
 
 \begin{frame}{Summary}
-  \emph{EFT-$M_h$ approach}
   \begin{itemize}
   \item full model approach suffers from large logs
     $\propto\log(M_t/M_S)$ if $M_S \gg M_t$
-  \item EFT-$\lambda$ approach resums large logs, but difficult to
+  \item pure EFT approach resums large logs, but difficult to
     automatize (also misses 1L terms $O(p^2/M_S^2)$ if performed at
     1L-level only)
-  \item EFT-$M_h$ approach
+  \item FlexibleEFTHiggs
     \begin{itemize}
     \item can be automatized easily $\rightarrow$ incorporation into
       FlexibleSUSY
-    \item resums large logs $\propto\log(M_t/M_S)$
+    \item FlexibleEFTHiggs-1L resums LL $\propto\log(M_t/M_S)$
+    \item FlexibleEFTHiggs-2L resums NLL $\propto\log(M_t/M_S)$
     \item includes all 1L terms $O(p^n/M_S^n, v^n/M_S^n)$
     \item large logs cancel only in SM limit
-    \item more accurate than full model approach for $M_S \gtrsim 3\eh{TeV}$
-    \item Todo: perform matching and calculation of $M_h$ at 2-loop level
     \end{itemize}
-  \end{itemize}
-  \emph{THDM (+ Higgsinos + Gauginos):}
-  \begin{itemize}
-  \item Effect of threshold corrections $\kappa O(g_i^4)$ on $M_h$
-    less than $1\eh{GeV}$
-  \item Uncertainty from variation of $Q$ and $M_t$: max. $\pm 2\eh{GeV}$
   \end{itemize}
 \end{frame}
 
@@ -400,11 +392,11 @@
 
 \begin{frame}[noframenumbering]
   \begin{center}
-    \Large Equivalence of EFT-$\lambda$ and EFT-$M_h$ approach
+    \Large Equivalence of pure EFT and FlexibleEFTHiggs
   \end{center}
 \end{frame}
 
-\begin{frame}[noframenumbering]{Equivalence EFT-$\lambda$ and EFT-$M_h$ approach $O(\hbar y_t^4)$}
+\begin{frame}[noframenumbering]{Equivalence pure EFT and FlexibleEFTHiggs $O(\hbar y_t^4)$}
   \begin{align*}
     M_h^{\SM} &\overset{!}{=} M_h^\text{MSSM} \quad \text{at} \quad Q = M_S, 1L
   \end{align*}
@@ -425,7 +417,7 @@
   \end{align*}
 \end{frame}
 
-\begin{frame}[noframenumbering]{Equivalence EFT-$\lambda$ and EFT-$M_h$ approach $O(\hbar y_t^4)$}
+\begin{frame}[noframenumbering]{Equivalence pure EFT and FlexibleEFTHiggs $O(\hbar y_t^4)$}
   in SM limit $\frac{c^2_\alpha}{s^2_\beta} \rightarrow 1$\\
   $\Rightarrow$ 
   \begin{align*}
