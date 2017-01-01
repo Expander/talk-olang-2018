@@ -43,7 +43,7 @@ dQ(Mhmean,Mhmax,Mhmin) = max(abs(Mhmean-Mhmax), abs(Mhmean-Mhmin))
 #15: g3^SM(MS)
 #16: g3^SM(Mt)
 
-set key box bottom right width -1 height 0.5 opaque
+set key box bottom right width -1 height 0.5 opaque font ",10"
 set ylabel 'M_h / GeV'
 set output dir.'/Mh_${s}.pdf'
 dataTower1L = dir.'/MSSMtower1L_${s}.dat'
@@ -63,9 +63,8 @@ plot [${x1}] [${y1}] \
      dataSGs   u (\$1/${scaling}):(\$10-\$11):(\$10+\$11) t '' w filledcurves ls 19 fs transparent solid 0.3
 
 set output dir.'/Mh_relative_${s}.pdf'
-set key font ",10"
 set ylabel '(M_h - M_h^{FlexibleEFTHiggs/MSSM 2L}) / GeV'
-set key box top left width -1 height 0.5 opaque
+set key top left
 
 data = '< paste '.dataTower1L.' '.dataTower2L.' '.dataSGs
 
@@ -86,7 +85,7 @@ plot [${x2}] [${y2}] \
 set style line 1 lt 4 lw 0 dt 1 lc rgb '#00FFFF'
 set style line 2 lt 4 lw 0 dt 1 lc rgb '#FF00FF'
 set style line 3 lt 4 lw 0 dt 1 lc rgb '#FFFF00'
-set key box bottom right width 1 height 0.5 font ",12"
+set key bottom right width 0 height 0.5 font ",12"
 
 set output dir.'/DMh_tower-1L_${s}.pdf'
 set ylabel "{/Symbol D} M_h / GeV"
