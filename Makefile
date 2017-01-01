@@ -16,7 +16,9 @@ PLOTS       := plots/PlotScale-in-FH_new_low.pdf \
                plots/FlexibleEFTHiggs/Mh_MS_TB-5_Xt-0.pdf \
                plots/FlexibleEFTHiggs/Mh_relative_MS_TB-5_Xt-0.pdf \
                plots/FlexibleEFTHiggs/Mh_MS_TB-5_Xt--2.pdf \
-               plots/FlexibleEFTHiggs/Mh_relative_MS_TB-5_Xt--2.pdf
+               plots/FlexibleEFTHiggs/Mh_relative_MS_TB-5_Xt--2.pdf \
+               plots/FlexibleEFTHiggs/Mh_Xt_TB-5_MS-2000.pdf \
+               plots/FlexibleEFTHiggs/Mh_relative_Xt_TB-5_MS-2000.pdf
 TEXDIRS     := $(PLOTSDIR)
 BIBTEX      := bibtex
 
@@ -58,6 +60,8 @@ plots/FlexibleEFTHiggs/Mh_MS_TB-5_Xt-0.pdf \
 plots/FlexibleEFTHiggs/Mh_relative_MS_TB-5_Xt-0.pdf \
 plots/FlexibleEFTHiggs/Mh_MS_TB-5_Xt--2.pdf \
 plots/FlexibleEFTHiggs/Mh_relative_MS_TB-5_Xt--2.pdf \
+plots/FlexibleEFTHiggs/Mh_Xt_TB-5_MS-2000.pdf \
+plots/FlexibleEFTHiggs/Mh_relative_Xt_TB-5_MS-2000.pdf \
 : plots/FlexibleEFTHiggs/*.dat plots/FlexibleEFTHiggs/*.sh plots/FlexibleEFTHiggs/*.gnuplot
 	cd plots/FlexibleEFTHiggs && ./plot.sh
 
