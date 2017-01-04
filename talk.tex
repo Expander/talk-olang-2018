@@ -276,8 +276,8 @@
   \end{itemize}
   \emph{Disadvantage:}
   \begin{itemize}
-  \item FlexibleEFTHiggs 1L: incorrect 2L logs $O(\hbar^2 \log(M_t/M_S))$
-  \item FlexibleEFTHiggs 2L: incorrect 3L logs $O(\hbar^3 \log^2(M_t/M_S))$
+  \item FlexibleEFTHiggs-1L: incorrect 2L logs $O(\hbar^2 \log(M_t/M_S))$
+  \item FlexibleEFTHiggs-2L: incorrect 3L logs $O(\hbar^3 \log^2(M_t/M_S))$
   \end{itemize}
 \end{frame}
 
@@ -328,8 +328,8 @@
 \begin{frame}{Uncertainty estimation of FlexibleEFTHiggs}
   \begin{itemize}
   \item relation between $y_t^{\text{SM}}$ and $y_t^{\text{MSSM}}$ one loop order higher \\
-    FlexibleEFTHiggs 1L: $\rightarrow$ $\Delta M_h^{(y_t\ \text{0L vs. 1L})}$\\
-    FlexibleEFTHiggs 2L: $\rightarrow$ $\Delta M_h^{(y_t\ \text{1L vs. 2L})}$
+    FlexibleEFTHiggs-1L: $\rightarrow$ $\Delta M_h^{(y_t\ \text{0L vs. 1L})}$\\
+    FlexibleEFTHiggs-2L: $\rightarrow$ $\Delta M_h^{(y_t\ \text{1L vs. 2L})}$
   \item variation of $Q_\text{match}$ within $[M_S/2, 2 M_S]$ \\
     $\rightarrow$ $\Delta M_h^{(Q_\text{match})}$
   \item variation of $Q_\text{pole}$ within $[M_t/2, 2 M_t]$ \\
@@ -376,17 +376,15 @@
   \begin{itemize}
   \item full model approach suffers from large logs
     $\propto\log(M_t/M_S)$ if $M_S \gg M_t$
-  \item pure EFT approach resums large logs, but difficult to
-    automatize (also misses 1L terms $O(p^2/M_S^2)$ if performed at
-    1L-level only)
+  \item pure EFT approach resums large logs but neglects terms
+    $O(p^2/M_S^2)$.  Also difficult to automatize.
   \item FlexibleEFTHiggs
     \begin{itemize}
+    \item includes all 1L terms $O(p^n/M_S^n, v^n/M_S^n)$
+    \item FlexibleEFTHiggs-1L resums LL (but incorrect NLL)
+    \item FlexibleEFTHiggs-2L resums LL + NLL (but incorrect NNLL)
     \item can be automatized easily $\rightarrow$ incorporation into
       FlexibleSUSY
-    \item FlexibleEFTHiggs-1L resums LL $\propto\log(M_t/M_S)$
-    \item FlexibleEFTHiggs-2L resums NLL $\propto\log(M_t/M_S)$
-    \item includes all 1L terms $O(p^n/M_S^n, v^n/M_S^n)$
-    \item large logs cancel only in SM limit
     \end{itemize}
   \end{itemize}
 \end{frame}
