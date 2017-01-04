@@ -80,6 +80,18 @@ plot [${x2}] [${y2}] \
      data u (\$33/${scaling}):(\$42-\$18) t 'SUSYHD 1.0.2' w lines ls 9, \
      data u (\$33/${scaling}):(\$42-\$43-\$18):(\$42+\$43-\$18) t '' w filledcurves ls 19 fs transparent solid 0.3
 
+######### lambda #########
+
+set ylabel "{/Symbol l}(M_S)"
+set output "lambda_${s}.pdf"
+
+dataEFT2L = dir."/HSSUSY2L_${s}.dat"
+
+plot [${x1}] [:] \
+     dataTower1L u (\$1/${scaling}):12 t "FlexibleEFTHiggs-1L" w lines ls 7, \
+     dataTower2L u (\$1/${scaling}):12 t "FlexibleEFTHiggs-2L" w lines ls 1, \
+     dataEFT2L   u (\$1/${scaling}):7  t "HSSUSY-2L" w lines ls 2
+
 ###### DMh ######
 
 set style line 1 lt 4 lw 0 dt 1 lc rgb '#00FFFF'
@@ -111,7 +123,6 @@ plot [${x1}] [-6:6] \
      data u (\$1/${scaling}):(-dQ(\$2,\$7,\$8)):(dQ(\$2,\$7,\$8)) t "{/Symbol D}M_h^{(Q_{pole})}" \
      w filledcurves ls 3 fs transparent solid 0.5
 EOF
-
 }
 
 scenario="
