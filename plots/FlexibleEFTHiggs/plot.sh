@@ -174,7 +174,7 @@ for s in $scenario ; do
 done
 
 scenario="
- Xt_TB-5_MS-2000,-3.5:3.5,:,-3.5:3.5,-4:10
+ Xt_TB-5_MS-2000,-3.5:3.5,95:,-3.5:3.5,-4:10
 "
 
 for s in $scenario ; do
