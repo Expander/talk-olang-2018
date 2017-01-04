@@ -58,9 +58,23 @@ plot [${x1}] [${y1}] \
      dataSGs   u (\$1/${scaling}):6 t 'SOFTSUSY 3.6.2' w lines ls 5, \
      dataSGs   u (\$1/${scaling}):12 t 'SARAH/SPheno' w lines ls 6, \
      dataSGs   u (\$1/${scaling}):8 t 'FeynHiggs 2.12.0' w lines ls 8, \
+     dataSGs   u (\$1/${scaling}):10 t 'SUSYHD 1.0.2' w lines ls 9
+
+set output dir.'/Mh_uncertainties_${s}.pdf'
+
+plot [${x1}] [${y1}] \
+     dataTower2L u (\$1/${scaling}):(\$2-\$3):(\$2+\$3) t '' w filledcurves ls 11 fs pattern 6, \
+     dataTower2L u (\$1/${scaling}):2 t 'FlexibleEFTHiggs/MSSM 2L' w lines ls 1, \
+     dataSGs   u (\$1/${scaling}):4 t 'FlexibleSUSY/MSSM 2L' w lines ls 3, \
+     dataSGs   u (\$1/${scaling}):5 t 'FlexibleSUSY/HSSUSY 2L' w lines ls 2, \
+     dataSGs   u (\$1/${scaling}):6 t 'SOFTSUSY 3.6.2' w lines ls 5, \
+     dataSGs   u (\$1/${scaling}):12 t 'SARAH/SPheno' w lines ls 6, \
+     dataSGs   u (\$1/${scaling}):8 t 'FeynHiggs 2.12.0' w lines ls 8, \
      dataSGs   u (\$1/${scaling}):(\$8-\$9):(\$8+\$9) t '' w filledcurves ls 18 fs transparent solid 0.3, \
      dataSGs   u (\$1/${scaling}):10 t 'SUSYHD 1.0.2' w lines ls 9, \
      dataSGs   u (\$1/${scaling}):(\$10-\$11):(\$10+\$11) t '' w filledcurves ls 19 fs transparent solid 0.3
+
+#     dataTower2L u (\$1/${scaling}):(\$2-\$3):(\$2+\$3) t '' w filledcurves ls 11 fs transparent solid 0.3, \
 
 set output dir.'/Mh_relative_${s}.pdf'
 set ylabel '(M_h - M_h^{FlexibleEFTHiggs/MSSM 2L}) / GeV'
@@ -76,9 +90,23 @@ plot [${x2}] [${y2}] \
      data u (\$33/${scaling}):(\$38-\$18) t 'SOFTSUSY 3.6.2' w lines ls 5, \
      data u (\$33/${scaling}):(\$44-\$18) t 'SARAH/SPheno' w lines ls 6, \
      data u (\$33/${scaling}):(\$40-\$18) t 'FeynHiggs 2.12.0' w lines ls 8, \
+     data u (\$33/${scaling}):(\$42-\$18) t 'SUSYHD 1.0.3' w lines ls 9, \
+
+set output dir.'/Mh_uncertainties_relative_${s}.pdf'
+
+plot [${x2}] [${y2}] \
+     data u (\$1/${scaling}):(\$18-\$18-\$19):(\$18-\$18+\$19) t '' w filledcurves ls 11 fs pattern 6, \
+     data u (\$1/${scaling}):(\$18-\$18) t 'FlexibleEFTHiggs/MSSM 2L' w lines ls 1, \
+     data u (\$33/${scaling}):(\$36-\$18) t 'FlexibleSUSY/MSSM 2L' w lines ls 3, \
+     data u (\$33/${scaling}):(\$37-\$18) t 'FlexibleSUSY/HSSUSY 2L' w lines ls 2, \
+     data u (\$33/${scaling}):(\$38-\$18) t 'SOFTSUSY 3.6.2' w lines ls 5, \
+     data u (\$33/${scaling}):(\$44-\$18) t 'SARAH/SPheno' w lines ls 6, \
+     data u (\$33/${scaling}):(\$40-\$18) t 'FeynHiggs 2.12.0' w lines ls 8, \
      data u (\$33/${scaling}):(\$40-\$41-\$18):(\$40+\$41-\$18) t '' w filledcurves ls 18 fs transparent solid 0.3, \
      data u (\$33/${scaling}):(\$42-\$18) t 'SUSYHD 1.0.2' w lines ls 9, \
      data u (\$33/${scaling}):(\$42-\$43-\$18):(\$42+\$43-\$18) t '' w filledcurves ls 19 fs transparent solid 0.3
+
+#     data u (\$1/${scaling}):(\$2-\$18) t 'FlexibleEFTHiggs/MSSM 1L' w lines ls 7, \
 
 ######### lambda #########
 
