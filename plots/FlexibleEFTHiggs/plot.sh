@@ -55,8 +55,8 @@ dataFH      = dir."/FH-2.12.2_${s}.dat"
 dataTower1LNoLogs = dir.'/MSSMtower-1L-nologs/MSSMtower1L_${s}.dat'
 
 plot [${x1}] [${y1}] \
-     dataTower1L u (\$1/${scaling}):2 t 'FlexibleEFTHiggs/MSSM 1L' w lines ls 7, \
      dataTower2L u (\$1/${scaling}):2 t 'FlexibleEFTHiggs/MSSM 2L' w lines ls 1, \
+     dataTower1L u (\$1/${scaling}):2 t 'FlexibleEFTHiggs/MSSM 1L' w lines ls 7, \
      dataSGs   u (\$1/${scaling}):4 t 'FlexibleSUSY/MSSM 2L' w lines ls 3, \
      dataSGs   u (\$1/${scaling}):5 t 'FlexibleSUSY/HSSUSY 2L' w lines ls 2, \
      dataSGs   u (\$1/${scaling}):6 t 'SOFTSUSY 3.6.2' w lines ls 5, \
@@ -71,6 +71,7 @@ set output dir.'/Mh_uncertainties_${s}.pdf'
 plot [${x1}] [${y1}] \
      dataTower2L u (\$1/${scaling}):(\$2-\$3):(\$2+\$3) t '' w filledcurves ls 11 fs pattern 6, \
      dataTower2L u (\$1/${scaling}):2 t 'FlexibleEFTHiggs/MSSM 2L' w lines ls 1, \
+     dataTower1L u (\$1/${scaling}):2 t 'FlexibleEFTHiggs/MSSM 1L' w lines ls 7, \
      dataSGs   u (\$1/${scaling}):4 t 'FlexibleSUSY/MSSM 2L' w lines ls 3, \
      dataSGs   u (\$1/${scaling}):5 t 'FlexibleSUSY/HSSUSY 2L' w lines ls 2, \
      dataSGs   u (\$1/${scaling}):6 t 'SOFTSUSY 3.6.2' w lines ls 5, \
@@ -94,8 +95,8 @@ data = '< paste '.dataTower1L.' '.dataTower2L.' '.dataSGs.' '.dataTower1LNoLogs
 dataFh = '< paste '.dataFH.' '.dataTower2L
 
 plot [${x2}] [${y2}] \
-     data u (\$1/${scaling}):(\$2-\$18) t 'FlexibleEFTHiggs/MSSM 1L' w lines ls 7, \
      data u (\$1/${scaling}):(\$18-\$18) t 'FlexibleEFTHiggs/MSSM 2L' w lines ls 1, \
+     data u (\$1/${scaling}):(\$2-\$18) t 'FlexibleEFTHiggs/MSSM 1L' w lines ls 7, \
      data u (\$33/${scaling}):(\$36-\$18) t 'FlexibleSUSY/MSSM 2L' w lines ls 3, \
      data u (\$33/${scaling}):(\$37-\$18) t 'FlexibleSUSY/HSSUSY 2L' w lines ls 2, \
      data u (\$33/${scaling}):(\$38-\$18) t 'SOFTSUSY 3.6.2' w lines ls 5, \
