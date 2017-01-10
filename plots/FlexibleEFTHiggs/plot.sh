@@ -49,6 +49,10 @@ set output dir.'/Mh_${s}.pdf'
 dataTower1L = dir.'/MSSMtower1L_${s}.dat'
 dataTower2L = dir.'/MSSMtower2L_${s}.dat'
 dataSGs     = dir.'/all_MSSM_${s}.dat'
+dataEFT1L   = dir."/HSSUSY1L_${s}.dat"
+dataEFT2L   = dir."/HSSUSY2L_${s}.dat"
+dataFH      = dir."/FH-2.12.2_${s}.dat"
+dataTower1LNoLogs = dir.'/MSSMtower-1L-nologs/MSSMtower1L_${s}.dat'
 
 plot [${x1}] [${y1}] \
      dataTower1L u (\$1/${scaling}):2 t 'FlexibleEFTHiggs/MSSM 1L' w lines ls 7, \
@@ -57,8 +61,10 @@ plot [${x1}] [${y1}] \
      dataSGs   u (\$1/${scaling}):5 t 'FlexibleSUSY/HSSUSY 2L' w lines ls 2, \
      dataSGs   u (\$1/${scaling}):6 t 'SOFTSUSY 3.6.2' w lines ls 5, \
      dataSGs   u (\$1/${scaling}):12 t 'SARAH/SPheno' w lines ls 6, \
-     dataSGs   u (\$1/${scaling}):8 t 'FeynHiggs 2.12.0' w lines ls 8, \
+     dataFH    u (\$1/${scaling}):2 t 'FeynHiggs 2.12.2' w lines ls 8, \
      dataSGs   u (\$1/${scaling}):10 t 'SUSYHD 1.0.2' w lines ls 9
+
+#     dataTower1LNoLogs u (\$1/${scaling}):2 t 'FlexibleEFTHiggs/MSSM 1L no logs' w lines ls 10, \
 
 set output dir.'/Mh_uncertainties_${s}.pdf'
 
@@ -69,18 +75,23 @@ plot [${x1}] [${y1}] \
      dataSGs   u (\$1/${scaling}):5 t 'FlexibleSUSY/HSSUSY 2L' w lines ls 2, \
      dataSGs   u (\$1/${scaling}):6 t 'SOFTSUSY 3.6.2' w lines ls 5, \
      dataSGs   u (\$1/${scaling}):12 t 'SARAH/SPheno' w lines ls 6, \
-     dataSGs   u (\$1/${scaling}):8 t 'FeynHiggs 2.12.0' w lines ls 8, \
-     dataSGs   u (\$1/${scaling}):(\$8-\$9):(\$8+\$9) t '' w filledcurves ls 18 fs transparent solid 0.3, \
+     dataFH    u (\$1/${scaling}):2 t 'FeynHiggs 2.12.2' w lines ls 8, \
+     dataFH    u (\$1/${scaling}):(\$2-\$3):(\$2+\$3) t '' w filledcurves ls 18 fs transparent solid 0.3, \
      dataSGs   u (\$1/${scaling}):10 t 'SUSYHD 1.0.2' w lines ls 9, \
      dataSGs   u (\$1/${scaling}):(\$10-\$11):(\$10+\$11) t '' w filledcurves ls 19 fs transparent solid 0.3
 
-#     dataTower2L u (\$1/${scaling}):(\$2-\$3):(\$2+\$3) t '' w filledcurves ls 11 fs transparent solid 0.3, \
+#     dataTower1LNoLogs u (\$1/${scaling}):2 t 'FlexibleEFTHiggs/MSSM 1L no logs' w lines ls 10, \
 
 set output dir.'/Mh_relative_${s}.pdf'
 set ylabel '(M_h - M_h^{FlexibleEFTHiggs/MSSM 2L}) / GeV'
 set key top left
 
-data = '< paste '.dataTower1L.' '.dataTower2L.' '.dataSGs
+# 1L tower: fields 1 - 16
+# 2L tower: fields 17 - 32
+# all SGs : fields 33 - 49
+# 1L tower w/o logs: fields 50 - 65
+data = '< paste '.dataTower1L.' '.dataTower2L.' '.dataSGs.' '.dataTower1LNoLogs
+dataFh = '< paste '.dataFH.' '.dataTower2L
 
 plot [${x2}] [${y2}] \
      data u (\$1/${scaling}):(\$2-\$18) t 'FlexibleEFTHiggs/MSSM 1L' w lines ls 7, \
@@ -89,35 +100,38 @@ plot [${x2}] [${y2}] \
      data u (\$33/${scaling}):(\$37-\$18) t 'FlexibleSUSY/HSSUSY 2L' w lines ls 2, \
      data u (\$33/${scaling}):(\$38-\$18) t 'SOFTSUSY 3.6.2' w lines ls 5, \
      data u (\$33/${scaling}):(\$44-\$18) t 'SARAH/SPheno' w lines ls 6, \
-     data u (\$33/${scaling}):(\$40-\$18) t 'FeynHiggs 2.12.0' w lines ls 8, \
+     dataFh u (\$1/${scaling}):(\$2-\$5) t 'FeynHiggs 2.12.2' w lines ls 8, \
      data u (\$33/${scaling}):(\$42-\$18) t 'SUSYHD 1.0.3' w lines ls 9, \
+
+#     data u (\$1/${scaling}):(\$51-\$18) t 'FlexibleEFTHiggs/MSSM 1L no logs' w lines ls 10, \
 
 set output dir.'/Mh_uncertainties_relative_${s}.pdf'
 
 plot [${x2}] [${y2}] \
      data u (\$1/${scaling}):(\$18-\$18-\$19):(\$18-\$18+\$19) t '' w filledcurves ls 11 fs pattern 6, \
      data u (\$1/${scaling}):(\$18-\$18) t 'FlexibleEFTHiggs/MSSM 2L' w lines ls 1, \
+     data u (\$1/${scaling}):(\$2-\$18) t 'FlexibleEFTHiggs/MSSM 1L' w lines ls 7, \
      data u (\$33/${scaling}):(\$36-\$18) t 'FlexibleSUSY/MSSM 2L' w lines ls 3, \
      data u (\$33/${scaling}):(\$37-\$18) t 'FlexibleSUSY/HSSUSY 2L' w lines ls 2, \
      data u (\$33/${scaling}):(\$38-\$18) t 'SOFTSUSY 3.6.2' w lines ls 5, \
      data u (\$33/${scaling}):(\$44-\$18) t 'SARAH/SPheno' w lines ls 6, \
-     data u (\$33/${scaling}):(\$40-\$18) t 'FeynHiggs 2.12.0' w lines ls 8, \
-     data u (\$33/${scaling}):(\$40-\$41-\$18):(\$40+\$41-\$18) t '' w filledcurves ls 18 fs transparent solid 0.3, \
+     dataFh u (\$1/${scaling}):(\$2-\$5) t 'FeynHiggs 2.12.2' w lines ls 8, \
+     dataFh u (\$1/${scaling}):(\$2-\$3-\$5):(\$2+\$3-\$5) t '' w filledcurves ls 18 fs transparent solid 0.3, \
      data u (\$33/${scaling}):(\$42-\$18) t 'SUSYHD 1.0.2' w lines ls 9, \
      data u (\$33/${scaling}):(\$42-\$43-\$18):(\$42+\$43-\$18) t '' w filledcurves ls 19 fs transparent solid 0.3
 
-#     data u (\$1/${scaling}):(\$2-\$18) t 'FlexibleEFTHiggs/MSSM 1L' w lines ls 7, \
+#     data u (\$1/${scaling}):(\$51-\$18) t 'FlexibleEFTHiggs/MSSM 1L no logs' w lines ls 10, \
 
 ######### lambda #########
 
 set ylabel "{/Symbol l}(M_S)"
 set output "lambda_${s}.pdf"
 
-dataEFT2L = dir."/HSSUSY2L_${s}.dat"
-
 plot [${x1}] [:] \
      dataTower1L u (\$1/${scaling}):12 t "FlexibleEFTHiggs-1L" w lines ls 7, \
+     dataTower1LNoLogs u (\$1/${scaling}):12 t "FlexibleEFTHiggs-1L no logs" w lines ls 10, \
      dataTower2L u (\$1/${scaling}):12 t "FlexibleEFTHiggs-2L" w lines ls 1, \
+     dataEFT1L   u (\$1/${scaling}):7  t "HSSUSY-1L" w lines ls 3, \
      dataEFT2L   u (\$1/${scaling}):7  t "HSSUSY-2L" w lines ls 2
 
 ###### DMh ######
@@ -134,6 +148,16 @@ data = dataTower1L
 plot [${x1}] [-6:6] \
      data u (\$1/${scaling}):(-\$4):(\$4) t "{/Symbol D}M_h^{(y_t 0L vs. 1L)}" \
      w filledcurves ls 1 fs transparent solid 0.5, \
+     data u (\$1/${scaling}):(-dQ(\$2,\$5,\$6)):(dQ(\$2,\$5,\$6)) t "{/Symbol D}M_h^{(Q_{match})}" \
+     w filledcurves ls 2 fs transparent solid 0.5, \
+     data u (\$1/${scaling}):(-dQ(\$2,\$7,\$8)):(dQ(\$2,\$7,\$8)) t "{/Symbol D}M_h^{(Q_{pole})}" \
+     w filledcurves ls 3 fs transparent solid 0.5
+
+set output dir.'/DMh_tower-1L_no-logs_${s}.pdf'
+set ylabel "{/Symbol D} M_h / GeV"
+data = dataTower1LNoLogs
+
+plot [${x1}] [-6:6] \
      data u (\$1/${scaling}):(-dQ(\$2,\$5,\$6)):(dQ(\$2,\$5,\$6)) t "{/Symbol D}M_h^{(Q_{match})}" \
      w filledcurves ls 2 fs transparent solid 0.5, \
      data u (\$1/${scaling}):(-dQ(\$2,\$7,\$8)):(dQ(\$2,\$7,\$8)) t "{/Symbol D}M_h^{(Q_{pole})}" \

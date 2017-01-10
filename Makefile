@@ -21,7 +21,7 @@ BIBTEX      := bibtex
 
 all: $(OUTFILENAME)
 
-$(PLOTS): plots/FlexibleEFTHiggs/*.dat plots/FlexibleEFTHiggs/*.sh plots/FlexibleEFTHiggs/*.gnuplot
+$(PLOTS): plots/FlexibleEFTHiggs/*.dat plots/FlexibleEFTHiggs/MSSMtower-1L-nologs/*.dat plots/FlexibleEFTHiggs/*.sh plots/FlexibleEFTHiggs/*.gnuplot
 	cd plots/FlexibleEFTHiggs && ./plot.sh
 
 %.pdf: %.tex $(PLOTS)
