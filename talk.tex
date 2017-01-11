@@ -310,9 +310,11 @@
   \emph{Advantages:}
   \begin{itemize}
   \item easily automatizable
-  \item FlexibleEFTHiggs-1L: correctly resums LL
-  \item FlexibleEFTHiggs-2L: correctly resums LL + NLL
-  \item includes all 1L terms $O(p^n/M_S^n, v^n/M_S^n)$
+  \item FlexibleEFTHiggs-1L/2L correctly resums LL
+  \item FlexibleEFTHiggs-1L: all non-log terms correct at 1L, \\
+    including all terms $O(p^n/M_S^n, v^n/M_S^n)$
+  \item FlexibleEFTHiggs-2L: non-log terms correct at 2L
+    $O(\alpha_s(\alpha_t + \alpha_b) + (\alpha_t + \alpha_b)^2 + \alpha_\tau^2)$
   \end{itemize}
   \emph{Disadvantage:}
   \begin{itemize}
@@ -420,9 +422,11 @@
     $O(p^2/M_S^2)$.  Also difficult to automatize.
   \item FlexibleEFTHiggs
     \begin{itemize}
-    \item includes all 1L terms $O(p^n/M_S^n, v^n/M_S^n)$
-    \item FlexibleEFTHiggs-1L resums LL (but incorrect NLL)
-    \item FlexibleEFTHiggs-2L resums LL + NLL (but incorrect NNLL)
+    \item resums LL (but incorrect NLL)
+    \item FlexibleEFTHiggs-1L: all non-log terms correct at 1L, \\
+      including all terms $O(p^n/M_S^n, v^n/M_S^n)$
+    \item FlexibleEFTHiggs-2L: non-log terms correct at 2L
+      $O(\alpha_s(\alpha_t + \alpha_b) + (\alpha_t + \alpha_b)^2 + \alpha_\tau^2)$
     \item can be automatized easily $\rightarrow$ incorporation into
       FlexibleSUSY
     \end{itemize}
