@@ -265,6 +265,47 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}{Incorrect 2L logs in FlexibleEFTHiggs-1L}
+  Matching condition:
+  \begin{align*}
+    \lambda &\leftarrow \frac{1}{v^2} \left[
+      (m_h^\SM)^2 + (M_h^\text{MSSM})^2 - (M_h^\SM)^2
+    \right]
+  \end{align*}
+  Expansion of momentum iteration up to 1L level:
+  \begin{align*}
+    \lambda &= \frac{1}{v^2} \Big[
+      (m_h^\MSSM)^2
+      + \Delta m_{h,\MSSM}^2
+      - \Delta m_{h,\SM}^2
+      + O(\hbar^2)
+    \Big]
+  \end{align*}
+  with
+  \begin{align*}
+    \Delta m_{h,\MSSM}^2 &= -\Sigma^{1L}_{\MSSM} + t_{\MSSM}^{1L}/v_\MSSM \\
+    \Delta m_{h,\SM}^2 &= -\Sigma^{1L}_{\SM} + t^{1L}_{\SM}/v_\SM
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Incorrect 2L logs in FlexibleEFTHiggs-1L}
+  \emph{Problem:} $y_t^{\MSSM} = y_t^\SM/s_\beta [1 + O(\hbar)] $\\
+  $\Rightarrow$
+  \begin{align*}
+    \Delta m_{h,\MSSM}^2 - \Delta m_{h,\SM}^2 &\propto
+    \hbar \Bigg[ (y_t^\MSSM s_\beta)^4 \log\frac{m_t}{M_S} - (y_t^\SM)^4 \log\frac{m_t}{M_S}\Bigg] \\
+    &= \hbar \Bigg[0\ + \propto \hbar y_t^4 \log\frac{m_t}{M_S} + O(\hbar^2) \Bigg] \\
+    &= O(\hbar^2 y_t^4 \log\frac{m_t}{M_S})
+  \end{align*}
+  $\Rightarrow$\\
+  large 2L logs remain in FlexibleEFTHiggs-1L\\[1em]
+  $\Rightarrow$\\
+  FlexibleEFTHiggs-1L: large 2L logs $O(\hbar^2 \log(M_t/M_S))$
+  FlexibleEFTHiggs-2L: large 3L logs $O(\hbar^3 \log^2(M_t/M_S))$
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}{EFT approach with $M_h$ matching (FlexibleEFTHiggs)}
   \emph{Advantages:}
   \begin{itemize}
