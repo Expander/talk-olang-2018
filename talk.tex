@@ -95,6 +95,7 @@
 \newcommand{\MSSM}{\ensuremath{\text{MSSM}}}
 \newcommand{\pole}{\ensuremath{\text{pole}}}
 \newcommand{\tree}{\ensuremath{\text{tree}}}
+\newcommand{\fsstar}{\ensuremath{^{\star}}}
 \newcommand{\Zv}{\ensuremath{\backslash\mkern-11.0mu{Z_3}}}
 \newcommand{\downrightknickarrow}{\mathrel{\scalebox{1.3}{\rotatebox[origin=c]{180}{$\Lsh$}}}}
 \newcommand{\threelinebrace}{$\left. \begin{array}{c} \\ \\ \\ \end{array} \right\rbrace$}
@@ -227,9 +228,9 @@
 
 \subsection{EFT approach with $M_h$ matching (FlexibleEFTHiggs)}
 
-\begin{frame}{EFT approach with $M_h$ matching (FlexibleEFTHiggs)}
+\begin{frame}{EFT approach with $M_h$ matching (FlexibleEFTHiggs-1L)}
   \begin{align*}
-    M_h^{\SM} &\overset{!}{=} M_h^\text{MSSM} \quad \text{at} \quad Q = M_S, 1L/2L
+    M_h^{\SM} &\overset{!}{=} M_h^\text{MSSM} \quad \text{at} \quad Q = M_S, 1L
   \end{align*}
   $\Rightarrow$
   \begin{align*}
@@ -240,11 +241,11 @@
   3-loop RG running to $Q = M_t$:
   \begin{align*}
     M_h^2 &= \lambda v^2 - \Sigma^{\SM}_h(M_h^2) + \frac{t_h^\SM}{v}
-    \qquad \text{(1L/2L)}
+    \qquad \text{(1L)}
   \end{align*}
 \end{frame}
 
-\begin{frame}{EFT approach with $M_h$ matching (FlexibleEFTHiggs)}
+\begin{frame}{EFT approach with $M_h$ matching (FlexibleEFTHiggs-1L)}
   Matching condition for $y_t$:
   \begin{align*}
     M_t^{\SM} &\overset{!}{=} M_t^\text{MSSM} \quad \text{at} \quad Q = M_S, 2L
@@ -259,7 +260,7 @@
   \begin{align*}
     &M_V^{\SM} \overset{!}{=} M_V^\text{MSSM} \quad \text{at} \quad Q = M_S, 1L \quad (V = W,Z)\\
     &\alpha_{\text{em}}^\MSSM(M_S) = \alpha_{\text{em}}^\SM(M_S) \ (1 + \Delta\alpha_{\text{em}})\\
-    &\alpha_s^\MSSM(M_S) = \alpha_s^\SM(M_S)
+    &\alpha_s^\MSSM(M_S) = \alpha_s^\SM(M_S) \ (1 + \Delta\alpha_s)
   \end{align*}
 \end{frame}
 
@@ -298,28 +299,116 @@
     &= O(\hbar^2 y_t^4 \log\frac{m_t}{M_S})
   \end{align*}
   $\Rightarrow$\\
-  incorrect 2L logs remain in FlexibleEFTHiggs-1L\\[1em]
-  $\Rightarrow$\\
-  FlexibleEFTHiggs-1L: incorrect 2L logs $O(\hbar^2 \log(M_t/M_S))$
-  FlexibleEFTHiggs-2L: incorrect 3L logs $O(\hbar^3 \log^2(M_t/M_S))$
+  incorrect 2L logs remain in FlexibleEFTHiggs
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{EFT approach with $M_h$ matching (FlexibleEFTHiggs)}
+\begin{frame}{Improvement 1: FlexibleEFTHiggs-2L}
+  \begin{center}
+    \Large Improvement 1: $M_h$ matching at 2L \\
+    (FlexibleEFTHiggs-2L)
+  \end{center}
+\end{frame}
+
+\begin{frame}{Improvement 1: FlexibleEFTHiggs-2L}
+  \begin{align*}
+    M_h^{\SM} &\overset{!}{=} M_h^\text{MSSM} & &\text{at} & Q = M_S, \textcolor{red}{2L} \\
+    M_t^{\SM} &\overset{!}{=} M_t^\text{MSSM} & &\text{at} & Q = M_S, \textcolor{red}{1L} \\
+    \alpha_s^\SM(M_S) &= \alpha_s^\MSSM(M_S)  & &\text{at} & Q = M_S, \textcolor{red}{0L}
+  \end{align*}
+  $\Rightarrow$
+  \begin{align*}
+    \lambda \leftarrow \frac{1}{v^2} \left[
+      (m_h^\SM)^2 + (M_h^\text{MSSM})^2 - (M_h^\SM)^2
+    \right]
+  \end{align*}
+  3-loop RG running to $Q = M_t$:
+  \begin{align*}
+    M_h^2 &= \lambda v^2 - \Sigma^{\SM}_h(M_h^2) + \frac{t_h^\SM}{v}
+    \qquad \text{\textcolor{red}{(2L)}}
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Improvement 1: FlexibleEFTHiggs-2L}
   \emph{Advantages:}
   \begin{itemize}
   \item easily automatizable
-  \item FlexibleEFTHiggs-1L/2L correctly resums LL
-  \item FlexibleEFTHiggs-1L: all non-log terms correct at 1L, \\
+  \item correctly resums LL
+  \item all non-log terms correct at 1L, \\
     including all terms $O(p^n/M_S^n, v^n/M_S^n)$
-  \item FlexibleEFTHiggs-2L: non-log terms correct at 2L
+  \item non-log terms correct at 2L
     $O(\alpha_s(\alpha_t + \alpha_b) + (\alpha_t + \alpha_b)^2 + \alpha_\tau^2)$
   \end{itemize}
   \emph{Disadvantage:}
   \begin{itemize}
-  \item FlexibleEFTHiggs-1L: incorrect 2L logs $O(\hbar^2 \log(M_t/M_S))$
-  \item FlexibleEFTHiggs-2L: incorrect 3L logs $O(\hbar^3 \log^2(M_t/M_S))$
+  \item incorrect 3L logs $O(\hbar^3 \log^2(M_t/M_S))$
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Improvement 2: FlexibleEFTHiggs-1L\fsstar}
+  \begin{center}
+    \Large Improvement 2: $M_h$ matching at 1L \\
+    but avoiding appearance of incorrect higher-order logs \\
+    (FlexibleEFTHiggs-1L\fsstar)
+  \end{center}
+\end{frame}
+
+\begin{frame}{Improvement 2: FlexibleEFTHiggs-1L\fsstar}
+  Idea: stricter handling of loop orders in matching condition
+  \begin{align*}
+    (M_h^\SM)^2 &= \lambda v^2 - \Sigma^{\SM}_h((m_h^\MSSM)^2) + \frac{t_h^\SM}{v}\\
+    (M_h^\MSSM)^2 &= M_{h}^{(1)} - \Sigma^{\MSSM}_h((m_h^\MSSM)^2) + \tilde{t}_h^\MSSM
+  \end{align*}
+  with
+  \begin{align*}
+    M_{h}^{(1)} &= \text{tree-level mass matrix w/ 1L parameters} \\
+    \Sigma^{\MSSM}_h &= \text{1L self-energy w/ 0L parameters} \\
+    t^{\MSSM}_{h_i} &= \text{1L tadpole w/ 0L parameters} \\
+    m_h^\MSSM &= \text{tree-level mass w/ 0L parameters} \\
+    (\tilde{t}^{\MSSM}_h)_i &= t^{\MSSM}_{h_i} / v_i
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Improvement 2: FlexibleEFTHiggs-1L\fsstar}
+  \emph{Advantages:}
+  \begin{itemize}
+  \item ??? correctly resums LL + NLL
+  \item ??? all non-log terms correct at 1L, \\
+    including all terms $O(p^n/M_S^n, v^n/M_S^n)$
+  \end{itemize}
+  \emph{Disadvantage:}
+  \begin{itemize}
+  \item more difficult to add 2L corrections
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Summary FlexibleEFTHiggs}
+  \emph{FlexibleEFTHiggs-1L:}\\
+  Advantages:
+  \begin{itemize}
+  \item easily automatizable
+  \item correctly resums LL
+  \item all non-log terms correct at 1L, including all terms $O(p^n/M_S^n, v^n/M_S^n)$
+  \end{itemize}
+  Disadvantage:
+  \begin{itemize}
+  \item incorrect 2L logs $O(\hbar^2 \log(M_t/M_S))$
+  \end{itemize}
+  \emph{FlexibleEFTHiggs-2L:}
+  \begin{itemize}
+    \item non-log terms correct at 2L
+      $O(\alpha_s(\alpha_t + \alpha_b) + (\alpha_t + \alpha_b)^2 + \alpha_\tau^2)$
+    \item incorrect 3L logs $O(\hbar^3 \log^2(M_t/M_S))$
+    \end{itemize}
+  \emph{FlexibleEFTHiggs-1L\fsstar:}
+  \begin{itemize}
+  \item ??? correctly resums LL + NLL
+  \item more difficult to add 2L corrections
   \end{itemize}
 \end{frame}
 
@@ -463,30 +552,6 @@
     \includegraphics[width=\textwidth]{plots/FlexibleEFTHiggs/Mh_uncertainties_relative_MS_TB-5_Xt--2}
   \end{figure}
   $\tan\beta = 5$, $X_t = -2 M_S$, $X_{b,\tau} = 0$
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[noframenumbering]
-  \begin{center}
-    \Large How to avoid 2L $\log(m_t/M_S)$ in FlexibleEFTHiggs-1L?
-  \end{center}
-\end{frame}
-
-\begin{frame}[noframenumbering]{How to avoid 2L $\log(m_t/M_S)$ in FlexibleEFTHiggs-1L?}
-  Idea: stricter handling of loop orders in matching condition
-  \begin{align*}
-    (M_h^\SM)^2 &= \lambda v^2 - \Sigma^{\SM}_h((m_h^\MSSM)^2) + \frac{t_h^\SM}{v}\\
-    (M_h^\MSSM)^2 &= M_{h}^{(1)} - \Sigma^{\MSSM}_h((m_h^\SM)^2) + \tilde{t}_h^\MSSM
-  \end{align*}
-  with
-  \begin{align*}
-    M_{h}^{(1)} &= \text{tree-level mass matrix w/ 1L parameters} \\
-    \Sigma^{\MSSM}_h &= \text{1L self-energy w/ 0L parameters} \\
-    t^{\MSSM}_{h_i} &= \text{1L tadpole w/ 0L parameters} \\
-    m_h^\SM &= \text{tree-level mass w/ 0L parameters} \\
-    (\tilde{t}^{\MSSM}_h)_i &= t^{\MSSM}_{h_i} / v_i
-  \end{align*}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
