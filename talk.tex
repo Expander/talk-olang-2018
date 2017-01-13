@@ -95,7 +95,7 @@
 \newcommand{\MSSM}{\ensuremath{\text{MSSM}}}
 \newcommand{\pole}{\ensuremath{\text{pole}}}
 \newcommand{\tree}{\ensuremath{\text{tree}}}
-\newcommand{\fsstar}{\ensuremath{^{\star}}}
+\newcommand{\fsstar}{\textbf{*}}
 \newcommand{\Zv}{\ensuremath{\backslash\mkern-11.0mu{Z_3}}}
 \newcommand{\downrightknickarrow}{\mathrel{\scalebox{1.3}{\rotatebox[origin=c]{180}{$\Lsh$}}}}
 \newcommand{\threelinebrace}{$\left. \begin{array}{c} \\ \\ \\ \end{array} \right\rbrace$}
@@ -196,6 +196,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\subsection{Pure EFT approach with $\Gamma$ matching}
+
 \begin{frame}{EFT approach}
   \begin{center}
     \includegraphics[width=0.45\textwidth]{images/mssm-sm-tower-eft}\\[1em]
@@ -205,8 +207,6 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{EFT approach with $\Gamma$ matching}
 
 \begin{frame}{EFT approach with $\Gamma$ matching}
   Determine $\lambda(M_S)$ from mathching all
@@ -226,7 +226,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{EFT approach with $M_h$ matching (FlexibleEFTHiggs)}
+\subsection{EFT approach with $M_h$ matching (FlexibleEFTHiggs-1L)}
 
 \begin{frame}{EFT approach with $M_h$ matching (FlexibleEFTHiggs-1L)}
   \begin{align*}
@@ -304,7 +304,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Improvements}
+\subsection{Improvement 1: FlexibleEFTHiggs-2L}
 
 \begin{frame}{Improvement 1: FlexibleEFTHiggs-2L}
   \begin{center}
@@ -350,6 +350,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\subsection{Improvement 2: FlexibleEFTHiggs-1L\protect\fsstar}
+
 \begin{frame}{Improvement 2: FlexibleEFTHiggs-1L\fsstar}
   \begin{center}
     \Large Improvement 2: $M_h$ matching at 1L \\
@@ -384,6 +386,7 @@
   \emph{Disadvantage:}
   \begin{itemize}
   \item more difficult to add 2L corrections
+  \item non-logarithmic 2L terms arise at $M_S$
   \end{itemize}
 \end{frame}
 
@@ -411,12 +414,13 @@
   \begin{itemize}
   \item ??? correctly resums LL + NLL
   \item more difficult to add 2L corrections
+  \item non-logarithmic 2L terms arise at $M_S$
   \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Numerical comparison of the approaches}
+\section{Numerical comparison}
 
 \begin{frame}{Contents}
   \tableofcontents[currentsection]  
@@ -458,7 +462,7 @@
 
 \section{Uncertainty estimation}
 
-\begin{frame}{Uncertainty estimation of FlexibleEFTHiggs}
+\begin{frame}{Uncertainty estimation of FlexibleEFTHiggs-1L/2L}
   \begin{itemize}
   \item relation between $y_t^{\text{SM}}$ and $y_t^{\text{MSSM}}$ one loop order higher \\
     FlexibleEFTHiggs-1L: $\rightarrow$ $\Delta M_h^{(y_t\ \text{0L vs. 1L})}$\\
@@ -470,7 +474,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Uncertainty estimation of FlexibleEFTHiggs}
+\begin{frame}{Uncertainty estimation of FlexibleEFTHiggs-1L/2L}
   \begin{minipage}[t]{0.49\textwidth}
     \centering
     FlexibleEFTHiggs-1L \\
