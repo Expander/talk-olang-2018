@@ -64,6 +64,7 @@
 \newcommand{\ok}{\textcolor{darkgreen}{\cmark}}
 \newcommand{\notok}{\textcolor{red}{\xmark}}
 \newcommand{\maybe}{\textcolor{gray}{\cmark}}
+\newcommand{\meh}{\textcolor{gray}{\textbf{\huge\lower.1em\hbox{-}}}}
 \newcommand{\Lagr}{\mathcal{L}}
 \newcommand{\mathi}{\mathsf{i}}
 \newcommand{\mycite}[1]{\textcolor{darkgray}{\tiny [#1]}}
@@ -335,16 +336,16 @@
 \begin{frame}{Improvement 1: FlexibleEFTHiggs-2L}
   \emph{Advantages:}
   \begin{itemize}
-  \item easily automatizable
-  \item correctly resums LL
-  \item all non-log terms correct at 1L, \\
+  \item[\ok] easily automatizable
+  \item[\ok] correctly resums LL
+  \item[\ok] all non-log terms correct at 1L, \\
     including all terms $O(p^n/M_S^n, v^n/M_S^n)$
-  \item non-log terms correct at 2L
+  \item[\ok] non-log terms correct at 2L
     $O(\alpha_s(\alpha_t + \alpha_b) + (\alpha_t + \alpha_b)^2 + \alpha_\tau^2)$
   \end{itemize}
   \emph{Disadvantage:}
   \begin{itemize}
-  \item incorrect 3L logs $O(\hbar^3 \log^2(M_t/M_S))$
+  \item[\notok] incorrect 3L logs $O(\hbar^3 \log^2(M_t/M_S))$
   \end{itemize}
 \end{frame}
 
@@ -379,42 +380,14 @@
 \begin{frame}{Improvement 2: FlexibleEFTHiggs-1L\fsstar}
   \emph{Advantages:}
   \begin{itemize}
-  \item ??? correctly resums LL + NLL
-  \item ??? all non-log terms correct at 1L, \\
+  \item[\ok] ??? correctly resums LL + NLL
+  \item[\ok] ??? all non-log terms correct at 1L, \\
     including all terms $O(p^n/M_S^n, v^n/M_S^n)$
   \end{itemize}
   \emph{Disadvantage:}
   \begin{itemize}
-  \item more difficult to add 2L corrections
-  \item non-logarithmic 2L terms arise at $M_S$
-  \end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{Summary FlexibleEFTHiggs}
-  \emph{FlexibleEFTHiggs-1L:}\\
-  Advantages:
-  \begin{itemize}
-  \item easily automatizable
-  \item correctly resums LL
-  \item all non-log terms correct at 1L, including all terms $O(p^n/M_S^n, v^n/M_S^n)$
-  \end{itemize}
-  Disadvantage:
-  \begin{itemize}
-  \item incorrect 2L logs $O(\hbar^2 \log(M_t/M_S))$
-  \end{itemize}
-  \emph{FlexibleEFTHiggs-2L:}
-  \begin{itemize}
-    \item non-log terms correct at 2L
-      $O(\alpha_s(\alpha_t + \alpha_b) + (\alpha_t + \alpha_b)^2 + \alpha_\tau^2)$
-    \item incorrect 3L logs $O(\hbar^3 \log^2(M_t/M_S))$
-    \end{itemize}
-  \emph{FlexibleEFTHiggs-1L\fsstar:}
-  \begin{itemize}
-  \item ??? correctly resums LL + NLL
-  \item more difficult to add 2L corrections
-  \item non-logarithmic 2L terms arise at $M_S$
+  \item[\meh] more difficult to add 2L corrections
+  \item[\meh] non-logarithmic 2L terms arise at $M_S$
   \end{itemize}
 \end{frame}
 
@@ -510,25 +483,26 @@
 \section{Summary}
 
 \begin{frame}{Summary}
+  \emph{FlexibleEFTHiggs-1L:}\\
   \begin{itemize}
-  \item full model approach suffers from large logs
-    $\propto\log(M_t/M_S)$ if $M_S \gg M_t$
-  \item pure EFT approach resums N$^n$LL but neglects terms
-    $O(p^2/M_S^2)$.  Also difficult to automatize.
-  \item FlexibleEFTHiggs
-    \begin{itemize}
-    \item resums LL (but incorrect NLL)
-      \begin{itemize}
-      \item FlexibleEFTHiggs-1L: incorrect 2L logs $O(\hbar^2 \log(M_t/M_S))$
-      \item FlexibleEFTHiggs-2L: incorrect 3L logs $O(\hbar^3 \log^2(M_t/M_S))$
-      \end{itemize}
-    \item FlexibleEFTHiggs-1L: all non-log terms correct at 1L, \\
-      including all terms $O(p^n/M_S^n, v^n/M_S^n)$
-    \item FlexibleEFTHiggs-2L: non-log terms correct at 2L
-      $O(\alpha_s(\alpha_t + \alpha_b) + (\alpha_t + \alpha_b)^2 + \alpha_\tau^2)$
-    \item can be automatized easily $\rightarrow$ incorporation into
-      FlexibleSUSY
-    \end{itemize}
+  \item[\ok] easily automatizable
+  \item[\ok] correctly resums LL
+  \item[\ok] all non-log terms correct at 1L, including all terms $O(p^n/M_S^n, v^n/M_S^n)$
+  \item[\notok] incorrect 2L logs $O(\hbar^2 \log(M_t/M_S))$
+  \end{itemize}
+  \emph{FlexibleEFTHiggs-2L:}
+  \begin{itemize}
+  \item[\ok] same advantages as FlexibleEFTHiggs-1L
+  \item[\ok] non-log terms correct at 2L
+    $O(\alpha_s(\alpha_t + \alpha_b) + (\alpha_t + \alpha_b)^2 + \alpha_\tau^2)$
+  \item[\notok] incorrect 3L logs $O(\hbar^3 \log^2(M_t/M_S))$
+  \end{itemize}
+  \emph{FlexibleEFTHiggs-1L\fsstar:}
+  \begin{itemize}
+  \item[\ok] ??? correctly resums LL + NLL
+  \item[\ok] ??? all non-log terms correct at 1L, including all terms $O(p^n/M_S^n, v^n/M_S^n)$
+  \item[\meh] more difficult to add 2L corrections
+  \item[\meh] non-logarithmic 2L terms arise at $M_S$
   \end{itemize}
 \end{frame}
 
