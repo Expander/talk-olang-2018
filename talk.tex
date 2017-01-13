@@ -469,6 +469,30 @@
 
 \begin{frame}[noframenumbering]
   \begin{center}
+    \Large How to avoid 2L $\log(m_t/M_S)$ in FlexibleEFTHiggs-1L?
+  \end{center}
+\end{frame}
+
+\begin{frame}[noframenumbering]{How to avoid 2L $\log(m_t/M_S)$ in FlexibleEFTHiggs-1L?}
+  Idea: stricter handling of loop orders in matching condition
+  \begin{align*}
+    % (M_h^\SM)^2 &= \lambda v^2 - \Sigma^{\SM}_h((m_h^\MSSM)^2) + \frac{t_h^\SM}{v}\\
+    (M_h^\MSSM)^2 &= M_{h}^{(1)} - \Sigma^{\MSSM}_h((m_h^\SM)^2) + \tilde{t}_h^\MSSM
+  \end{align*}
+  with
+  \begin{align*}
+    M_{h}^{(1)} &= \text{tree-level mass matrix w/ 1L parameters} \\
+    \Sigma^{\MSSM}_h &= \text{1L self-energy w/ 0L parameters} \\
+    t^{\MSSM}_{h_i} &= \text{1L tadpole w/ 0L parameters} \\
+    m_h^\SM &= \text{tree-level mass w/ 0L parameters} \\
+    (\tilde{t}^{\MSSM}_h)_i &= t^{\MSSM}_{h_i} / v_i
+  \end{align*}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[noframenumbering]
+  \begin{center}
     \Large Equivalence of pure EFT and FlexibleEFTHiggs
   \end{center}
 \end{frame}
