@@ -43,7 +43,7 @@ dQ(Mhmean,Mhmax,Mhmin) = max(abs(Mhmean-Mhmax), abs(Mhmean-Mhmin))
 #15: g3^SM(MS)
 #16: g3^SM(Mt)
 
-set key box bottom right width -1 height 0.5 opaque font ",10"
+set key box bottom right width -1 height 0.5 opaque font ",9"
 set ylabel 'M_h / GeV'
 set output dir.'/Mh_${s}.pdf'
 dataTower1L = dir.'/MSSMtower1L_${s}.dat'
@@ -60,6 +60,7 @@ plot [${x1}] [${y1}] \
      dataTower1LNoLogs u (\$1/${scaling}):2 t 'FlexibleEFTHiggs/MSSM 1L*' w lines ls 10, \
      dataSGs   u (\$1/${scaling}):4 t 'FlexibleSUSY/MSSM 2L' w lines ls 3, \
      dataSGs   u (\$1/${scaling}):5 t 'FlexibleSUSY/HSSUSY 2L' w lines ls 2, \
+     dataEFT1L u (\$1/${scaling}):2 t 'FlexibleSUSY/HSSUSY 1L' w lines ls 4, \
      dataSGs   u (\$1/${scaling}):6 t 'SOFTSUSY 3.6.2' w lines ls 5, \
      dataSGs   u (\$1/${scaling}):12 t 'SARAH/SPheno' w lines ls 6, \
      dataFH    u (\$1/${scaling}):2 t 'FeynHiggs 2.12.2' w lines ls 8, \
@@ -74,6 +75,7 @@ plot [${x1}] [${y1}] \
      dataTower1LNoLogs u (\$1/${scaling}):2 t 'FlexibleEFTHiggs/MSSM 1L*' w lines ls 10, \
      dataSGs   u (\$1/${scaling}):4 t 'FlexibleSUSY/MSSM 2L' w lines ls 3, \
      dataSGs   u (\$1/${scaling}):5 t 'FlexibleSUSY/HSSUSY 2L' w lines ls 2, \
+     dataEFT1L u (\$1/${scaling}):2 t 'FlexibleSUSY/HSSUSY 1L' w lines ls 4, \
      dataSGs   u (\$1/${scaling}):6 t 'SOFTSUSY 3.6.2' w lines ls 5, \
      dataSGs   u (\$1/${scaling}):12 t 'SARAH/SPheno' w lines ls 6, \
      dataFH    u (\$1/${scaling}):2 t 'FeynHiggs 2.12.2' w lines ls 8, \
@@ -97,6 +99,8 @@ plot [${x2}] [${y2}] \
      data u (\$1/${scaling}):(\$2-\$18) t 'FlexibleEFTHiggs/MSSM 1L' w lines ls 7, \
      data u (\$33/${scaling}):(\$36-\$18) t 'FlexibleSUSY/MSSM 2L' w lines ls 3, \
      data u (\$33/${scaling}):(\$37-\$18) t 'FlexibleSUSY/HSSUSY 2L' w lines ls 2, \
+     '< paste '.dataTower2L.' '.dataEFT1L \
+     u (\$1/${scaling}):(\$18-\$2) t 'FlexibleSUSY/HSSUSY 1L' w lines ls 4, \
      data u (\$33/${scaling}):(\$38-\$18) t 'SOFTSUSY 3.6.2' w lines ls 5, \
      data u (\$33/${scaling}):(\$44-\$18) t 'SARAH/SPheno' w lines ls 6, \
      dataFh u (\$1/${scaling}):(\$2-\$5) t 'FeynHiggs 2.12.2' w lines ls 8, \
@@ -111,6 +115,8 @@ plot [${x2}] [${y2}] \
      data u (\$1/${scaling}):(\$2-\$18) t 'FlexibleEFTHiggs/MSSM 1L' w lines ls 7, \
      data u (\$33/${scaling}):(\$36-\$18) t 'FlexibleSUSY/MSSM 2L' w lines ls 3, \
      data u (\$33/${scaling}):(\$37-\$18) t 'FlexibleSUSY/HSSUSY 2L' w lines ls 2, \
+     '< paste '.dataTower2L.' '.dataEFT1L \
+     u (\$1/${scaling}):(\$18-\$2) t 'FlexibleSUSY/HSSUSY 1L' w lines ls 4, \
      data u (\$33/${scaling}):(\$38-\$18) t 'SOFTSUSY 3.6.2' w lines ls 5, \
      data u (\$33/${scaling}):(\$44-\$18) t 'SARAH/SPheno' w lines ls 6, \
      dataFh u (\$1/${scaling}):(\$2-\$5) t 'FeynHiggs 2.12.2' w lines ls 8, \
@@ -195,7 +201,7 @@ for s in $scenario ; do
 done
 
 scenario="
- Xt_TB-5_MS-2000,-3.5:3.5,92:,-3.5:3.5,-4:10
+ Xt_TB-5_MS-2000,-3.5:3.5,95:,-3.5:3.5,-4:10
 "
 
 for s in $scenario ; do
