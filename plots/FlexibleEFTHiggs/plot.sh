@@ -129,6 +129,7 @@ plot [${x2}] [${y2}] \
 
 set ylabel "{/Symbol l}(M_S)"
 set output "lambda_${s}.pdf"
+set key bottom left
 
 plot [${x1}] [:] \
      dataTower1L u (\$1/${scaling}):12 t "FlexibleEFTHiggs-1L" w lines ls 7, \
