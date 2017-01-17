@@ -187,9 +187,9 @@
 
 \begin{frame}{Full model approach}
   \begin{align*}
-    (M_h^\text{MSSM})^2 &= \text{smallest eigenvalue of} \\
-    &\phantom{={}} \left[(m_h^\text{MSSM})^2 - \Sigma^\text{MSSM}_h((M_h^\text{MSSM})^2,M_S)
-      + \frac{t_h^\text{MSSM}}{v}\right]_{ij}
+    (M_h^\text{MSSM})^2 &= \text{eigenvalue of} \\
+    &\phantom{={}} \left[(M_\phi^\text{MSSM})^2 - \Sigma^\text{MSSM}_\phi(p^2,M_S)
+      + t_\phi^\text{MSSM}\right]
   \end{align*}
   \emph{Advantage:} includes all 1L terms $O(p^2/M_S^2)$\\
   \emph{Disadvantage:} suffers from large logarithms $\propto\log(M_t/M_S)$ if $M_S\gg M_t$\\
@@ -365,15 +365,15 @@
   Idea: stricter handling of loop orders in matching condition
   \begin{align*}
     (M_h^\SM)^2 &= \lambda v^2 - \Sigma^{\SM}_h((m_h^\MSSM)^2) + \frac{t_h^\SM}{v}\\
-    (M_h^\MSSM)^2 &= M_{h}^{(1)} - \Sigma^{\MSSM}_h((m_h^\MSSM)^2) + \tilde{t}_h^\MSSM
+    (M_h^\MSSM)^2 &= \text{EV of } \left[M_\phi^{(1)} - \Sigma^{\MSSM}_\phi((m_h^\MSSM)^2) + \tilde{t}_\phi^\MSSM\right]
   \end{align*}
   with
   \begin{align*}
-    M_{h}^{(1)} &= \text{tree-level mass matrix w/ 1L parameters} \\
-    \Sigma^{\MSSM}_h &= \text{1L self-energy w/ 0L parameters} \\
-    t^{\MSSM}_{h_i} &= \text{1L tadpole w/ 0L parameters} \\
+    M_\phi^{(1)} &= \text{tree-level mass matrix w/ 1L parameters} \\
+    \Sigma^{\MSSM}_\phi &= \text{1L self-energy w/ 0L parameters} \\
+    t^{\MSSM}_{\phi_i} &= \text{1L tadpole w/ 0L parameters} \\
     m_h^\MSSM &= \text{tree-level mass w/ 0L parameters} \\
-    (\tilde{t}^{\MSSM}_h)_i &= t^{\MSSM}_{h_i} / v_i
+    (\tilde{t}^{\MSSM}_\phi)_i &= t^{\MSSM}_{\phi_i} / v_i
   \end{align*}
 \end{frame}
 
