@@ -300,7 +300,7 @@
     &= O(\hbar^2 y_t^4 \log\frac{m_t}{M_S})
   \end{align*}
   $\Rightarrow$\\
-  incorrect 2L logs remain in FlexibleEFTHiggs
+  incorrect 2L logs remain in FlexibleEFTHiggs-1L
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -341,7 +341,7 @@
   \item[\ok] all non-log terms correct at 1L, \\
     including all terms $O(p^n/M_S^n, v^n/M_S^n)$
   \item[\ok] all non-log terms correct at 2L
-    $O(\alpha_t(\alpha_t + \alpha_s))$,
+    $O(\alpha_t(\alpha_t + \alpha_s))$, \\
     including all terms $O(p^n/M_S^n, v^n/M_S^n)$
   \end{itemize}
   \emph{Disadvantage:}
@@ -438,15 +438,24 @@
 \section{Uncertainty estimation}
 
 \begin{frame}{Uncertainty estimation of FlexibleEFTHiggs-1L/2L}
+  \emph{Three sources:}
   \begin{itemize}
   \item relation between $y_t^{\text{SM}}$ and $y_t^{\text{MSSM}}$ one loop order higher \\
     FlexibleEFTHiggs-1L: $\rightarrow$ $\Delta M_h^{(y_t\ \text{0L vs. 1L})}$\\
     FlexibleEFTHiggs-2L: $\rightarrow$ $\Delta M_h^{(y_t\ \text{1L vs. 2L})}$
-  \item variation of $Q_\text{match}$ within $[M_S/2, 2 M_S]$ \\
+  \item variation of $Q_\text{match}$ within $[M_S/2, 2 M_S]$
     $\rightarrow$ $\Delta M_h^{(Q_\text{match})}$
-  \item variation of $Q_\text{pole}$ within $[M_t/2, 2 M_t]$ \\
+  \item variation of $Q_\text{pole}$ within $[M_t/2, 2 M_t]$
     $\rightarrow$ $\Delta M_h^{(Q_\pole)}$
   \end{itemize}
+  \emph{Combination:}
+  \begin{align*}
+    \left(\Delta M_h^{\text{FlexibleEFTHiggs-$n$L}}\right)^2
+    &= \left(\max\left\{
+        \Delta M_h^{(y_t\ \text{$(n-1)$L vs. $n$L})},
+        \Delta M_h^{(Q_\text{match})}\right\}\right)^2 \\
+    &\phantom{=\;} + \left(\Delta M_h^{(Q_\pole)}\right)^2
+  \end{align*}
 \end{frame}
 
 \begin{frame}{Uncertainty estimation of FlexibleEFTHiggs-1L/2L}
