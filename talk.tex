@@ -191,7 +191,7 @@
     &\phantom{={}} \left[(M_\phi^\text{MSSM})^2 - \Sigma^\text{MSSM}_\phi(p^2,M_S)
       + t_\phi^\text{MSSM}\right]
   \end{align*}
-  \emph{Advantage:} includes all 1L terms $O(p^2/M_S^2)$\\
+  \emph{Advantage:} includes all 1L terms $O(v^2/M_S^2)$\\
   \emph{Disadvantage:} suffers from large logarithms $\propto\log(M_t/M_S)$ if $M_S\gg M_t$\\
 \end{frame}
 
@@ -222,7 +222,7 @@
   \end{align*}
   \emph{Advantage:} resums large logarithms $\propto\log(M_t/M_S)$\\
   \emph{Disadvantage:} difficult to automatize; neglects terms
-  $O(p^2/M_S^2)$ from SUSY particles
+  $O(v^2/M_S^2)$ from SUSY particles
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -339,10 +339,10 @@
   \item[\ok] easily automatizable
   \item[\ok] correctly resums LL
   \item[\ok] all non-log terms correct at 1L, \\
-    including all terms $O(p^n/M_S^n, v^n/M_S^n)$
+    including all terms $O(v^n/M_S^n)$
   \item[\ok] all non-log terms correct at 2L
     $O(\alpha_t(\alpha_t + \alpha_s))$, \\
-    including all terms $O(p^n/M_S^n, v^n/M_S^n)$
+    including all terms $O(v^n/M_S^n)$
   \end{itemize}
   \emph{Disadvantage:}
   \begin{itemize}
@@ -383,7 +383,7 @@
   \begin{itemize}
   \item[\ok] correctly resums LL + NLL
   \item[\ok] all non-log terms correct at 1L, \\
-    including all terms $O(p^n/M_S^n, v^n/M_S^n)$
+    including all terms $O(v^n/M_S^n)$
   \end{itemize}
   \emph{Disadvantage:}
   \begin{itemize}
@@ -498,20 +498,20 @@
   \begin{itemize}
   \item[\ok] easily automatizable
   \item[\ok] correctly resums LL
-  \item[\ok] all non-log terms correct at 1L, including all terms $O(p^n/M_S^n, v^n/M_S^n)$
+  \item[\ok] all non-log terms correct at 1L, including all terms $O(v^n/M_S^n)$
   \item[\notok] incorrect 2L logs $O(\hbar^2 \log(M_t/M_S))$
   \end{itemize}
   \emph{FlexibleEFTHiggs-2L:}
   \begin{itemize}
   \item[\ok] same advantages as FlexibleEFTHiggs-1L
   \item[\ok] all non-log terms correct at 2L $O(\alpha_t(\alpha_t +
-    \alpha_s))$, including all terms $O(p^n/M_S^n, v^n/M_S^n)$
+    \alpha_s))$, including all terms $O(v^n/M_S^n)$
   \item[\notok] incorrect 3L logs $O(\hbar^3 \log^2(m_t/M_S))$
   \end{itemize}
   \emph{FlexibleEFTHiggs-1L\fsstar:}
   \begin{itemize}
   \item[\ok] correctly resums LL + NLL
-  \item[\ok] all non-log terms correct at 1L, including all terms $O(p^n/M_S^n, v^n/M_S^n)$
+  \item[\ok] all non-log terms correct at 1L, including all terms $O(v^n/M_S^n)$
   \item[\meh] non-logarithmic 2L terms arise at $M_S$
   \item[\notok] difficult to add 2L corrections
   \end{itemize}
