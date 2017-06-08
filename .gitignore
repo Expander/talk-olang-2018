@@ -6,7 +6,7 @@
 *.snm
 *.toc
 
-talk.pdf
+*.pdf
 
 Feynman/FeynmanRules.*
 
