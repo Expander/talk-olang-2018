@@ -104,6 +104,10 @@
 \newcommand{\fivelinebrace}{$\left. \begin{array}{c} \\ \\ \\ \\ \\ \end{array} \right\rbrace$}
 \newcommand{\twolinebrace}{$\left. \begin{array}{c} \\ \\ \end{array} \right\rbrace$}
 \newcommand{\elevenlinebrace}{$\left. \begin{array}{c} \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \end{array} \right\rbrace$}
+\newcommand{\at}{\alpha_t}
+\newcommand{\ab}{\alpha_b}
+\newcommand{\atau}{\alpha_\tau}
+\newcommand{\as}{\alpha_s}
 
 % set look of slides
 \usetheme{Madrid}
@@ -278,7 +282,7 @@
   In the MSSM the following diagrams give the dominant contribution to
   $M_h$ at the 1-loop level:
   \begin{align*}
-    (\Delta m_h^2)^{1L} &= -\Sigma_h^{1L} + \frac{t_h^{1L}}{v} \\
+    (\Delta m_h^2)^{1L} &= -\Sigma_h^{1L}(p^2) + \frac{t_h^{1L}}{v} \\
     &= \fmfvcenter{htop} + \fmfvcenter{hstop} + \fmfvcenter{hstopA} \\
     &\phantom{={}} + \fmfvcenter{htoptad} + \fmfvcenter{hstoptad} \\
     &\approx \frac{12 m_t^4}{(4\pi)^2 v^2} \left(
@@ -286,7 +290,7 @@
       + \frac{X_t^2}{m_{\tilde{t}}^2}
       - \frac{X_t^4}{12 m_{\tilde{t}}^4}
     \right)
-    \quad \text{for} \quad m_{\tilde{t}_1} = m_{\tilde{t}_2}
+    \quad \text{for} \quad m_{\tilde{t}_1} = m_{\tilde{t}_2}, p^2 = 0
   \end{align*}
 \end{frame}
 
@@ -297,7 +301,7 @@
       \ln\frac{m_{\tilde{t}}^2}{m_t^2}
       + \frac{X_t^2}{m_{\tilde{t}}^2}
       - \frac{X_t^4}{12 m_{\tilde{t}}^4}
-    \right)
+    \right) + O(p^2)
   \end{align*}
   $X_t = A_t - \mu/t_\beta$ = stop mixing parameter
   % 12 mt^4 / (16 Pi^2 v^2) (Log[MS^2/mt^2] + Xt^2/MS^2 - Xt^4/(12 MS^4))
@@ -317,7 +321,78 @@
 \end{frame}
 
 \begin{frame}{Higgs mass at 2-loop level}
-  ...
+  Known contributions: $O(\as (\at + \ab) + (\at+\ab)^2 + \atau^2)$ for $p^2 = 0$
+  \\[1em]
+  \includegraphics[width=0.6\textwidth]{images/atas}\\[1em]
+  \includegraphics[width=\textwidth]{images/atat}
+\end{frame}
+
+\begin{frame}{Higgs mass at 2-loop level}
+  \begin{align*}
+    (\Delta m_h^2)^{2L} &\approx
+    \frac{m_t^4 y_t^2}{(4\pi)^4 v^2} \left(
+      c_1 \ln^2\frac{\MS^2}{m_t^2}
+      + c_2 \ln\frac{\MS^2}{m_t^2}
+      + c_3
+    \right) \\
+    & +
+    \frac{m_t^4 \as}{(4\pi)^4 v^2} \left(
+      c_4 \ln^2\frac{\MS^2}{m_t^2}
+      c_5 \ln\frac{\MS^2}{m_t^2}
+      + c_6
+    \right)
+  \end{align*}
+  \emph{Facts:}
+  \begin{itemize}
+  \item logarithmically enhanced by $\MS / m_t$
+  \item still high sensitivity on $m_t$
+  \item ambiguity of definition of $m_t$ is resolved
+  \item ambiguity of definition of $\as$: $\as^\SM(M_Z)$, $\as^\MSSM(\MS)$, \ldots ? \\
+    $\Rightarrow$ 3-loop calculation needed to resolve this ambiguity
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Higgs mass at 3-loop level}
+  Known contributions: $O(\at\as^2)$ for $p^2 = 0$
+  \begin{align*}
+    (\Delta m_h^2)^{3L} &\approx
+    \frac{m_t^4 \as^2}{(4\pi)^6 v^2} \left(
+      c_7 \ln^3\frac{\MS^2}{m_t^2}
+      + c_8 \ln^2\frac{\MS^2}{m_t^2}
+      + c_9 \ln\frac{\MS^2}{m_t^2}
+      + c_{10}
+    \right)
+  \end{align*}
+  \emph{Facts:}
+  \begin{itemize}
+  \item logarithmically enhanced by $\MS / m_t$
+  \item still high sensitivity on $m_t$
+  \item ambiguity of definition of $m_t$ is resolved
+  \item ambiguity of definition of $\as$ is resolved
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Summary of loop calculations}
+  Typical order of magnitude of loop contributions (depends on
+  parameter scenario):
+  \begin{align*}
+    M_h &= m_h + \Delta m_h^{1L} + \Delta m_h^{2L} + \Delta m_h^{3L} + \cdots \\
+    &\approx [91 + O(20\ldots 30) + O(2\ldots 4) + O(1\ldots 2)] \eh{GeV}
+  \end{align*}
+  \emph{Advantages:}
+  \begin{itemize}
+  \item includes logarithmic, non-logarithmic and suppressed terms of
+    the order $O(v^2/\MS^2)$ at fixed loop order
+  \item Precise prediction if $\MS \sim m_t$
+  \end{itemize}
+  \emph{Problem:}
+  \begin{itemize}
+  \item large corrections, if $\MS \gg m_t$ \\
+    $\Rightarrow$ slow convergence of perturbation series \\
+    $\Rightarrow$ large theoretical uncertainty, ($1$--$2\eh{GeV}$, or
+    more) \\
+    $M_h^{\text{exp}} = (125.09 \pm 0.24)\eh{GeV}$
+  \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
