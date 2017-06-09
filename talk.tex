@@ -748,7 +748,7 @@
   \tableofcontents[currentsection]  
 \end{frame}
 
-\begin{frame}{Ways to estimate the uncertainty}
+\begin{frame}{Ways to estimate the theoretical uncertainty}
   \emph{Good ansatz:} Change the calculation by higher orders beyond
   the calculational accuracy.
   \\
@@ -756,7 +756,7 @@
   \begin{itemize}
   \item variation of the unphysical renormalization scale(s)
   \item change $m_t$ or $\as$ by higher orders
-  \item re-parametrization
+  \item re-parametrization of $M_h$
   \end{itemize}
   % \vspace{1em}
   \emph{Potential pitfalls:}
@@ -820,106 +820,92 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Approaches to predict $M_h$}
+\section{Summary}
 
-\begin{frame}{Contents}
-  \tableofcontents[currentsection]  
-\end{frame}
-
-\subsection{Full model approach}
-
-\begin{frame}{Full model approach}
+\begin{frame}{Summary}
+  \emph{Supersymmetry} is still viable, but LHC continuously excludes
+  light SUSY scenarios\\[1em]
+  %
+  \emph{Approaches to calculate $M_h$}:
   \begin{center}
-    \includegraphics[width=0.45\textwidth]{images/mssm-sm-tower-diagrammatic}\\[1em]
+    \begin{tabular}{lcc}
+      \toprule
+                  & low $\MS$ & high $\MS$ \\
+                  & $\MS \lesssim 2\eh{TeV}$ & $\MS \gtrsim 2\eh{TeV}$ \\
+      \midrule
+      fixed-order & \ok       & \notok     \\
+      EFT         & \notok    & \ok        \\
+      mixed       & \ok       & \ok        \\
+      \bottomrule
+    \end{tabular}
   \end{center}
-  \emph{Idea:} Calculate $M_h$ in the MSSM at the scale $Q = M_S$ as a function of the \DRbar\ parameters:\\[1em]
-  \centering $g_i$, $y^f_{ij}$, $v_i$, $\mu$, $B\mu$, $m^2_{H_i}$,
-  $m_{\tilde{f},ij}^2$, $M_i$, $T^f_{ij}$
-\end{frame}
-
-\begin{frame}{Full model approach}
-  \begin{align*}
-    (M_h^\text{MSSM})^2 &= \text{eigenvalue of} \\
-    &\phantom{={}} \left[(M_\phi^\text{MSSM})^2 - \Sigma^\text{MSSM}_\phi(p^2,M_S)
-      + t_\phi^\text{MSSM}\right]
-  \end{align*}
-  \emph{Advantage:} includes all 1L terms $O(v^2/M_S^2)$\\
-  \emph{Disadvantage:} suffers from large logarithms $\propto\log(M_t/M_S)$ if $M_S\gg M_t$\\
+  \emph{Uncertainty of $M_h$ in SUSY:}
+  \begin{itemize}
+  \item tricky to estimate and still ongoing effort!
+  \item $\Delta M_h \gtrsim 1$--$2\eh{GeV}$ at least, but continuously
+    improves
+  \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% backup slides
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Pure EFT approach with $\Gamma$ matching}
-
-\begin{frame}{EFT approach}
+\begin{frame}[noframenumbering]
   \begin{center}
-    \includegraphics[width=0.45\textwidth]{images/mssm-sm-tower-eft}\\[1em]
+    \Huge Backup
   \end{center}
-  \emph{Idea:} Calculate $M_h$ in the SM at the scale $Q = M_t$ as a function of the \MSbar\ parameters:\\[1em]
-  \centering $g_i$, $y^f_{ij}$, $v$, $\mu^2$, $\lambda$
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{EFT approach with $\Gamma$ matching}
-  Determine $\lambda(M_S)$ from mathching all
-  $\Gamma_{\phi_1,\ldots,\phi_n}^{(k)}(p^2 = 0, Q = M_S)$: $\Rightarrow$
-  \begin{align*}
-    \lambda (M_S) &= \frac{1}{4}\left[g_Y^{2} + g_2^2\right] \cos^22\beta
-    + \Delta \lambda
-  \end{align*}
-  RG running to $Q=M_t$ $\Rightarrow$
-  \begin{align*}
-    (M_h^\SM)^2 &= \lambda v^2 - \Sigma^\SM_h((M_h^\SM)^2) + \frac{t_h^\SM}{v}
-  \end{align*}
-  \emph{Advantage:} resums large logarithms $\propto\log(M_t/M_S)$\\
-  \emph{Disadvantage:} difficult to automatize; neglects terms
-  $O(v^2/M_S^2)$ from SUSY particles
+\begin{frame}[noframenumbering]{Numerical comparison}
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{plots/FlexibleEFTHiggs/Mh_MS_TB-5_Xt-0}
+  \end{figure}
+  $\tan\beta = 5$, $X_{t,b,\tau} = 0$
+\end{frame}
+
+\begin{frame}[noframenumbering]{Numerical comparison}
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{plots/FlexibleEFTHiggs/Mh_relative_MS_TB-5_Xt-0}
+  \end{figure}
+  $\tan\beta = 5$, $X_{t,b,\tau} = 0$
+\end{frame}
+
+\begin{frame}[noframenumbering]{Numerical comparison}
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{plots/FlexibleEFTHiggs/Mh_Xt_TB-5_MS-2000}
+  \end{figure}
+  $\tan\beta = 5$, $M_S = 2 \eh{TeV}$, $X_{b,\tau} = 0$
+\end{frame}
+
+\begin{frame}[noframenumbering]{Numerical comparison}
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{plots/FlexibleEFTHiggs/Mh_relative_Xt_TB-5_MS-2000}
+  \end{figure}
+  $\tan\beta = 5$, $M_S = 2 \eh{TeV}$, $X_{b,\tau} = 0$\\
+  For large $X_t$ deviation from HSSUSY-1L due to $p\neq 0 \neq v$.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{EFT approach with $M_h$ matching (FlexibleEFTHiggs-1L)}
-
-\begin{frame}{EFT approach with $M_h$ matching (FlexibleEFTHiggs-1L)}
-  \begin{align*}
-    M_h^{\SM} &\overset{!}{=} M_h^\text{MSSM} \quad \text{at} \quad Q = M_S, 1L
-  \end{align*}
-  $\Rightarrow$
-  \begin{align*}
-    \lambda \leftarrow \frac{1}{v^2} \left[
-      (m_h^\SM)^2 + (M_h^\text{MSSM})^2 - (M_h^\SM)^2
-    \right]
-  \end{align*}
-  3-loop RG running to $Q = M_t$:
-  \begin{align*}
-    M_h^2 &= \lambda v^2 - \Sigma^{\SM}_h(M_h^2) + \frac{t_h^\SM}{v}
-    \qquad \text{(1L)}
-  \end{align*}
-\end{frame}
-
-\begin{frame}{EFT approach with $M_h$ matching (FlexibleEFTHiggs-1L)}
-  Matching condition for $y_t$:
-  \begin{align*}
-    M_t^{\SM} &\overset{!}{=} M_t^\text{MSSM} \quad \text{at} \quad Q = M_S, 2L
-  \end{align*}
-  $\Rightarrow$
-  \begin{align*}
-    y_t^\MSSM \leftarrow \frac{\sqrt{2}}{v_u} \left[
-      m_t^\MSSM - M_t^\MSSM + M_t^\SM
-    \right]
-  \end{align*}
-  Matching conditions for $g_i$:
-  \begin{align*}
-    &M_V^{\SM} \overset{!}{=} M_V^\text{MSSM} \quad \text{at} \quad Q = M_S, 1L \quad (V = W,Z)\\
-    &\alpha_{\text{em}}^\MSSM(M_S) = \alpha_{\text{em}}^\SM(M_S) \ (1 + \Delta\alpha_{\text{em}})\\
-    &\alpha_s^\MSSM(M_S) = \alpha_s^\SM(M_S) \ (1 + \Delta\alpha_s)
-  \end{align*}
+\begin{frame}[noframenumbering]{Uncertainty estimation of original FlexibleEFTHiggs-1L}
+  \begin{center}
+    \begin{minipage}[t]{0.6\textwidth}
+      \includegraphics[width=\textwidth]{plots/FlexibleEFTHiggs/DMh_tower-1L_MS_TB-5_Xt-0}\\
+      \includegraphics[width=\textwidth]{plots/FlexibleEFTHiggs/DMh_tower-1L_Xt_TB-5_MS-2000}
+    \end{minipage}\hfill
+  \end{center}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Incorrect 2L logs in FlexibleEFTHiggs-1L}
+\begin{frame}[noframenumbering]{Incorrect 2L logs in original FlexibleEFTHiggs-1L}
   Matching condition:
   \begin{align*}
     \lambda &\leftarrow \frac{1}{v^2} \left[
@@ -942,7 +928,7 @@
   \end{align*}
 \end{frame}
 
-\begin{frame}{Incorrect 2L logs in FlexibleEFTHiggs-1L}
+\begin{frame}[noframenumbering]{Incorrect 2L logs in original FlexibleEFTHiggs-1L}
   \emph{Problem:} $y_t^{\MSSM} = y_t^\SM/s_\beta [1 + O(\hbar)] $\\
   $\Rightarrow$
   \begin{align*}
@@ -955,7 +941,7 @@
   incorrect 2L logs remain in FlexibleEFTHiggs-1L
 \end{frame}
 
-\begin{frame}{FlexibleEFTHiggs-1L}
+\begin{frame}[noframenumbering]{Summary original FlexibleEFTHiggs-1L}
   \emph{Advantages:}
   \begin{itemize}
   \item[\ok] easily automatizable
@@ -971,65 +957,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Improvement 1: FlexibleEFTHiggs-2L}
-
-\begin{frame}{Improvement 1: FlexibleEFTHiggs-2L}
-  \begin{center}
-    \Large Improvement 1: $M_h$ matching at 2L \\
-    (FlexibleEFTHiggs-2L)
-  \end{center}
-\end{frame}
-
-\begin{frame}{Improvement 1: FlexibleEFTHiggs-2L}
-  \begin{align*}
-    M_h^{\SM} &\overset{!}{=} M_h^\text{MSSM} & &\text{at} & Q = M_S, \textcolor{red}{2L} \\
-    M_t^{\SM} &\overset{!}{=} M_t^\text{MSSM} & &\text{at} & Q = M_S, \textcolor{red}{1L} \\
-    \alpha_s^\SM(M_S) &= \alpha_s^\MSSM(M_S)  & &\text{at} & Q = M_S, \textcolor{red}{0L}
-  \end{align*}
-  $\Rightarrow$
-  \begin{align*}
-    \lambda \leftarrow \frac{1}{v^2} \left[
-      (m_h^\SM)^2 + (M_h^\text{MSSM})^2 - (M_h^\SM)^2
-    \right]
-  \end{align*}
-  3-loop RG running to $Q = M_t$:
-  \begin{align*}
-    M_h^2 &= \lambda v^2 - \Sigma^{\SM}_h(M_h^2) + \frac{t_h^\SM}{v}
-    \qquad \text{\textcolor{red}{(2L)}}
-  \end{align*}
-\end{frame}
-
-\begin{frame}{Improvement 1: FlexibleEFTHiggs-2L}
-  \emph{Advantages:}
-  \begin{itemize}
-  \item[\ok] easily automatizable
-  \item[\ok] correctly resums LL
-  \item[\ok] all non-log terms correct at 1L, \\
-    including all terms $O(v^n/M_S^n)$
-  \item[\ok] all non-log terms correct at 2L
-    $O(\alpha_t(\alpha_t + \alpha_s))$, \\
-    including all terms $O(v^n/M_S^n)$
-  \end{itemize}
-  \emph{Disadvantage:}
-  \begin{itemize}
-  \item[\notok] incorrect 3L logs $O(\hbar^3 \log^2(m_t/M_S))$
-  \end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{Improvement 2: FlexibleEFTHiggs-1L\protect\fsstar}
-
-\begin{frame}{Improvement 2: FlexibleEFTHiggs-1L\fsstar}
-  \begin{center}
-    \Large Improvement 2: $M_h$ matching at 1L, \\
-    but avoid appearance of incorrect higher-order logs \\
-    (FlexibleEFTHiggs-1L\fsstar)
-  \end{center}
-\end{frame}
-
-\begin{frame}{Improvement 2: FlexibleEFTHiggs-1L\fsstar}
-  Idea: stricter handling of loop orders in matching condition
+\begin{frame}[noframenumbering]{Improved FlexibleEFTHiggs-1L}
+  strict handling of loop orders in matching condition
   \begin{align*}
     (M_h^\SM)^2 &= \lambda v^2 - \Sigma^{\SM}_h((m_h^\MSSM)^2) + \frac{t_h^\SM}{v}\\
     (M_h^\MSSM)^2 &= \text{EV of } \left[M_\phi^{(1)} - \Sigma^{\MSSM}_\phi((m_h^\MSSM)^2) + \tilde{t}_\phi^\MSSM\right]
@@ -1044,7 +973,7 @@
   \end{align*}
 \end{frame}
 
-\begin{frame}{Improvement 2: FlexibleEFTHiggs-1L\fsstar}
+\begin{frame}[noframenumbering]{Improved FlexibleEFTHiggs-1L}
   \emph{Advantages:}
   \begin{itemize}
   \item[\ok] easily automatizable
@@ -1057,141 +986,6 @@
   \item[\meh] non-logarithmic 2L terms arise at $M_S$
   \item[\notok] difficult to add 2L corrections
   \end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Numerical comparison}
-
-\begin{frame}{Contents}
-  \tableofcontents[currentsection]  
-\end{frame}
-
-\begin{frame}{Numerical comparison}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/FlexibleEFTHiggs/Mh_MS_TB-5_Xt-0}
-  \end{figure}
-  $\tan\beta = 5$, $X_{t,b,\tau} = 0$
-\end{frame}
-
-\begin{frame}{Numerical comparison}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/FlexibleEFTHiggs/Mh_relative_MS_TB-5_Xt-0}
-  \end{figure}
-  $\tan\beta = 5$, $X_{t,b,\tau} = 0$
-\end{frame}
-
-\begin{frame}{Numerical comparison}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/FlexibleEFTHiggs/Mh_Xt_TB-5_MS-2000}
-  \end{figure}
-  $\tan\beta = 5$, $M_S = 2 \eh{TeV}$, $X_{b,\tau} = 0$
-\end{frame}
-
-\begin{frame}{Numerical comparison}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/FlexibleEFTHiggs/Mh_relative_Xt_TB-5_MS-2000}
-  \end{figure}
-  $\tan\beta = 5$, $M_S = 2 \eh{TeV}$, $X_{b,\tau} = 0$\\
-  For large $X_t$ deviation from HSSUSY-1L due to $p\neq 0 \neq v$.
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Uncertainty estimation}
-
-\begin{frame}{Uncertainty estimation of FlexibleEFTHiggs-1L/2L}
-  \emph{Three sources:}
-  \begin{itemize}
-  \item relation between $y_t^{\text{SM}}$ and $y_t^{\text{MSSM}}$ one loop order higher \\
-    FlexibleEFTHiggs-1L: $\rightarrow$ $\Delta M_h^{(y_t\ \text{0L vs. 1L})}$\\
-    FlexibleEFTHiggs-2L: $\rightarrow$ $\Delta M_h^{(y_t\ \text{1L vs. 2L})}$
-  \item variation of $Q_\text{match}$ within $[M_S/2, 2 M_S]$
-    $\rightarrow$ $\Delta M_h^{(Q_\text{match})}$
-  \item variation of $Q_\text{pole}$ within $[M_t/2, 2 M_t]$
-    $\rightarrow$ $\Delta M_h^{(Q_\pole)}$
-  \end{itemize}
-  \emph{Combination:}
-  \begin{align*}
-    \left(\Delta M_h^{\text{FlexibleEFTHiggs-$n$L}}\right)^2
-    &= \left(\max\left\{
-        \Delta M_h^{(y_t\ \text{$(n-1)$L vs. $n$L})},
-        \Delta M_h^{(Q_\text{match})}\right\}\right)^2 \\
-    &\phantom{=\;} + \left(\Delta M_h^{(Q_\pole)}\right)^2
-  \end{align*}
-\end{frame}
-
-\begin{frame}{Uncertainty estimation of FlexibleEFTHiggs-1L/2L}
-  \begin{minipage}[t]{0.49\textwidth}
-    \centering
-    FlexibleEFTHiggs-1L \\
-    \includegraphics[width=\textwidth]{plots/FlexibleEFTHiggs/DMh_tower-1L_MS_TB-5_Xt-0}\\
-    \includegraphics[width=\textwidth]{plots/FlexibleEFTHiggs/DMh_tower-1L_Xt_TB-5_MS-2000}
-  \end{minipage}\hfill
-  \begin{minipage}[t]{0.49\textwidth}
-    \centering
-    FlexibleEFTHiggs-2L \\
-    \includegraphics[width=\textwidth]{plots/FlexibleEFTHiggs/DMh_tower-2L_MS_TB-5_Xt-0}\\
-    \includegraphics[width=\textwidth]{plots/FlexibleEFTHiggs/DMh_tower-2L_Xt_TB-5_MS-2000}
-  \end{minipage}
-\end{frame}
-
-\begin{frame}{FlexibleEFTHiggs-2L combined uncertainty}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/FlexibleEFTHiggs/Mh_uncertainties_relative_MS_TB-5_Xt-0}
-  \end{figure}
-  $\tan\beta = 5$, $X_{t,b,\tau} = 0$
-\end{frame}
-
-\begin{frame}{FlexibleEFTHiggs-2L combined uncertainty}
-  \begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{plots/FlexibleEFTHiggs/Mh_uncertainties_relative_Xt_TB-5_MS-2000}
-  \end{figure}
-  $\tan\beta = 5$, $X_{t,b,\tau} = 0$
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Summary}
-
-\begin{frame}{Summary}
-  \emph{FlexibleEFTHiggs-1L:}\\
-  \begin{itemize}
-  \item[\ok] easily automatizable
-  \item[\ok] correctly resums LL
-  \item[\ok] all non-log terms correct at 1L, including all terms $O(v^n/M_S^n)$
-  \item[\notok] incorrect 2L logs $O(\hbar^2 \log(M_t/M_S))$
-  \end{itemize}
-  \emph{FlexibleEFTHiggs-2L:}
-  \begin{itemize}
-  \item[\ok] same advantages as FlexibleEFTHiggs-1L
-  \item[\ok] all non-log terms correct at 2L $O(\alpha_t(\alpha_t +
-    \alpha_s))$, including all terms $O(v^n/M_S^n)$
-  \item[\notok] incorrect 3L logs $O(\hbar^3 \log^2(m_t/M_S))$
-  \end{itemize}
-  \emph{FlexibleEFTHiggs-1L\fsstar:}
-  \begin{itemize}
-  \item[\ok] correctly resums LL + NLL
-  \item[\ok] all non-log terms correct at 1L, including all terms $O(v^n/M_S^n)$
-  \item[\meh] non-logarithmic 2L terms arise at $M_S$
-  \item[\notok] difficult to add 2L corrections
-  \end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% backup slides
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[noframenumbering]
-  \begin{center}
-    \Huge Backup
-  \end{center}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
