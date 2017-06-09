@@ -51,7 +51,7 @@ plt.ylim([0, 6])
 
 plt.legend([r'2L fixed-order',
             r'2L EFT',
-            r'1L mixed'],
+            r'1L FlexibleEFTHiggs'],
            loc='upper right', fontsize=10, fancybox=None, framealpha=None)
 
 plt.title(r'$X_t = M_S, \tan\beta = 5$', color='k', fontsize=10)
