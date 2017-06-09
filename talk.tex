@@ -499,7 +499,7 @@
   \tableofcontents[currentsection]  
 \end{frame}
 
-\begin{frame}{Mixed fixed-order and EFT approach}
+\begin{frame}{Mixed fixed-order and EFT approaches}
   \emph{Goal:} resum large logarithms and include suppressed
   $O(v^2/\MS^2)$ terms
   \\[2em]
@@ -517,6 +517,95 @@
       (M_h^2)_{\SM} = (M_h^2)_{\MSSM} \qquad \text{at 1L level at } Q = \MS
     \end{align*}
   \end{itemize}
+\end{frame}
+
+\begin{frame}{FlexibleEFTHiggs approach}
+  \emph{Idea:}
+  \begin{enumerate}
+  \item Determine $\lambda(\MS)$ from the condition
+    \begin{align*}
+      (M_h^2)_{\SM} &= (M_h^2)_{\MSSM}\qquad \text{1L, } Q = \MS
+    \end{align*}
+    \textcolor{darkgreen}{No suppressed terms are neglected.
+      $\Rightarrow$ $\lambda$ contains all $O(v^2/\MS^2)$ suppressed
+      terms}
+  \item RG running of $\lambda(\MS)$ from $\MS \rightarrow M_t$\\
+    \textcolor{darkgreen}{Note: $M_h$ is RG invariant.}
+  \item Calculate $M_h$ in the Standard Model at $Q = M_t$:
+    \begin{align*}
+      M_h^2 = \lambda(M_t) v^2 + (\Delta m_h^2)^{1L}_{\SM}
+    \end{align*}
+    \textcolor{darkgreen}{$\Rightarrow$ $M_h$ contains all suppressed
+      terms.}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{FlexibleEFTHiggs -- EFT equivalence}
+  \begin{align*}
+    (M_h^2)_{\SM} &= (M_h^2)_{\MSSM} \qquad \text{1L, } Q = \MS \\
+    \lambda v^2 + (\Delta m_h^2)^{1L}_{\SM} &= (M_h^2)_{\MSSM}
+  \end{align*}
+  $\Rightarrow$
+  \begin{align*}
+    \lambda(\MS) &= \frac{1}{v^2} \left[ (M_h^2)_{\MSSM} - (\Delta m_h^2)^{1L}_{\SM} \right] \\
+    &= \frac{1}{v^2} \left[
+      (m_h^2)_{\MSSM} + (\Delta m_h^2)^{1L}_{\MSSM} - (\Delta m_h^2)^{1L}_{\SM}
+    \right]
+  \end{align*}
+\end{frame}
+
+\begin{frame}{FlexibleEFTHiggs -- EFT equivalence}
+  Inserting 1-loop corrections to $(M_h^2)_{\MSSM}$ for $X_t = 0$:
+  \begin{align*}
+    \lambda(\MS) &=
+    \frac{1}{v^2} \Bigg[
+      \frac{1}{4}(g_Y^2 + g_2^2) v^2 c_{2\beta}^2 \\
+      &\quad\qquad \textcolor{red}{ + \frac{c_{\alpha}^2}{s_{\beta}^2} (\Delta m_h^2)^{1L}_{\SM} } \\
+      &\quad\qquad \textcolor{red}{ - \frac{c_{\alpha}^2}{s_{\beta}^2} \frac{6 (y_t^{\SM})^2 m_t^2}{(4\pi)^2}
+      \Bigg( B_0(m_{Q_3},m_{Q_3}) + B_0(m_{U_3},m_{U_3}) \Bigg) } \\
+      &\quad\qquad - (\Delta m_h^2)^{1L}_{\SM}
+    \Bigg]
+  \end{align*}
+\end{frame}
+
+\begin{frame}{FlexibleEFTHiggs -- EFT equivalence}
+  In the decoupling limit $c_{\alpha}^2/s_{\beta}^2\rightarrow 1$:
+  \begin{align*}
+    \lambda(\MS) &=
+    \frac{1}{4}(g_Y^2 + g_2^2) c_{2\beta}^2
+    - 3 \frac{(y_t^{\SM})^4}{(4\pi)^2} \Bigg[
+      B_0(m_{Q_3},m_{Q_3}) + B_0(m_{U_3},m_{U_3})
+    \Bigg] \\
+    &= \frac{1}{4} (g_Y^2 + g_2^2) c_{2\beta}^2
+    - 3 \frac{(y_t^\SM)^4}{(4\pi)^2} \Bigg[ 
+    -\log\frac{m^2_{Q_3}}{Q^2} + \frac{p^2}{6m^2_{Q_3}} + O\Big(\frac{p^4}{m^4_{Q_3}}\Big)\\
+    &\qquad\qquad
+    - \log\frac{m^2_{U_3}}{Q^2} + \frac{p^2}{6m^2_{U_3}} + O\Big(\frac{p^4}{m^4_{U_3}}\Big)
+    \Bigg] \\
+    &= \lambda^{\text{tree}}(\MS) + \lambda^{1L}(\MS) + O\Big(\frac{p^2}{\MS^2}\Big)
+  \end{align*}
+  $\lambda(\MS)$ in the FlexibleEFTHiggs approach is equivalent to the
+  EFT approach at 1-loop, up to suppressed terms $O(v^2/\MS^2)$
+\end{frame}
+
+\begin{frame}{Summary FlexibleEFTHiggs approach}
+  \begin{align*}
+    (M_h^2)_{\SM} &= (M_h^2)_{\MSSM} \qquad \text{1L, } Q = \MS
+\intertext{$\Rightarrow$}
+    \lambda(\MS) &=
+    \lambda^{\text{tree}}(\MS) + \lambda^{1L}(\MS) + O(v^2/\MS^2)
+  \end{align*}
+  \emph{Observations:}
+  \begin{itemize}
+  \item large 1-loop logarithms cancel in matching condition
+  \item for $v=p=0$ FlexibleEFTHiggs is identical to a 1-loop EFT
+    calculation
+  \item all suppressed terms are incorporated in $\lambda$
+  \item RG running resums (N)LL to all orders
+  \end{itemize}
+  \textcolor{darkgreen}{$\Rightarrow$ FlexibleEFTHiggs leads to a
+    correct Higgs mass prediction at the full 1-loop level (including
+    suppressed terms) with additional (N)LL resummation.}
 \end{frame}
 
 \begin{frame}{Comparison of approaches}
