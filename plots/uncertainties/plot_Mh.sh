@@ -51,7 +51,7 @@ hEFT,  = plt.plot(xSUSYHD      , ySUSYHD      , 'g-.', linewidth=1.2, dashes=(5,
 plt.legend(handles = [hMSSM, hEFT, hmix],
            loc='lower right', fontsize=10, fancybox=None, framealpha=None)
 
-plt.title(r'$X_t = M_S, \tan\beta = 5$', color='k', fontsize=10)
+plt.title(r'$X_t = 0, \tan\beta = 5$', color='k', fontsize=10)
 
 plt.savefig(outfile)
 print "saved plot in ", outfile

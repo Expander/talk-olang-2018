@@ -3,7 +3,7 @@
 OUTFILENAME := talk.pdf
 PLOTS       := \
 		plots/uncertainties/DMh_MS_TB-5_Xt-1.pdf \
-		plots/uncertainties/Mh_MS_TB-5_Xt-1.pdf
+		plots/uncertainties/Mh_MS_TB-5_Xt-0.pdf
 
 TEXDIRS     := $(PLOTSDIR)
 BIBTEX      := bibtex
@@ -12,7 +12,7 @@ BIBTEX      := bibtex
 
 all: $(OUTFILENAME)
 
-plots/uncertainties/DMh_MS_TB-5_Xt-1.pdf: plots/uncertainties/plot_DMh.sh plots/uncertainties/*.dat
+plots/uncertainties/DMh_MS_TB-5_Xt-0.pdf: plots/uncertainties/plot_DMh.sh plots/uncertainties/*.dat
 	$<
 
 plots/uncertainties/Mh_MS_TB-5_Xt-1.pdf: plots/uncertainties/plot_Mh.sh plots/uncertainties/*.dat
