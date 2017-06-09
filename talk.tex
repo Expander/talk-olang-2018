@@ -482,10 +482,13 @@
       \midrule
       fixed-order & \ok       & \notok     \\
       EFT         & \notok    & \ok        \\
-      mixed       & \ok       & \ok        \\
+      ? mixed     & \ok       & \ok        \\
       \bottomrule
     \end{tabular}
   \end{center}
+  \vspace{2em}
+  Q: Can the fixed-order and EFT approaches be combined? \\[1em]
+  A: Yes!  \mycite{arXiv:1312.4937, arXiv:1609.00371}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -494,6 +497,26 @@
 
 \begin{frame}{Contents}
   \tableofcontents[currentsection]  
+\end{frame}
+
+\begin{frame}{Mixed fixed-order and EFT approach}
+  \emph{Goal:} resum large logarithms and include suppressed
+  $O(v^2/\MS^2)$ terms
+  \\[2em]
+  \emph{Two known approaches:}
+  \begin{itemize}
+  \item FeynHiggs \mycite{arXiv:1312.4937}: Replace logs from
+    fixed-order calculation by resummed logs
+    \begin{align*}
+      M_h^2 = (M_h^2)_{\text{fixed-order}} - (M_h^2)_{\text{logs}} + (M_h^2)_{\text{resummed logs}}
+    \end{align*}
+  \item FlexibleEFTHiggs \mycite{arXiv:1609.00371}: Incorporate
+    $O(v^2/\MS^2)$ terms into $\lambda$ by using the matching
+    condition
+    \begin{align*}
+      (M_h^2)_{\SM} = (M_h^2)_{\MSSM} \qquad \text{at 1L level at } Q = \MS
+    \end{align*}
+  \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
