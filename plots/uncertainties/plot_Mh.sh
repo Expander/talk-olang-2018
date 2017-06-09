@@ -12,12 +12,12 @@ directory = r'plots/uncertainties/'
 
 # plot Mh(MS)
 
-outfile = directory + r'Mh_MS_TB-5_Xt-1.pdf'
+outfile = directory + r'Mh_MS_TB-5_Xt-0.pdf'
 
 try:
-    dataMSSMEFTHiggs = np.genfromtxt(directory + r'MSSMEFTHiggs_MS_TB-5_Xt-1..dat')
-    dataMSSM         = np.genfromtxt(directory + r'NUHMSSMNoFV_MS_TB-5_Xt-1..dat')
-    dataSUSYHD       = np.genfromtxt(directory + r'SUSYHD_MS_TB-5_Xt-1..dat')
+    dataMSSMEFTHiggs = np.genfromtxt(directory + r'MSSMEFTHiggs_MS_TB-5_Xt-0..dat')
+    dataMSSM         = np.genfromtxt(directory + r'MSSMMuBMu_MS_TB-5_Xt-0..dat')
+    dataSUSYHD       = np.genfromtxt(directory + r'HSSUSY_MS_TB-5_Xt-0..dat')
 except:
     print "Error: could not load numerical data from file"
     exit
@@ -44,13 +44,11 @@ plt.xscale('log')
 plt.xlabel(r'$M_S\,/\,\mathrm{GeV}$')
 plt.ylabel(r'$M_h\,/\,\mathrm{GeV}$')
 
-plt.plot(xMSSM        , yMSSM        , 'b--', linewidth=1.2)
-plt.plot(xSUSYHD      , ySUSYHD      , 'g-.', linewidth=1.2, dashes=(5,3,1,3))
-plt.plot(xMSSMEFTHiggs, yMSSMEFTHiggs, 'r-' , linewidth=1.2)
+hMSSM, = plt.plot(xMSSM        , yMSSM        , 'b--', linewidth=1.2, label=r'2L fixed-order')
+hmix,  = plt.plot(xMSSMEFTHiggs, yMSSMEFTHiggs, 'r-' , linewidth=1.2, label=r'1L mixed')
+hEFT,  = plt.plot(xSUSYHD      , ySUSYHD      , 'g-.', linewidth=1.2, dashes=(5,3,1,3), label=r'2L EFT')
 
-plt.legend([r'2L fixed-order',
-            r'2L EFT',
-            r'1L mixed'],
+plt.legend(handles = [hMSSM, hEFT, hmix],
            loc='lower right', fontsize=10, fancybox=None, framealpha=None)
 
 plt.title(r'$X_t = M_S, \tan\beta = 5$', color='k', fontsize=10)
