@@ -161,6 +161,78 @@
   \tableofcontents[currentsection]  
 \end{frame}
 
+\begin{frame}{Supersymmetry}
+  Still an attractive extension of the Standard Model!\\[1em]
+  \emph{Features:}
+  \begin{itemize}
+  \item can solve the hierarchy problem (heavy BSM particles can give
+    large corrections to the Higgs mass)
+  \item gauge coupling unification at $\sim 10^{16}\eh{GeV}$ (due to
+    extra matter)
+  \item possible connection to super-gravity models and string theory
+    (\ESSM, MRSSM)
+  \item can stabilize the electroweak vacuum (see later)
+  \end{itemize}
+  \vspace{1em}
+  \emph{Problem:} LHC has not found any SUSY particles so far
+  $\Rightarrow$ SUSY particles are probably heavy
+\end{frame}
+
+\begin{frame}{Minimal supersymmetry (MSSM)}
+  Particle content:
+  \begin{equation*}
+    \begin{aligned}
+      \hat{Q}  &:\textstyle (\mathbf{     3} ,\mathbf{2}, \frac{1}{6}) ,
+      &\hat{u}^c&:\textstyle (\bar{\mathbf{3}},\mathbf{1},-\frac{2}{3}) ,
+      &\hat{d}^c&:\textstyle (\bar{\mathbf{3}},\mathbf{1}, \frac{1}{3}) ,
+      \\
+      \hat{L}  &:\textstyle (\mathbf{     1} ,\mathbf{2},-\frac{1}{2}) ,
+      &\hat{e}^c&:\textstyle (\mathbf{     1} ,\mathbf{1}, 1          ) ,
+      \\
+      \hat{H}_d&:\textstyle (\mathbf{     1} ,\mathbf{2},-\frac{1}{2}) ,
+      &\hat{H}_u&:\textstyle (\mathbf{     1} ,\mathbf{2}, \frac{1}{2}) ,
+      \\
+      \tilde{B}  &:\textstyle (\mathbf{1},\mathbf{1},0) ,
+      &\tilde{W}  &:\textstyle (\mathbf{1},\mathbf{3},0) ,
+      &\tilde{g}  &:\textstyle (\mathbf{8},\mathbf{1},0)
+    \end{aligned}
+  \end{equation*}
+  Superpotential:
+  \begin{align*}
+    \mathcal{W}_\MSSM &= (Y_u)_{ij} \, \hat{Q}_i\cdot\hat{H}_u \, \hat{u}^c_j
+    + (Y_d)_{ij} \, \hat{Q}_i\cdot\hat{H}_{d} \, \hat{d}^c_j
+    +  (Y_e)_{ij} \, \hat{L}_i\cdot\hat{H}_{d} \, \hat{e}^c_j \\
+    &\phantom{={}} + \mu \hat{H}_u\cdot\hat{H}_{d}
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Minimal supersymmetry (MSSM)}
+  SUSY particles have not been observed $\Rightarrow$ SUSY must be
+  broken.  Here we consider soft breaking:
+  \begin{align*}
+    \mathcal{L}_{\MSSM}^\mathsf{soft} &= -\frac12\Big[M_1\bar{\tilde{B}}^0\tilde{B}^0 +
+    M_2\bar{\tilde{W}}\tilde{W} +
+    M_3\bar{\tilde{g}}\tilde{g}\Big] \\
+    &\phantom{={}} - m^2_{H_u}|H_u|^2 - m^2_{H_d}|H_d|^2 - \Big[B\mu \, {H}_u\cdot{H}_{d} +
+    \text{h.c.}\Big] \\
+    &\phantom{={}}
+    -\Big[\tilde{Q}_i^\dagger(m^2_Q)_{ij}\tilde{Q}_j +
+    \tilde{d}_{Ri}^\dagger(m^2_d)_{ij}\tilde{d}_{Rj}
+    +
+    \tilde{u}_{Ri}^\dagger(m^2_u)_{ij}\tilde{u}_{Rj} \\
+    &\phantom{={}}\qquad
+    + \tilde{L}_{i}^\dagger(m^2_L)_{ij}\tilde{L}_{j} +
+    \tilde{e}_{Ri}^\dagger(m^2_e)_{ij}\tilde{e}_{Rj}
+    \Big] \\
+    &\phantom{={}}
+    +\Big[(T_u)_{ij}\tilde{Q}_i \cdot  H_u\tilde{u}^\dagger_{\text{R}j}
+    +
+    (T_d)_{ij}\tilde{Q}_i \cdot H_{d} \tilde{d}^\dagger_{\text{R}j}
+    + (T_e)_{ij}\tilde{L}_i \cdot H_{d}\tilde{e}^\dagger_{\text{R}j} \\
+    &\phantom{={}} \qquad + \text{h.c.}\Big]
+  \end{align*}
+\end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Higgs mass calculation at fixed loop order}
