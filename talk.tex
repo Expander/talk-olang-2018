@@ -684,9 +684,9 @@
     \lambda(\MS) &=
     \frac{1}{v^2} \Bigg[
       \frac{1}{4}(g_Y^2 + g_2^2) v^2 c_{2\beta}^2 \\
-      &\quad\qquad \textcolor{red}{ + \frac{c_{\alpha}^2}{s_{\beta}^2} (\Delta m_h^2)^{1L}_{\SM} } \\
-      &\quad\qquad \textcolor{red}{ - \frac{c_{\alpha}^2}{s_{\beta}^2} \frac{6 (y_t^{\SM})^2 m_t^2}{(4\pi)^2}
-      \Bigg( B_0(m_{Q_3},m_{Q_3}) + B_0(m_{U_3},m_{U_3}) \Bigg) } \\
+      &\quad\qquad \textcolor{red}{ + \frac{c_{\alpha}^2}{s_{\beta}^2} (\Delta m_h^2)^{1L}_{\SM}
+        - \frac{c_{\alpha}^2}{s_{\beta}^2} \frac{12 (y_t^{\SM})^2 m_t^2}{(4\pi)^2}
+      B_0(p^2,\MS^2,\MS^2) } \\
       &\quad\qquad - (\Delta m_h^2)^{1L}_{\SM}
     \Bigg]
   \end{align*}
@@ -697,15 +697,14 @@
   \begin{align*}
     \lambda(\MS) &=
     \frac{1}{4}(g_Y^2 + g_2^2) c_{2\beta}^2
-    - 3 \frac{(y_t^{\SM})^4}{(4\pi)^2} \Bigg[
-      B_0(m_{Q_3},m_{Q_3}) + B_0(m_{U_3},m_{U_3})
+    - 12 \frac{m_t^2 (y_t^{\SM})^2}{(4\pi)^2 v^2} B_0(p^2,\MS^2,\MS^2) \\
+    &= \frac{1}{4} (g_Y^2 + g_2^2) c_{2\beta}^2
+    - 12 \frac{m_t^2 (y_t^\SM)^2}{(4\pi)^2 v^2} \Bigg[ 
+    -\log\frac{\MS^2}{Q^2} + \frac{p^2}{6\MS^2} + O\Big(\frac{p^4}{\MS^4}\Big)
     \Bigg] \\
     &= \frac{1}{4} (g_Y^2 + g_2^2) c_{2\beta}^2
-    - 3 \frac{(y_t^\SM)^4}{(4\pi)^2} \Bigg[ 
-    -\log\frac{m^2_{Q_3}}{Q^2} + \frac{p^2}{6m^2_{Q_3}} + O\Big(\frac{p^4}{m^4_{Q_3}}\Big)\\
-    &\qquad\qquad
-    - \log\frac{m^2_{U_3}}{Q^2} + \frac{p^2}{6m^2_{U_3}} + O\Big(\frac{p^4}{m^4_{U_3}}\Big)
-    \Bigg] \\
+    + 12 \frac{m_t^2 (y_t^\SM)^2}{(4\pi)^2 v^2} \Bigg[ 
+    \log\frac{\MS^2}{Q^2} \Bigg] + O\Big(\frac{p^2}{\MS^2}\Big) \\
     &= \lambda^{\text{tree}}(\MS) + \lambda^{1L}(\MS) + O\Big(\frac{p^2}{\MS^2}\Big)
   \end{align*}
   $\lambda(\MS)$ in the FlexibleEFTHiggs approach is equivalent to the
