@@ -16,7 +16,7 @@ outfile = directory + r'Mh_MS_TB-5_Xt-0.pdf'
 
 try:
     dataMSSMEFTHiggs = np.genfromtxt(directory + r'MSSMEFTHiggs_MS_TB-5_Xt-0..dat')
-    dataMSSM         = np.genfromtxt(directory + r'MSSMMuBMu_MS_TB-5_Xt-0..dat')
+    dataMSSM         = np.genfromtxt(directory + r'scan_FeynHiggs-2.13.0beta_Mh_MS_TB-5_Xt-0.dat')
     dataSUSYHD       = np.genfromtxt(directory + r'HSSUSY_MS_TB-5_Xt-0..dat')
 except:
     print "Error: could not load numerical data from file"
@@ -43,6 +43,7 @@ plt.grid(color='gray', linestyle=':', linewidth=0.2)
 plt.xscale('log')
 plt.xlabel(r'$M_S\,/\,\mathrm{GeV}$')
 plt.ylabel(r'$M_h\,/\,\mathrm{GeV}$')
+plt.xlim([100,10000])
 
 hMSSM, = plt.plot(xMSSM        , yMSSM        , 'b--', linewidth=1.2, label=r'2L fixed-order')
 hmix,  = plt.plot(xMSSMEFTHiggs, yMSSMEFTHiggs, 'r-' , linewidth=1.2, label=r'1L FlexibleEFTHiggs')

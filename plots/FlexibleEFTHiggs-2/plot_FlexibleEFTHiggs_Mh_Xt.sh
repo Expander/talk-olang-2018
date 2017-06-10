@@ -16,7 +16,7 @@ try:
     dataHSSUSY1    = np.genfromtxt(directory + r'scan_HSSUSY-1L_Mh_Xt_TB-5_MS-2000.dat')
     dataMSSMtower  = np.genfromtxt(directory + r'scan_MSSMtower-1.0_Mh_Xt_TB-5_MS-2000.dat')
     dataMSSMtower2 = np.genfromtxt(directory + r'scan_MSSMtower-2.0_Mh_Xt_TB-5_MS-2000.dat')
-    dataMSSMMuBMu  = np.genfromtxt(directory + r'scan_MSSMMuBMu_Mh_Xt_TB-5_MS-2000.dat')
+    dataMSSMMuBMu  = np.genfromtxt(directory + r'scan_FeynHiggs-2.13.0beta_Mh_Xt_TB-5_MS-2000.dat')
 except:
     print "Error: could not load numerical data from file"
     exit
@@ -43,7 +43,8 @@ plt.rc('text', usetex=True)
 plt.rc('font', family='serif', weight='normal')
 plt.rcParams['text.latex.preamble']=[r"\usepackage{amsmath}"]
 plt.grid(color='gray', linestyle=':', linewidth=0.2)
-plt.ylim([100,125])
+plt.xlim([-3,3])
+plt.ylim([100,126])
 
 plt.xlabel(r'$X_t / M_S$')
 plt.ylabel(r'$M_h\;/\;\mathrm{GeV}$')
