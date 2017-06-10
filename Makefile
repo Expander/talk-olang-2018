@@ -4,6 +4,7 @@ OUTFILENAME := talk.pdf
 PLOTS       := \
 		plots/uncertainties/DMh_MS_TB-5_Xt-1.pdf \
 		plots/uncertainties/Mh_MS_TB-5_Xt-0.pdf \
+		plots/uncertainties/Mh_MS_TB-5_Xt-0_FO_EFT.pdf \
 		plots/FlexibleEFTHiggs-2/scan_Mh_Xt_TB-5_MS-2000.pdf \
 		plots/SPheno-FS-uncertainty/scale_MSSM_yt_variants.pdf \
 		plots/contributions/scan_Mh_MS_TB-5_Xt-0_contributions.pdf
@@ -19,6 +20,11 @@ plots/uncertainties/DMh_MS_TB-5_Xt-1.pdf: plots/uncertainties/plot_DMh.sh plots/
 	$<
 
 plots/uncertainties/Mh_MS_TB-5_Xt-0.pdf: plots/uncertainties/plot_Mh.sh plots/uncertainties/*.dat
+	$<
+
+plots/uncertainties/Mh_MS_TB-5_Xt-0_FO_EFT.pdf: \
+plots/uncertainties/plot_Mh_FO_EFT.sh \
+plots/uncertainties/*.dat
 	$<
 
 plots/FlexibleEFTHiggs-2/scan_Mh_Xt_TB-5_MS-2000.pdf: \
