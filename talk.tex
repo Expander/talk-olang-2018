@@ -296,7 +296,7 @@
 
 \section{Higgs mass calculation in the MSSM}
 
-\subsection{Higgs mass calculation at fixed loop order}
+\subsection{at fixed loop order}
 
 \begin{frame}{Contents}
   \tableofcontents[
@@ -539,7 +539,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Higgs mass calculation in an EFT}
+\subsection{in an EFT}
 
 \begin{frame}{Contents}
   \tableofcontents[
@@ -644,7 +644,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Higgs mass calculation in a mixed approach}
+\subsection{in a mixed approach}
 
 \begin{frame}{Contents}
   \tableofcontents[
@@ -654,7 +654,7 @@
 \end{frame}
 
 \begin{frame}{Mixed fixed-order and EFT approaches}
-  \emph{Goal:} resum large logarithms and include suppressed
+  \emph{Goal:} resum large logarithms \emph{and} include suppressed
   $O(v^2/\MS^2)$ terms
   \\[2em]
   \emph{Two known approaches:}
@@ -695,6 +695,7 @@
 \end{frame}
 
 \begin{frame}{FlexibleEFTHiggs -- EFT equivalence}
+  \emph{Proof of equivalence:} Start with matching condition:
   \begin{align*}
     (M_h^2)_{\SM} &= (M_h^2)_{\MSSM} \qquad \text{1L, } Q = \MS \\
     \lambda v^2 + (\Delta m_h^2)^{1L}_{\SM} &= (M_h^2)_{\MSSM}
@@ -706,20 +707,25 @@
       (m_h^2)_{\MSSM} + (\Delta m_h^2)^{1L}_{\MSSM} - (\Delta m_h^2)^{1L}_{\SM}
     \right]
   \end{align*}
+  Now insert $(m_h^2)_{\MSSM}$ and $(\Delta m_h^2)^{1L}_{\MSSM}$ \ldots
 \end{frame}
 
 \begin{frame}{FlexibleEFTHiggs -- EFT equivalence}
-  Inserting 1-loop corrections to $(M_h^2)_{\MSSM}$ for $X_t = 0$:
+  Inserting \textcolor{darkgreen}{$(m_h^2)_{\MSSM}$} and
+  \textcolor{red}{$(\Delta m_h^2)^{1L}_{\MSSM}$} for $X_t = 0$:
   \begin{align*}
     \lambda(\MS) &=
     \frac{1}{v^2} \Bigg[
-      \frac{1}{4}(g_Y^2 + g_2^2) v^2 c_{2\beta}^2 \\
+      \textcolor{darkgreen}{
+      \frac{1}{4}(g_Y^2 + g_2^2) v^2 c_{2\beta}^2} \\
       &\quad\qquad \textcolor{red}{ + \frac{c_{\alpha}^2}{s_{\beta}^2} (\Delta m_h^2)^{1L}_{\SM}
         - \frac{c_{\alpha}^2}{s_{\beta}^2} \frac{12 (y_t^{\SM})^2 m_t^2}{(4\pi)^2}
-      B_0(p^2,\MS^2,\MS^2) } \\
+      B_0(m_h^2,\MS^2,\MS^2) } \\
       &\quad\qquad - (\Delta m_h^2)^{1L}_{\SM}
     \Bigg]
   \end{align*}
+  Now go to the decoupling limit $c_{\alpha}^2/s_{\beta}^2\rightarrow
+  1$ \ldots
 \end{frame}
 
 \begin{frame}{FlexibleEFTHiggs -- EFT equivalence}
@@ -727,15 +733,15 @@
   \begin{align*}
     \lambda(\MS) &=
     \frac{1}{4}(g_Y^2 + g_2^2) c_{2\beta}^2
-    - 12 \frac{m_t^2 (y_t^{\SM})^2}{(4\pi)^2 v^2} B_0(p^2,\MS^2,\MS^2) \\
+    - 12 \frac{m_t^2 (y_t^{\SM})^2}{(4\pi)^2 v^2} B_0(m_h^2,\MS^2,\MS^2) \\
     &= \frac{1}{4} (g_Y^2 + g_2^2) c_{2\beta}^2
     - 12 \frac{m_t^2 (y_t^\SM)^2}{(4\pi)^2 v^2} \Bigg[ 
-    -\log\frac{\MS^2}{Q^2} + \frac{p^2}{6\MS^2} + O\Big(\frac{p^4}{\MS^4}\Big)
+    -\log\frac{\MS^2}{Q^2} + \frac{m_h^2}{6\MS^2} + O\Big(\frac{m_h^4}{\MS^4}\Big)
     \Bigg] \\
     &= \frac{1}{4} (g_Y^2 + g_2^2) c_{2\beta}^2
     + 12 \frac{m_t^2 (y_t^\SM)^2}{(4\pi)^2 v^2} \Bigg[ 
-    \log\frac{\MS^2}{Q^2} \Bigg] + O\Big(\frac{p^2}{\MS^2}\Big) \\
-    &= \lambda^{\text{tree}}(\MS) + \lambda^{1L}(\MS) + O\Big(\frac{p^2}{\MS^2}\Big)
+    \log\frac{\MS^2}{Q^2} \Bigg] + O\Big(\frac{v^2}{\MS^2}\Big) \\
+    &= \lambda^{\text{tree}}(\MS) + \lambda^{1L}(\MS) + O\Big(\frac{v^2}{\MS^2}\Big)
   \end{align*}
   $\lambda(\MS)$ in the FlexibleEFTHiggs approach is equivalent to the
   EFT approach at 1-loop, up to suppressed terms $O(v^2/\MS^2)$
