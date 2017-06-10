@@ -68,7 +68,7 @@
 \newcommand{\Lagr}{\mathcal{L}}
 \newcommand{\MS}{\ensuremath{M_S}}
 \newcommand{\mathi}{\mathsf{i}}
-\newcommand{\mycite}[1]{\textcolor{darkgray}{\tiny [#1]}}
+\newcommand{\mycite}[1]{\ensuremath{\text{\textcolor{darkgray}{\tiny [#1]}}}}
 \newcommand{\bigcite}[1]{\textcolor{darkgray}{[#1]}}
 \newcommand{\dimrep}[1]{\mathbf{#1}}
 \newcommand{\dimrepadj}[1]{\mathbf{\overline{#1}}}
@@ -347,6 +347,24 @@
     & &\Rightarrow &
     \Delta m_h^2 &\geq (85\eh{GeV})^2
   \end{align*}
+\end{frame}
+
+\begin{frame}{Current status of MSSM Higgs mass calculation}
+  \emph{Usual approach:} Spectrum generators calculate r.h.s.\ of
+  \begin{align*}
+    M_h^2 &= m_h^2 + \Delta m_h^2
+  \end{align*}
+  as a function of all SM and SUSY parameters.  Because of large loop
+  corrections $\Delta m_h^2$:
+  \begin{align*}
+    \Delta M_h^{\text{theo}} &\gtrsim (1\ldots 2)\eh{GeV} \quad \text{at least!} \\
+    \Delta M_h^{\text{exp}} &= 0.24\eh{GeV} \ \ \mycite{PDG-2017}
+  \end{align*}
+  Theory calculation needs to improve!  Current workshop series:
+  \\[1em]
+  \begin{center}
+    \fbox{\includegraphics[width=0.8\textwidth]{images/KUTS-Webpage-3-cut.png}}
+  \end{center}
 \end{frame}
 
 % Savebox which contains the the Feynman rules
