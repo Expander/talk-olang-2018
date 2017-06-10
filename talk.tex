@@ -238,13 +238,13 @@
 \begin{frame}{Higgs sector of the MSSM}
   The two Higgs doublets develop VEVs as
   \begin{align*}
-    \langle H_d \rangle &=
+    H_d &=
     \begin{pmatrix}
-      v_d / \sqrt{2} \\ 0
+      \frac{v_d}{\sqrt{2}} + H_d^0 \\ H_d^-
     \end{pmatrix} &
-    \langle H_u \rangle &=
+    H_u &=
     \begin{pmatrix}
-      0 \\ v_u / \sqrt{2}
+      H_u^+ \\ \frac{v_u}{\sqrt{2}} + H_u^0
     \end{pmatrix}
   \end{align*}
   $\Rightarrow$
@@ -252,8 +252,14 @@
     m_Z^2 &= \frac{1}{2} (g_Y^2 + g_2^2) v^2, &
     m_W^2 &= \frac{1}{2} g_2^2 v^2, \\
     m_t &= y_t v_u / \sqrt{2}, &
-    m_t &= y_b v_d / \sqrt{2}, \\ \\
+    m_t &= y_b v_d / \sqrt{2}, \\
     v^2 &:= v_u^2 + v_d^2, & \tan\beta &:= v_u/v_d
+  \end{align*}
+  Mixing of Higgs fields:
+  \begin{align*}
+    \left(\re H_d^0, \re H_u^0\right) &\rightarrow (h, H) \\
+    \left(\im H_d^0, \im H_u^0\right) &\rightarrow (G^0, A) \\
+    \left((H_d^-)^*, H_u^+\right)     &\rightarrow (G^+, H^+)
   \end{align*}
 \end{frame}
 
