@@ -567,7 +567,7 @@
 \end{frame}
 
 \begin{frame}{Higgs mass calculation in an EFT}
-  \emph{Idea:} Integrate out SUSY particles at $\MS$ (expand in $v^2/MS^2$) \\
+  \emph{Idea:} Integrate out SUSY particles at $\MS$ (expand in $v^2/\MS^2$) \\
   $\Rightarrow$ $\lambda(\MS)$ is fixed by the MSSM \\
   $\Rightarrow$ effectively: separation of scales $\MS$ and $M_t$.
   \begin{center}
@@ -584,8 +584,8 @@
   \end{align*}
   $\Rightarrow$
   \begin{align*}
-    \lambda(M_S) &= \frac{1}{4}\left[g_Y^{2} + g_2^2\right] \cos^22\beta
-    + \Delta \lambda
+    \lambda(M_S) &= \frac{1}{4}\left[g_Y^{2} + g_2^2\right] c^2_{2\beta}
+    + \Delta \lambda^{1L} + \Delta \lambda^{2L} + \cdots
   \end{align*}
   RG running of $\lambda(\MS)$ to $Q=M_t$.\\
   Calculation of $M_h$ in the Standard Model:
@@ -595,7 +595,7 @@
   \end{align*}
 \end{frame}
 
-\begin{frame}{Concrete EFT example}
+\begin{frame}{EFT avoids large logarithmic corrections}
   \begin{enumerate}
   \item Calculate $\lambda$ at $Q = \MS$:
     \begin{align*}
@@ -759,7 +759,7 @@
     &= \frac{1}{4} (g_Y^2 + g_2^2) c_{2\beta}^2
     + 12 \frac{m_t^2 (y_t^\SM)^2}{(4\pi)^2 v^2} \Bigg[ 
     \log\frac{\MS^2}{Q^2} \Bigg] + O\Big(\frac{v^2}{\MS^2}\Big) \\
-    &= \lambda^{\text{tree}}(\MS) + \lambda^{1L}(\MS) + O\Big(\frac{v^2}{\MS^2}\Big)
+    &= \lambda^{\text{EFT,tree}} + \Delta\lambda^{\text{EFT},1L} + O\Big(\frac{v^2}{\MS^2}\Big)
   \end{align*}
   In the decoupling limit $\lambda(\MS)$ in the FlexibleEFTHiggs
   approach is equivalent to the EFT approach at 1-loop, up to
@@ -771,7 +771,7 @@
     (M_h^2)_{\SM} &= (M_h^2)_{\MSSM} \qquad \text{1L, } Q = \MS
 \intertext{$\Rightarrow$}
     \lambda(\MS) &=
-    \lambda^{\text{tree}}(\MS) + \lambda^{1L}(\MS) + O(v^2/\MS^2)
+    \lambda^{\text{EFT,tree}} + \lambda^{\text{EFT},1L} + O(v^2/\MS^2)
   \end{align*}
   \emph{Observations:}
   \begin{itemize}
@@ -828,7 +828,7 @@
 \end{frame}
 
 \begin{frame}{Example: under-estimation of the uncertainty}
-  The variation of the renormalization alone might be an
+  The variation of the renormalization scale alone might be an
   under-estimation of the uncertainty:
   \begin{center}
     \includegraphics[width=0.8\textwidth]{plots/SPheno-FS-uncertainty/scale_MSSM_yt_variants}
