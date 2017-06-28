@@ -34,23 +34,28 @@ plt.rc('text', usetex=True)
 plt.rc('font', family='serif', weight='normal')
 fig = plt.figure(figsize=(4,4))
 plt.gcf().subplots_adjust(bottom=0.15, left=0.15) # room for xlabel
+plt.grid(color='0.5', linestyle=':', linewidth=0.2, dashes=(0.5,1.5))
+
 ax = plt.gca()
 ax.set_axisbelow(True)
 ax.xaxis.set_major_formatter(tck.FormatStrFormatter(r'$%d$'))
 ax.yaxis.set_major_formatter(tck.FormatStrFormatter(r'$%d$'))
-plt.grid(color='gray', linestyle=':', linewidth=0.2)
+ax.get_yaxis().set_tick_params(which='both',direction='in')
+ax.get_xaxis().set_tick_params(which='both',direction='in')
 
 plt.xscale('log')
 plt.xlabel(r'$M_S\,/\,\mathrm{GeV}$')
 plt.ylabel(r'$M_h\,/\,\mathrm{GeV}$')
 plt.xlim([100,10000])
 
-hMSSM, = plt.plot(xMSSM        , yMSSM        , 'b--', linewidth=1.2, label=r'2L fixed-order')
-hmix,  = plt.plot(xMSSMEFTHiggs, yMSSMEFTHiggs, 'r-' , linewidth=1.2, label=r'1L FlexibleEFTHiggs')
-hEFT,  = plt.plot(xSUSYHD      , ySUSYHD      , 'g-.', linewidth=1.2, dashes=(5,3,1,3), label=r'2L EFT')
+hMSSM, = plt.plot(xMSSM        , yMSSM        , 'b--', linewidth=1.2, label=r'pure fixed order')
+hmix,  = plt.plot(xMSSMEFTHiggs, yMSSMEFTHiggs, 'r-' , linewidth=1.2, label=r'FlexibleEFTHiggs')
+hEFT,  = plt.plot(xSUSYHD      , ySUSYHD      , 'g-.', linewidth=1.2, dashes=(3,2,1,2), label=r'pure EFT')
 
-plt.legend(handles = [hMSSM, hEFT, hmix],
-           loc='lower right', fontsize=10, fancybox=None, framealpha=None)
+leg = plt.legend(handles = [hMSSM, hEFT, hmix],
+                 loc='lower right', fontsize=10, fancybox=None, framealpha=None)
+leg.get_frame().set_alpha(1.0)
+leg.get_frame().set_edgecolor('black')
 
 plt.title(r'$X_t = 0, \tan\beta = 5$', color='k', fontsize=10)
 
