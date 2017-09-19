@@ -342,41 +342,19 @@
 
 \begin{frame}{Higgs mass calculation in an EFT}
   \emph{Idea:} Integrate out SUSY particles at $\MS$ (expand in $v^2/\MS^2$) \\
-  $\Rightarrow$ $\lambda(\MS)$ is fixed by the MSSM
-  (Remember: in the SM $m_h^2 = \lambda v^2$) \\
+  $\Rightarrow$ $\lambda(\MS)$ is fixed by the MSSM \\
   $\Rightarrow$ effectively: separation of scales $\MS$ and $M_t$.
   \begin{center}
-    \includegraphics[width=0.5\textwidth]{images/mssm-sm-tower-eft}
+    \begin{tikzpicture}[scale=0.9]
+      \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5) node[left]{$\MS$} -- (0,6);
+      \draw[thick] (1,0)   rectangle node{SM(5)} (4,0.9);
+      \draw[thick] (1,1.1) rectangle node{SM}    (4,4.9);
+      \draw[thick] (1,5.1) rectangle node{MSSM}  (4,6);
+      \draw[<-, thick, darkgreen] (4,5) -- (4.5,5) node[right]{$\lambda(\MS) = \frac{1}{4}\left(g_Y^{2} + g_2^2\right) c^2_{2\beta} + \cdots$};
+      \draw[<-, thick, red] (4,1) -- (4.5,1) node[right]{$(M_h^\SM)^2 = \lambda(M_t) v^2 + (\Delta m_h^2)^{1L} + \cdots$};
+      \draw[<->, thick, blue] (4.2,1.2) -- node[right]{RG running} (4.2,4.8);
+    \end{tikzpicture}
   \end{center}
-\end{frame}
-
-\begin{frame}{EFT avoids large logarithmic corrections}
-  \begin{enumerate}
-  \item Match all renormalized $n$-point functions at $p^2 = v^2 = 0$, $Q =
-    \MS$ of the SM and MSSM:
-    \begin{align*}
-      \partial_{p^2}^{(k)}\Gamma_{h,\ldots,h}^{\MSSM,(n)}
-       = \partial_{p^2}^{(k)}\Gamma_{h,\ldots,h}^{\SM,(n)}
-    \end{align*}
-    $\Rightarrow$
-    \begin{align*}
-      \lambda(Q) &= \frac{1}{4}\left[g_Y^{2} + g_2^2\right] c^2_{2\beta}
-      + \frac{12 m_t^2 y_t^2}{(4\pi)^2 v^2} \left[
-        \ln\frac{\MS^2}{Q^2} + \frac{X_t^2}{\MS^2} - \frac{X_t^4}{12 \MS^4}
-      \right]
-      + \cdots
-    \end{align*}
-    $\Rightarrow$ \textcolor{darkgreen}{no large logs}
-  \item RG running from $Q = \MS$ $\rightarrow M_t$.\\
-    $\Rightarrow$ \textcolor{darkgreen}{logs are resummed to all orders}
-  \item Calculate $M_h$ in the SM at $Q = M_t$:
-    \begin{align*}
-      (M_h^\SM)^2
-       &= \lambda v^2 + (\Delta m_h^2)^{1L} + (\Delta m_h^2)^{2L} + (\Delta m_h^2)^{3L} + \cdots \\
-       &= \lambda v^2 + \frac{12 m_t^2 y_t^2}{(4\pi)^2 v^2} \ln\frac{Q^2}{m_t^2} + \cdots
-    \end{align*}
-    $\Rightarrow$ \textcolor{darkgreen}{no large logs}
-  \end{enumerate}
 \end{frame}
 
 \begin{frame}{Summary of EFT approach}
@@ -456,42 +434,41 @@
 
 \begin{frame}{FlexibleEFTHiggs approach}
   \emph{Idea:}
-  \begin{enumerate}
-  \item Determine $\lambda(\MS)$ from the condition
-    \begin{align*}
-      (M_h^2)_{\SM} &= (M_h^2)_{\MSSM}\qquad \text{1L, } Q = \MS \\
-      \lambda v^2 + (\Delta m_h^2)^{1L}_{\SM} &= (M_h^2)_{\MSSM}
-    \end{align*}
-    \textcolor{darkgreen}{No suppressed terms are neglected.
-      $\Rightarrow$ $\lambda$ contains all $O(v^2/\MS^2)$ suppressed
-      terms}
-  \item RG running of $\lambda(\MS)$ from $\MS \rightarrow M_t$\\
-    \textcolor{darkgreen}{Note: $M_h$ is RG invariant.}
-  \item Calculate $M_h$ in the Standard Model at $Q = M_t$:
-    \begin{align*}
-      M_h^2 = \lambda(M_t) v^2 + (\Delta m_h^2)^{1L}_{\SM}
-    \end{align*}
-    \textcolor{darkgreen}{$\Rightarrow$ $M_h$ contains all suppressed
-      terms.}
-  \end{enumerate}
+  Determine $\lambda(\MS)$ from the condition
+  \begin{align*}
+    (M_h^2)_{\SM} \equiv \lambda(\MS) v^2 + (\Delta m_h^2)^{1L}_{\SM} = (M_h^2)_{\MSSM}\qquad \text{1L, } Q = \MS
+  \end{align*}
+  \begin{center}
+    \begin{tikzpicture}[scale=0.9]
+      \draw[->, thick] (0,0) -- (0,1) node[left]{$M_t$} -- (0,5) node[left]{$\MS$} -- (0,6);
+      \draw[thick] (1,0)   rectangle node{SM(5)} (4,0.9);
+      \draw[thick] (1,1.1) rectangle node{SM}    (4,4.9);
+      \draw[thick] (1,5.1) rectangle node{MSSM}  (4,6);
+      \draw[<-, thick, darkgreen] (4,5) -- (4.5,5) node[right]{$\lambda(\MS) = \frac{1}{v^2}\left[(M_h^2)_{\MSSM} - (\Delta m_h^2)^{1L}_{\SM}\right]$};
+      \draw[<-, thick, red] (4,1) -- (4.5,1) node[right]{$(M_h^\SM)^2 = \lambda(M_t) v^2 + (\Delta m_h^2)^{1L}_{\SM} + \cdots$};
+      \draw[<->, thick, blue] (4.2,1.2) -- node[right]{RG running} (4.2,4.8);
+    \end{tikzpicture}
+  \end{center}
 \end{frame}
 
 \begin{frame}{Summary FlexibleEFTHiggs approach}
   \begin{align*}
     (M_h^2)_{\SM} &= (M_h^2)_{\MSSM} \qquad \text{1L, } Q = \MS
   \end{align*}
-  \emph{Observations:}
+  \emph{Advantages:}
   \begin{itemize}
-  \item large 1-loop logarithms cancel in matching condition
-  \item for $v=p=0$ FlexibleEFTHiggs is identical to a 1-loop EFT
-    calculation
   \item all suppressed terms $O(v^2/\MS^2)$ are incorporated in $\lambda$
   \item RG running resums (N)LL to all orders
   \end{itemize}
   \vspace{1em}
   \textcolor{darkgreen}{$\Rightarrow$ FlexibleEFTHiggs leads to a
     correct Higgs mass prediction at the full 1-loop level (including
-    suppressed terms) with additional (N)LL resummation.}
+    suppressed terms) with additional (N)LL resummation.}\\
+  \vspace{1em}
+  \emph{Disadvantage:}
+  \begin{itemize}
+  \item tricky to extend to 2-loop accuracy
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Comparison of the three approaches}
