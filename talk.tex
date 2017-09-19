@@ -185,94 +185,31 @@
   \end{center}
 \end{frame}
 
-\begin{frame}{Higgs sector of the MSSM}
-  The two Higgs doublets develop VEVs as
-  \begin{align*}
-    H_d &=
-    \begin{pmatrix}
-      \frac{v_d}{\sqrt{2}} + H_d^0 \\ H_d^-
-    \end{pmatrix} &
-    H_u &=
-    \begin{pmatrix}
-      H_u^+ \\ \frac{v_u}{\sqrt{2}} + H_u^0
-    \end{pmatrix}
-  \end{align*}
-  $\Rightarrow$
-  \begin{align*}
-    m_Z^2 &= \frac{1}{4} (g_Y^2 + g_2^2) v^2, &
-    m_W^2 &= \frac{1}{4} g_2^2 v^2, \\
-    m_t &= y_t v_u / \sqrt{2}, &
-    m_b &= y_b v_d / \sqrt{2}, \\
-    v^2 &:= v_u^2 + v_d^2, & \tan\beta &:= v_u/v_d
-  \end{align*}
-  Mixing of Higgs fields in the CP-conserving MSSM:
-  \begin{align*}
-    \left(\re H_d^0, \re H_u^0\right) &\rightarrow (h, H) \\
-    \left(\im H_d^0, \im H_u^0\right) &\rightarrow (G^0, A) \\
-    \left((H_d^-)^*, H_u^+\right)     &\rightarrow (G^+, H^+)
-  \end{align*}
-\end{frame}
-
 \begin{frame}{CP-even Higgs masses MSSM}
-  $\left(\re H_d^0, \re H_u^0\right) \overset{\alpha}{\rightarrow} (h, H)$ with the mass matrix
-  \begin{align*}
-    M =
-    \begin{pmatrix}
-      m_A^2 s_\beta^2 + m_Z^2 c_\beta^2 & -(m_A^2 + m_Z^2) s_\beta c_\beta \\
-      \cdot & m_A^2 c_\beta^2 + m_Z^2 s_\beta^2
-    \end{pmatrix}
-  \end{align*}
-  $\Rightarrow$
+  $\left(\re H_d^0, \re H_u^0\right) \overset{\alpha}{\rightarrow} (h, H)$:
   \begin{align*}
     m_{h,H}^2 = \frac{1}{2} \left[
       m_Z^2 + m_A^2 \mp \sqrt{(m_Z^2 + m_A^2)^2 - 4 m_Z^2 m_A^2 c_{2\beta}^2}
     \right]
   \end{align*}
-  $\Rightarrow$
-  \begin{align*}
-    m_h^2 < \min(m_Z^2, m_A^2) c_{2\beta}^2
-  \end{align*}
-  If $m_A \gg m_Z$:
+  If $m_A \gg m_Z$ $\Rightarrow$
   \begin{align*}
     m_h^2 \approx m_Z^2 c_{2\beta}^2
     = \frac{1}{4} (g_Y^2 + g_2^2) v^2 c_{2\beta}^2
+    \leq (91.2 \eh{GeV})^2
   \end{align*}
-\end{frame}
-
-\begin{frame}{Higgs mass in the CP-conserving MSSM}
-  If $m_A \gg m_Z$:
-  \begin{align*}
-    m_h^2 \approx m_Z^2 c_{2\beta}^2
-    = \frac{1}{4} (g_Y^2 + g_2^2) v^2 c_{2\beta}^2
-  \end{align*}
-  In the MSSM the tree-level Higgs mass is restricted to be smaller
-  than $m_Z$!
-  \\[2em]
-  Q: How can $M_h \approx 125\eh{GeV}$ be possible in the MSSM? \\[1em]
-  A: Large loop corrections are to be expected!
+  $\Rightarrow$ $M_h \approx 125\eh{GeV}$ requires \emph{large loop
+    corrections}!
   \begin{align*}
     M_h^2 &= m_h^2 + \Delta m_h^2
     & &\Rightarrow &
     \Delta m_h^2 &\geq (85\eh{GeV})^2
   \end{align*}
-\end{frame}
-
-\begin{frame}{Current status of MSSM Higgs mass calculation}
-  \emph{Usual approach:} Spectrum generators calculate r.h.s.\ of
-  \begin{align*}
-    M_h^2 &= m_h^2 + \Delta m_h^2
-  \end{align*}
-  as a function of all SM and SUSY parameters.  Because of large loop
-  corrections $\Delta m_h^2$:
+  Because of large loop corrections $\Delta m_h^2$:
   \begin{align*}
     \Delta M_h^{\text{theo}} &\gtrsim (1\ldots 2)\eh{GeV} \quad \text{at least!} \\
     \Delta M_h^{\text{exp}} &= 0.24\eh{GeV} \ \ \mycite{PDG-2017}
   \end{align*}
-  Theory calculation needs to improve!  Current workshop series:
-  \\[1em]
-  \begin{center}
-    \fbox{\includegraphics[width=0.8\textwidth]{images/KUTS-Webpage-3-cut.png}}
-  \end{center}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -362,11 +299,10 @@
     &= \fmfvcenter{htop} + \fmfvcenter{hstop} + \fmfvcenter{hstopA} \\
     &\phantom{={}} + \fmfvcenter{htoptad} + \fmfvcenter{hstoptad} \\
     &\approx \frac{12 m_t^2 y_t^2}{(4\pi)^2} \left(
-      \ln\frac{m_{\tilde{t}}^2}{m_t^2}
-      + \frac{X_t^2}{m_{\tilde{t}}^2}
-      - \frac{X_t^4}{12 m_{\tilde{t}}^4}
-    \right)
-    \quad \text{for} \quad m_{\tilde{t}_1} = m_{\tilde{t}_2}, p^2 = 0
+      \ln\frac{\MS^2}{m_t^2}
+      + \frac{X_t^2}{\MS^2}
+      - \frac{X_t^4}{12 \MS^4}
+    \right) + O(p^2)
   \end{align*}
 \end{frame}
 
@@ -374,9 +310,9 @@
   \begin{align*}
     (\Delta m_h^2)^{1L} &\approx
     \frac{12 m_t^2 y_t^2}{(4\pi)^2} \left(
-      \ln\frac{m_{\tilde{t}}^2}{m_t^2}
-      + \frac{X_t^2}{m_{\tilde{t}}^2}
-      - \frac{X_t^4}{12 m_{\tilde{t}}^4}
+      \ln\frac{\MS^2}{m_t^2}
+      + \frac{X_t^2}{\MS^2}
+      - \frac{X_t^4}{12 \MS^4}
     \right) + O(p^2)
   \end{align*}
   $X_t = A_t - \mu/t_\beta$ = stop mixing parameter
@@ -384,19 +320,19 @@
   \\[1em]
   \emph{Observations:}
   \begin{itemize}
-  \item logarithmically enhanced by $m_{\tilde{t}} / m_t$
-  \item maximal for $X_t \approx \sqrt{6} m_{\tilde{t}}$
+  \item logarithmically enhanced by $\MS / m_t$
+  \item maximal for $X_t \approx \sqrt{6} \MS$
   \item high sensitivity on $m_t$, due to prefactor $m_t^2 y_t^2 = 2 m_t^4/v^2$
   \item ambiguity of definition of $m_t$: pole mass or \DRbar\ mass? \\
     $M_t \approx 173.3\eh{GeV}$, $m_t^{\DRbar} \approx 165\eh{GeV}$ \\
     $\Rightarrow$ huge theoretical uncertainty!\\
     $\Rightarrow$ 2-loop calculation needed to resolve this ambiguity
-  \item to get $M_h \approx 125\eh{GeV}$, $m_{\tilde{t}} \gtrsim 1\eh{TeV}$ needed
+  \item to get $M_h \approx 125\eh{GeV}$, $\MS \gtrsim 1\eh{TeV}$ needed
     (see later)
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Summary of fixed loop order calculations}
+\begin{frame}{Summary of fixed-order calculation}
   Typical order of magnitude of loop contributions (depends on
   parameter scenario):
   \begin{align*}
@@ -569,18 +505,16 @@
 \begin{frame}{Summary FlexibleEFTHiggs approach}
   \begin{align*}
     (M_h^2)_{\SM} &= (M_h^2)_{\MSSM} \qquad \text{1L, } Q = \MS
-\intertext{$\Rightarrow$}
-    \lambda(\MS) &=
-    \lambda^{\text{EFT,tree}} + \lambda^{\text{EFT},1L} + O(v^2/\MS^2)
   \end{align*}
   \emph{Observations:}
   \begin{itemize}
   \item large 1-loop logarithms cancel in matching condition
   \item for $v=p=0$ FlexibleEFTHiggs is identical to a 1-loop EFT
     calculation
-  \item all suppressed terms are incorporated in $\lambda$
+  \item all suppressed terms $O(v^2/\MS^2)$ are incorporated in $\lambda$
   \item RG running resums (N)LL to all orders
   \end{itemize}
+  \vspace{1em}
   \textcolor{darkgreen}{$\Rightarrow$ FlexibleEFTHiggs leads to a
     correct Higgs mass prediction at the full 1-loop level (including
     suppressed terms) with additional (N)LL resummation.}
@@ -600,25 +534,22 @@
   \emph{Supersymmetry} is still viable, but LHC continuously excludes
   light SUSY scenarios\\[1em]
   %
-  \emph{Approaches to calculate $M_h$}:
+  \emph{Approaches to calculate $M_h$:}
   \begin{center}
     \begin{tabular}{lcc}
       \toprule
-                  & low $\MS$ & high $\MS$ \\
-                  & $\MS \lesssim 2\eh{TeV}$ & $\MS \gtrsim 2\eh{TeV}$ \\
+                               & low $\MS$ & high $\MS$ \\
+                               & $\MS \lesssim 2\eh{TeV}$ & $\MS \gtrsim 2\eh{TeV}$ \\
       \midrule
-      fixed-order & \ok       & \notok     \\
-      EFT         & \notok    & \ok        \\
-      mixed       & \ok       & \ok        \\
+      fixed-order              & \ok       & \notok     \\
+      EFT                      & \notok    & \ok        \\
+      mixed (FlexibleEFTHiggs) & \ok       & \ok        \\
       \bottomrule
     \end{tabular}
   \end{center}
-  \emph{Uncertainty of $M_h$ in SUSY:}
-  \begin{itemize}
-  \item tricky to estimate and still ongoing effort!
-  \item $\Delta M_h \gtrsim 1$--$2\eh{GeV}$ at least, but continuously
-    improves
-  \end{itemize}
+  %
+  \emph{Generalizability:} FlexibleEFTHiggs can be applied to
+  \emph{any} SUSY or non-SUSY model
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
