@@ -52,15 +52,15 @@ plt.xscale('log')
 plt.xlabel(r'$M_S\,/\,\mathrm{GeV}$')
 plt.ylabel(r'$M_h\,/\,\mathrm{GeV}$')
 plt.xlim([100,10000])
-plt.ylim([75,130])
+plt.ylim([80,125])
 
 hMSSM, = plt.plot(xMSSM        , yMSSM        , 'b--', linewidth=1.2, label=r'2L fixed order')
 hmix,  = plt.plot(xMSSMEFTHiggs, yMSSMEFTHiggs, 'r-' , linewidth=1.2, label=r'1L FlexibleEFTHiggs')
 hEFT,  = plt.plot(xSUSYHD      , ySUSYHD      , 'g-.', linewidth=1.2, dashes=(3,2,1,2), label=r'2L EFT')
-plt.fill_between(xMSSM, yMSSM - dMSSM, yMSSM + dMSSM,
-                 color='blue', alpha=0.3, interpolate=True, linewidth=0.0)
-plt.fill_between(xSUSYHD, ySUSYHD - dSUSYHD, ySUSYHD + dSUSYHD,
-                 color='green', alpha=0.3, interpolate=True, linewidth=0.0)
+# plt.fill_between(xMSSM, yMSSM - dMSSM, yMSSM + dMSSM,
+#                  color='blue', alpha=0.3, interpolate=True, linewidth=0.0)
+# plt.fill_between(xSUSYHD, ySUSYHD - dSUSYHD, ySUSYHD + dSUSYHD,
+#                  color='green', alpha=0.3, interpolate=True, linewidth=0.0)
 # plt.fill_between(xMSSMEFTHiggs, yMSSMEFTHiggs - dMSSMEFTHiggs, yMSSMEFTHiggs + dMSSMEFTHiggs,
 #                  color='red', alpha=0.3, interpolate=True, linewidth=0.0)
 
