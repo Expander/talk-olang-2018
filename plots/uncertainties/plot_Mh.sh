@@ -48,9 +48,9 @@ plt.xlabel(r'$M_S\,/\,\mathrm{GeV}$')
 plt.ylabel(r'$M_h\,/\,\mathrm{GeV}$')
 plt.xlim([100,10000])
 
-hMSSM, = plt.plot(xMSSM        , yMSSM        , 'b--', linewidth=1.2, label=r'pure fixed order')
-hmix,  = plt.plot(xMSSMEFTHiggs, yMSSMEFTHiggs, 'r-' , linewidth=1.2, label=r'FlexibleEFTHiggs')
-hEFT,  = plt.plot(xSUSYHD      , ySUSYHD      , 'g-.', linewidth=1.2, dashes=(3,2,1,2), label=r'pure EFT')
+hMSSM, = plt.plot(xMSSM        , yMSSM        , 'b--', linewidth=1.2, label=r'2L fixed order')
+hmix,  = plt.plot(xMSSMEFTHiggs, yMSSMEFTHiggs, 'r-' , linewidth=1.2, label=r'1L FlexibleEFTHiggs')
+hEFT,  = plt.plot(xSUSYHD      , ySUSYHD      , 'g-.', linewidth=1.2, dashes=(3,2,1,2), label=r'2L EFT')
 
 leg = plt.legend(handles = [hMSSM, hEFT, hmix],
                  loc='lower right', fontsize=10, fancybox=None, framealpha=None)

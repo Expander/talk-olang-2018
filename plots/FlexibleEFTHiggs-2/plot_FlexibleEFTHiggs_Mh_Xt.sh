@@ -33,17 +33,21 @@ yMSSMtower  = dataMSSMtower[:,1]
 yMSSMtower2 = dataMSSMtower2[:,1]
 yMSSMMuBMu  = dataMSSMMuBMu[:,1]
 
+plt.rc('text', usetex=True)
+plt.rc('font', family='serif', weight='normal')
+plt.rcParams['text.latex.preamble']=[r"\usepackage{amsmath}"]
 fig = plt.figure(figsize=(4,4))
 plt.gcf().subplots_adjust(bottom=0.15, left=0.15) # room for xlabel
+plt.grid(color='0.5', linestyle=':', linewidth=0.2, dashes=(0.5,1.5))
+
 ax = plt.gca()
 ax.set_axisbelow(True)
 ax.xaxis.set_major_formatter(tck.FormatStrFormatter(r'$%d$'))
 ax.yaxis.set_major_formatter(tck.FormatStrFormatter(r'$%d$'))
-plt.rc('text', usetex=True)
-plt.rc('font', family='serif', weight='normal')
-plt.rcParams['text.latex.preamble']=[r"\usepackage{amsmath}"]
-plt.grid(color='gray', linestyle=':', linewidth=0.2)
-plt.xlim([-3,3])
+ax.get_yaxis().set_tick_params(which='both',direction='in')
+ax.get_xaxis().set_tick_params(which='both',direction='in')
+
+plt.xlim([-3.5,3.5])
 plt.ylim([100,126])
 
 plt.xlabel(r'$X_t / M_S$')
@@ -51,12 +55,14 @@ plt.ylabel(r'$M_h\;/\;\mathrm{GeV}$')
 
 hmix, = plt.plot(xMSSMtower2, yMSSMtower2, 'r-' , linewidth=1.2, label=r'1L FlexibleEFTHiggs')
 #plt.plot(xMSSMtower , yMSSMtower , 'r:' , linewidth=2)
-hEFT2, = plt.plot(xHSSUSY    , yHSSUSY    , 'g'  , linewidth=1.2, dashes=(5,3,1,3), label=r'2L EFT')
+hEFT2, = plt.plot(xHSSUSY    , yHSSUSY    , 'g'  , linewidth=1.2, dashes=(4,2,1,2), label=r'2L EFT')
 hEFT1, = plt.plot(xHSSUSY1   , yHSSUSY1   , 'k:' , linewidth=2, label=r'1L EFT')
 hMSSM, = plt.plot(xMSSMMuBMu , yMSSMMuBMu , 'b--', linewidth=1.2, label=r'2L fixed-order')
 
-plt.legend(handles = [hMSSM, hEFT2, hEFT1, hmix],
-           loc='lower right', fontsize=10)
+leg = plt.legend(handles = [hMSSM, hEFT2, hEFT1, hmix],
+                 loc='lower center', fontsize=10)
+leg.get_frame().set_alpha(1.0)
+leg.get_frame().set_edgecolor('black')
 
 plt.title(r'$M_S = 2\;\mathrm{TeV}, \tan\beta = 5$', color='k', fontsize=10)
 

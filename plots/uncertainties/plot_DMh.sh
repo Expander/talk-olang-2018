@@ -17,6 +17,7 @@ outfile = directory + r'DMh_MS_TB-5_Xt-1.pdf'
 try:
     dataMSSMEFTHiggs = np.genfromtxt(directory + r'MSSMEFTHiggs_MS_TB-5_Xt-1..dat')
     dataMSSM         = np.genfromtxt(directory + r'NUHMSSMNoFV_MS_TB-5_Xt-1..dat')
+    # dataMSSM         = np.genfromtxt(directory + r'scan_FeynHiggs-2.13.0beta_Mh_MS_TB-5_Xt-0.dat')
     dataSUSYHD       = np.genfromtxt(directory + r'SUSYHD_MS_TB-5_Xt-1..dat')
 except:
     print "Error: could not load numerical data from file"
@@ -38,7 +39,9 @@ ax = plt.gca()
 ax.set_axisbelow(True)
 ax.xaxis.set_major_formatter(tck.FormatStrFormatter(r'$%d$'))
 ax.yaxis.set_major_formatter(tck.FormatStrFormatter(r'$%d$'))
-plt.grid(color='gray', linestyle=':', linewidth=0.2)
+ax.get_yaxis().set_tick_params(direction='in', which='both', right=True)
+ax.get_xaxis().set_tick_params(direction='in', which='both', top=True)
+plt.grid(color='0.5', linestyle=':', linewidth=0.2, dashes=(0.5,1.5))
 
 plt.xscale('log')
 plt.xlabel(r'$M_S\,/\,\mathrm{GeV}$')
@@ -49,10 +52,12 @@ plt.plot(xSUSYHD      , ySUSYHD      , 'g-.', linewidth=1.2, dashes=(5,3,1,3))
 plt.plot(xMSSMEFTHiggs, yMSSMEFTHiggs, 'r-' , linewidth=1.2)
 plt.ylim([0, 6])
 
-plt.legend([r'2L fixed-order',
-            r'2L EFT',
-            r'1L FlexibleEFTHiggs'],
-           loc='upper right', fontsize=10, fancybox=None, framealpha=None)
+leg = plt.legend([r'2L fixed-order',
+                  r'2L EFT',
+                  r'1L FlexibleEFTHiggs'],
+                 loc='upper right', fontsize=10, fancybox=None, framealpha=None)
+leg.get_frame().set_alpha(1.0)
+leg.get_frame().set_edgecolor('black')
 
 plt.title(r'$X_t = M_S, \tan\beta = 5$', color='k', fontsize=10)
 
