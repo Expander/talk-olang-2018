@@ -17,7 +17,7 @@ outfile = directory + r'Mh_MS_TB-5_Xt-0_FO_EFT.pdf'
 try:
     dataMSSMEFTHiggs = np.genfromtxt(directory + r'MSSMEFTHiggs_MS_TB-5_Xt-0..dat')
     dataMSSM         = np.genfromtxt(directory + r'scan_FeynHiggs-2.13.0beta_Mh_MS_TB-5_Xt-0.dat')
-    dataSUSYHD       = np.genfromtxt(directory + r'SUSYHD_MS_TB-5_Xt-1..dat')
+    dataSUSYHD       = np.genfromtxt(directory + r'SUSYHD_MS_TB-5_Xt-0..dat')
     dataHSSUSY       = np.genfromtxt(directory + r'HSSUSY_MS_TB-5_Xt-0..dat')
 except:
     print "Error: could not load numerical data from file"
