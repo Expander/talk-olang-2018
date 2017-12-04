@@ -101,6 +101,8 @@
 \newcommand{\fs}{\texttt{FlexibleSUSY}\xspace}
 \newcommand{\fsh}{\texttt{FS+H}\xspace}
 \newcommand{\feft}{\texttt{FlexibleEFTHiggs}\xspace}
+\newcommand{\hssusy}{\texttt{HSSUSY}\xspace}
+\newcommand{\FH}{\texttt{FeynHiggs}\xspace}
 \newcommand{\Zv}{\ensuremath{\backslash\mkern-11.0mu{Z_3}}}
 \newcommand{\downrightknickarrow}{\mathrel{\scalebox{1.3}{\rotatebox[origin=c]{180}{$\Lsh$}}}}
 \newcommand{\threelinebrace}{$\left. \begin{array}{c} \\ \\ \\ \end{array} \right\rbrace$}
@@ -333,7 +335,7 @@
     $M_t \approx 173.3\eh{GeV}$, $m_t^{\DRbar} \approx 165\eh{GeV}$ \\
     $\Rightarrow$ huge theoretical uncertainty!\\
     $\Rightarrow$ 2-loop calculation needed to resolve this ambiguity
-  \item to get $M_h \approx 125\eh{GeV}$, $\MS \gtrsim 1\eh{TeV}$ needed
+  \item to get $M_h \approx 125\eh{GeV}$, $\MS \gtrsim 5\eh{TeV}$ needed
     (see later)
   \end{itemize}
 \end{frame}
@@ -505,7 +507,7 @@
     \begin{tabular}{lcc}
       \toprule
                   & low $\MS$ & high $\MS$ \\
-                  & $\MS \lesssim 1\eh{TeV}$ & $\MS \gtrsim 1\eh{TeV}$ \\
+                  & $\MS \lesssim 2\eh{TeV}$ & $\MS \gtrsim 2\eh{TeV}$ \\
       \midrule
       fixed-order & \ok       & \notok     \\
       EFT         & \notok    & \ok        \\
@@ -653,14 +655,19 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Current status in the MSSM}
+\section{Current status of Higgs mass prediction in the MSSM}
 
-\begin{frame}{Current status in the MSSM}
+\begin{frame}{Current status of high precision calculation in the MSSM}
+  Currently most precise tools: \fsh (3-loop fixed order
+  \mycite{1708.05720}), \hssusy (2-loop EFT \mycite{1710.03760}),
+  \FH (2-loop mixed \mycite{1312.4937, 1608.01880, 1706.00346})
   \begin{center}
     \includegraphics[width=0.49\textwidth]{{{plots/uncertainties/DMh_MS_TB-5_Xt-0}}}\hfill
     \includegraphics[width=0.49\textwidth]{{{plots/uncertainties/DMh_MS_TB-5_Xt--2}}}
 %    \includegraphics[width=0.49\textwidth]{{{plots/uncertainties/DMh_Xt_TB-5_MS-5000}}}
   \end{center}
+  $\MS \lesssim 2\eh{TeV}$ $\Rightarrow$ \fsh more accurate than \hssusy\\
+  $\MS \gtrsim 2\eh{TeV}$ $\Rightarrow$ \fsh less accurate than \hssusy
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -690,6 +697,7 @@
   \item full NLO + NLL resummation
   \item can be applied to \emph{any} BSM model (SUSY or non-SUSY)
   \item can be easily automatized
+  \item tricky to extend to 2-loop level (work in progress)
   \end{itemize}
 \end{frame}
 
