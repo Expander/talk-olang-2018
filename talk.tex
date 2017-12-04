@@ -721,74 +721,19 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[noframenumbering]{FlexibleEFTHiggs -- EFT equivalence}
-  \emph{Proof of equivalence:} Start with matching condition:
-  \begin{align*}
-    (M_h^2)_{\SM} &= (M_h^2)_{\MSSM} \qquad \text{1L, } Q = \MS \\
-    \lambda v^2 + (\Delta m_h^2)^{1L}_{\SM} &= (M_h^2)_{\MSSM}
-  \end{align*}
-  $\Rightarrow$
-  \begin{align*}
-    \lambda(\MS) &= \frac{1}{v^2} \left[ (M_h^2)_{\MSSM} - (\Delta m_h^2)^{1L}_{\SM} \right] \\
-    &= \frac{1}{v^2} \left[
-      (m_h^2)_{\MSSM} + (\Delta m_h^2)^{1L}_{\MSSM} - (\Delta m_h^2)^{1L}_{\SM}
-    \right]
-  \end{align*}
-  Now insert $(m_h^2)_{\MSSM}$ and $(\Delta m_h^2)^{1L}_{\MSSM}$ \ldots
-\end{frame}
-
-\begin{frame}[noframenumbering]{FlexibleEFTHiggs -- EFT equivalence}
-  Inserting \textcolor{darkgreen}{$(m_h^2)_{\MSSM}$} and
-  \textcolor{red}{$(\Delta m_h^2)^{1L}_{\MSSM}$} for $X_t = 0$:
-  \begin{align*}
-    \lambda(\MS) &=
-    \frac{1}{v^2} \Bigg[
-      \textcolor{darkgreen}{
-      \frac{1}{4}(g_Y^2 + g_2^2) v^2 c_{2\beta}^2} \\
-      &\quad\qquad \textcolor{red}{ + \frac{c_{\alpha}^2}{s_{\beta}^2} (\Delta m_h^2)^{1L}_{\SM}
-        - \frac{c_{\alpha}^2}{s_{\beta}^2} \frac{12 (y_t^{\SM})^2 m_t^2}{(4\pi)^2}
-      B_0(m_h^2,\MS^2,\MS^2) } \\
-      &\quad\qquad - (\Delta m_h^2)^{1L}_{\SM}
-    \Bigg]
-  \end{align*}
-  Now go to the decoupling limit $c_{\alpha}^2/s_{\beta}^2\rightarrow
-  1$ \ldots
-\end{frame}
-
-\begin{frame}[noframenumbering]{FlexibleEFTHiggs -- EFT equivalence}
-  In the decoupling limit $c_{\alpha}^2/s_{\beta}^2\rightarrow 1$:
-  \begin{align*}
-    \lambda(\MS) &=
-    \frac{1}{4}(g_Y^2 + g_2^2) c_{2\beta}^2
-    - 12 \frac{m_t^2 (y_t^{\SM})^2}{(4\pi)^2 v^2} B_0(m_h^2,\MS^2,\MS^2) \\
-    &= \frac{1}{4} (g_Y^2 + g_2^2) c_{2\beta}^2
-    - 12 \frac{m_t^2 (y_t^\SM)^2}{(4\pi)^2 v^2} \Bigg[ 
-    -\log\frac{\MS^2}{Q^2} + \frac{m_h^2}{6\MS^2} + O\Big(\frac{m_h^4}{\MS^4}\Big)
-    \Bigg] \\
-    &= \frac{1}{4} (g_Y^2 + g_2^2) c_{2\beta}^2
-    + 12 \frac{m_t^2 (y_t^\SM)^2}{(4\pi)^2 v^2} \Bigg[ 
-    \log\frac{\MS^2}{Q^2} \Bigg] + O\Big(\frac{v^2}{\MS^2}\Big) \\
-    &= \lambda^{\text{EFT,tree}} + \Delta\lambda^{\text{EFT},1L} + O\Big(\frac{v^2}{\MS^2}\Big)
-  \end{align*}
-  In the decoupling limit $\lambda(\MS)$ in the FlexibleEFTHiggs
-  approach is equivalent to the EFT approach at 1-loop, up to
-  suppressed terms $O(v^2/\MS^2)$
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{frame}[noframenumbering]{Higgs mass uncertainty estimate}
-  \emph{fixed-order:}
+  \emph{FS+H:}
   \begin{itemize}
-  \item $|M_h^{2L}(Q_\pole = \MS/2) - M_h^{2L}(Q_\pole = 2\MS)|$
-  \item $|M_h^{2L}(y_t^{1L}) - M_h^{2L}(y_t^{2L})|$
+  \item $|M_h^{3L}(Q_\pole = \MS/2) - M_h^{3L}(Q_\pole = 2\MS)|$
+  \item $|M_h^{2L}(\as^{1L}) - M_h^{2L}(\as^{2L})|$
   \end{itemize}
-  \emph{EFT (SUSYHD):}
+  \emph{EFT (HSSUSY):}
   \begin{itemize}
   \item $|M_h^{2L}(Q_\pole = M_t/2) - M_h^{2L}(Q_\pole = 2M_t)|$
   \item $|M_h^{2L}(y_t^{2L}) - M_h^{2L}(y_t^{3L})|$
   \item $|M_h^{2L}(Q_{\text{match}} = \MS/2) - M_h^{2L}(Q_{\text{match}} = 2\MS)|$
   \item $|M_h^{2L} - M_h^{2L}(\lambda \rightarrow \lambda(1 + v^2/\MS^2))|$
+  \item $|M_h^{2L}(y_t^\SM) - M_h^{2L}(y_t^\MSSM)|$
   \end{itemize}
   \emph{FlexibleEFTHiggs:}
   \begin{itemize}
@@ -796,44 +741,6 @@
   \item $|M_h^{2L}(y_t^{2L}) - M_h^{2L}(y_t^{3L})|$
   \item $|M_h^{2L}(Q_{\text{match}} = \MS/2) - M_h^{2L}(Q_{\text{match}} = 2\MS)|$
   \end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[noframenumbering]{Incorrect 2L logs in original FlexibleEFTHiggs-1L}
-  Matching condition:
-  \begin{align*}
-    \lambda &\leftarrow \frac{1}{v^2} \left[
-      (m_h^\SM)^2 + (M_h^\text{MSSM})^2 - (M_h^\SM)^2
-    \right]
-  \end{align*}
-  Expansion of momentum iteration up to 1L level:
-  \begin{align*}
-    \lambda &= \frac{1}{v^2} \Big[
-      (m_h^\MSSM)^2
-      + \Delta m_{h,\MSSM}^2
-      - \Delta m_{h,\SM}^2
-      + O(\hbar^2)
-    \Big]
-  \end{align*}
-  with
-  \begin{align*}
-    \Delta m_{h,\MSSM}^2 &= -\Sigma^{1L}_{\MSSM} + t_{\MSSM}^{1L}/v_\MSSM \\
-    \Delta m_{h,\SM}^2 &= -\Sigma^{1L}_{\SM} + t^{1L}_{\SM}/v_\SM
-  \end{align*}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Incorrect 2L logs in original FlexibleEFTHiggs-1L}
-  \emph{Problem:} $y_t^{\MSSM} = y_t^\SM/s_\beta [1 + O(\hbar)] $\\
-  $\Rightarrow$
-  \begin{align*}
-    \Delta m_{h,\MSSM}^2 - \Delta m_{h,\SM}^2 &\propto
-    \hbar \Bigg[ (y_t^\MSSM s_\beta)^4 \log\frac{m_t}{M_S} - (y_t^\SM)^4 \log\frac{m_t}{M_S}\Bigg] \\
-    &= \hbar \Bigg[0\ + \propto \hbar y_t^4 \log\frac{m_t}{M_S} + O(\hbar^2) \Bigg] \\
-    &= O(\hbar^2 y_t^4 \log\frac{m_t}{M_S})
-  \end{align*}
-  $\Rightarrow$\\
-  incorrect 2L logs remain in FlexibleEFTHiggs-1L
 \end{frame}
 
 \end{document}
