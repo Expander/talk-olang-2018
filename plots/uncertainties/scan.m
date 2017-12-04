@@ -196,6 +196,7 @@ RunFSH[MS_, TB_, Xtt_] :=
             precisionGoal -> 1.*^-5,
             poleMassLoopOrder -> 3,
             ewsbLoopOrder -> 3,
+            forceOutput -> 1,
             thresholdCorrectionsLoopOrder -> 2,
             thresholdCorrections -> 122111121
         },
@@ -318,14 +319,6 @@ RunSUSYHD[MS_, TB_, Xt_] :=
     ];
 
 steps = 60;
-MSstart = Mtpole;
-MSstop  = 1.0 10^5;
-Xtstart = -3.5;
-Xtstop  = 3.5;
-TBX = 5;
-XtX = 0;
-
-LaunchKernels[];
 
 ScanSG[SG_, range_, filename_] :=
     Module[{res},
@@ -333,7 +326,12 @@ ScanSG[SG_, range_, filename_] :=
            Export[filename, res, "Table"];
           ];
 
-range = LogRange[MSstart, MSstop, steps];
+LaunchKernels[];
+DistributeDefinitions[ScanSG, RunSUSYHD, RunHSSUSY1L, RunHSSUSY2L, RunEFTHiggs, RunMSSM, RunFSH];
+
+TBX = 5;
+XtX = 0;
+range = LogRange[Mtpole, 1.0 10^5, steps];
 filesuffix = "_MS_TB-" <> ToString[TBX] <> "_Xt-" <> ToString[N[XtX]] <> ".dat";
 
 ScanSG[RunSUSYHD[#, TBX, XtX]&  , range, "SUSYHD"              <> filesuffix];
@@ -342,3 +340,27 @@ ScanSG[RunHSSUSY2L[#, TBX, XtX]&, range, "HSSUSY"              <> filesuffix];
 ScanSG[RunEFTHiggs[#, TBX, XtX]&, range, "MSSMEFTHiggs"        <> filesuffix];
 ScanSG[RunMSSM[#, TBX, XtX]&    , range, "MSSMMuBMu"           <> filesuffix];
 ScanSG[RunFSH[#, TBX, XtX]&     , range, "NUHMSSMNoFVHimalaya" <> filesuffix];
+
+TBX = 5;
+XtX = -2;
+range = LogRange[350, 1.0 10^4, steps];
+filesuffix = "_MS_TB-" <> ToString[TBX] <> "_Xt-" <> ToString[N[XtX]] <> ".dat";
+
+ScanSG[RunSUSYHD[#, TBX, XtX]&  , range, "SUSYHD"              <> filesuffix];
+ScanSG[RunHSSUSY1L[#, TBX, XtX]&, range, "HSSUSY1L"            <> filesuffix];
+ScanSG[RunHSSUSY2L[#, TBX, XtX]&, range, "HSSUSY"              <> filesuffix];
+ScanSG[RunEFTHiggs[#, TBX, XtX]&, range, "MSSMEFTHiggs"        <> filesuffix];
+ScanSG[RunMSSM[#, TBX, XtX]&    , range, "MSSMMuBMu"           <> filesuffix];
+ScanSG[RunFSH[#, TBX, XtX]&     , range, "NUHMSSMNoFVHimalaya" <> filesuffix];
+
+TBX = 5;
+MSX = 5000;
+range = LinearRange[-3.5, 3.5, steps];
+filesuffix = "_Xt_TB-" <> ToString[TBX] <> "_MS-" <> ToString[N[MSX]] <> ".dat";
+
+ScanSG[RunSUSYHD[MSX, TBX, #]&  , range, "SUSYHD"              <> filesuffix];
+ScanSG[RunHSSUSY1L[MSX, TBX, #]&, range, "HSSUSY1L"            <> filesuffix];
+ScanSG[RunHSSUSY2L[MSX, TBX, #]&, range, "HSSUSY"              <> filesuffix];
+ScanSG[RunEFTHiggs[MSX, TBX, #]&, range, "MSSMEFTHiggs"        <> filesuffix];
+ScanSG[RunMSSM[MSX, TBX, #]&    , range, "MSSMMuBMu"           <> filesuffix];
+ScanSG[RunFSH[MSX, TBX, #]&     , range, "NUHMSSMNoFVHimalaya" <> filesuffix];
