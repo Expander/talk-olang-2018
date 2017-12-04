@@ -1,6 +1,10 @@
 Get["models/HSSUSY/HSSUSY_librarylink.m"];
+Get["model_files/HSSUSY/HSSUSY_uncertainty_estimate.m"];
 Get["models/MSSMEFTHiggs/MSSMEFTHiggs_librarylink.m"];
+Get["model_files/MSSMEFTHiggs/MSSMEFTHiggs_uncertainty_estimate.m"];
 Get["models/MSSMMuBMu/MSSMMuBMu_librarylink.m"];
+Get["models/NUHMSSMNoFVHimalaya/NUHMSSMNoFVHimalaya_librarylink.m"];
+Get["model_files/NUHMSSMNoFVHimalaya/NUHMSSMNoFVHimalaya_uncertainty_estimate.m"];
 Needs["SUSYHD`"];
 
 invalid;
@@ -54,64 +58,6 @@ LogRange[start_, stop_, steps_] :=
                result = AppendTo[result, Exp[Log[start] + (Log[stop] - Log[start]) i / steps]];
               ];
            result
-          ];
-
-RunMSSMEFTHiggs[MS_?NumericQ, TB_?NumericQ, Xt_?NumericQ,
-                ytLoops_:2, Qpole_:0, Qmatch_:0] :=
-    Module[{handle, spectrum, uncerts = {}},
-           handle = FSMSSMEFTHiggsOpenHandle[
-               fsSettings -> {
-                   precisionGoal -> 1.*^-5,           (* FlexibleSUSY[0] *)
-                   maxIterations -> 1000,             (* FlexibleSUSY[1] *)
-                   calculateStandardModelMasses -> 0, (* FlexibleSUSY[3] *)
-                   poleMassLoopOrder -> 1,            (* FlexibleSUSY[4] *)
-                   ewsbLoopOrder -> 1,                (* FlexibleSUSY[5] *)
-                   betaFunctionLoopOrder -> 3,        (* FlexibleSUSY[6] *)
-                   thresholdCorrectionsLoopOrder -> 3,(* FlexibleSUSY[7] *)
-                   higgs2loopCorrectionAtAs -> 1,     (* FlexibleSUSY[8] *)
-                   higgs2loopCorrectionAbAs -> 1,     (* FlexibleSUSY[9] *)
-                   higgs2loopCorrectionAtAt -> 1,     (* FlexibleSUSY[10] *)
-                   higgs2loopCorrectionAtauAtau -> 1, (* FlexibleSUSY[11] *)
-                   forceOutput -> 0,                  (* FlexibleSUSY[12] *)
-                   topPoleQCDCorrections -> 1,        (* FlexibleSUSY[13] *)
-                   betaZeroThreshold -> 1.*^-11,      (* FlexibleSUSY[14] *)
-                   forcePositiveMasses -> 0,          (* FlexibleSUSY[16] *)
-                   poleMassScale -> 0,                (* FlexibleSUSY[17] *)
-                   eftPoleMassScale -> Qpole,         (* FlexibleSUSY[18] *)
-                   eftMatchingScale -> Qmatch,        (* FlexibleSUSY[19] *)
-                   eftMatchingLoopOrderUp -> 1,       (* FlexibleSUSY[20] *)
-                   eftMatchingLoopOrderDown -> 1,     (* FlexibleSUSY[21] *)
-                   eftHiggsIndex -> 0,                (* FlexibleSUSY[22] *)
-                   calculateBSMMasses -> 0,           (* FlexibleSUSY[23] *)
-                   thresholdCorrections -> 120111121 + ytLoops 10^6, (* FlexibleSUSY[24] *)
-                   parameterOutputScale -> 0          (* MODSEL[12] *)
-               },
-               fsSMParameters -> SMParameters,
-               fsModelParameters -> {
-                   MSUSY -> MS,
-                   M1Input -> MS,
-                   M2Input -> MS,
-                   M3Input -> MS,
-                   MuInput -> MS,
-                   mAInput -> MS,
-                   TanBeta -> TB,
-                   AeInput -> MS TB IdentityMatrix[3],
-                   AdInput -> MS TB IdentityMatrix[3],
-                   AuInput -> {
-                       {MS/TB, 0    , 0            },
-                       {0    , MS/TB, 0            },
-                       {0    , 0    , MS/TB + Xt MS}
-                   },
-                   mq2Input -> MS^2 IdentityMatrix[3],
-                   mu2Input -> MS^2 IdentityMatrix[3],
-                   md2Input -> MS^2 IdentityMatrix[3],
-                   ml2Input -> MS^2 IdentityMatrix[3],
-                   me2Input -> MS^2 IdentityMatrix[3]
-               }
-           ];
-           spectrum = FSMSSMEFTHiggsCalculateSpectrum[handle];
-           FSMSSMEFTHiggsCloseHandle[handle];
-           spectrum
           ];
 
 RunMSSMMuBMu[MS_?NumericQ, TB_?NumericQ, Xt_?NumericQ,
@@ -170,58 +116,34 @@ RunMSSMMuBMu[MS_?NumericQ, TB_?NumericQ, Xt_?NumericQ,
            spectrum
           ];
 
-RunHSSUSY[MS_?NumericQ, TB_?NumericQ, Xt_?NumericQ,
-          mhLoops_:2, ytLoops_:2] :=
-    Module[{handle, spectrum},
-           handle = FSHSSUSYOpenHandle[
-               fsSettings -> {
-                   precisionGoal -> 1.*^-5,           (* FlexibleSUSY[0] *)
-                   maxIterations -> 100,              (* FlexibleSUSY[1] *)
-                   calculateStandardModelMasses -> 1, (* FlexibleSUSY[3] *)
-                   poleMassLoopOrder -> mhLoops,      (* FlexibleSUSY[4] *)
-                   ewsbLoopOrder -> mhLoops,          (* FlexibleSUSY[5] *)
-                   betaFunctionLoopOrder -> 3,        (* FlexibleSUSY[6] *)
-                   thresholdCorrectionsLoopOrder -> 2,(* FlexibleSUSY[7] *)
-                   higgs2loopCorrectionAtAs -> 1,     (* FlexibleSUSY[8] *)
-                   higgs2loopCorrectionAbAs -> 1,     (* FlexibleSUSY[9] *)
-                   higgs2loopCorrectionAtAt -> 1,     (* FlexibleSUSY[10] *)
-                   higgs2loopCorrectionAtauAtau -> 1, (* FlexibleSUSY[11] *)
-                   forceOutput -> 0,                  (* FlexibleSUSY[12] *)
-                   topPoleQCDCorrections -> 1,        (* FlexibleSUSY[13] *)
-                   betaZeroThreshold -> 1.*^-11,      (* FlexibleSUSY[14] *)
-                   forcePositiveMasses -> 0,          (* FlexibleSUSY[16] *)
-                   poleMassScale -> 0,                (* FlexibleSUSY[17] *)
-                   eftPoleMassScale -> 0,             (* FlexibleSUSY[18] *)
-                   eftMatchingScale -> 0,             (* FlexibleSUSY[19] *)
-                   eftMatchingLoopOrderUp -> 0,       (* FlexibleSUSY[20] *)
-                   eftMatchingLoopOrderDown -> 0,     (* FlexibleSUSY[21] *)
-                   eftHiggsIndex -> 0,                (* FlexibleSUSY[22] *)
-                   calculateBSMMasses -> 0,           (* FlexibleSUSY[23] *)
-                   parameterOutputScale -> 0          (* MODSEL[12] *)
-               },
-               fsSMParameters -> SMParameters,
-               fsModelParameters -> {
-                   MSUSY   -> MS,
-                   M1Input -> MS,
-                   M2Input -> MS,
-                   M3Input -> MS,
-                   MuInput -> MS,
-                   mAInput -> MS,
-                   MEWSB   -> Mtpole,
-                   AtInput -> MS/TB + Xt MS,
-                   TanBeta -> TB,
-                   LambdaLoopOrder -> mhLoops,
-                   msq2 -> MS^2 IdentityMatrix[3],
-                   msu2 -> MS^2 IdentityMatrix[3],
-                   msd2 -> MS^2 IdentityMatrix[3],
-                   msl2 -> MS^2 IdentityMatrix[3],
-                   mse2 -> MS^2 IdentityMatrix[3]
-               }
-           ];
-           spectrum = FSHSSUSYCalculateSpectrum[handle];
-           FSHSSUSYCloseHandle[handle];
-           spectrum
-          ];
+RunMSSMEFTHiggsMh[MS_, TB_, Xtt_] :=
+    CalcMSSMEFTHiggsDMh[
+        fsSettings -> {
+            precisionGoal -> 1.*^-5,
+            thresholdCorrectionsLoopOrder -> 2,
+            thresholdCorrections -> 122111121
+        },
+        fsSMParameters -> SMParameters,
+        fsModelParameters -> {
+            MSUSY   -> MS,
+            M1Input -> MS,
+            M2Input -> MS,
+            M3Input -> MS,
+            MuInput -> MS,
+            mAInput -> MS,
+            TanBeta -> TB,
+            mq2Input -> MS^2 IdentityMatrix[3],
+            mu2Input -> MS^2 IdentityMatrix[3],
+            md2Input -> MS^2 IdentityMatrix[3],
+            ml2Input -> MS^2 IdentityMatrix[3],
+            me2Input -> MS^2 IdentityMatrix[3],
+            AuInput -> {{MS/TB, 0    , 0},
+                        {0    , MS/TB, 0},
+                        {0    , 0    , MS/TB + Xtt MS}},
+            AdInput -> MS TB IdentityMatrix[3],
+            AeInput -> MS TB IdentityMatrix[3]
+        }
+   ];
 
 GetPar[spec_, par__] :=
     GetPar[spec, #]& /@ {par};
@@ -232,14 +154,6 @@ GetPar[spec_, par_] :=
 GetPar[spec_, par_[n__?IntegerQ]] :=
     If[spec =!= $Failed, (par /. spec)[[n]], invalid];
 
-RunMSSMEFTHiggsMh[args__] :=
-    Module[{spec = RunMSSMEFTHiggs[args]},
-           If[spec === $Failed,
-              invalid,
-              GetPar[MSSMEFTHiggs /. spec, Pole[M[hh]][1]]
-             ]
-          ];
-
 RunMSSMMuBMuMh[args__] :=
     Module[{spec = RunMSSMMuBMu[args]},
            If[spec === $Failed,
@@ -248,13 +162,83 @@ RunMSSMMuBMuMh[args__] :=
              ]
           ];
 
-RunHSSUSYMh[args__] :=
-    Module[{spec = RunHSSUSY[args]},
-           If[spec === $Failed,
-              invalid,
-              GetPar[HSSUSY /. spec, Pole[M[hh]]]
-             ]
-          ];
+RunHSSUSYMh[MS_, TB_, Xtt_, mhLoops_:2, ytLoops_:2] :=
+    CalcHSSUSYDMh[
+        fsSettings -> {
+            precisionGoal -> 1.*^-5,
+            maxIterations -> 100,
+            thresholdCorrectionsLoopOrder -> 2,
+            thresholdCorrections -> 122111121
+        },
+        fsSMParameters -> SMParameters,
+        fsModelParameters -> {
+            MSUSY   -> MS,
+            M1Input -> MS,
+            M2Input -> MS,
+            M3Input -> MS,
+            MuInput -> MS,
+            mAInput -> MS,
+            MEWSB   -> Mtpole,
+            AtInput -> MS/TB + Xtt MS,
+            TanBeta -> TB,
+            LambdaLoopOrder -> mhLoops,
+            msq2 -> MS^2 IdentityMatrix[3],
+            msu2 -> MS^2 IdentityMatrix[3],
+            msd2 -> MS^2 IdentityMatrix[3],
+            msl2 -> MS^2 IdentityMatrix[3],
+            mse2 -> MS^2 IdentityMatrix[3],
+            TwoLoopAtAs -> 1,
+            TwoLoopAbAs -> 1,
+            TwoLoopAtAb -> 1,
+            TwoLoopAtauAtau -> 1,
+            TwoLoopAtAt -> 1
+        }
+   ];
+
+RunFSH[MS_, TB_, Xtt_] :=
+    CalcNUHMSSMNoFVHimalayaDMh[
+        fsSettings -> {
+            precisionGoal -> 1.*^-5,
+            poleMassLoopOrder -> 3,
+            ewsbLoopOrder -> 3,
+            thresholdCorrectionsLoopOrder -> 2,
+            thresholdCorrections -> 122111121
+        },
+        fsSMParameters -> SMParameters,
+        fsModelParameters -> {
+            TanBeta -> TB,
+            Qin -> MS,
+            M1 -> MS,
+            M2 -> MS,
+            M3 -> MS,
+            AtIN -> MS/TB + Xtt MS,
+            AbIN -> MS TB,
+            AtauIN -> MS TB,
+            AcIN -> MS/TB,
+            AsIN -> MS TB,
+            AmuonIN -> MS TB,
+            AuIN -> MS/TB,
+            AdIN -> MS TB,
+            AeIN -> MS TB,
+            MuIN -> MS,
+            mA2IN -> MS^2,
+            ml11IN -> MS,
+            ml22IN -> MS,
+            ml33IN -> MS,
+            me11IN -> MS,
+            me22IN -> MS,
+            me33IN -> MS,
+            mq11IN -> MS,
+            mq22IN -> MS,
+            mq33IN -> MS,
+            mu11IN -> MS,
+            mu22IN -> MS,
+            mu33IN -> MS,
+            md11IN -> MS,
+            md22IN -> MS,
+            md33IN -> MS
+        }
+   ];
 
 VaryScale[Qmean_, factor_] := LogRange[Qmean/factor, Qmean factor, 10];
 
@@ -269,18 +253,34 @@ RunPoint[SG_, pars__, scale_] :=
            { Min[scales], Max[scales] }
           ];
 
-RunEFTHiggs[MS_?NumericQ, TB_?NumericQ, Xt_?NumericQ] :=
-    Module[{MhYt2, MhYt3, Qpole = 0, Qmatch = 0, MhQpole, MhQmatch, DMh},
-           MhYt2 = RunMSSMEFTHiggsMh[MS, TB, Xt, 2, Qpole, Qmatch];
-           MhYt3 = RunMSSMEFTHiggsMh[MS, TB, Xt, 3, Qpole, Qmatch];
-           MhQpole = RunPoint[RunMSSMEFTHiggsMh, MS, TB, Xt, 2, Mtpole];
-           MhQmatch = RunPoint[RunMSSMEFTHiggsMh, MS, TB, Xt, 2, 0, MS];
-           DMh = Abs[MhYt2 - MhYt3] + Abs[Min[MhQpole] - Max[MhQpole]] + Abs[Min[MhQmatch] - Max[MhQmatch]];
-           If[MhYt2 === $Failed,
-              { invalid, invalid },
-              { MhYt2, DMh }
-             ]
-          ];
+RunEFTHiggs[MS_, TB_, Xtt_] :=
+    CalcMSSMEFTHiggsDMh[
+        fsSettings -> {
+            precisionGoal -> 1.*^-5,
+            thresholdCorrectionsLoopOrder -> 2,
+            thresholdCorrections -> 122111121
+        },
+        fsSMParameters -> SMParameters,
+        fsModelParameters -> {
+            MSUSY   -> MS,
+            M1Input -> MS,
+            M2Input -> MS,
+            M3Input -> MS,
+            MuInput -> MS,
+            mAInput -> MS,
+            TanBeta -> TB,
+            mq2Input -> MS^2 IdentityMatrix[3],
+            mu2Input -> MS^2 IdentityMatrix[3],
+            md2Input -> MS^2 IdentityMatrix[3],
+            ml2Input -> MS^2 IdentityMatrix[3],
+            me2Input -> MS^2 IdentityMatrix[3],
+            AuInput -> {{MS/TB, 0    , 0},
+                        {0    , MS/TB, 0},
+                        {0    , 0    , MS/TB + Xtt MS}},
+            AdInput -> MS TB IdentityMatrix[3],
+            AeInput -> MS TB IdentityMatrix[3]
+        }
+   ];
 
 RunMSSM[MS_?NumericQ, TB_?NumericQ, Xt_?NumericQ] :=
     Module[{MhYt1, MhYt2, Qpole = 0, MhQpole, DMh},
@@ -340,22 +340,36 @@ Xtstop  = 3.5;
 TBX = 5;
 XtX = 0;
 
+LaunchKernels[];
+
 (********** SUSYHD **********)
 
-res = {N[#], Sequence @@ RunSUSYHD[#, TBX, XtX]}& /@ LogRange[MSstart, MSstop, steps];
+res = ParallelMap[{N[#], Sequence @@ RunSUSYHD[#, TBX, XtX]}&,
+                  LogRange[MSstart, MSstop, steps]];
 Export["SUSYHD_MS_TB-" <> ToString[TBX] <> "_Xt-" <> ToString[N[XtX]] <> ".dat", res, "Table"];
 
 (********** HSSUSY **********)
 
-res = {N[#], RunHSSUSYMh[#, TBX, XtX]}& /@ LogRange[MSstart, MSstop, steps];
+res = ParallelMap[{N[#], Sequence @@ RunHSSUSYMh[#, TBX, XtX, 1]}&,
+                  LogRange[MSstart, MSstop, steps]];
+Export["HSSUSY1L_MS_TB-" <> ToString[TBX] <> "_Xt-" <> ToString[N[XtX]] <> ".dat", res, "Table"];
+
+res = ParallelMap[{N[#], Sequence @@ RunHSSUSYMh[#, TBX, XtX]}&,
+                  LogRange[MSstart, MSstop, steps]];
 Export["HSSUSY_MS_TB-" <> ToString[TBX] <> "_Xt-" <> ToString[N[XtX]] <> ".dat", res, "Table"];
 
 (********** FlexibleEFTHiggs **********)
 
-res = {N[#], Sequence @@ RunEFTHiggs[#, TBX, XtX]}& /@ LogRange[MSstart, MSstop, steps];
+res = ParallelMap[{N[#], Sequence @@ RunEFTHiggs[#, TBX, XtX]}&,
+                  LogRange[MSstart, MSstop, steps]];
 Export["MSSMEFTHiggs_MS_TB-" <> ToString[TBX] <> "_Xt-" <> ToString[N[XtX]] <> ".dat", res, "Table"];
 
 (********** MSSM **********)
 
-res = {N[#], Sequence @@ RunMSSM[#, TBX, XtX]}& /@ LogRange[MSstart, MSstop, steps];
+res = ParallelMap[{N[#], Sequence @@ RunMSSM[#, TBX, XtX]}&,
+                  LogRange[MSstart, MSstop, steps]];
 Export["MSSMMuBMu_MS_TB-" <> ToString[TBX] <> "_Xt-" <> ToString[N[XtX]] <> ".dat", res, "Table"];
+
+res = ParallelMap[{N[#], Sequence @@ RunFSH[#, TBX, XtX]}&,
+                  LogRange[MSstart, MSstop, steps]];
+Export["NUHMSSMNoFVHimalaya_MS_TB-" <> ToString[TBX] <> "_Xt-" <> ToString[N[XtX]] <> ".dat", res, "Table"];

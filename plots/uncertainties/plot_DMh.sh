@@ -17,7 +17,6 @@ outfile = directory + r'DMh_MS_TB-5_Xt-0.pdf'
 try:
     dataMSSMEFTHiggs = np.genfromtxt(directory + r'MSSMEFTHiggs_MS_TB-5_Xt-0..dat')
     dataMSSM         = np.genfromtxt(directory + r'scan_FeynHiggs-2.13.0beta_Mh_MS_TB-5_Xt-0.dat')
-    dataSUSYHD       = np.genfromtxt(directory + r'SUSYHD_MS_TB-5_Xt-0..dat')
     dataHSSUSY       = np.genfromtxt(directory + r'HSSUSY_MS_TB-5_Xt-0..dat')
 except:
     print "Error: could not load numerical data from file"
@@ -25,15 +24,15 @@ except:
 
 xMSSMEFTHiggs = dataMSSMEFTHiggs[:,0]
 xMSSM         = dataMSSM[:,0]
-xSUSYHD       = dataHSSUSY[:,0]
+xHSSUSY       = dataHSSUSY[:,0]
 
 yMSSMEFTHiggs = dataMSSMEFTHiggs[:,1]
 yMSSM         = dataMSSM[:,1]
-ySUSYHD       = dataHSSUSY[:,1]
+yHSSUSY       = dataHSSUSY[:,1]
 
 dMSSMEFTHiggs = dataMSSMEFTHiggs[:,2]
 dMSSM         = dataMSSM[:,2]
-dSUSYHD       = dataSUSYHD[:,2]
+dHSSUSY       = dataHSSUSY[:,2]
 
 plt.rc('text', usetex=True)
 plt.rc('font', family='serif', weight='normal')
@@ -56,11 +55,11 @@ plt.ylim([80,125])
 
 # hMSSM, = plt.plot(xMSSM        , yMSSM        , 'b--', linewidth=1.2, label=r'2L fixed order')
 # hmix,  = plt.plot(xMSSMEFTHiggs, yMSSMEFTHiggs, 'r-' , linewidth=1.2, label=r'1L FlexibleEFTHiggs')
-# hEFT,  = plt.plot(xSUSYHD      , ySUSYHD      , 'g-.', linewidth=1.2, dashes=(3,2,1,2), label=r'2L EFT')
+# hEFT,  = plt.plot(xHSSUSY      , yHSSUSY      , 'g-.', linewidth=1.2, dashes=(3,2,1,2), label=r'2L EFT')
 plt.fill_between(xMSSM, yMSSM - dMSSM, yMSSM + dMSSM,
                  color='blue', alpha=0.3, interpolate=True, linewidth=0.0,
                  label=r'2L fixed order')
-plt.fill_between(xSUSYHD, ySUSYHD - dSUSYHD, ySUSYHD + dSUSYHD,
+plt.fill_between(xHSSUSY, yHSSUSY - dHSSUSY, yHSSUSY + dHSSUSY,
                  color='green', alpha=0.3, interpolate=True, linewidth=0.0,
                  label=r'2L EFT')
 plt.fill_between(xMSSMEFTHiggs, yMSSMEFTHiggs - dMSSMEFTHiggs, yMSSMEFTHiggs + dMSSMEFTHiggs,
