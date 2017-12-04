@@ -3,6 +3,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as tck
+import matplotlib.patches as patches
 import scipy.interpolate
 
 plt.rcParams['text.usetex'] = True
@@ -51,7 +52,7 @@ plt.xscale('log')
 plt.xlabel(r'$M_S\,/\,\mathrm{GeV}$')
 plt.ylabel(r'$M_h\,/\,\mathrm{GeV}$')
 plt.xlim([100,10000])
-plt.ylim([80,126])
+plt.ylim([80,130])
 
 hMSSM, = plt.plot(xMSSM        , yMSSM        , 'b-' , linewidth=1.2, label=r'3L \texttt{FS+H}')
 hEFT,  = plt.plot(xHSSUSY      , yHSSUSY      , 'g-.', linewidth=1.2, dashes=(5,3,1,3), label=r'2L \texttt{HSSUSY}')
@@ -69,6 +70,20 @@ leg.get_frame().set_alpha(1.0)
 leg.get_frame().set_edgecolor('black')
 
 plt.title(r'$X_t = 0, \tan\beta = 5$', color='k', fontsize=10)
+
+Mhexp = 125.09
+sigma = 0.32
+
+ax.add_patch(
+    patches.Rectangle(
+        (ax.get_xlim()[0], Mhexp - sigma)  , # (x,y)
+        ax.get_xlim()[1] - ax.get_xlim()[0], # width
+        2*sigma                            , # height
+        color='orange', alpha=0.5, zorder=-1
+    )
+)
+
+plt.text(ax.get_xlim()[0] + 10, Mhexp + sigma + 0.4, r"ATLAS/CMS $\pm1\sigma$", fontsize=8)
 
 plt.savefig(outfile)
 print "saved plot in ", outfile
