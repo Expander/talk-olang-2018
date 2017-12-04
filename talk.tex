@@ -372,7 +372,7 @@
 \end{frame}
 
 \begin{frame}{Higgs mass at 3-loop level}
-  Known contributions: $O(\at\as^2)$ for $p^2 = 0$ \mycite{arXiv:1005.5709}
+  Known contributions: $O(\at\as^2)$ for $p^2 = 0$ \mycite{1005.5709}
   \begin{center}
     \includegraphics[width=0.3\textwidth]{images/h3l-atasas}
   \end{center}
@@ -529,11 +529,11 @@
   subsectionstyle=show/shaded/hide]  
 \end{frame}
 
-\begin{frame}{FlexibleEFTHiggs approach \mycite{arXiv:1609.00371}}
+\begin{frame}{FlexibleEFTHiggs approach \mycite{1609.00371, 1710.03760}}
   \emph{Idea:}
   Determine $\lambda(\MS)$ from the condition
   \begin{align*}
-    (M_h^2)_{\SM} \equiv \lambda(\MS) v^2 + (\Delta m_h^2)^{1L}_{\SM} \overset{!}{=} (M_h^2)_{\MSSM}\qquad \text{1L, } Q = \MS
+    (M_h^2)_{\SM} \equiv \lambda(\MS) v^2 + (\Delta m_h^2)_{\SM} \overset{!}{=} (M_h^2)_{\MSSM} , \qquad Q = \MS
   \end{align*}
   \begin{center}
     \begin{tikzpicture}[scale=0.9]
@@ -541,8 +541,8 @@
       \draw[thick] (1,0)   rectangle node{SM(5)} (4,0.9);
       \draw[thick] (1,1.1) rectangle node{SM}    (4,4.9);
       \draw[thick] (1,5.1) rectangle node{MSSM}  (4,6);
-      \draw[<-, thick, darkgreen] (4,5) -- (4.5,5) node[right]{$\lambda(\MS) = \frac{1}{v^2}\left[(M_h^2)_{\MSSM} - (\Delta m_h^2)^{1L}_{\SM}\right]$};
-      \draw[<-, thick, red] (4,1) -- (4.5,1) node[right]{$(M_h^\SM)^2 = \lambda(M_t) v^2 + (\Delta m_h^2)^{1L}_{\SM} + \cdots$};
+      \draw[<-, thick, darkgreen] (4,5) -- (4.5,5) node[right]{$\lambda(\MS) = \frac{1}{v^2}\left[(M_h^2)_{\MSSM} - (\Delta m_h^2)_{\SM}\right]$};
+      \draw[<-, thick, red] (4,1) -- (4.5,1) node[right]{$(M_h^\SM)^2 = \lambda(M_t) v^2 + (\Delta m_h^2)_{\SM} + \cdots$};
       \draw[<->, thick, blue] (4.2,1.2) -- node[right]{RG running} (4.2,4.8);
     \end{tikzpicture}
   \end{center}
@@ -550,7 +550,7 @@
 
 \begin{frame}{Summary FlexibleEFTHiggs approach}
   \begin{align*}
-    (M_h^2)_{\SM} &= (M_h^2)_{\MSSM} \qquad \text{1L, } Q = \MS
+    (M_h^2)_{\SM} &= (M_h^2)_{\MSSM} , \qquad Q = \MS
   \end{align*}
   \emph{Advantages:}
   \begin{itemize}
