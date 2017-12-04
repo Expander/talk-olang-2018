@@ -53,8 +53,8 @@ plt.ylabel(r'$M_h\,/\,\mathrm{GeV}$')
 plt.xlim([100,10000])
 plt.ylim([80,125])
 
-hMSSM, = plt.plot(xMSSM        , yMSSM        , 'b--', linewidth=1.2, label=r'2L fixed-order')
-hEFT,  = plt.plot(xHSSUSY      , yHSSUSY      , 'g-.', linewidth=1.2, dashes=(5,3,1,3), label=r'2L EFT')
+hMSSM, = plt.plot(xMSSM        , yMSSM        , 'b--', linewidth=1.2, label=r'fixed loop order')
+hEFT,  = plt.plot(xHSSUSY      , yHSSUSY      , 'g-.', linewidth=1.2, dashes=(5,3,1,3), label=r'EFT')
 plt.fill_between(xMSSM, yMSSM - dMSSM, yMSSM + dMSSM,
                  color='blue', alpha=0.3, interpolate=True, linewidth=0.0)
 plt.fill_between(xHSSUSY, yHSSUSY - dHSSUSY, yHSSUSY + dHSSUSY,

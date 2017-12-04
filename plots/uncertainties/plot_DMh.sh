@@ -53,18 +53,18 @@ plt.ylabel(r'$M_h\,/\,\mathrm{GeV}$')
 plt.xlim([100,10000])
 plt.ylim([80,125])
 
-# hMSSM, = plt.plot(xMSSM        , yMSSM        , 'b--', linewidth=1.2, label=r'2L fixed order')
-# hmix,  = plt.plot(xMSSMEFTHiggs, yMSSMEFTHiggs, 'r-' , linewidth=1.2, label=r'1L FlexibleEFTHiggs')
-# hEFT,  = plt.plot(xHSSUSY      , yHSSUSY      , 'g-.', linewidth=1.2, dashes=(3,2,1,2), label=r'2L EFT')
+# hMSSM, = plt.plot(xMSSM        , yMSSM        , 'b--', linewidth=1.2, label=r'fixed loop order')
+# hmix,  = plt.plot(xMSSMEFTHiggs, yMSSMEFTHiggs, 'r-' , linewidth=1.2, label=r'FlexibleEFTHiggs')
+# hEFT,  = plt.plot(xHSSUSY      , yHSSUSY      , 'g-.', linewidth=1.2, dashes=(3,2,1,2), label=r'EFT')
 plt.fill_between(xMSSM, yMSSM - dMSSM, yMSSM + dMSSM,
                  color='blue', alpha=0.3, interpolate=True, linewidth=0.0,
-                 label=r'2L fixed order')
+                 label=r'fixed loop order')
 plt.fill_between(xHSSUSY, yHSSUSY - dHSSUSY, yHSSUSY + dHSSUSY,
                  color='green', alpha=0.3, interpolate=True, linewidth=0.0,
-                 label=r'2L EFT')
+                 label=r'EFT')
 plt.fill_between(xMSSMEFTHiggs, yMSSMEFTHiggs - dMSSMEFTHiggs, yMSSMEFTHiggs + dMSSMEFTHiggs,
                  color='red', alpha=0.3, interpolate=True, linewidth=0.0,
-                 label=r'1L FlexibleEFTHiggs')
+                 label=r'FlexibleEFTHiggs')
 
 leg = plt.legend(loc='lower right', fontsize=10, fancybox=None, framealpha=None)
 leg.get_frame().set_alpha(1.0)
