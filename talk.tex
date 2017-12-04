@@ -529,6 +529,26 @@
   subsectionstyle=show/shaded/hide]  
 \end{frame}
 
+\begin{frame}{Mixed fixed-order and EFT approaches}
+  \emph{Goal:} resum large logarithms \emph{and} include suppressed
+  $O(v^2/\MS^2)$ terms
+  \\[2em]
+  \emph{Two known approaches:}
+  \begin{itemize}
+  \item FeynHiggs \mycite{1312.4937}: Replace logs from
+    fixed-order calculation by resummed logs
+    \begin{align*}
+      M_h^2 = (M_h^2)_{\text{fixed-order}} - (M_h^2)_{\text{logs}} + (M_h^2)_{\text{resummed logs}}
+    \end{align*}
+  \item FlexibleEFTHiggs \mycite{1609.00371, 1710.03760}: Incorporate
+    $O(v^2/\MS^2)$ terms into $\lambda$ by using the matching
+    condition
+    \begin{align*}
+      (M_h^2)_{\SM} \overset{!}{=} (M_h^2)_{\MSSM} \qquad \text{at 1L level at } Q = \MS
+    \end{align*}
+  \end{itemize}
+\end{frame}
+
 \begin{frame}{FlexibleEFTHiggs approach \mycite{1609.00371, 1710.03760}}
   \emph{Idea:}
   Determine $\lambda(\MS)$ from the condition
@@ -548,9 +568,64 @@
   \end{center}
 \end{frame}
 
+\begin{frame}{FlexibleEFTHiggs -- EFT equivalence}
+  \emph{Proof of equivalence:} Start with matching condition:
+  \begin{align*}
+    (M_h^2)_{\SM} &= (M_h^2)_{\MSSM} \qquad \text{1L, } Q = \MS \\
+    \lambda v^2 + (\Delta m_h^2)^{1L}_{\SM} &= (M_h^2)_{\MSSM}
+  \end{align*}
+  $\Rightarrow$
+  \begin{align*}
+    \lambda(\MS) &= \frac{1}{v^2} \left[ (M_h^2)_{\MSSM} - (\Delta m_h^2)^{1L}_{\SM} \right] \\
+    &= \frac{1}{v^2} \left[
+      \textcolor{darkgreen}{(m_h^2)_{\MSSM}}\ +\ \textcolor{red}{(\Delta m_h^2)^{1L}_{\MSSM}} - (\Delta m_h^2)^{1L}_{\SM}
+    \right]
+  \end{align*}
+  Now insert \textcolor{darkgreen}{$(m_h^2)_{\MSSM}$} and
+  \textcolor{red}{$(\Delta m_h^2)^{1L}_{\MSSM}$} \ldots
+\end{frame}
+
+\begin{frame}{FlexibleEFTHiggs -- EFT equivalence}
+  Inserting \textcolor{darkgreen}{$(m_h^2)_{\MSSM}$} and
+  \textcolor{red}{$(\Delta m_h^2)^{1L}_{\MSSM}$} (for $X_t = 0$):
+  \begin{align*}
+    \lambda(\MS) &=
+    \frac{1}{v^2} \Bigg[
+      \textcolor{darkgreen}{
+      \frac{1}{4}(g_Y^2 + g_2^2) v^2 c_{2\beta}^2} \\
+      &\quad\qquad \textcolor{red}{ + \frac{c_{\alpha}^2}{s_{\beta}^2} (\Delta m_h^2)^{1L}_{\SM}
+        - \frac{c_{\alpha}^2}{s_{\beta}^2} \frac{12 (y_t^{\SM})^2 m_t^2}{(4\pi)^2}
+      B_0(m_h^2,\MS^2,\MS^2) } \\
+      &\quad\qquad - (\Delta m_h^2)^{1L}_{\SM}
+    \Bigg]
+  \end{align*}
+  Now go to the decoupling limit $c_{\alpha}^2/s_{\beta}^2\rightarrow
+  1$ \ldots
+\end{frame}
+
+\begin{frame}{FlexibleEFTHiggs -- EFT equivalence}
+  In the decoupling limit $c_{\alpha}^2/s_{\beta}^2\rightarrow 1$:
+  \begin{align*}
+    \lambda(\MS) &=
+    \textcolor{darkgreen}{\frac{1}{4}(g_Y^2 + g_2^2) c_{2\beta}^2}
+    \textcolor{red}{\ -\ 12 \frac{m_t^2 (y_t^{\SM})^2}{(4\pi)^2 v^2} B_0(m_h^2,\MS^2,\MS^2)} \\
+    &= \frac{1}{4} (g_Y^2 + g_2^2) c_{2\beta}^2
+    - 12 \frac{m_t^2 (y_t^\SM)^2}{(4\pi)^2 v^2} \Bigg[ 
+    -\log\frac{\MS^2}{Q^2} + \frac{m_h^2}{6\MS^2} + O\Big(\frac{m_h^4}{\MS^4}\Big)
+    \Bigg] \\
+    &= \frac{1}{4} (g_Y^2 + g_2^2) c_{2\beta}^2
+    + 12 \frac{m_t^2 (y_t^\SM)^2}{(4\pi)^2 v^2} \Bigg[ 
+    \log\frac{\MS^2}{Q^2} \Bigg] + O\Big(\frac{v^2}{\MS^2}\Big) \\
+    &= \lambda^{\text{EFT,tree}} + \Delta\lambda^{\text{EFT},1L} + O\Big(\frac{v^2}{\MS^2}\Big)
+  \end{align*}
+  In the decoupling limit $\lambda(\MS)$ in the FlexibleEFTHiggs
+  approach is equivalent to the EFT approach at 1-loop, up to
+  suppressed terms $O(v^2/\MS^2)$
+\end{frame}
+
 \begin{frame}{Summary FlexibleEFTHiggs approach}
   \begin{align*}
-    (M_h^2)_{\SM} &= (M_h^2)_{\MSSM} , \qquad Q = \MS
+    (M_h^2)_{\SM} &= (M_h^2)_{\MSSM} \qquad \text{at 1L, } Q = \MS
   \end{align*}
   \emph{Advantages:}
   \begin{itemize}
@@ -560,11 +635,11 @@
   \vspace{1em}
   \textcolor{darkgreen}{$\Rightarrow$ FlexibleEFTHiggs leads to a
     correct Higgs mass prediction at the full 1-loop level (including
-    suppressed terms) with additional (N)LL resummation.}\\
+    suppressed terms) with additional NLL resummation.}\\
   \vspace{1em}
   \emph{Disadvantage:}
   \begin{itemize}
-  \item tricky to extend to 2-loop accuracy
+  \item tricky to extend to 2-loop accuracy (work in progress)
   \end{itemize}
 \end{frame}
 
@@ -600,7 +675,7 @@
   %
   \emph{FlexibleEFTHiggs:}
   \begin{itemize}
-  \item full NLO + (N)LL resummation
+  \item full NLO + NLL resummation
   \item can be applied to \emph{any} BSM model (SUSY or non-SUSY)
   \item can be easily automatized
   \end{itemize}
