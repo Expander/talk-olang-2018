@@ -17,7 +17,7 @@ outfile = directory + r'DMh_MS_TB-5_Xt-0.pdf'
 
 try:
     dataMSSMEFTHiggs = np.genfromtxt(directory + r'MSSMEFTHiggs_MS_TB-5_Xt-0..dat')
-    dataMSSM         = np.genfromtxt(directory + r'NUHMSSMNoFVHimalaya_MS_TB-5_Xt-0..dat')
+    dataMSSM         = np.genfromtxt(directory + r'NUHMSSMNoFVHimalaya_MS_TB-5_Xt-0..dat')[0:39]
     dataHSSUSY       = np.genfromtxt(directory + r'HSSUSY_MS_TB-5_Xt-0..dat')
 except:
     print "Error: could not load numerical data from file"
@@ -51,7 +51,7 @@ ax.get_xaxis().set_tick_params(which='both',direction='in')
 plt.xscale('log')
 plt.xlabel(r'$M_S\,/\,\mathrm{GeV}$')
 plt.ylabel(r'$M_h\,/\,\mathrm{GeV}$')
-plt.xlim([100,10000])
+plt.xlim([100,100000])
 plt.ylim([80,130])
 
 hMSSM, = plt.plot(xMSSM        , yMSSM        , 'b-' , linewidth=1.2, label=r'3L \texttt{FS+H}')
