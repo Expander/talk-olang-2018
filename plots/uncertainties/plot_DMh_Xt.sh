@@ -57,8 +57,8 @@ hMSSM, = plt.plot(xMSSM        , yMSSM        , 'b-' , linewidth=1.2, label=r'3L
 hEFT,  = plt.plot(xHSSUSY      , yHSSUSY      , 'g-.', linewidth=1.2, dashes=(5,3,1,3), label=r'2L \texttt{HSSUSY}')
 # hmix,  = plt.plot(xMSSMEFTHiggs, dMSSMEFTHiggs, 'r-' , linewidth=1.2, label=r'1L FlexibleEFTHiggs')
 
-# plt.fill_between(xMSSM, yMSSM - dMSSM, yMSSM + dMSSM,
-#                  color='blue', alpha=0.3, interpolate=True, linewidth=0.0)
+plt.fill_between(xMSSM, yMSSM - dMSSM, yMSSM + dMSSM,
+                 color='blue', alpha=0.3, interpolate=True, linewidth=0.0)
 plt.fill_between(xHSSUSY, yHSSUSY - dHSSUSY, yHSSUSY + dHSSUSY,
                  color='green', alpha=0.3, interpolate=True, linewidth=0.0)
 # plt.fill_between(xMSSMEFTHiggs, yMSSMEFTHiggs - dMSSMEFTHiggs, yMSSMEFTHiggs + dMSSMEFTHiggs,
