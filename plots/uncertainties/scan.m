@@ -52,14 +52,6 @@ SMParameters = {
 LinearRange[start_, stop_, steps_] :=
     Table[start + i/steps (stop - start), {i, 0, steps}];
 
-LogRange[start_, stop_, steps_] :=
-    Module[{i, result = {}},
-           For[i = 0, i <= steps, i++,
-               result = AppendTo[result, Exp[Log[start] + (Log[stop] - Log[start]) i / steps]];
-              ];
-           result
-          ];
-
 RunMSSMMuBMu[MS_?NumericQ, TB_?NumericQ, Xt_?NumericQ,
              ytLoops_:2, Qpole_:0] :=
     Module[{handle, spectrum},
@@ -195,6 +187,9 @@ RunHSSUSYMh[MS_, TB_, Xtt_, mhLoops_:2, ytLoops_:2] :=
         }
    ];
 
+RunHSSUSY1L[MS_, TB_, Xtt_] := RunHSSUSYMh[MS,TB,Xtt,1];
+RunHSSUSY2L[MS_, TB_, Xtt_] := RunHSSUSYMh[MS,TB,Xtt,2];
+
 RunFSH[MS_, TB_, Xtt_] :=
     CalcNUHMSSMNoFVHimalayaDMh[
         fsSettings -> {
@@ -240,12 +235,10 @@ RunFSH[MS_, TB_, Xtt_] :=
         }
    ];
 
-VaryScale[Qmean_, factor_] := LogRange[Qmean/factor, Qmean factor, 10];
-
-CheckInvalid[l_List] := If[FreeQ[l,invalid], l, invalid];
-
 RunPoint[SG_, pars__, scale_] :=
-    Module[{MhMean, scales},
+    Module[{MhMean, scales, CheckInvalid, VaryScale},
+           VaryScale[Qmean_, factor_] := LogRange[Qmean/factor, Qmean factor, 10];
+           CheckInvalid[l_List] := If[FreeQ[l,invalid], l, invalid];
            MhMean = SG[pars, scale];
            If[MhMean === invalid, Return[Array[invalid&, 2]]];
            scales = CheckInvalid[SG[pars, #]& /@ VaryScale[scale, 2]];
@@ -324,15 +317,7 @@ RunSUSYHD[MS_, TB_, Xt_] :=
            {mass, dmass}
     ];
 
-IsValid[ex_]          := FreeQ[ex, invalid];
-RemoveInvalid[l_List] := Select[l, IsValid];
-MaxDiff[l_List]       := Max[Abs[RemoveInvalid[l]]] - Min[Abs[RemoveInvalid[l]]];
-MaxDiff[{}]           := 0;
-MinMax[l_List]        := { Min[Abs[RemoveInvalid[l]]], Max[Abs[RemoveInvalid[l]]] };
-MinMax[{}]            := { invalid, invalid };
-
 steps = 60;
-
 MSstart = Mtpole;
 MSstop  = 1.0 10^5;
 Xtstart = -3.5;
@@ -342,34 +327,18 @@ XtX = 0;
 
 LaunchKernels[];
 
-(********** SUSYHD **********)
+ScanSG[SG_, range_, filename_] :=
+    Module[{res},
+           res = ParallelMap[{N[#], Sequence @@ SG[#]}&, range];
+           Export[filename, res, "Table"];
+          ];
 
-res = ParallelMap[{N[#], Sequence @@ RunSUSYHD[#, TBX, XtX]}&,
-                  LogRange[MSstart, MSstop, steps]];
-Export["SUSYHD_MS_TB-" <> ToString[TBX] <> "_Xt-" <> ToString[N[XtX]] <> ".dat", res, "Table"];
+range = LogRange[MSstart, MSstop, steps];
+filesuffix = "_MS_TB-" <> ToString[TBX] <> "_Xt-" <> ToString[N[XtX]] <> ".dat";
 
-(********** HSSUSY **********)
-
-res = ParallelMap[{N[#], Sequence @@ RunHSSUSYMh[#, TBX, XtX, 1]}&,
-                  LogRange[MSstart, MSstop, steps]];
-Export["HSSUSY1L_MS_TB-" <> ToString[TBX] <> "_Xt-" <> ToString[N[XtX]] <> ".dat", res, "Table"];
-
-res = ParallelMap[{N[#], Sequence @@ RunHSSUSYMh[#, TBX, XtX]}&,
-                  LogRange[MSstart, MSstop, steps]];
-Export["HSSUSY_MS_TB-" <> ToString[TBX] <> "_Xt-" <> ToString[N[XtX]] <> ".dat", res, "Table"];
-
-(********** FlexibleEFTHiggs **********)
-
-res = ParallelMap[{N[#], Sequence @@ RunEFTHiggs[#, TBX, XtX]}&,
-                  LogRange[MSstart, MSstop, steps]];
-Export["MSSMEFTHiggs_MS_TB-" <> ToString[TBX] <> "_Xt-" <> ToString[N[XtX]] <> ".dat", res, "Table"];
-
-(********** MSSM **********)
-
-res = ParallelMap[{N[#], Sequence @@ RunMSSM[#, TBX, XtX]}&,
-                  LogRange[MSstart, MSstop, steps]];
-Export["MSSMMuBMu_MS_TB-" <> ToString[TBX] <> "_Xt-" <> ToString[N[XtX]] <> ".dat", res, "Table"];
-
-res = ParallelMap[{N[#], Sequence @@ RunFSH[#, TBX, XtX]}&,
-                  LogRange[MSstart, MSstop, steps]];
-Export["NUHMSSMNoFVHimalaya_MS_TB-" <> ToString[TBX] <> "_Xt-" <> ToString[N[XtX]] <> ".dat", res, "Table"];
+ScanSG[RunSUSYHD[#, TBX, XtX]&  , range, "SUSYHD"              <> filesuffix];
+ScanSG[RunHSSUSY1L[#, TBX, XtX]&, range, "HSSUSY1L"            <> filesuffix];
+ScanSG[RunHSSUSY2L[#, TBX, XtX]&, range, "HSSUSY"              <> filesuffix];
+ScanSG[RunEFTHiggs[#, TBX, XtX]&, range, "MSSMEFTHiggs"        <> filesuffix];
+ScanSG[RunMSSM[#, TBX, XtX]&    , range, "MSSMMuBMu"           <> filesuffix];
+ScanSG[RunFSH[#, TBX, XtX]&     , range, "NUHMSSMNoFVHimalaya" <> filesuffix];
