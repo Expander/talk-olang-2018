@@ -49,22 +49,23 @@ ax.get_xaxis().set_tick_params(which='both',direction='in')
 
 plt.xscale('log')
 plt.xlabel(r'$M_S\,/\,\mathrm{GeV}$')
-plt.ylabel(r'$\Delta M_h\,/\,\mathrm{GeV}$')
+plt.ylabel(r'$M_h\,/\,\mathrm{GeV}$')
 plt.xlim([300,10000])
-plt.ylim([0,10])
+# plt.ylim([0,10])
 
-hMSSM, = plt.plot(xMSSM        , dMSSM        , 'b--', linewidth=1.2, label=r'3L \texttt{FS+H}')
-hEFT,  = plt.plot(xHSSUSY      , dHSSUSY      , 'g-.', linewidth=1.2, dashes=(5,3,1,3), label=r'2L \texttt{HSSUSY}')
-hmix,  = plt.plot(xMSSMEFTHiggs, dMSSMEFTHiggs, 'r-' , linewidth=1.2, label=r'1L FlexibleEFTHiggs')
-# plt.fill_between(xMSSM, yMSSM - dMSSM, yMSSM + dMSSM,
-#                  color='blue', alpha=0.3, interpolate=True, linewidth=0.0)
-# plt.fill_between(xHSSUSY, yHSSUSY - dHSSUSY, yHSSUSY + dHSSUSY,
-#                  color='green', alpha=0.3, interpolate=True, linewidth=0.0)
+hMSSM, = plt.plot(xMSSM        , yMSSM        , 'b-' , linewidth=1.2, label=r'3L \texttt{FS+H}')
+hEFT,  = plt.plot(xHSSUSY      , yHSSUSY      , 'g-.', linewidth=1.2, dashes=(5,3,1,3), label=r'2L \texttt{HSSUSY}')
+# hmix,  = plt.plot(xMSSMEFTHiggs, dMSSMEFTHiggs, 'r-' , linewidth=1.2, label=r'1L FlexibleEFTHiggs')
+
+plt.fill_between(xMSSM, yMSSM - dMSSM, yMSSM + dMSSM,
+                 color='blue', alpha=0.3, interpolate=True, linewidth=0.0)
+plt.fill_between(xHSSUSY, yHSSUSY - dHSSUSY, yHSSUSY + dHSSUSY,
+                 color='green', alpha=0.3, interpolate=True, linewidth=0.0)
 # plt.fill_between(xMSSMEFTHiggs, yMSSMEFTHiggs - dMSSMEFTHiggs, yMSSMEFTHiggs + dMSSMEFTHiggs,
 #                  color='red', alpha=0.3, interpolate=True, linewidth=0.0)
 
-leg = plt.legend(handles = [hMSSM, hEFT, hmix],
-                 loc='upper right', fontsize=10, fancybox=None, framealpha=None)
+leg = plt.legend(handles = [hMSSM, hEFT],
+                 loc='lower right', fontsize=10, fancybox=None, framealpha=None)
 leg.get_frame().set_alpha(1.0)
 leg.get_frame().set_edgecolor('black')
 
