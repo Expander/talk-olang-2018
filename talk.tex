@@ -146,6 +146,85 @@
 
 \begin{document}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Savebox which contains the the Feynman rules
+\newsavebox{\feynmanrules}
+\sbox{\feynmanrules}{
+\begin{fmffile}{Feynman/higgs} % file name and path
+  \fmfset{thin}{.8pt}
+  \fmfset{wiggly_len}{5mm}
+  \fmfset{dash_len}{2.5mm}
+  \fmfset{dot_size}{1thick}
+  \fmfset{arrow_len}{2.5mm}
+  \fmfset{curly_len}{2.5mm}
+
+\begin{fmfgraph*}(60,60)
+  \fmfkeep{hX}
+  \fmfleft{v1}
+  \fmfright{v2}
+  \fmf{higgs}{v1,c1}
+  \fmf{higgs}{c2,v2}
+  \fmf{quark,left,tension=0.5,label=$X$}{c1,c2}
+  \fmf{quark,left,tension=0.5}{c2,c1}
+\end{fmfgraph*}
+
+\begin{fmfgraph*}(60,60)
+  \fmfkeep{htop}
+  \fmfleft{v1}
+  \fmfright{v2}
+  \fmf{higgs}{v1,c1}
+  \fmf{higgs}{c2,v2}
+  \fmf{quark,left,tension=0.5,label=$t$}{c1,c2}
+  \fmf{quark,left,tension=0.5}{c2,c1}
+\end{fmfgraph*}
+
+\begin{fmfgraph*}(60,60)
+  \fmfkeep{hstop}
+  \fmfleft{v1}
+  \fmfright{v2}
+  \fmf{higgs}{v1,c1}
+  \fmf{higgs}{c2,v2}
+  \fmf{scalar,left,tension=0.5,label=$\tilde{t}_i$}{c1,c2}
+  \fmf{scalar,left,tension=0.5}{c2,c1}
+\end{fmfgraph*}
+
+\begin{fmfgraph*}(60,60)
+  \fmfkeep{hstopA}
+  \fmfleft{v1}
+  \fmfright{v2}
+  \fmf{higgs}{v1,c,v2}
+  \fmf{scalar,right,tension=0.8,label=$\tilde{t}_i$}{c,c}
+\end{fmfgraph*}
+
+\begin{fmfgraph*}(60,60)
+  \fmfkeep{htoptad}
+  \fmfleft{v1}
+  \fmfright{v2}
+  \fmftop{t1}
+  \fmf{higgs}{v1,c,v2}
+  \fmffreeze
+  \fmf{higgs}{c,c1}
+  \fmf{quark,right,tension=0.3,label=$t$}{c1,c2}
+  \fmf{quark,right,tension=0.3}{c2,c1}
+  \fmf{phantom,tension=10}{c2,t1}
+\end{fmfgraph*}
+
+\begin{fmfgraph*}(60,60)
+  \fmfkeep{hstoptad}
+  \fmfleft{v1}
+  \fmfright{v2}
+  \fmftop{t1}
+  \fmf{higgs}{v1,c,v2}
+  \fmffreeze
+  \fmf{higgs}{c,c1}
+  \fmf{scalar,right,tension=0.3,label=$\tilde{t}_i$}{c1,c2}
+  \fmf{scalar,right,tension=0.3}{c2,c1}
+  \fmf{phantom,tension=10}{c2,t1}
+\end{fmfgraph*}
+\end{fmffile}
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[plain]
   \tikz [remember picture,overlay]
@@ -196,6 +275,34 @@
     \tikz[overlay,remember picture]
     \node[anchor=north east] at ($(current page.north east)+(-1,-1)$) {
       \includegraphics[scale=0.3]{images/lambda}
+    };
+  }
+  \visible<4>{
+    \tikz[overlay,remember picture]
+    \node[anchor=north east] at ($(current page.north east)+(-1,-1)$) {
+      \fbox{$M_h^2 = \textcolor{red}{\lambda} v^2 + \cdots$}
+    };
+  }
+  \visible<5>{
+    \tikz[overlay,remember picture]
+    \node[anchor=north east] at ($(current page.north east)+(-1,-1)$) {
+      \fbox{$\Lagr = \textcolor{red}{y_{ij}} \phi\psi_i\psi_j + \cdots$}
+    };
+  }
+  \visible<6>{
+    \tikz[overlay,remember picture]
+    \node[anchor=north east] at ($(current page.north east)+(-1,-1)$) {
+      $\fmfvcenter{hX}$
+    };
+  }
+  \visible<7>{
+    \tikz[overlay,remember picture]
+    \node[anchor=north east] at ($(current page.north east)+(-1,-1)$) {
+      \begin{minipage}{3cm}
+        \raggedleft
+        \includegraphics[scale=0.08]{images/quantum-gravity.jpg}
+        \\[-0.5em]\mycite{SLAC}
+      \end{minipage}
     };
   }
 \end{frame}
@@ -282,73 +389,6 @@
   currentsubsection,
   subsectionstyle=show/shaded/hide]  
 \end{frame}
-
-% Savebox which contains the the Feynman rules
-\newsavebox{\feynmanrules}
-\sbox{\feynmanrules}{
-\begin{fmffile}{Feynman/higgs} % file name and path
-  \fmfset{thin}{.8pt}
-  \fmfset{wiggly_len}{5mm}
-  \fmfset{dash_len}{2.5mm}
-  \fmfset{dot_size}{1thick}
-  \fmfset{arrow_len}{2.5mm}
-  \fmfset{curly_len}{2.5mm}
-
-\begin{fmfgraph*}(60,60)
-  \fmfkeep{htop}
-  \fmfleft{v1}
-  \fmfright{v2}
-  \fmf{higgs}{v1,c1}
-  \fmf{higgs}{c2,v2}
-  \fmf{quark,left,tension=0.5,label=$t$}{c1,c2}
-  \fmf{quark,left,tension=0.5}{c2,c1}
-\end{fmfgraph*}
-
-\begin{fmfgraph*}(60,60)
-  \fmfkeep{hstop}
-  \fmfleft{v1}
-  \fmfright{v2}
-  \fmf{higgs}{v1,c1}
-  \fmf{higgs}{c2,v2}
-  \fmf{scalar,left,tension=0.5,label=$\tilde{t}_i$}{c1,c2}
-  \fmf{scalar,left,tension=0.5}{c2,c1}
-\end{fmfgraph*}
-
-\begin{fmfgraph*}(60,60)
-  \fmfkeep{hstopA}
-  \fmfleft{v1}
-  \fmfright{v2}
-  \fmf{higgs}{v1,c,v2}
-  \fmf{scalar,right,tension=0.8,label=$\tilde{t}_i$}{c,c}
-\end{fmfgraph*}
-
-\begin{fmfgraph*}(60,60)
-  \fmfkeep{htoptad}
-  \fmfleft{v1}
-  \fmfright{v2}
-  \fmftop{t1}
-  \fmf{higgs}{v1,c,v2}
-  \fmffreeze
-  \fmf{higgs}{c,c1}
-  \fmf{quark,right,tension=0.3,label=$t$}{c1,c2}
-  \fmf{quark,right,tension=0.3}{c2,c1}
-  \fmf{phantom,tension=10}{c2,t1}
-\end{fmfgraph*}
-
-\begin{fmfgraph*}(60,60)
-  \fmfkeep{hstoptad}
-  \fmfleft{v1}
-  \fmfright{v2}
-  \fmftop{t1}
-  \fmf{higgs}{v1,c,v2}
-  \fmffreeze
-  \fmf{higgs}{c,c1}
-  \fmf{scalar,right,tension=0.3,label=$\tilde{t}_i$}{c1,c2}
-  \fmf{scalar,right,tension=0.3}{c2,c1}
-  \fmf{phantom,tension=10}{c2,t1}
-\end{fmfgraph*}
-\end{fmffile}
-}
 
 \begin{frame}{Fixed loop order calculation}
   Dominant contribution to $M_h$ at the 1-loop level:
