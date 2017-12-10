@@ -192,6 +192,12 @@
       \includegraphics[scale=0.5]{images/amu}
     };
   }
+  \visible<3>{
+    \tikz[overlay,remember picture]
+    \node[anchor=north east] at ($(current page.north east)+(-1,-1)$) {
+      \includegraphics[scale=0.3]{images/lambda}
+    };
+  }
 \end{frame}
 
 \begin{frame}{Supersymmetry}
