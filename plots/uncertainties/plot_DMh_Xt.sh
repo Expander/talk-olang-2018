@@ -35,6 +35,12 @@ dMSSMEFTHiggs = dataMSSMEFTHiggs[:,2]
 dMSSM         = dataMSSM[:,2]
 dHSSUSY       = dataHSSUSY[:,2]
 
+def make_nan(x):
+    if x < 50: return x
+    return np.nan
+
+dMSSM = [make_nan(d) for d in dMSSM]
+
 plt.rc('text', usetex=True)
 plt.rc('font', family='serif', weight='normal')
 fig = plt.figure(figsize=(4,4))
