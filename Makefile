@@ -14,7 +14,9 @@ PLOTS       := \
 		plots/NMSSMEFTHiggs/DMh_MS_TB-5_Xt-0_lam-0.1_kap-0.1.pdf \
 		plots/NMSSMEFTHiggs/DMh_MS_TB-5_Xt-0_lam-0.3_kap-0.3.pdf \
 		plots/NMSSMEFTHiggs/DMh_MS_TB-5_Xt--2_lam-0.1_kap-0.1.pdf \
-		plots/NMSSMEFTHiggs/DMh_MS_TB-5_Xt--2_lam-0.3_kap-0.3.pdf
+		plots/NMSSMEFTHiggs/DMh_MS_TB-5_Xt--2_lam-0.3_kap-0.3.pdf \
+		plots/SOFTSUSY/Mh_MS_TB-20_Xt--sqrt6.pdf \
+		plots/SOFTSUSY/SS_TB-20_Xt--sqrt6.pdf
 
 TEXDIRS     := $(PLOTSDIR)
 BIBTEX      := bibtex
@@ -22,6 +24,12 @@ BIBTEX      := bibtex
 .PHONY: all clean
 
 all: $(OUTFILENAME)
+
+plots/SOFTSUSY/SS_TB-20_Xt--sqrt6.pdf: plots/SOFTSUSY/plot_SS.sh plots/SOFTSUSY/*.dat
+	cd plots/SOFTSUSY/ && ./plot_SS.sh
+
+plots/SOFTSUSY/Mh_MS_TB-20_Xt--sqrt6.pdf: plots/SOFTSUSY/plot_SS.sh plots/SOFTSUSY/*.dat
+	cd plots/SOFTSUSY/ && ./plot_SS.sh
 
 plots/uncertainties/DMh_MS_TB-5_Xt-0_alt.pdf: plots/uncertainties/plot_DMh.sh plots/uncertainties/*.dat
 	$<

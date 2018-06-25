@@ -92,6 +92,7 @@
 \newcommand{\SOten}{\ensuremath{{SO(10)}}}
 \newcommand{\comma}{,}
 \newcommand{\DRbar}{\ensuremath{\overline{\text{DR}}}}
+\newcommand{\DRbarp}{\ensuremath{\overline{\text{DR}}'}}
 \newcommand{\MSbar}{\ensuremath{\overline{\text{MS}}}}
 \newcommand{\SM}{\ensuremath{\text{SM}}}
 \newcommand{\MSSM}{\ensuremath{\text{MSSM}}}
@@ -115,6 +116,9 @@
 \newcommand{\ab}{\alpha_b}
 \newcommand{\atau}{\alpha_\tau}
 \newcommand{\as}{\alpha_s}
+\newcommand{\aem}{\alpha_\text{em}}
+\newcommand{\GeV}{\eh{GeV}}
+\newcommand{\TeV}{\eh{TeV}}
 
 % set look of slides
 \usetheme{Madrid}
@@ -244,6 +248,12 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}{Current limits on SUSY particle masses}
+  \begin{center}
+    \includegraphics[width=\textwidth]{images/ATLAS_SUSY_Summary}
+  \end{center}
+\end{frame}
+
 \section{Higgs mass calculation}
 \subsection{at fixed loop order}
 
@@ -254,101 +264,63 @@
   subsectionstyle=show/shaded/hide]  
 \end{frame}
 
-\begin{frame}{Fixed loop order calculation}
-  Dominant contribution to $M_h$ at the 1-loop level:
-  \begin{align*}
-    (\Delta m_h^2)^{1L} &= -\Sigma_h^{1L}(p^2) + \frac{t_h^{1L}}{v} \\
-    &= \fmfvcenter{htop} + \fmfvcenter{hstop} + \fmfvcenter{hstopA} \\
-    &\phantom{={}} + \fmfvcenter{htoptad} + \fmfvcenter{hstoptad} \\
-    &\approx \frac{12 m_t^2 y_t^2}{(4\pi)^2} \left(
-      \ln\frac{\MS^2}{m_t^2}
-      + \frac{X_t^2}{\MS^2}
-      - \frac{X_t^4}{12 \MS^4}
-    \right) + O(p^2)
-  \end{align*}
-\end{frame}
+% \begin{frame}{Fixed-order calculation}
+%   \begin{center}
+%   \begin{tikzpicture}
+%     \path[arrow] (0,0) -- (0,5) node[left]{$Q$};
+%     \draw[thick,darkgreen] (0,4) node[left]{$M_S$} -- node[above = 0.5cm,black]{MSSM} (3,4) node[right,black,text width=8cm]{
+%       $M_h^2$ at $O(\text{1L} + (\at+\ab)\as + (\at+\ab)^2)$\\ \ \ \ \ \ + $O(\atau^2) + O((\at + \ab)\as^2)$};
+%     \draw[thick,darkgreen] (0,1) node[left]{$M_Z$} -- node[above = 1.2cm,black]{MSSM} node[below = 0.5cm,black]{SM(5)} (3,1) node[right,black,text width=8cm]{
+%       $y_{t,b}$ at $O(\text{1L} + \as^2)$, $v$ at 1L, \\ $g_3$ at $O(\text{1L} + \as^2 + (\at + \ab)\as)$};
+%     \path[arrow,latex-latex,blue] (-1,1) -- node[above,rotate=90]{3L RGEs} (-1,4);
+%   \end{tikzpicture}
+%   \end{center}
+%   $M_h^2$: \mycite{0105096, 0112177, 0212132, 0206101, 0305127, 1708.05720}\\
+%   $y_{t,b}$: \mycite{0210258, 0507139, 0707.0650, 0912.4652},
+%   $g_3$: \mycite{0509048, 0810.5101, 1009.5455}\\
+%   $\aem$: \mycite{1411.7040}, 
+%   $\beta_i$: \mycite{0308231, 0408128}
+% \end{frame}
 
-\begin{frame}{Higgs mass at 1-loop level}
-  \begin{align*}
-    (\Delta m_h^2)^{1L} &\approx
-    \frac{12 m_t^2 y_t^2}{(4\pi)^2} \left(
-      \ln\frac{\MS^2}{m_t^2}
-      + \frac{X_t^2}{\MS^2}
-      - \frac{X_t^4}{12 \MS^4}
-    \right) + O(p^2)
-  \end{align*}
-  $X_t = A_t - \mu/t_\beta$ = stop mixing parameter,
-  $\MS = (m_Q)_{33} = (m_U)_{33}$
-  % 24 mt^4 / (16 Pi^2 v^2) (Log[MS^2/mt^2] + Xt^2/MS^2 - Xt^4/(12 MS^4))
-  \\[1em]
-  \emph{Observations:}
-  \begin{itemize}
-  \item logarithmically enhanced by $\MS / m_t$
-  \item maximal for $X_t \approx \sqrt{6} \MS$
-  \item high sensitivity on $m_t$, due to prefactor $m_t^2 y_t^2 = 2 m_t^4/v^2$
-  \item ambiguity of definition of $m_t$: pole mass or \DRbar\ mass? \\
-    $M_t \approx 173.3\eh{GeV}$, $m_t^{\DRbar} \approx 165\eh{GeV}$ \\
-    $\Rightarrow$ huge theoretical uncertainty!\\
-    $\Rightarrow$ 2-loop calculation needed to resolve this ambiguity
-  \item to get $M_h \approx 125\eh{GeV}$, $\MS \gtrsim 5\eh{TeV}$ needed
-    (see later)
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Higgs mass at 2-loop level}
-  Known contributions: $O(\as (\at + \ab) + (\at+\ab)^2 + \atau^2)$
-  for $p^2 = 0$ \mycite{hep-ph/0105096, hep-ph/0112177}
-  \\[1em]
-  \includegraphics[width=0.6\textwidth]{images/atas}\\[1em]
-  \includegraphics[width=\textwidth]{images/atat}
-\end{frame}
-
-\begin{frame}{Higgs mass at 2-loop level}
-  \begin{align*}
-    (\Delta m_h^2)^{2L} &\approx
-    \frac{m_t^2 y_t^4}{(4\pi)^4} \left(
-      c_1 \ln^2\frac{\MS^2}{m_t^2}
-      + c_2 \ln\frac{\MS^2}{m_t^2}
-      + c_3
-    \right) \\
-    & +
-    \frac{m_t^2 y_t^2 g_3^2}{(4\pi)^4} \left(
-      c_4 \ln^2\frac{\MS^2}{m_t^2}
-      + c_5 \ln\frac{\MS^2}{m_t^2}
-      + c_6
-    \right)
-  \end{align*}
-  \emph{Observations:}
-  \begin{itemize}
-  \item logarithmically enhanced by $\MS / m_t$
-  \item still high sensitivity on $m_t$
-  \item ambiguity of definition of $m_t$ is resolved \ok
-  \item ambiguity of definition of $\as$: $\as^\SM(M_Z)$, $\as^\MSSM(\MS)$, \ldots ? \\
-    $\Rightarrow$ 3-loop calculation needed to resolve this ambiguity
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Higgs mass at 3-loop level}
-  Known contributions: $O(\at\as^2)$ for $p^2 = 0$ \mycite{1005.5709}
+\begin{frame}{Higgs mass calculation at fixed loop order}
+  % \emph{Idea:} Integrate out SUSY particles at $\MS$ (expand in $v^2/\MS^2$) \\
+  % $\Rightarrow$ $\lambda(\MS)$ is fixed by the MSSM \\
+  % $\Rightarrow$ effectively: separation of scales $\MS$ and $M_t$.
   \begin{center}
-    \includegraphics[width=0.3\textwidth]{images/h3l-atasas}
+    \begin{tikzpicture}[scale=0.9]
+      \draw[->, thick] (0,0) -- (0,1) node[left]{$M_Z$} -- (0,5) node[left]{$\MS$} -- (0,6);
+      \draw[thick] (1,0)   rectangle node{SM(5)} (4,0.9);
+      \draw[thick] (1,1.1) rectangle node{MSSM}  (4,4.9);
+      \draw[thick] (1,5.1) rectangle node{MSSM}  (4,6);
+      \draw[<-, thick, red] (4,5) -- (4.5,5) node[right]{$M_h^2 = m_Z^2 c_{2\beta}^2 + (\Delta m_h^2)^{1L} + \cdots$};
+      \draw[<-, thick, darkgreen] (4,1) -- (4.5,1) node[right]{$y_f^\MSSM, g_i^\MSSM, \ldots$};
+      \draw[<->, thick, blue] (4.2,1.2) -- node[right]{RG running} (4.2,4.8);
+    \end{tikzpicture}
   \end{center}
-  \begin{align*}
-    (\Delta m_h^2)^{3L} &\approx
-    \frac{m_t^2 y_t^2 g_3^4}{(4\pi)^6} \left(
-      c_7 \ln^3\frac{\MS^2}{m_t^2}
-      + c_8 \ln^2\frac{\MS^2}{m_t^2}
-      + c_9 \ln\frac{\MS^2}{m_t^2}
-      + c_{10}
-    \right)
-  \end{align*}
-  \emph{Observations:}
-  \begin{itemize}
-  \item logarithmically enhanced by $\MS / m_t$
-  \item still high sensitivity on $m_t$
-  \item ambiguity of definition of $m_t$ is resolved \ok
-  \item ambiguity of definition of $\as$ is resolved \ok
-  \end{itemize}
+\end{frame}
+
+\begin{frame}{Higgs mass calculation at fixed loop order}
+  Currently known higher-order corrections:
+  \begin{center}
+    \begin{tabular}{lll}
+      \toprule
+      loops & \DRbarp & on-shell \\
+      \midrule
+      1-loop & full & full \\
+      %\midrule
+      2-loop & \multicolumn{2}{c}{$(\at + \ab)\as + (\at + \ab)^2 + \ab\atau + \atau^2 + \aem\as$} \\
+      %\midrule
+      3-loop & $\at\as^2 + \ab\as^2$ & -- \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+  \mycite{0105096, 0112177, 0212132, 0206101, 0305127, 1708.05720}
+\end{frame}
+
+\begin{frame}{Uncertainty of the fixed-order \DRbarp\ calculation}
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{{{plots/SOFTSUSY/SS_TB-20_Xt--sqrt6}}}
+  \end{center}
 \end{frame}
 
 \begin{frame}{Summary of fixed loop order calculation}
@@ -372,7 +344,6 @@
     more) \\
     recall: $M_h^{\text{exp}} = (125.09 \pm 0.24)\eh{GeV}$
   \end{itemize}
-  \emph{Note:} 3-loop MSSM calculation implemented in \fsh \mycite{1708.05720}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -384,6 +355,27 @@
   currentsection,
   currentsubsection,
   subsectionstyle=show/shaded/hide]  
+\end{frame}
+
+\begin{frame}{EFT calculation (\texttt{HSSUSY})}
+  \begin{center}
+  \begin{tikzpicture}
+    \path[arrow] (0,0) -- (0,5) node[left]{$Q$};
+    \draw[thick,darkgreen] (0,4) node[left]{$M_S$} -- node[above = 0.5cm,black]{MSSM} (3,4) node[right,black,text width=8cm]{
+      $\lambda$ at $O(\text{1L} + (\at+\ab)\as + (\at+\ab)^2)$\\ \ \ \ \ \ + $O(\atau^2)$};
+    \draw[thick,dashed,darkgreen] (0,2) node[left]{$M_t$} -- (3,2) node[right,black,text width=8cm]{
+      $M_h^2$ at $O(\text{1L} + (\at+\as)\at)$\\ \ \ \ \ \ \ + $O(\at^3 + \at^2\as + \at\as^2)$
+    };
+    \draw[thick,darkgreen] (0,1) node[left]{$M_Z$} -- node[above = 1.5cm,black]{SM} node[below = 0.5cm,black]{SM(5)} (3,1) node[right,black,text width=8cm]{
+      $y_t$ at $O(\text{1L} + \as^2 + \as^3)$, $v$ at 1L, \\ $g_3$ at $O(\text{1L} + \as^2 + \as^3)$};
+    \path[arrow,latex-latex,blue] (-1,1) -- node[above,rotate=90]{3L RGEs} (-1,4);
+  \end{tikzpicture}
+  \end{center}
+  $\lambda$: \mycite{1407.4081, 1504.05200, 1703.08166}
+  $M_h^2$: \mycite{1205.6497, 1504.05200, 1407.4336}\\
+  $y_t$: \mycite{9912391, 1205.2892},
+  $g_3$: \mycite{9305305, 9707474, 9708255, 0004189}\\
+  $\beta_i$: \mycite{1201.5868, 1210.6873, 1212.6829, 1205.2892, 1303.4364}
 \end{frame}
 
 \begin{frame}{Higgs mass calculation in an EFT}
@@ -453,7 +445,8 @@
 
 \begin{frame}{Comparison of fixed-order and EFT approaches}
   \begin{center}
-    \includegraphics[width=0.7\textwidth]{{{plots/uncertainties/Mh_MS_TB-5_Xt-0_FO_EFT}}}
+    \includegraphics[width=0.7\textwidth]{plots/SOFTSUSY/Mh_MS_TB-20_Xt--sqrt6}
+    % \includegraphics[width=0.7\textwidth]{{{plots/uncertainties/Mh_MS_TB-5_Xt-0_FO_EFT}}}
   \end{center}
 \end{frame}
 
