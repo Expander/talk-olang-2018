@@ -317,17 +317,17 @@
   \mycite{0105096, 0112177, 0212132, 0206101, 0305127, 1708.05720}
 \end{frame}
 
-\begin{frame}{Uncertainty of the fixed order calculation}
+\begin{frame}{Uncertainty of the fixed order \DRbarp\ calculation}
   Two main sources:
   \begin{itemize}
   \item Missing higher order corrections in the determination of the
-    running MSSM parameters $y_f^\MSSM$, $g_i^\MSSM$, $v^\MSSM$:
+    running MSSM parameters $y_f^\MSSM$, $g_i^\MSSM$:
     \begin{align*}
-      y_t^\MSSM = \frac{\sqrt{2}\,M_t}{v_u}
+      y_t^\MSSM &= \frac{\sqrt{2}\,M_t}{v_u}
       \Big[1 + \hbar(\textcolor{darkgreen}{\text{full}})
       + \hbar^2(\textcolor{darkgreen}{\as^2} + \textcolor{red}{\at\as} + \textcolor{red}{\at^2})
       + \cdots \Big] \\
-      \as^\MSSM = \as^{\SM(5)}
+      \as^\MSSM &= \as^{\SM(5)}
       \Big[1 + \hbar(\textcolor{darkgreen}{\text{full}})
       + \hbar^2(\textcolor{darkgreen}{\as^2} + \textcolor{darkgreen}{\at\as} + \textcolor{darkgreen}{\ab\as})
       + \cdots \Big]
@@ -344,7 +344,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Uncertainty of the fixed-order \DRbarp\ calculation}
+\begin{frame}{Uncertainty of the fixed order \DRbarp\ calculation}
   \begin{center}
     \includegraphics[width=0.7\textwidth]{{{plots/SOFTSUSY/SS_TB-20_Xt--sqrt6}}}
   \end{center}
@@ -420,6 +420,54 @@
       \draw[<->, thick, blue] (4.2,1.2) -- node[right]{RG running} (4.2,4.8);
     \end{tikzpicture}
   \end{center}
+\end{frame}
+
+\begin{frame}{Uncertainty of the EFT calculation}
+  Three main sources:\\[1em]  
+  \emph{1. SM uncertainty:}
+  \begin{itemize}
+  \item Missing higher order corrections in the
+    determination of the running SM parameters $y_f^\SM$, $g_i^\SM$:
+    \begin{align*}
+      y_t^\SM &= \frac{\sqrt{2}\,M_t}{v}
+      \Big[1 + \hbar(\textcolor{darkgreen}{\text{full}})
+      + \hbar^2(\textcolor{darkgreen}{\as^2} + \textcolor{darkgray}{\at\as} + \textcolor{darkgray}{\at^2})
+      + \hbar^3(\textcolor{darkgreen}{\as^3} + \cdots)
+      \Big] \\
+      \as^\SM &= \as^{\SM(5)}
+      \Big[1 + \hbar(\textcolor{darkgreen}{\text{full}})
+      + \hbar^2(\textcolor{darkgreen}{\as^2} + \cdots)
+      + \hbar^3(\textcolor{darkgreen}{\as^3} + \cdots)
+      + \cdots \Big]
+    \end{align*}
+  \item Missing higher order corrections to $M_h^2$:
+    \begin{align*}
+      M_h^2 &= m_h^2 + \hbar(\textcolor{darkgreen}{\text{full}})
+      + \hbar^2\Big[ m_t^2(\textcolor{darkgreen}{\at\as} + \textcolor{darkgreen}{\at^2} + \cdots)
+      + \textcolor{darkgray}{m_Z^2\aem^2}
+      + \cdots\Big]\\
+      &\quad + \hbar^3\Big[ m_t^2(\textcolor{darkgreen}{\at\as^2} + \textcolor{darkgreen}{\at^2\as} + \textcolor{darkgreen}{\at^3})
+        + \textcolor{red}{m_Z^2 \aem^3} + \cdots \Big]\\
+      &\quad + \hbar^4\Big[ m_t^2(\textcolor{darkgreen}{\at\as^4} + \cdots)
+      + \cdots\Big]
+    \end{align*}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Uncertainty of the EFT calculation}
+  \emph{2. SUSY uncertainty:}
+  Missing higher order corrections in the determination of
+  $\lambda(\MS)$:
+  \begin{align*}
+      \lambda(\MS) &= \frac{1}{4}(g_Y^2+g_2^2)c_{2\beta}^2 + \hbar(\textcolor{darkgreen}{\text{full}}) \\
+      &\quad + \hbar^2\Big[ (\textcolor{darkgreen}{\at^2\as} + \textcolor{darkgreen}{\ab^2\as}
+        + \textcolor{darkgreen}{\at^2\ab} + \textcolor{darkgreen}{\at\ab^2} + \textcolor{darkgreen}{\at^3} + \cdots)
+      + \textcolor{red}{\aem^3}
+      + \cdots\Big]\\
+      &\quad + \hbar^3\Big[ (\textcolor{darkgreen}{\at^2\as^2} + \textcolor{red}{\at^3\as} + \textcolor{red}{\at^4})
+        + \textcolor{red}{\aem^4} + \cdots \Big]
+  \end{align*}
+  \emph{3. EFT uncertainty:} Missing terms of $O(v^2/\MS^2)$
 \end{frame}
 
 \begin{frame}{Comparison of fixed-order and EFT approaches}
