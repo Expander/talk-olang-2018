@@ -13,6 +13,7 @@ def plot(datafile, outfile, title, label_y, range_y, range_x, curves=[1,1]):
     try:
         dataSS = np.genfromtxt(datafile[0])
         dataFS = np.genfromtxt(datafile[1])
+        dataHS = np.genfromtxt('HSSUSY-3L/' + datafile[1])
     except:
         print "Error: could not load numerical data from file"
         exit
@@ -23,7 +24,7 @@ def plot(datafile, outfile, title, label_y, range_y, range_x, curves=[1,1]):
     MSFS   = dataFS[:,0]
     MhFS   = dataFS[:,1]
     DMhFS  = dataFS[:,2]
-    MhEFT  = dataFS[:,3]
+    MhEFT  = dataHS[:,3]
     DMhEFT = dataFS[:,4]
 
     plt.rc('text', usetex=True)
