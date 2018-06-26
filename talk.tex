@@ -299,29 +299,9 @@
   \end{center}
 \end{frame}
 
-\begin{frame}{Higgs mass calculation at fixed loop order}
-  Currently known higher-order corrections:
-  \begin{center}
-    \begin{tabular}{lll}
-      \toprule
-      loops & \DRbarp & on-shell \\
-      \midrule
-      1-loop & full & full \\
-      %\midrule
-      2-loop & \multicolumn{2}{c}{$(\at + \ab)\as + (\at + \ab)^2 + \ab\atau + \atau^2 + \aem\as$} \\
-      %\midrule
-      3-loop & $\at\as^2 + \ab\as^2$ & -- \\
-      \bottomrule
-    \end{tabular}
-  \end{center}
-  \mycite{0105096, 0112177, 0212132, 0206101, 0305127, 1708.05720}
-\end{frame}
-
-\begin{frame}{Uncertainty of the fixed order \DRbarp\ calculation}
-  Two main sources:
-  \begin{itemize}
-  \item Missing higher order corrections in the determination of the
-    running MSSM parameters $y_f^\MSSM$, $g_i^\MSSM$:
+\begin{frame}{Known/unknown fixed order \DRbarp\ loop corrections}
+  Loop corrections in the determination of the running MSSM
+    parameters $y_f^\MSSM$, $g_i^\MSSM$:
     \begin{align*}
       y_t^\MSSM &= \frac{\sqrt{2}\,M_t}{v_u}
       \Big[1 + \hbar(\textcolor{darkgreen}{\text{full}})
@@ -332,7 +312,7 @@
       + \hbar^2(\textcolor{darkgreen}{\as^2} + \textcolor{darkgreen}{\at\as} + \textcolor{darkgreen}{\ab\as})
       + \cdots \Big]
     \end{align*}
-  \item Missing higher order corrections to $M_h^2$:
+    Loop corrections to $M_h^2$ in the MSSM:
     \begin{align*}
       M_h^2 &= m_h^2 + \hbar(\textcolor{darkgreen}{\text{full}})
       + \hbar^2\Big[ m_t^2(\textcolor{darkgreen}{\at\as} + \textcolor{darkgreen}{\at^2} + \cdots)
@@ -341,7 +321,7 @@
       &\quad + \hbar^3\Big[ m_t^2(\textcolor{darkgreen}{\at\as^2} + \textcolor{red}{\at^2\as} + \textcolor{red}{\at^3})
       + \cdots\Big]
     \end{align*}
-  \end{itemize}
+    \mycite{0105096, 0112177, 0212132, 0206101, 0305127, 1005.5709, 1708.05720}
 \end{frame}
 
 \begin{frame}{Uncertainty of the fixed order \DRbarp\ calculation}
@@ -422,12 +402,11 @@
   \end{center}
 \end{frame}
 
-\begin{frame}{Uncertainty of the EFT calculation}
-  Three main sources:\\[1em]  
-  \emph{1. SM uncertainty:}
+\begin{frame}{Known/unknown loop corrections in the EFT calculation}
+  \emph{SM contributions:}
   \begin{itemize}
-  \item Missing higher order corrections in the
-    determination of the running SM parameters $y_f^\SM$, $g_i^\SM$:
+  \item Loop corrections in the determination of the running SM
+    parameters $y_f^\SM$, $g_i^\SM$:
     \begin{align*}
       y_t^\SM &= \frac{\sqrt{2}\,M_t}{v}
       \Big[1 + \hbar(\textcolor{darkgreen}{\text{full}})
@@ -440,7 +419,7 @@
       + \hbar^3(\textcolor{darkgreen}{\as^3} + \cdots)
       + \cdots \Big]
     \end{align*}
-  \item Missing higher order corrections to $M_h^2$:
+  \item Loop corrections to $M_h^2$ in the SM:
     \begin{align*}
       M_h^2 &= m_h^2 + \hbar(\textcolor{darkgreen}{\text{full}})
       + \hbar^2\Big[ m_t^2(\textcolor{darkgreen}{\at\as} + \textcolor{darkgreen}{\at^2} + \cdots)
@@ -454,10 +433,8 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Uncertainty of the EFT calculation}
-  \emph{2. SUSY uncertainty:}
-  Missing higher order corrections in the determination of
-  $\lambda(\MS)$:
+\begin{frame}{Known/unknown loop corrections in the EFT calculation}
+  \emph{SUSY contributions:} Loop corrections to $\lambda(\MS)$:
   \begin{align*}
       \lambda(\MS) &= \frac{1}{4}(g_Y^2+g_2^2)c_{2\beta}^2 + \hbar(\textcolor{darkgreen}{\text{full}}) \\
       &\quad + \hbar^2\Big[ (\textcolor{darkgreen}{\at^2\as} + \textcolor{darkgreen}{\ab^2\as}
@@ -467,7 +444,7 @@
       &\quad + \hbar^3\Big[ (\textcolor{darkgreen}{\at^2\as^2} + \textcolor{red}{\at^3\as} + \textcolor{red}{\at^4})
         + \textcolor{red}{\aem^4} + \cdots \Big]
   \end{align*}
-  \emph{3. EFT uncertainty:} Missing terms of $O(v^2/\MS^2)$
+  \emph{Neglected contributions:} Terms of $O(v^2/\MS^2)$
 \end{frame}
 
 \begin{frame}{Comparison of fixed-order and EFT approaches}
@@ -514,7 +491,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{in a mixed approach}
+\subsection{in a mixed fixed-order/EFT calculation}
 
 \begin{frame}{Contents}
   \tableofcontents[
@@ -523,7 +500,7 @@
   subsectionstyle=show/shaded/hide]  
 \end{frame}
 
-\begin{frame}{Mixed fixed-order and EFT approaches}
+\begin{frame}{Mixed fixed-order/EFT calculations}
   \emph{Goal:} resum large logarithms \emph{and} include suppressed
   $O(v^2/\MS^2)$ terms
   \\[2em]
