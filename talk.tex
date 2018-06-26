@@ -293,7 +293,7 @@
       \draw[thick] (1,1.1) rectangle node{MSSM}  (4,4.9);
       \draw[thick] (1,5.1) rectangle node{MSSM}  (4,6);
       \draw[<-, thick, red] (4,5) -- (4.5,5) node[right]{$M_h^2 = m_Z^2 c_{2\beta}^2 + (\Delta m_h^2)^{1L} + \cdots$};
-      \draw[<-, thick, darkgreen] (4,1) -- (4.5,1) node[right]{$y_f^\MSSM, g_i^\MSSM, \ldots$};
+      \draw[<-, thick, darkgreen] (4,1) -- (4.5,1) node[right]{$y_f^\MSSM, g_i^\MSSM, v^\MSSM$};
       \draw[<->, thick, blue] (4.2,1.2) -- node[right]{RG running} (4.2,4.8);
     \end{tikzpicture}
   \end{center}
@@ -315,6 +315,33 @@
     \end{tabular}
   \end{center}
   \mycite{0105096, 0112177, 0212132, 0206101, 0305127, 1708.05720}
+\end{frame}
+
+\begin{frame}{Uncertainty of the fixed order calculation}
+  Two main sources:
+  \begin{itemize}
+  \item Missing higher order corrections in the determination of the
+    running MSSM parameters $y_f^\MSSM$, $g_i^\MSSM$, $v^\MSSM$:
+    \begin{align*}
+      y_t^\MSSM = \frac{\sqrt{2}\,M_t}{v_u}
+      \Big[1 + \hbar(\textcolor{darkgreen}{\text{full}})
+      + \hbar^2(\textcolor{darkgreen}{\as^2} + \textcolor{red}{\at\as} + \textcolor{red}{\at^2})
+      + \cdots \Big] \\
+      \as^\MSSM = \as^{\SM(5)}
+      \Big[1 + \hbar(\textcolor{darkgreen}{\text{full}})
+      + \hbar^2(\textcolor{darkgreen}{\as^2} + \textcolor{darkgreen}{\at\as} + \textcolor{darkgreen}{\ab\as})
+      + \cdots \Big]
+    \end{align*}
+  \item Missing higher order corrections to $M_h^2$:
+    \begin{align*}
+      M_h^2 &= m_h^2 + \hbar(\textcolor{darkgreen}{\text{full}})
+      + \hbar^2\Big[ m_t^2(\textcolor{darkgreen}{\at\as} + \textcolor{darkgreen}{\at^2} + \cdots)
+      + \textcolor{red}{m_Z^2\aem^2}
+      + \cdots\Big]\\
+      &\quad + \hbar^3\Big[ m_t^2(\textcolor{darkgreen}{\at\as^2} + \textcolor{red}{\at^2\as} + \textcolor{red}{\at^3})
+      + \cdots\Big]
+    \end{align*}
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Uncertainty of the fixed-order \DRbarp\ calculation}
