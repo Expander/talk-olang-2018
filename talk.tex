@@ -99,13 +99,15 @@
 \newcommand{\pole}{\ensuremath{\text{pole}}}
 \newcommand{\tree}{\ensuremath{\text{tree}}}
 \newcommand{\fsstar}{\textbf{*}}
-\newcommand{\fs}{\texttt{FlexibleSUSY}\xspace}
+\newcommand{\FS}{\texttt{FlexibleSUSY}\xspace}
 \newcommand{\fsh}{\texttt{FS+H}\xspace}
 \newcommand{\feft}{\texttt{FlexibleEFTHiggs}\xspace}
 \newcommand{\hssusy}{\texttt{HSSUSY}\xspace}
 \newcommand{\Himalaya}{\texttt{Himalaya}\xspace}
 \newcommand{\FH}{\texttt{FeynHiggs}\xspace}
 \newcommand{\SPheno}{\texttt{SPheno}\xspace}
+\newcommand{\SARAH}{\texttt{SARAH}\xspace}
+\newcommand{\SOFTSUSY}{\texttt{SOFTSUSY}\xspace}
 \newcommand{\Zv}{\ensuremath{\backslash\mkern-11.0mu{Z_3}}}
 \newcommand{\downrightknickarrow}{\mathrel{\scalebox{1.3}{\rotatebox[origin=c]{180}{$\Lsh$}}}}
 \newcommand{\threelinebrace}{$\left. \begin{array}{c} \\ \\ \\ \end{array} \right\rbrace$}
@@ -590,13 +592,44 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}{Current status of (N)MSSM spectrum generators}
+  \begin{center}
+    \emph{MSSM}\\[0.4em]
+    \begin{tabular}{llll}
+      \toprule
+      Spectrum generator & fixed order & EFT & hybrid \\
+      \midrule
+      \FH                & 2L & 2L & NNLO + NNLL \\
+      \FS                & 3L & \textcolor{darkgreen}{3L} &  \textcolor{darkgreen}{NNLO + NNLL} \textcolor{darkgreen}{(new!)} \\
+      \SOFTSUSY          & 3L & -- & -- \\
+      \SARAH/\SPheno     & 2L & -- & NNLO + LL \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+  %
+  \begin{center}
+    \emph{NMSSM}\\[0.4em]
+    \begin{tabular}{llll}
+      \toprule
+      Spectrum generator & fixed order & EFT & hybrid \\
+      \midrule
+      \FH                & -- & -- & -- \\
+      \FS                & 2L$^*$ & -- & NLO + NLL \\
+      \SOFTSUSY          & 2L$^*$ & -- & -- \\
+      \SARAH/\SPheno     & 2L & -- & NNLO + LL \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+  $^*$: $O(\at^2)$ corrections in the MSSM limit, no $O(\at\lambda^2)$ corrections
+\end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Current status of Higgs mass prediction in the MSSM}
 
 \begin{frame}{Current status of high precision calculation in the MSSM}
   Currently most precise tools: \fsh (3-loop fixed order
-  \mycite{1708.05720}), \hssusy (2-loop EFT \mycite{1710.03760}),
+  \mycite{1708.05720}), \hssusy (3-loop EFT \mycite{1710.03760, \textcolor{red}{1807.XXXX}}),
   \FH (2-loop mixed \mycite{1312.4937, 1608.01880, 1706.00346}),
   \SPheno (2-loop$^*$ mixed \mycite{1703.03267})
   \begin{center}
