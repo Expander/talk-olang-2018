@@ -482,13 +482,10 @@
       \midrule
       fixed-order & \ok       & \notok     \\
       EFT         & \notok    & \ok        \\
-      ? mixed     & \ok       & \ok        \\
+      mixed       & \ok       & \ok        \\
       \bottomrule
     \end{tabular}
   \end{center}
-  \vspace{2em}
-  Q: Can the fixed-order and EFT approaches be combined? \\[1em]
-  A: Yes!  \mycite{1312.4937, 1609.00371, 1710.03760}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -542,6 +539,7 @@
 \end{frame}
 
 \begin{frame}{Comparison of the three approaches in the MSSM}
+  \textcolor{red}{TODO: Update with Thomas's new 2L tower!}
   \begin{center}
     \includegraphics[width=0.49\textwidth]{{{plots/uncertainties/Mh_MS_TB-5_Xt-0}}}
     \hfill
@@ -549,7 +547,28 @@
   \end{center}
 \end{frame}
 
-\begin{frame}{Comparison of the three approaches in the NMSSM}
+\begin{frame}{Summary FlexibleEFTHiggs approach}
+  \begin{align*}
+    (M_h^2)_{\SM} &\overset{!}{=} (M_h^2)_{\MSSM} \qquad \text{at } Q = \MS
+  \end{align*}
+  \emph{Advantages:}
+  \begin{itemize}
+  \item large logarithms $\propto\ln(M_S/m_t)$ are resummed
+  \item suppressed 1-loop terms $O(v^2/\MS^2)$ are incorporated in $\lambda$
+  \item can be applied to a large class of non-minimal SUSY models (NMSSM, \ESSM, MRSSM, \ldots)
+  \end{itemize}
+  \vspace{0.5em}
+  $\Rightarrow$ precise at both $\MS \sim v$ and $\MS \gg v$\\
+  \vspace{1em}
+  \emph{Disadvantage:}
+  \begin{itemize}
+  \item restricted to the SM as EFT
+  \item tricky to extend to 2-loop accuracy (work in progress)
+  \item 2-loop suppressed terms of the form $\frac{1}{(4\pi)^4}\frac{v^2}{\MS^2}\times\log(\MS/m_t)$ not included
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Comparison in the NMSSM}
   \begin{center}
     \includegraphics[width=0.35\textwidth]{{{plots/NMSSMEFTHiggs/DMh_MS_TB-5_Xt-0_lam-0.1_kap-0.1}}}%\hfill
     \includegraphics[width=0.35\textwidth]{{{plots/NMSSMEFTHiggs/DMh_MS_TB-5_Xt-0_lam-0.3_kap-0.3}}}\\
@@ -558,36 +577,47 @@
   \end{center}
 \end{frame}
 
-\begin{frame}{Summary FlexibleEFTHiggs approach}
-  \begin{align*}
-    (M_h^2)_{\SM} &= (M_h^2)_{\MSSM} \qquad \text{at } Q = \MS
-  \end{align*}
-  \emph{Advantages:}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Summary}
+
+\begin{frame}{Summary}
+  \emph{Supersymmetry} is still viable, but
   \begin{itemize}
-  \item large logarithms $\propto\ln(M_S/m_t)$ are resummed to all orders
-  \item all suppressed 1-loop terms $O(v^2/\MS^2)$ are incorporated in $\lambda$
+  \item LHC continuously excludes light SUSY scenarios with
+    $\MS \lesssim 1\TeV$
+  \item $\MS \gtrsim 1\TeV$ required in the MSSM to predict
+    $M_h = 125.09\GeV$
   \end{itemize}
   \vspace{1em}
-  \textcolor{darkgreen}{$\Rightarrow$ FlexibleEFTHiggs leads to a
-    correct Higgs mass prediction at the full 1-loop level (including
-    suppressed terms) with additional NLL resummation.}\\
-  \vspace{1em}
-  \emph{Disadvantage:}
-  \begin{itemize}
-  \item 2-loop suppressed terms of the form $\frac{1}{(4\pi)^4}\frac{v^2}{\MS^2}\times\log(\MS/m_t)$ not included
-  \end{itemize}
+  %
+  \emph{Approaches to calculate $M_h$:}
+  \begin{center}
+    \begin{tabular}{lcc}
+      \toprule
+                               & low $\MS$ & high $\MS$ \\
+                               & $\MS \lesssim 1$--$2\eh{TeV}$ & $\MS \gtrsim 1$--$2\eh{TeV}$ \\
+      \midrule
+      fixed-order              & \ok       & \notok     \\
+      EFT                      & \notok    & \ok        \\
+      mixed                    & \ok       & \ok        \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Current status of (N)MSSM spectrum generators}
   \begin{center}
     \emph{MSSM}\\[0.4em]
-    \begin{tabular}{lllll}
+    \begin{tabular}{llll}
       \toprule
       Spectrum generator & fixed order & EFT & hybrid \\
       \midrule
-      \FH                & 2L & 2L & NNLO + NNLL \\
-      \FS                & \textcolor{darkgreen}{3L} & \textcolor{darkgreen}{3L} & \textcolor{darkgreen}{NNLO + NNLL} & \textcolor{darkgreen}{(new!)} \\
-      \SOFTSUSY          & \textcolor{darkgreen}{3L} & -- & -- & \textcolor{darkgreen}{(new!)} \\
+      \FH                & 2L & 2L & \textcolor{darkgreen}{NNLO + NNLL} \\
+      \FS                & \textcolor{darkgreen}{3L} & \textcolor{darkgreen}{3L} & NLO + NLL$^\dagger$ \\
+      \SOFTSUSY          & \textcolor{darkgreen}{3L} & -- & -- \\
       \SARAH/\SPheno     & 2L & -- & NNLO + LL \\
       \bottomrule
     \end{tabular}
@@ -600,62 +630,14 @@
       Spectrum generator & fixed order & EFT & hybrid \\
       \midrule
       \FH                & -- & -- & -- \\
-      \FS                & 2L$^*$ & -- & NLO + NLL \\
+      \FS                & 2L$^*$ & -- & NLO + NLL$^\dagger$ \\
       \SOFTSUSY          & 2L$^*$ & -- & -- \\
       \SARAH/\SPheno     & 2L & -- & NNLO + LL \\
       \bottomrule
     \end{tabular}
   \end{center}
+  $^\dagger$: extension to NNLO + NNLL coming soon\\
   $^*$: $O(\at^2)$ corrections in the MSSM limit, no $O(\at\lambda^2)$ corrections
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Current status of Higgs mass prediction in the MSSM}
-
-\begin{frame}{Current status of high precision calculation in the MSSM}
-  Currently most precise tools: \fsh (3-loop fixed order
-  \mycite{1708.05720}), \hssusy (3-loop EFT \mycite{1710.03760, \textcolor{red}{1807.XXXX}}),
-  \FH (2-loop mixed \mycite{1312.4937, 1608.01880, 1706.00346}),
-  \SPheno (2-loop$^*$ mixed \mycite{1703.03267})
-  \begin{center}
-    \includegraphics[width=0.49\textwidth]{{{plots/uncertainties/DMh_MS_TB-5_Xt-0}}}\hfill
-    \includegraphics[width=0.49\textwidth]{{{plots/uncertainties/DMh_MS_TB-5_Xt--2}}}
-%    \includegraphics[width=0.49\textwidth]{{{plots/uncertainties/DMh_Xt_TB-5_MS-5000}}}
-  \end{center}
-  $\MS \lesssim 2\eh{TeV}$ $\Rightarrow$ \fsh more accurate than \hssusy\\
-  $\MS \gtrsim 2\eh{TeV}$ $\Rightarrow$ \fsh less accurate than \hssusy
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Summary}
-
-\begin{frame}{Summary}
-  \emph{Supersymmetry} is still viable, but LHC continuously excludes
-  light SUSY scenarios\\[1em]
-  %
-  \emph{Approaches to calculate $M_h$:}
-  \begin{center}
-    \begin{tabular}{lcc}
-      \toprule
-                               & low $\MS$ & high $\MS$ \\
-                               & $\MS \lesssim 2\eh{TeV}$ & $\MS \gtrsim 2\eh{TeV}$ \\
-      \midrule
-      fixed-order              & \ok       & \notok     \\
-      EFT                      & \notok    & \ok        \\
-      mixed (FlexibleEFTHiggs) & \ok       & \ok        \\
-      \bottomrule
-    \end{tabular}
-  \end{center}
-  %
-  \emph{FlexibleEFTHiggs:}
-  \begin{itemize}
-  \item full NLO + NLL resummation
-  \item can be applied to \emph{any} BSM model (SUSY or non-SUSY)
-  \item can be easily automatized
-  \item tricky to extend to 2-loop level (work in progress)
-  \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -724,7 +706,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[noframenumbering]{Uncertainty estimate of the fixed-order calculation}
+\begin{frame}[noframenumbering]{Uncertainty estimate of the EFT calculation}
   Inspired by \bigcite{1407.4081, 1504.05200, 1609.00371}, we consider
   5 sources of uncertainty:
   \begin{align*}
@@ -743,50 +725,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[noframenumbering]{Uncertainty estimate of the fixed-order calculation}
-  \begin{center}
-    \includegraphics[width=0.7\textwidth]{plots/kuts-9/HSSUSY_TB-20_Xt--sqrt6_individual}
-  \end{center}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[noframenumbering]{Uncertainty estimate of the fixed-order calculation}
-  \begin{center}
-    \includegraphics[width=0.7\textwidth]{plots/kuts-9/SS_TB-20_Xt--sqrt6_individual}
-  \end{center}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[noframenumbering]{Comparison of the three approaches}
-  \begin{center}
-    \includegraphics[width=0.7\textwidth]{{{plots/FlexibleEFTHiggs-2/scan_Mh_Xt_TB-5_MS-2000}}}
-  \end{center}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[noframenumbering]{Higgs mass uncertainty estimate}
-  \emph{FS+H:}
-  \begin{itemize}
-  \item $|M_h^{3L}(Q_\pole = \MS/2) - M_h^{3L}(Q_\pole = 2\MS)|$
-  \item $|M_h^{2L}(\as^{1L}) - M_h^{2L}(\as^{2L})|$
-  \end{itemize}
-  \emph{EFT (HSSUSY):}
-  \begin{itemize}
-  \item $|M_h^{2L}(Q_\pole = M_t/2) - M_h^{2L}(Q_\pole = 2M_t)|$
-  \item $|M_h^{2L}(y_t^{2L}) - M_h^{2L}(y_t^{3L})|$
-  \item $|M_h^{2L}(Q_{\text{match}} = \MS/2) - M_h^{2L}(Q_{\text{match}} = 2\MS)|$
-  \item $|M_h^{2L} - M_h^{2L}(\lambda \rightarrow \lambda(1 + v^2/\MS^2))|$
-  \item $|M_h^{2L}(y_t^\SM) - M_h^{2L}(y_t^\MSSM)|$
-  \end{itemize}
-  \emph{FlexibleEFTHiggs:}
-  \begin{itemize}
-  \item $|M_h^{2L}(Q_\pole = M_t/2) - M_h^{2L}(Q_\pole = 2M_t)|$
-  \item $|M_h^{2L}(y_t^{2L}) - M_h^{2L}(y_t^{3L})|$
-  \item $|M_h^{2L}(Q_{\text{match}} = \MS/2) - M_h^{2L}(Q_{\text{match}} = 2\MS)|$
-  \end{itemize}
+\begin{frame}[noframenumbering]{Uncertainty estimate of the FlexibleEFTHiggs calculation}
+  \begin{align*}
+    \DMhQpole &= \max_{\Qpole\in[M_t/2,2M_t]}\left|M_h(\Qpole) - M_h(M_t)\right| & \text{\mycite{1609.00371}} \\
+    \DMhQmatch &= \max_{\Qmatch\in[\MS/2,2\MS]}\left|M_h(\Qmatch) - M_h(\MS)\right| & \text{\mycite{1407.4081}} \\
+    \DMhHSSUSYytSM &= \left| M_h(y_t^{\SM,2L}(M_Z)) - M_h(y_t^{\SM,3L}(M_Z)) \right| & \text{\mycite{1504.05200}} \\
+    \DMhEFT &= 0 \quad \text{(has no EFT uncertainty!)} & \text{\mycite{1609.00371}}
+  \end{align*}
 \end{frame}
 
 \end{document}
