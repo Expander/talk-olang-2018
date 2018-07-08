@@ -328,16 +328,17 @@
       + \hbar^2(\textcolor{darkgreen}{\as^2} + \textcolor{darkgreen}{\at\as} + \textcolor{darkgreen}{\ab\as})
       + \cdots \Big]
     \end{align*}
+    \mycite{0210258, 0507139, 0707.0650, 0509048, 0810.5101, 1009.5455}\\[0.5em]
     Loop corrections to $M_h^2$ in the MSSM:
     \begin{align*}
       M_h^2 &= m_h^2 + \hbar(\textcolor{darkgreen}{\text{full}})
       + \hbar^2\Big[ m_t^2(\textcolor{darkgreen}{\at\as} + \textcolor{darkgreen}{\at^2} + \cdots)
       + \textcolor{red}{m_Z^2\aem^2}
       + \cdots\Big]\\
-      &\quad + \hbar^3\Big[ m_t^2(\textcolor{darkgreen}{\at\as^2} + \textcolor{red}{\at^2\as} + \textcolor{red}{\at^3})
+      &\quad + \hbar^3\Big[ m_t^2(\textcolor{darkgreen}{\underline{\at\as^2}} + \textcolor{red}{\at^2\as} + \textcolor{red}{\at^3})
       + \cdots\Big]
     \end{align*}
-    \mycite{0105096, 0112177, 0212132, 0206101, 0305127, 1005.5709, 1708.05720}
+    \mycite{0105096, 0112177, 0212132, 0206101, 0305127, 1005.5709, \underline{1708.05720}, \textcolor{red}{\underline{1807.XXXX}}}
 \end{frame}
 
 \begin{frame}{Uncertainty of the fixed order \DRbarp\ calculation}
@@ -382,27 +383,6 @@
   subsectionstyle=show/shaded/hide]  
 \end{frame}
 
-% \begin{frame}{EFT calculation (\texttt{HSSUSY})}
-%   \begin{center}
-%   \begin{tikzpicture}
-%     \path[arrow] (0,0) -- (0,5) node[left]{$Q$};
-%     \draw[thick,darkgreen] (0,4) node[left]{$M_S$} -- node[above = 0.5cm,black]{MSSM} (3,4) node[right,black,text width=8cm]{
-%       $\lambda$ at $O(\text{1L} + (\at+\ab)\as + (\at+\ab)^2)$\\ \ \ \ \ \ + $O(\atau^2)$};
-%     \draw[thick,dashed,darkgreen] (0,2) node[left]{$M_t$} -- (3,2) node[right,black,text width=8cm]{
-%       $M_h^2$ at $O(\text{1L} + (\at+\as)\at)$\\ \ \ \ \ \ \ + $O(\at^3 + \at^2\as + \at\as^2)$
-%     };
-%     \draw[thick,darkgreen] (0,1) node[left]{$M_Z$} -- node[above = 1.5cm,black]{SM} node[below = 0.5cm,black]{SM(5)} (3,1) node[right,black,text width=8cm]{
-%       $y_t$ at $O(\text{1L} + \as^2 + \as^3)$, $v$ at 1L, \\ $g_3$ at $O(\text{1L} + \as^2 + \as^3)$};
-%     \path[arrow,latex-latex,blue] (-1,1) -- node[above,rotate=90]{3L RGEs} (-1,4);
-%   \end{tikzpicture}
-%   \end{center}
-%   $\lambda$: \mycite{1407.4081, 1504.05200, 1703.08166}
-%   $M_h^2$: \mycite{1205.6497, 1504.05200, 1407.4336}\\
-%   $y_t$: \mycite{9912391, 1205.2892},
-%   $g_3$: \mycite{9305305, 9707474, 9708255, 0004189}\\
-%   $\beta_i$: \mycite{1201.5868, 1210.6873, 1212.6829, 1205.2892, 1303.4364}
-% \end{frame}
-
 \begin{frame}{Higgs mass calculation in an EFT}
   \emph{Idea:} Integrate out SUSY particles at $\MS$ (expand in $v^2/\MS^2$) \\
   $\Rightarrow$ $\lambda(\MS)$ is fixed by the MSSM \\
@@ -437,6 +417,7 @@
       + \hbar^3(\textcolor{darkgreen}{\as^3} + \cdots)
       + \cdots \Big]
     \end{align*}
+    \mycite{9912391, 1205.2892, 9305305, 9707474, 9708255, 0004189}
   \item Loop corrections to $M_h^2$ in the SM:
     \begin{align*}
       M_h^2 &= m_h^2 + \hbar(\textcolor{darkgreen}{\text{full}})
@@ -448,6 +429,7 @@
       &\quad + \hbar^4\Big[ m_t^2(\textcolor{darkgreen}{\at\as^4} + \cdots)
       + \cdots\Big]
     \end{align*}
+    \mycite{1205.6497, 1407.4336, 1508.00912}
   \end{itemize}
 \end{frame}
 
@@ -459,17 +441,19 @@
         + \textcolor{darkgreen}{\at^2\ab} + \textcolor{darkgreen}{\at\ab^2} + \textcolor{darkgreen}{\at^3} + \cdots)
       + \textcolor{red}{\aem^3}
       + \cdots\Big]\\
-      &\quad + \hbar^3\Big[ (\textcolor{darkgreen}{\at^2\as^2} + \textcolor{red}{\at^3\as} + \textcolor{red}{\at^4})
+      &\quad + \hbar^3\Big[ (\textcolor{darkgreen}{\underline{\at^2\as^2}} + \textcolor{red}{\at^3\as} + \textcolor{red}{\at^4})
         + \textcolor{red}{\aem^4} + \cdots \Big]
   \end{align*}
+  \mycite{1407.4081, 1504.05200, 1703.08166, \textcolor{red}{\underline{1807.XXXX}}}\\[0.5em]
   \emph{Neglected contributions:} Terms of $O(v^2/\MS^2)$
 \end{frame}
 
 \begin{frame}{Comparison of fixed-order and EFT approaches}
   \begin{center}
-    \includegraphics[width=0.7\textwidth]{plots/SOFTSUSY/Mh_MS_TB-20_Xt--sqrt6}
-    % \includegraphics[width=0.7\textwidth]{{{plots/uncertainties/Mh_MS_TB-5_Xt-0_FO_EFT}}}
+    \includegraphics[width=0.49\textwidth]{plots/SOFTSUSY/HSSUSY_TB-20_Xt--sqrt6_individual}\hfill
+    \includegraphics[width=0.49\textwidth]{plots/SOFTSUSY/Mh_MS_TB-20_Xt--sqrt6}
   \end{center}
+  \mycite{1804.09410}
 \end{frame}
 
 \begin{frame}{Summary of EFT approach}
@@ -482,7 +466,7 @@
   \emph{Advantages:}
   \begin{itemize}
   \item large logarithmic fixed order loop corrections are avoided
-  \item large logarithms $\propto\ln(M_S/m_t)$ are resummed to all orders
+  \item large logarithms $\propto\ln(M_S/m_t)$ are resummed
   \end{itemize}
   \emph{Disadvantage:} usually terms $O(v^2/M_S^2)$ are neglected \\
   $\Rightarrow$ imprecise when $v \sim \MS$ \\
