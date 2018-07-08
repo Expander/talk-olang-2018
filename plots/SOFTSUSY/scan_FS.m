@@ -75,8 +75,7 @@ HSSUSYCalcMh[MS_, TB_, Xtt_] :=
             TwoLoopAtAb -> 1,
             TwoLoopAtauAtau -> 1,
             TwoLoopAtAt -> 1,
-            ThreeLoopAtAsAsEFT -> 1,
-            ThreeLoopAtAsAsH3m -> 0
+            ThreeLoopAtAsAs -> 1
         }
    ];
 
