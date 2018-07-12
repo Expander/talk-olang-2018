@@ -51,14 +51,15 @@ def plot(Xt, lam, kap):
     # plt.ylim([80,130])
 
     hMSSM, = plt.plot(x, yMSSM        , 'b--', linewidth=1.2, label=r'$\text{\texttt{FlexibleSUSY}/fixed-order 2L}$')
-    hmix,  = plt.plot(x, yMSSMEFTHiggs, 'r-' , linewidth=1.2, label=r'$\text{\texttt{FlexibleSUSY}/mixed 1L}$')
+    hmix,  = plt.plot(x, yMSSMEFTHiggs, 'r-' , linewidth=1.2, label=r'$\text{\texttt{FlexibleSUSY}/FlexibleEFTHiggs 1L}$')
     plt.fill_between(x, yMSSM - dMSSM, yMSSM + dMSSM,
                      color='blue', alpha=0.3, interpolate=True, linewidth=0.0)
     plt.fill_between(x, yMSSMEFTHiggs - dMSSMEFTHiggs, yMSSMEFTHiggs + dMSSMEFTHiggs,
                      color='red', alpha=0.3, interpolate=True, linewidth=0.0)
 
     leg = plt.legend(handles = [hMSSM, hmix],
-                     loc='lower right', fontsize=10, fancybox=None, framealpha=None)
+                     loc='lower right', fontsize=10, fancybox=None, framealpha=None,
+                     bbox_to_anchor=(1.2, 0))
     leg.get_frame().set_alpha(1.0)
     leg.get_frame().set_edgecolor('black')
 
@@ -80,7 +81,7 @@ def plot(Xt, lam, kap):
     plt.text(ax.get_xlim()[0] + 10, Mhexp + sigma + 0.4, r"ATLAS/CMS $\pm1\sigma$", fontsize=8)
 
     plt.tight_layout()
-    plt.savefig(outfile)
+    plt.savefig(outfile, bbox_inches="tight")
     print "saved plot in ", outfile
     plt.close(fig)
 

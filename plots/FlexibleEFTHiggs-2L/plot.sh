@@ -47,9 +47,9 @@ def plot(filename, outfile, xlim, title):
     plt.plot(MS, EFT2L , 'g-.', linewidth=1.2, dashes=(3,2,1,2))
 
     leg = plt.legend([# r'$\text{FlexibleEFTHiggs/MSSM\ 1L}$',
-                      r'$\text{\texttt{FlexibleSUSY}/mixed 2L}$',
+                      r'$\text{\texttt{FlexibleSUSY}/FlexibleEFTHiggs 2L}$',
                       r'$\text{\texttt{FlexibleSUSY}/fixed-order 2L}$',
-                      r'$\text{\texttt{FlexibleSUSY}/EFT 2L}$'],
+                      r'$\text{\texttt{FlexibleSUSY}/\texttt{HSSUSY}(EFT) 2L}$'],
                      loc='lower right', fontsize=10)
     leg.get_frame().set_alpha(1.0)
     leg.get_frame().set_edgecolor('black')

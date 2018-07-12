@@ -57,8 +57,8 @@ def plot(datafile, outfile, title, label_y, range_y, range_x, curves=[1,1]):
                          facecolor='black', alpha=0.3, interpolate=True, linewidth=0.0)
 
     labels = []
-    if curves[0]: labels.append(r'\texttt{SOFTSUSY+Himalaya}')
-    if curves[1]: labels.append(r'\texttt{HSSUSY+Himalaya}')
+    if curves[0]: labels.append(r'\texttt{SOFTSUSY}+\texttt{Himalaya}')
+    if curves[1]: labels.append(r'\texttt{FlexibleSUSY}/\texttt{HSSUSY}+\texttt{Himalaya}')
 
     leg = plt.legend(labels,
                      loc='lower right', fontsize=10, fancybox=None, framealpha=None)
