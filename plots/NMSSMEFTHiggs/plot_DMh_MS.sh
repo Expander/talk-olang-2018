@@ -50,8 +50,8 @@ def plot(Xt, lam, kap):
     plt.xlim([100,100000])
     # plt.ylim([80,130])
 
-    hMSSM, = plt.plot(x, yMSSM        , 'b--', linewidth=1.2, label=r'2L FlexibleSUSY')
-    hmix,  = plt.plot(x, yMSSMEFTHiggs, 'r-' , linewidth=1.2, label=r'1L FlexibleEFTHiggs')
+    hMSSM, = plt.plot(x, yMSSM        , 'b--', linewidth=1.2, label=r'$\text{\texttt{FlexibleSUSY}/fixed-order 2L}$')
+    hmix,  = plt.plot(x, yMSSMEFTHiggs, 'r-' , linewidth=1.2, label=r'$\text{\texttt{FlexibleSUSY}/mixed 1L}$')
     plt.fill_between(x, yMSSM - dMSSM, yMSSM + dMSSM,
                      color='blue', alpha=0.3, interpolate=True, linewidth=0.0)
     plt.fill_between(x, yMSSMEFTHiggs - dMSSMEFTHiggs, yMSSMEFTHiggs + dMSSMEFTHiggs,

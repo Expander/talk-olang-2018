@@ -26,7 +26,7 @@ def plot(filename, outfile, xlim, title):
     plt.rc('font', family='serif', weight='normal')
     fig = plt.figure(figsize=(4,4))
     plt.gcf().subplots_adjust(bottom=0.15, left=0.15) # room for xlabel
-    plt.grid(color='gray', linestyle=':', linewidth=0.2)
+    plt.grid(color='0.5', linestyle=':', linewidth=0.2, dashes=(0.5,1.5))
 
     ax = plt.gca()
     ax.set_axisbelow(True)
@@ -41,15 +41,15 @@ def plot(filename, outfile, xlim, title):
     plt.ylabel(r'$M_h\;/\;\mathrm{GeV}$')
     plt.xlim(xlim)
 
-    plt.plot(MS, FEFT1L, 'r:' , linewidth=1.2)
+    # plt.plot(MS, FEFT1L, 'r:' , linewidth=1.2)
     plt.plot(MS, FEFT2L, 'r-' , linewidth=1.2)
     plt.plot(MS, FO2L  , 'b--', linewidth=1.2)
     plt.plot(MS, EFT2L , 'g-.', linewidth=1.2, dashes=(3,2,1,2))
 
-    leg = plt.legend([r'$\text{FlexibleEFTHiggs/MSSM\ 1L}$',
-                      r'$\text{FlexibleEFTHiggs/MSSM\ 2L}$',
-                      r'$\text{FlexibleSUSY/MSSM\ 2L}$',
-                      r'$\text{FlexibleSUSY/HSSUSY\ 2L}$'],
+    leg = plt.legend([# r'$\text{FlexibleEFTHiggs/MSSM\ 1L}$',
+                      r'$\text{\texttt{FlexibleSUSY}/mixed 2L}$',
+                      r'$\text{\texttt{FlexibleSUSY}/fixed-order 2L}$',
+                      r'$\text{\texttt{FlexibleSUSY}/EFT 2L}$'],
                      loc='lower right', fontsize=10)
     leg.get_frame().set_alpha(1.0)
     leg.get_frame().set_edgecolor('black')
