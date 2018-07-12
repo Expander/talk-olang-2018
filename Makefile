@@ -18,7 +18,9 @@ PLOTS       := \
 		plots/SOFTSUSY/Mh_MS_TB-20_Xt--sqrt6.pdf \
 		plots/SOFTSUSY/SS_TB-20_Xt--sqrt6.pdf \
 		plots/SOFTSUSY/SS_TB-20_Xt--sqrt6_individual.pdf \
-		plots/SOFTSUSY/HSSUSY_TB-20_Xt--sqrt6_individual.pdf
+		plots/SOFTSUSY/HSSUSY_TB-20_Xt--sqrt6_individual.pdf \
+		plots/FlexibleEFTHiggs-2L/Mh_MS_TB-20_Xt-0.pdf \
+		plots/FlexibleEFTHiggs-2L/Mh_MS_TB-20_Xt--sqrt6.pdf
 
 TEXDIRS     := $(PLOTSDIR)
 BIBTEX      := bibtex
@@ -63,6 +65,12 @@ plots/FlexibleEFTHiggs-2/scan_Mh_Xt_TB-5_MS-2000.pdf: \
 plots/FlexibleEFTHiggs-2/plot_FlexibleEFTHiggs_Mh_Xt.sh \
 plots/FlexibleEFTHiggs-2/*.dat
 	$<
+
+plots/FlexibleEFTHiggs-2L/Mh_MS_TB-20_Xt-0.pdf: plots/FlexibleEFTHiggs-2L/plot.sh plots/FlexibleEFTHiggs-2L/*.dat
+	cd plots/FlexibleEFTHiggs-2L && ./plot.sh
+
+plots/FlexibleEFTHiggs-2L/Mh_MS_TB-20_Xt--sqrt6.pdf: plots/FlexibleEFTHiggs-2L/plot.sh plots/FlexibleEFTHiggs-2L/*.dat
+	cd plots/FlexibleEFTHiggs-2L && ./plot.sh
 
 plots/SPheno-FS-uncertainty/scale_MSSM_yt_variants.pdf: \
 plots/SPheno-FS-uncertainty/scale_MSSM_yt_variants.gnuplot plots/SPheno-FS-uncertainty/*.dat
