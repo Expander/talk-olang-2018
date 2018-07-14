@@ -630,7 +630,7 @@
       Spectrum generator & fixed order & EFT & hybrid \\
       \midrule
       \FH                & 2L & 2L & \textcolor{darkgreen}{NNLO + NNLL} \\
-      \FS                & \textcolor{darkgreen}{3L} & \textcolor{darkgreen}{3L} & NLO + NLL$^\dagger$ \\
+      \FS                & \textcolor{darkgreen}{3L} & \textcolor{darkgreen}{3L} & \textcolor{darkgreen}{NNLO + NNLL}$^\dagger$ \\
       \SOFTSUSY          & \textcolor{darkgreen}{3L} & -- & -- \\
       \SARAH/\SPheno     & 2L & -- & NNLO + LL \\
       \bottomrule
@@ -644,13 +644,13 @@
       Spectrum generator & fixed order & EFT & hybrid \\
       \midrule
       \FH                & -- & -- & -- \\
-      \FS                & 2L$^*$ & -- & NLO + NLL$^\dagger$ \\
+      \FS                & 2L$^*$ & -- & \textcolor{darkgreen}{NNLO + NNLL}$^\dagger$ \\
       \SOFTSUSY          & 2L$^*$ & -- & -- \\
       \SARAH/\SPheno     & 2L & -- & NNLO + LL \\
       \bottomrule
     \end{tabular}
   \end{center}
-  $^\dagger$: extension to NNLO + NNLL coming soon\\
+  $^\dagger$: not released yet\\
   $^*$: $O(\at^2)$ corrections in the MSSM limit, no $O(\at\lambda^2)$ corrections
 \end{frame}
 
@@ -671,10 +671,10 @@
   uncertainty:
   \begin{align*}
     \DMhQpole &= \max_{\Qpole\in[\MS/2,2\MS]}\left|M_h(\Qpole) - M_h(\MS)\right| & \text{\mycite{1609.00371}} \\
-    \DMhQmatch &= \max_{\Qmatch\in[M_Z/2,2M_Z]}\left|M_h(\Qmatch) - M_h(M_Z)\right| & \text{\textcolor{darkgreen}{New!}} \\
+    \DMhQmatch &= \max_{\Qmatch\in[M_Z/2,2M_Z]}\left|M_h(\Qmatch) - M_h(M_Z)\right| & \text{\mycite{1804.09410}} \\
     \DMhMt &= \left|M_h(m_t^{(1)}) - M_h(m_t^{(2)})\right| & \text{\mycite{1609.00371}} \\
-    \DMhAlphaS &= \left| M_h(\as^{(1)}) - M_h(\as^{(2)}) \right| & \text{\textcolor{darkgreen}{New!}} \\
-    \DMhAlphaEm &= \left| M_h(\aem^{(1)}) - M_h(\aem^{(2)}) \right| & \text{\textcolor{darkgreen}{New!}}
+    \DMhAlphaS &= \left| M_h(\as^{(1)}) - M_h(\as^{(2)}) \right| & \text{\mycite{1804.09410}} \\
+    \DMhAlphaEm &= \left| M_h(\aem^{(1)}) - M_h(\aem^{(2)}) \right| & \text{\mycite{1804.09410}}
   \end{align*}
   Combination:
   \begin{align*}
