@@ -19,6 +19,7 @@ PLOTS       := \
 		plots/SOFTSUSY/SS_TB-20_Xt--sqrt6.pdf \
 		plots/SOFTSUSY/SS_TB-20_Xt--sqrt6_individual.pdf \
 		plots/SOFTSUSY/HSSUSY_TB-20_Xt--sqrt6_individual.pdf \
+		plots/SOFTSUSY/Mh_2L_vs_3L_MS_TB-20_Xt--sqrt6.pdf \
 		plots/FlexibleEFTHiggs-2L/Mh_MS_TB-20_Xt-0.pdf \
 		plots/FlexibleEFTHiggs-2L/Mh_MS_TB-20_Xt--sqrt6.pdf
 
@@ -40,6 +41,9 @@ plots/SOFTSUSY/Mh_MS_TB-20_Xt--sqrt6.pdf: plots/SOFTSUSY/plot_SS.sh plots/SOFTSU
 
 plots/SOFTSUSY/HSSUSY_TB-20_Xt--sqrt6_individual.pdf: plots/SOFTSUSY/plot_HSSUSY_individual.sh plots/SOFTSUSY/*.dat
 	cd plots/SOFTSUSY/ && ./plot_HSSUSY_individual.sh
+
+plots/SOFTSUSY/Mh_2L_vs_3L_MS_TB-20_Xt--sqrt6.pdf: plots/SOFTSUSY/plot_SS.sh plots/SOFTSUSY/*.dat
+	cd plots/SOFTSUSY/ && ./plots/SOFTSUSY/plot_SS.sh
 
 plots/uncertainties/DMh_MS_TB-5_Xt-0_alt.pdf: plots/uncertainties/plot_DMh.sh plots/uncertainties/*.dat
 	$<

@@ -1,3 +1,6 @@
+Get["models/NUHMSSMNoFV/NUHMSSMNoFV_librarylink.m"];
+Get["model_files/NUHMSSMNoFV/NUHMSSMNoFV_uncertainty_estimate.m"];
+
 Get["models/NUHMSSMNoFVHimalaya/NUHMSSMNoFVHimalaya_librarylink.m"];
 Get["model_files/NUHMSSMNoFVHimalaya/NUHMSSMNoFVHimalaya_uncertainty_estimate.m"];
 
@@ -76,6 +79,45 @@ HSSUSYCalcMh[MS_, TB_, Xtt_] :=
             TwoLoopAtauAtau -> 1,
             TwoLoopAtAt -> 1,
             ThreeLoopAtAsAs -> 1
+        }
+   ];
+
+NUHMSSMNoFVCalcMh[MS_, TB_, Xtt_] :=
+    CalcNUHMSSMNoFVDMh[
+        fsSettings -> settings,
+        fsSMParameters -> smpars,
+        fsModelParameters -> {
+            TanBeta -> TB,
+            Qin -> MS,
+            M1 -> MS,
+            M2 -> MS,
+            M3 -> MS,
+            AtIN -> MS/TB + Xtt MS,
+            AbIN -> 0,
+            AtauIN -> 0,
+            AcIN -> 0,
+            AsIN -> 0,
+            AmuonIN -> 0,
+            AuIN -> 0,
+            AdIN -> 0,
+            AeIN -> 0,
+            MuIN -> MS,
+            mA2IN -> MS^2,
+            ml11IN -> MS,
+            ml22IN -> MS,
+            ml33IN -> MS,
+            me11IN -> MS,
+            me22IN -> MS,
+            me33IN -> MS,
+            mq11IN -> MS,
+            mq22IN -> MS,
+            mq33IN -> MS,
+            mu11IN -> MS,
+            mu22IN -> MS,
+            mu33IN -> MS,
+            md11IN -> MS,
+            md22IN -> MS,
+            md33IN -> MS
         }
    ];
 
@@ -176,9 +218,17 @@ TBX = 20;
 data = ParallelMap[
     { N[#],
       Sequence @@ NUHMSSMNoFVHimalayaCalcMh[#, TBX, Xtt],
-      Sequence @@ HSSUSYCalcMh[#, TBX, Xtt] }&,
+      Sequence @@ HSSUSYCalcMh[#, TBX, Xtt]
+    }&,
     range];
-Export["FS_TB-20_Xt--sqrt6.dat", data];
+Export["FS-3L_TB-20_Xt--sqrt6.dat", data];
+
+data = ParallelMap[
+    { N[#],
+      Sequence @@ NUHMSSMNoFVCalcMh[#, TBX, Xtt]
+    }&,
+    range];
+Export["FS-2L_TB-20_Xt--sqrt6.dat", data];
 
 Xtt = -Sqrt[6];
 TBX = 30;
