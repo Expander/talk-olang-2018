@@ -297,7 +297,7 @@
 %   $\beta_i$: \mycite{0308231, 0408128}
 % \end{frame}
 
-\begin{frame}{Higgs mass calculation at fixed loop order}
+\begin{frame}{Higgs mass calculation at fixed loop order in \DRbarp}
   % \emph{Idea:} Integrate out SUSY particles at $\MS$ (expand in $v^2/\MS^2$) \\
   % $\Rightarrow$ $\lambda(\MS)$ is fixed by the MSSM \\
   % $\Rightarrow$ effectively: separation of scales $\MS$ and $m_t$.
@@ -340,7 +340,7 @@
     \mycite{0105096, 0112177, 0212132, 0206101, 0305127, 1005.5709, \underline{1708.05720}, \underline{1807.03509}}
 \end{frame}
 
-\begin{frame}{Effect of the 3-loop corrections to $M_h$}
+\begin{frame}{Effect of the 3-loop $O(\at\as^2)$ corrections to $M_h$}
   \begin{center}
     \includegraphics[width=0.49\textwidth]{plots/SOFTSUSY/Mh_2L_vs_3L_MS_TB-20_Xt--sqrt6}\hfill
     \includegraphics[width=0.49\textwidth]{plots/Mh3L/scan_Mh_MS_TB-5_Xt-0_uncertainty_Qpole}
@@ -348,7 +348,56 @@
   \mycite{1708.05720}
 \end{frame}
 
-\begin{frame}{Uncertainty of the fixed order \DRbarp\ calculation}
+\begin{frame}{Uncertainty estimate of the fixed-order \DRbarp\ calculation}
+  In \bigcite{1804.09410} 5 sources of uncertainty were combined:
+  \begin{align*}
+    \DMhQpole &= \max_{\Qpole\in[\MS/2,2\MS]}\left|M_h(\Qpole) - M_h(\MS)\right| & \text{\mycite{1609.00371}} \\
+    \DMhQmatch &= \max_{\Qmatch\in[M_Z/2,2M_Z]}\left|M_h(\Qmatch) - M_h(M_Z)\right| & \text{\mycite{\underline{1804.09410}}} \\
+    \DMhMt &= \left|M_h(m_t^{(1)}) - M_h(m_t^{(2)})\right| & \text{\mycite{1609.00371}} \\
+    \DMhAlphaS &= \left| M_h(\as^{(1)}) - M_h(\as^{(2)}) \right| & \text{\mycite{\underline{1804.09410}}} \\
+    \DMhAlphaEm &= \left| M_h(\aem^{(1)}) - M_h(\aem^{(2)}) \right| & \text{\mycite{\underline{1804.09410}}}
+  \end{align*}
+  Combination:
+  \begin{align*}
+    \DMh &= \DMhQpole + \DMhQmatch + \DMhMt + \DMhAlphaS + \DMhAlphaEm 
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Uncertainty estimate of the fixed-order \DRbarp\ calculation}
+  Calculation of $m_t$ in two different ways as proposed in
+  \bigcite{1609.00371}:
+  \begin{align*}
+    m_t^{(1)} &=
+                M_t + \widetilde{\Sigma}_t^{(1),S} +
+                M_t \left[
+                \widetilde{\Sigma}_t^{(1),L} +
+                \widetilde{\Sigma}_t^{(1),R}
+                \right] \\
+              &\phantom{={}} + M_t
+                \left[\widetilde{\Sigma}_t^{(1),\SQCD}
+                + \widetilde{\Sigma}_t^{(2),\SQCD}
+                + \left(\widetilde{\Sigma}_t^{(1),\SQCD}\right)^2
+                \right]\\
+    m_t^{(2)} &=
+                M_t + \widetilde{\Sigma}_t^{(1),S} +
+                m_t \left[
+                \widetilde{\Sigma}_t^{(1),L} +
+                \widetilde{\Sigma}_t^{(1),R}
+                \right] \nonumber \\
+              &\phantom{={}} +
+                m_t
+                \left[\widetilde{\Sigma}_t^{(1),\SQCD} +
+                \widetilde{\Sigma}_t^{(2),\SQCD}
+                \right]
+  \end{align*}
+  Calculation of $\as$ and $\aem$ in two different ways:
+  \begin{align*}
+    \as^{(1)}  &= \frac{\as^{\SM(5)}}{1 - \Delta^{(1)}\as - \Delta^{(2)}\as}\\
+    \as^{(2)}  &= \as^{\SM(5)} \left[1 + \Delta^{(1)}\as + (\Delta^{(1)}\as)^2 + \Delta^{(2)}\as\right]
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Uncertainty estimate of the fixed-order \DRbarp\ calculation}
   \begin{center}
     \includegraphics[width=0.49\textwidth]{{{plots/SOFTSUSY/SS_TB-20_Xt--sqrt6_individual}}}\hfill
     \includegraphics[width=0.49\textwidth]{{{plots/SOFTSUSY/SS_TB-20_Xt--sqrt6}}}
@@ -460,6 +509,22 @@
     \includegraphics[width=0.49\textwidth]{plots/HSSUSY-3L/scan_Mh_MS_TB-10_Xt--sqrt6_diff.pdf}
   \end{center}
   \mycite{1807.03509}
+\end{frame}
+
+\begin{frame}{Uncertainty estimate of the EFT calculation}
+  In \bigcite{1804.09410} 5 sources of uncertainty were combined:
+  \begin{align*}
+    \DMhQpole &= \max_{\Qpole\in[M_t/2,2M_t]}\left|M_h(\Qpole) - M_h(M_t)\right| & \text{\mycite{1609.00371}} \\
+    \DMhQmatch &= \max_{\Qmatch\in[\MS/2,2\MS]}\left|M_h(\Qmatch) - M_h(\MS)\right| & \text{\mycite{1407.4081}} \\
+    \DMhHSSUSYytSM &= \left| M_h(y_t^{\SM,2L}(M_Z)) - M_h(y_t^{\SM,3L}(M_Z)) \right| & \text{\mycite{1504.05200}} \\
+    \DMhEFT &= \left| M_h - M_h(v^2/\MS^2) \right| & \text{\mycite{1504.05200}} \\
+    \DMhHSSUSYytMSSM &= \left| M_h - M_h(y_t^\MSSM(\MS)) \right| & \text{\mycite{Bagnaschi,AV,Weiglein}}
+  \end{align*}
+  Combination:
+  \begin{align*}
+    \DMhHSSUSY &= \DMhQpole + \DMhQmatch + \DMhHSSUSYytSM + \DMhHSSUSYytMSSM \\
+    &\quad + \DMhEFT
+  \end{align*}
 \end{frame}
 
 \begin{frame}{Comparison of fixed-order and EFT approaches}
