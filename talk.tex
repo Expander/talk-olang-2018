@@ -343,40 +343,6 @@
 \end{frame}
 
 \begin{frame}{Uncertainty estimate of the fixed-order \DRbarp\ calculation}
-  Calculation of $m_t$ in two different ways as proposed in
-  \bigcite{1609.00371}:
-  \begin{align*}
-    m_t^{[1]} &=
-                M_t + \widetilde{\Sigma}_t^{(1L),S} +
-                M_t \left[
-                \widetilde{\Sigma}_t^{(1L),L} +
-                \widetilde{\Sigma}_t^{(1L),R}
-                \right] \\
-              &\phantom{={}} + M_t
-                \left[\widetilde{\Sigma}_t^{(1L),\SQCD}
-                + \widetilde{\Sigma}_t^{(2L),\SQCD}
-                + \left(\widetilde{\Sigma}_t^{(1L),\SQCD}\right)^2
-                \right]\\
-    m_t^{[2]} &=
-                M_t + \widetilde{\Sigma}_t^{(1L),S} +
-                m_t \left[
-                \widetilde{\Sigma}_t^{(1L),L} +
-                \widetilde{\Sigma}_t^{(1L),R}
-                \right] \nonumber \\
-              &\phantom{={}} +
-                m_t
-                \left[\widetilde{\Sigma}_t^{(1L),\SQCD} +
-                \widetilde{\Sigma}_t^{(2L),\SQCD}
-                \right]
-  \end{align*}
-  Calculation of $\as$ and $\aem$ in two different ways:
-  \begin{align*}
-    \as^{[1]}  &= \frac{\as^{\SM(5)}}{1 - \Delta^{(1L)}\as - \Delta^{(2L)}\as}\\
-    \as^{[2]}  &= \as^{\SM(5)} \left[1 + \Delta^{(1L)}\as + (\Delta^{(1L)}\as)^2 + \Delta^{(2L)}\as\right]
-  \end{align*}
-\end{frame}
-
-\begin{frame}{Uncertainty estimate of the fixed-order \DRbarp\ calculation}
   \begin{center}
     \includegraphics[width=0.49\textwidth]{{{plots/SOFTSUSY/SS_TB-20_Xt--sqrt6_individual}}}\hfill
     \includegraphics[width=0.49\textwidth]{{{plots/SOFTSUSY/SS_TB-20_Xt--sqrt6}}}
@@ -660,6 +626,42 @@
   \begin{center}
     \Huge Backup
   \end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[noframenumbering]{Uncertainty estimate of the fixed-order \DRbarp\ calculation}
+  Calculation of $m_t$ in two different ways as proposed in
+  \bigcite{1609.00371}:
+  \begin{align*}
+    m_t^{[1]} &=
+                M_t + \widetilde{\Sigma}_t^{(1L),S} +
+                M_t \left[
+                \widetilde{\Sigma}_t^{(1L),L} +
+                \widetilde{\Sigma}_t^{(1L),R}
+                \right] \\
+              &\phantom{={}} + M_t
+                \left[\widetilde{\Sigma}_t^{(1L),\SQCD}
+                + \widetilde{\Sigma}_t^{(2L),\SQCD}
+                + \left(\widetilde{\Sigma}_t^{(1L),\SQCD}\right)^2
+                \right]\\
+    m_t^{[2]} &=
+                M_t + \widetilde{\Sigma}_t^{(1L),S} +
+                m_t \left[
+                \widetilde{\Sigma}_t^{(1L),L} +
+                \widetilde{\Sigma}_t^{(1L),R}
+                \right] \nonumber \\
+              &\phantom{={}} +
+                m_t
+                \left[\widetilde{\Sigma}_t^{(1L),\SQCD} +
+                \widetilde{\Sigma}_t^{(2L),\SQCD}
+                \right]
+  \end{align*}
+  Calculation of $\as$ and $\aem$ in two different ways:
+  \begin{align*}
+    \as^{[1]}  &= \frac{\as^{\SM(5)}}{1 - \Delta^{(1L)}\as - \Delta^{(2L)}\as}\\
+    \as^{[2]}  &= \as^{\SM(5)} \left[1 + \Delta^{(1L)}\as + (\Delta^{(1L)}\as)^2 + \Delta^{(2L)}\as\right]
+  \end{align*}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
