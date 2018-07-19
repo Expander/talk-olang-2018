@@ -66,8 +66,8 @@ h2 = plt.plot(xHSSUSY2L    , (yHSSUSY2L - yHSSUSY3L), 'k--', linewidth=1.2)
 plt.fill_between(xHSSUSY3L,
                  (yHSSUSY3L - yHSSUSY3L_plus_d), 
                  (yHSSUSY3L - yHSSUSY3L_minus_d),
-                 facecolor='gray', alpha=0.4, linewidth=0.0)
-pLam = plt.Rectangle((0, 0), 0, 0, facecolor='gray', alpha=0.4, linewidth=0.0)
+                 facecolor='green', alpha=0.4, linewidth=0.0)
+pLam = plt.Rectangle((0, 0), 0, 0, facecolor='green', alpha=0.4, linewidth=0.0)
 hpLam = ax.add_patch(pLam)
 
 plt.axhline(y=0, color='k', linestyle='-', linewidth=1.2)
