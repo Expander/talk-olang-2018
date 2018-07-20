@@ -76,7 +76,7 @@ plt.title(r'$\tan\beta = 10, X_t = -\sqrt{6}M_S$')
 
 leg = plt.legend([h2[0], hpLam],
                  [r'\texttt{FS/HSSUSY} 2L',
-                  r'$\pm\delta(\Delta\bar{\lambda})$'],
+                  r'$\pm\delta(\Delta\lambda_{\alpha_t^2\alpha_s^2})$'],
                  loc='upper right', fontsize=10, fancybox=None, framealpha=None)
 leg.get_frame().set_alpha(1.0)
 leg.get_frame().set_edgecolor('black')
